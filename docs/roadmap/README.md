@@ -114,6 +114,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Arama + solved + pinned bilgi`: eski bilgi gercekten bulunabilmeli
 - `Saved search + keyword alerts`: kullanici ihtiyacini sistem takip etmeli
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
+- `Admin AI & Automation`: Duplicate tespiti, auto-FAQ ve thread ozetleme ile moderasyon yukunun azalmasi
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
 - `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `ev ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
 - `Location relevance`: kullaniciya alakasiz sehir veya hizmet alanindaki icerikler gosterilmemeli

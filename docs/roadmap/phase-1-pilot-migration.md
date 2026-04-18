@@ -236,6 +236,8 @@ Faz 1'de kullaniciya hemen deger gostermezsen gecis olmaz. Bu nedenle ilk surumd
 
 Bu hissi olusturacak ilk deneyim:
 
+- **Welcome Thread**: Her yeni uyanin topluluk kurallarini ve ilk adimlari gorebilecegi sabit onboarding postu.
+- **Member Bio & Interests**: Ilk giriste kisa bir tanitim ve ilgi duyulan `topic group`larin secimi (feed'i kisisellestirmek icin).
 - lokasyon ve ilgi alanina gore hizli onboarding
 - en faydali pinned thread'lerin one cikmasi
 - `solved` veya `best answer` isaretli thread'lerin hemen gosterilmesi
@@ -319,7 +321,7 @@ Lokasyon kullaniminda Faz 1 kurali su olmali:
 
 Boylece kullanici alakasiz sehir veya bolge icerigiyle bogulmaz.
 
-### 4.2 Sonuc ve Status Katmani
+### 4.2 Sonuc ve Status Katmani (Content Lifecycle)
 
 Mevcut platformlarda bir post acildiktan sonra sonuc cogu zaman kaybolur. Bu urunde ise post'un kaderi gorunur olmalidir.
 
@@ -327,9 +329,9 @@ Ilk fazda temel status mantigi yeterlidir:
 
 - `Acik`
 - `Cozuldu`
-- `Kapandi`
+- `Kapandi` (Zaman asimi veya gecersizlik durumu)
 
-Ozellikle `Yardim Istegi`, ilan ve soru tiplerinde bu status'ler, yeni kullanicinin hangi icerigin hala gecerli oldugunu anlamasini kolaylastirir.
+Ozellikle `Yardim Istegi`, ilan ve soru tiplerinde bu status'ler, yeni kullanicinin hangi icerikin hala gecerli oldugunu anlamasini kolaylastirir. Zamanla eskiyen ve `Kapandi` durumuna gecen icerikler aramada daha dusuk oncelikle gosterilmelidir.
 
 ### 5. Thread ve Yorumlar
 

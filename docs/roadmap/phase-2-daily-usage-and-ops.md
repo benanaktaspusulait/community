@@ -273,6 +273,10 @@ Bu nedenle Faz 2 dashboard veya ozetlerinde en azindan su faydalar gosterilmelid
 - bekleyen onay ve moderasyon kuyruklarinin durumu
 - en cok sonuc ureten topic group'lar
 
+**Admin Automation (Faz 2 Temelleri):**
+- **Duplicate Detection**: Yeni bir post acilirken benzer anahtar kelimeler iceren eski postlarin "Bunu mu ariyordunuz?" seklinde onerilmesi.
+- **Auto-FAQ Suggestion**: Admin'in cok sık cevapladigi thread'leri tek tikla FAQ listesine ekleyebilmesi.
+
 Bu sadece analytics degil; admin'e `burada operasyon daha iyi yonetiliyor` sinyalidir.
 
 ### 8. Hafif Canli Etkilesim Katmani (Quick Rooms)

@@ -98,6 +98,10 @@ Bu nedenle Faz 3'te su sinyaller daha gorunur hale gelebilir:
 - `bu ilan cevaplandi`
 - `bu rehber en cok kaydedilenler arasinda`
 
+**Dispute Resolution & Escrow (Opsiyonel):**
+- **Safe Interaction**: Ozellikle yuksek montanli veya riskli hizmetlerde (kira, ev tasima) admin onayli guvenli odeme veya depozito tutma opsiyonlarinin arastirilmasi.
+- **Reporting & Dispute**: Hizmet veren ve alan arasindaki anlasmazliklarin moderatorlere raporlanma akisi.
+
 Bu tip sonuc sinyalleri yeni kullaniciya platformun gercek fayda uretebildigini gosterir.
 
 ### 4. Reklam Veren Araclari

@@ -43,14 +43,14 @@ Farkli topluluklar farkli operasyonel ihtiyaclar getirir:
 
 Bu yuzden sistem locale-aware hale gelmelidir.
 
-### 3. AI Discovery ve Summary Araclari
+### 3. AI Discovery ve Intelligence Layer
 
-Bu fazda AI gercek deger uretmeye baslar:
+Bu fazda AI, platformun ana vaadi olan "Community Memory"yi korumak ve erisilebilir kilmak icin kritik rol oynar:
 
-- benzer sorulari birlestirme
-- uzun thread'leri ozetleme
-- yeni uye icin en onemli bilgileri on plana cikarma
-- community knowledge assistant
+- **Semantic Search**: Sadece kelime eslesmesi degil, "MK civari cocuk doktoru" arayan birine "Milton Keynes pediatri tavsiyeleri" thread'ini getirebilen akilli arama.
+- **Thread Summarization**: Yuzlerce yorum iceren uzun bir tartismanin ana ciktilarini (onerilen yerler, dikkat edilmesi gerekenler) 3 maddede ozetleme.
+- **Auto-tagging & Categorization**: Postlarin icerigine gore otomatik etiketlenmesi (saglik, hukuk, emlak vb.) ve dogru topic group'a yonlendirilmesi.
+- **Community Knowledge Assistant**: Toplulukta daha once sorulmus ve cozulmus binlerce sorudan beslenen, yeni gelenlere rehberlik eden AI botu.
 
 AI, ana urun yerine gecen degil; community hafizasini daha kullanisli yapan katman olarak konumlanmalidir.
 
