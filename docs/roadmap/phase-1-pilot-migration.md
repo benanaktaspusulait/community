@@ -310,6 +310,44 @@ Faz 1'de en azindan su gorunur yuzler olmali:
 
 Ama amac tam public social network olmak degil; disaridan bakan kullaniciya burada deger oldugunu gostermektir.
 
+### 2.4 Kullanici Profili
+
+Her uye icin temel bir profil yapisi olmali. Bu profil sosyal ag profili gibi agir degil; ama kimin ne oldugunu anlamaya yetecek kadar net olmali.
+
+**Faz 1 profil alanlari:**
+
+- isim veya takma ad
+- profil gorseli (opsiyonel)
+- kisa tanitim (1-2 cumle)
+- base location (gorunurluk tercihi ile)
+- katilim tarihi
+- uye oldugu topic group'lar
+- acik yardim istekleri ve paylasimlari
+- `Sikayet Et` butonu
+
+Profil, kimin guvenilir oldugunu anlamanin ilk adagidir. Faz 2'de faydalilik sinyalleri, Faz 4'te verified badge'ler bu profilin ustune biner.
+
+### 2.5 Feed ve Kesif Mantigi
+
+Kullanicinin ana ekranda ne gordugu urunun basarisi icin belirleyicidir.
+
+**Faz 1 feed kurallari:**
+
+- feed varsayilan olarak kullanicinin secili topic group'larina ve lokasyonuna gore filtrelenir
+- feed sirasi: once pinned / sabitlenmis icerik, sonra yenilik bazli siralama
+- `Cozuldu` veya `Kapandi` status'undeki icerikler varsayilan olarak feed'de daha asagida gosterilir veya gizlenir
+- `Cozum Karti` ve `Rehber` tipleri arama ve feed'de on sira alir
+- reklam feed icinde ayri slotlardan gosterilir; normal icerikle karistirilmaz
+- feed bos gorunuyorsa en cok aranan veya en cok kaydedilen icerikler gosterilir
+
+**Feed ne olmamali:**
+
+- kronolojik mesaj akisi (WhatsApp benzeri)
+- genel sohbet ve dusuk sinyalli paylasimlarla dolan sosyal akis
+- `Merhaba, nasilsiniz` tarzinda icerikle dolan bir timeline
+
+Feed'in temel sorusu: `Bu kullanicinin simdi en cok isine yarayacak icerik ne?`
+
 ### 3. Topic Group Yapisi
 
 Her konu icin ayri alan olmali:
@@ -612,7 +650,43 @@ Faz 1'de basit ama etkili model su olabilir:
 
 Bu ozellik private topluluk kalitesini korur ve Facebook Groups'taki aliskanligi daha rahat tasir.
 
-### 8.3 Tekrarlayan Icerigi Daha Acarken Kirma
+### 8.3 Kullanici Bazli Engelleme
+
+Admin moderasyonundan ayri olarak, kullanicinin kendi deneyimini kontrol edebilmesi de gerekir.
+
+Faz 1'de minimum model:
+
+- bir kullanici baska bir kullaniciyi engelleyebilmeli
+- engellenen kullanicinin postlari ve yorumlari engeli koyan kisi icin gizlenmeli
+- engellenen kullanici engellendigini bilmemeli (sessiz engel)
+- engel kaldirilabilmeli
+- engelleme rapor akisini etkilememeli; engellenen kisi hala sikayet edilebilmeli
+
+Bu ozellik ozellikle buyuyen topluluklarda moderator mudahalesi olmadan bireysel rahatsizliklari yonetir.
+
+### 8.4 Hesap Silme ve Veri Haklari
+
+UK pazari GDPR kapsamindadir. Bu nedenle Faz 1'den itibaren kullanicinin veri haklari acik tanimlanmali.
+
+**Hesap silme:**
+
+- kullanici kendi hesabini silebilmeli
+- silme islemi geri donulemez; kullaniciya onay adimi gosterilmeli
+- hesap silindiginde: profil bilgileri, lokasyon, bio ve kisisel veriler kaldirilir
+- kullanicinin actigi thread ve yorumlar anonim hale getirilir (icerik kalir, isim `Silinmis Kullanici` olur); community hafizasi bozulmaz
+- DM veya birebir iletisimler tamamen silinir (Faz 5'te DM geldiginde)
+
+**Veri indir:**
+
+- kullanici kendi verisini JSON veya CSV olarak indirebilmeli (postlar, yorumlar, kaydedilenler)
+- bu islem Faz 4'teki admin export'tan farklidir; bireysel kullanici hakki olarak Faz 1'de olmali
+
+**Gizlilik ilkesi:**
+
+- kullanici verisi ucuncu tarafla (advertiser dahil) bireysel olarak paylasilmamali
+- profil gorunurlugu kullanici tarafindan ayarlanabilmeli
+
+### 8.5 Tekrarlayan Icerigi Daha Acarken Kirma
 
 Faz 1'de bile ayni sorunun tekrar tekrar acilmasi pasif sekilde izlenmemelidir.
 

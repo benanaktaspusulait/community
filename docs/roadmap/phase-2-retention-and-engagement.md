@@ -127,6 +127,20 @@ Faz 1'deki temel status modeli bu fazda anlamli lifecycle'a donusmeli.
 
 gibi durumlar izlenebilir olmali.
 
+### 4.2 Icerik Yaslanma ve Arsivleme
+
+Community memory zamanla buyur; ama eski ve gecersiz icerik birikmesi bilgi kalitesini dusurur.
+
+Faz 2'de temel arsivleme mantigi:
+
+- `Kapandi` veya `Suresi doldu` status'undeki icerikler arama sonuclarinda daha dusuk oncelik alir
+- belirli sure (orn: 6 ay) boyunca hic etkilesim almamis icerikler `arsiv` statusune otomatik gecebilir
+- arsivlenen icerik silinmez; ama feed ve arama'da varsayilan olarak gizlenir
+- kullanici veya admin arsivlenenmis icerigi tekrar aktif edebilir (orn: eski ama hala gecerli bir rehber)
+- `Cozum Karti`, `Rehber` ve `FAQ` arsivleme kurallarina tabi olmamali; bunlar aktif kalir ve admin tarafindan guncellenir
+
+Bu mantik olmadan topluluk hafizasi zamanla cop yigini haline gelir. Arsivleme, community memory'nin kaliteli kalmasi icin gerekli hijyendir.
+
 ### 5. Structured Request Template'leri
 
 `Yardim Istegi` sadece bos metinle acilan tip olarak kalmamali.

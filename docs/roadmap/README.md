@@ -215,6 +215,11 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 - yardim isteklerinin sonuca donme orani
 - migration yapilan community'lerde 30 gunluk aktiflik
 - community admin veya advertiser icin olculebilir ROI hikayesi olusma orani
+- cozum karti ve rehber olusturulma ve tekrar kullanilma orani
+- Altin Bilgi Kutuphanesi'ndeki icerik sayisi ve kullanim sikligi
+- admin pick veya kurasyon yapilan icerik orani
+- arsivlenen vs aktif kalan icerik dengesi
+- hesap silme talep orani (saglik sinyali olarak)
 
 ## Dokuman Yapisi
 
