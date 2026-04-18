@@ -1,25 +1,25 @@
-# Faz 4 - Expansion and Intelligence
+# Faz 6 - Expansion ve Intelligence
 
 ## Fazin Amaci
 
-Faz 4'te urun, tek bir diaspora veya tek bir ulkeye hizmet eden cozum olmaktan cikip genellenebilir bir global community platformuna donusur.
+Faz 6'da urun, tek bir diaspora veya tek bir ulkeye hizmet eden cozum olmaktan cikip genellenebilir bir global community platformuna donusur.
 
-Bu fazin ikinci odagi ise, biriken community hafizasini daha akilli ve daha erisilebilir hale getirmektir.
+Bu fazin ikinci odagi, biriken community hafizasini daha akilli ve daha erisilebilir kilmaktir.
 
 ## Expansion Boyutu
 
 Bu faza kadar urun buyuk ihtimalle belirli bir community modelinde calismasini kanitlamis olur.
 
-Buradan sonra genisleme su eksenlerde olabilir:
+Buradan sonra genisleme:
 
 - farkli sehirler
 - farkli ulkeler
 - farkli diaspora topluluklari
 - farkli ilgi veya profesyonel aglar
 
-Bu genisleme, ilk product truths'i bozmadan yapilmalidir.
+Bu genisleme, ilk product truth'lari bozmadan yapilmalidir.
 
-## Faz 4 Kapsami
+## Faz 6 Kapsami
 
 ### 1. Multi-Community Identity
 
@@ -30,7 +30,7 @@ Bir kullanici birden fazla topluluga ait olabilir:
 - London Parents
 - Europe Tech Contractors
 
-Bu nedenle hesap yapisi tek community'ye bagli olmamalidir.
+Bu nedenle hesap yapisi tek community'ye bagli olmamali.
 
 ### 2. Country ve Locale Katmani
 
@@ -41,22 +41,29 @@ Farkli topluluklar farkli operasyonel ihtiyaclar getirir:
 - moderation tercihleri
 - reklam hedefleme mantigi
 
-Bu yuzden sistem locale-aware hale gelmelidir.
+Sistem locale-aware hale gelmeli.
+
+**Tam ceviri ve cok dilli icerik destegi:**
+
+- Faz 1'de baslayan iki dilli UI bu fazda tam locale altyapisina donusmeli
+- topluluk bazli dil ayarlari olmali
+- icerik ceviri ozelligi arastirilabilir (AI destekli)
 
 ### 3. AI Discovery ve Intelligence Layer
 
-Bu fazda AI, platformun ana vaadi olan "Community Memory"yi korumak ve erisilebilir kilmak icin kritik rol oynar:
+Bu fazda AI, platformun ana vaadi olan `Community Memory`yi korumak ve erisilebilir kilmak icin kritik rol oynar:
 
-- **Semantic Search**: Sadece kelime eslesmesi degil, "MK civari cocuk doktoru" arayan birine "Milton Keynes pediatri tavsiyeleri" thread'ini getirebilen akilli arama.
-- **Thread Summarization**: Yuzlerce yorum iceren uzun bir tartismanin ana ciktilarini (onerilen yerler, dikkat edilmesi gerekenler) 3 maddede ozetleme.
-- **Auto-tagging & Categorization**: Postlarin icerigine gore otomatik etiketlenmesi (saglik, hukuk, emlak vb.) ve dogru topic group'a yonlendirilmesi.
+- **Semantic Search**: Sadece kelime eslesmesi degil, `MK civari cocuk doktoru` arayan birine `Milton Keynes pediatri tavsiyeleri` thread'ini getirebilen akilli arama.
+- **Thread Summarization**: Yuzlerce yorum iceren uzun bir tartismanin ana ciktilarini 3 maddede ozetleme.
+- **Auto-tagging & Categorization**: Postlarin icerigine gore otomatik etiketlenmesi ve dogru topic group'a yonlendirilmesi.
 - **Community Knowledge Assistant**: Toplulukta daha once sorulmus ve cozulmus binlerce sorudan beslenen, yeni gelenlere rehberlik eden AI botu.
+- **Admin AI Automation**: Duplicate tespiti, auto-FAQ onerisi ve moderasyon yuku azaltma Faz 3'te basladi; bu fazda AI ile guclendirilir.
 
-AI, ana urun yerine gecen degil; community hafizasini daha kullanisli yapan katman olarak konumlanmalidir.
+AI, ana urun yerine gecen degil; community hafizasini daha kullanisli yapan katman olarak konumlanmali.
 
 ### 4. Advanced Knowledge Graph
 
-Biriken bilgi sadece post listesi olarak kalmamalidir.
+Biriken bilgi sadece post listesi olarak kalmamali.
 
 Zamanla:
 
@@ -69,7 +76,7 @@ gibi yapilar ustunden daha akilli kesif deneyimi kurulabilir.
 
 ### 5. Community Creation at Scale
 
-Bu fazda yeni community kurmak cok kolay olmalidir:
+Bu fazda yeni community kurmak cok kolay olmali:
 
 - hazir template'ler
 - otomatik group yapisi
@@ -82,7 +89,7 @@ Boylece urun tek tek elle kurulan topluluklardan cikip platform seviyesine gelir
 
 Expansion sadece feature ile olmaz; tekrar edilebilir launch modeli de gerekir.
 
-Bu fazda sunlar standart hale getirilebilir:
+Bu fazda standart hale getirilebilecekler:
 
 - yeni community icin seed content paketleri
 - migration checklist'leri
@@ -94,7 +101,7 @@ Bu katman product ve sales ekiplerinin yeni ulke veya community tiplerine daha h
 
 ### 6. Global Monetization Variants
 
-Olcek arttikca gelir modelleri de cesitlenebilir:
+Olcek arttikca gelir modelleri cesitlenebilir:
 
 - farkli ulkelerde advertiser paketleri
 - topluluk bazli admin planlari
@@ -102,33 +109,33 @@ Olcek arttikca gelir modelleri de cesitlenebilir:
 - partner marketplace entegrasyonlari
 - ad network mediation ve fill optimization
 
-Bu noktada programmatic veya ad network gelir modeli daha olgun hale getirilebilir:
+Bu noktada programmatic gelir modeli daha olgun hale getirilebilir:
 
 - farkli ulke ve dil bazli ad source secimi
 - public web inventory ile app inventory ayrimi
 - native advertiser ile ad network arasinda yield dengesi
 
-Ama ana ilke burada da degismez:
+Ana ilke burada da degismez:
 
 - topluluk relevance'i ve kullanici kontrolu, network gelirinden daha onceliklidir
 
-## Faz 4 Basari Kriterleri
+## Faz 6 Basari Kriterleri
 
 - ikinci ve ucuncu community tiplerinde adoption
 - birden fazla ulke veya segmentte retention
 - AI destekli arama veya ozet kullanim orani
 - yeni community olusturma suresinin kisalmasi
+- global monetization variant'larda tekrar reklam orani
 
-## Faz 4 Riskleri
+## Faz 6 Riskleri
 
 - ana urun vaadinin generic platforma donusup zayiflamasi
 - AI'nin community katkisini bastirmasi
 - farkli ulke ihtiyaclarinin asiri karmasik hale gelmesi
+- cok dilli icerik + AI katmaninin mahremiyet risklerini artirmasi (hassas icerik ozeti veya ceviride gizlilik sirismasi)
 
 Bu yuzden expansion, ozunden kopmadan yapilmalidir.
 
-## Faz 4 Cikisinda Beklenen Sonuc
+## Faz 6 Cikisinda Beklenen Sonuc
 
-Bu faz sonunda urun su sekilde tanimlanabilir:
-
-`Insanlarin bulunduklari yerde kendi guvenilir topluluklarini buldugu, topluluk bilgisini kaybetmeden sakladigi ve farkli community tiplerine acilabilen global platform.`
+`Insanlarin bulundugu yerde kendi guvenilir topluluklarini buldugu, topluluk bilgisini kaybetmeden sakladigi ve farkli community tiplerine acilabilen global platform.`

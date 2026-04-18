@@ -557,6 +557,50 @@ Bu nedenle Faz 1'de en azindan su olmali:
 
 Bu ozellik, sadece chat replacement degil ayni zamanda bilgi kutuphanesi hissi verir.
 
+### 12. Dil ve Lokalizasyon Destegi
+
+UK Turks gibi iki dilli topluluklarda urun ilk gunden lokalizasyon sorunuyla karsilasir.
+
+Faz 1 icin minimum beklenti:
+
+- UI hem Turkce hem Ingilizce desteklemeli; varsayilan dil onboarding'de secilmeli
+- Post ve thread icerigi kullanicinin kendi dilinde girilmeli; sistem dil filtrelemesi Faz 1'de zorunlu degil
+- Bildirim metinleri kullanicinin secili diline gore gelmeli
+- Admin tarafindan topluluk kurallari ve pinned icerik her iki dilde de eklenebilmeli
+
+Tam ceviri altyapisi veya icerik ceviri ozelligi Faz 1 kapsami disinda tutulmali. Ama UI dil destegi olmadan pilot toplulukta hemen engel olusur.
+
+### 13. Hesap Guvenligi ve Rate Limiting
+
+Urun public invite ile buyudukce spam ve suistimal erken risk haline gelir.
+
+Faz 1 icin minimum guvenlik katmani:
+
+**Hesap dogrulama:**
+- kayit sirasinda email dogrulama zorunlu olmali
+- telefon dogrulama opsiyonel ama private topluluklar icin admin tercihe bagli aktive edebilmeli
+
+**Yeni uye throttle:**
+- ilk 24-48 saatte yeni uye post limiti uygulanmali (ornek: ilk gun max 5 post)
+- bu limit community admin tarafindan ayarlanabilmeli
+- verified veya invite ile gelen uyeler icin limit daha gevse tutulabilmeli
+
+**Spam sinyali:**
+- kisa surede cok sayida tekrar post acma otomatik flag uretmeli
+- moderator kuyruguna dusmeli, aninda ban olmamali
+
+### 14. Deep Link ve Invite Teknik Gerekliligi
+
+Invite linkleri WhatsApp, Telegram veya social media uzerinden paylasildigi icin teknik davranis cok onemlidir.
+
+Faz 1'de zorunlu davranislar:
+
+- invite linki uygulamayi aciyorsa dogru group veya community'e dogrudan gondermeli
+- uygulama yuklu degilse web preview sonrasi install + otomatik yonlendirme akisi olmali
+- belirli bir thread'in linki paylasildiginda o thread'e deep link calismalı
+- link preview meta tag'leri (og:title, og:description, og:image) olmali; WhatsApp ve iMessage'da kart gorunumu saglanmali
+- suresi dolmus veya iptal edilmis invite linkleri net hata mesaji vermeli, sessizce bos ekran acmamali
+
 ## Faz 1'de Olmamasi Gerekenler
 
 Asagidaki konular bu fazda bilerek disarida birakilmali:

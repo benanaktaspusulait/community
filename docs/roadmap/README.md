@@ -33,9 +33,11 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 | Faz | Ana amac | Cikis sonucu |
 | --- | --- | --- |
 | Faz 1 | 1-3 mevcut WhatsApp, Facebook veya Telegram grubunu tasiyabilecek pilot urun | Aranabilir, thread bazli (asenkron), davetiye ile girilen community platformu |
-| Faz 2 | Gunluk kullanim ve admin operasyonlarini guclendirmek | Toplulugun ana akis platformu ve hafif canli etkilesim (quick rooms) |
-| Faz 3 | Guven ve gelir modelini urune yerlestirmek | Verified profiles, reviews, monetization ve opsiyonel DM / group live mode |
-| Faz 4 | Birden fazla ulke ve community tipine acilmak | Global topluluk platformu ve intelligence layer |
+| Faz 2 | Kullanicinin platforma duzenli olarak geri gelmesini saglamak | Kisisel feed, saved search, keyword alerts, matching ve lifecycle ile retention motoru |
+| Faz 3 | Admin operasyonunu olgunlastirmak ve is yukunu azaltmak | Rol delegasyonu, approval engine, admin dashboard, quick rooms, otomasyon temelleri |
+| Faz 4 | Toplulukta kimlerin guvenilir oldugunu gorunur kilmak | Verified profiles, provider sayfalar, rating/review sistemi, reputation |
+| Faz 5 | Surdurulebilir gelir modeli kurmak | Advertiser araclari, commercial paketler, DM/live mode ve ad network |
+| Faz 6 | Birden fazla ulke ve community tipine acilmak | Global topluluk platformu, AI/intelligence katman ve locale destegi |
 
 ## Ilk Giris Stratejisi
 
@@ -105,18 +107,22 @@ Kisaca:
 Roadmap'te sira bilerek bu sekilde:
 
 - Faz 1'de once `tasinma sebebi` cozulur: bilgi kaybi, arama, grup duzeni. Chat sadece thread/comment bazli asenkron yapidadir.
-- Faz 2'de `geri gelme sebebi` cozulur: aktif kullanim, admin kolayligi, hafif live chat (quick rooms) ve kisa sureli etkilesim.
-- Faz 3'te `guven ve gelir` cozulur: verified business, reviews, reklam arayuzu, monetization ve opsiyonel birebir (DM) veya grup bazli canli modlar.
-- Faz 4'te `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari, AI destekleri.
+- Faz 2'de `geri gelme sebebi` cozulur: saved search, keyword alerts, kisisel feed ve yardim istegi matching ile duzenli kullanim aliskanligi kurulur.
+- Faz 3'te `admin operasyonu` cozulur: rol delegasyonu, approval engine, admin dashboard ve quick rooms ile yonetim yuku dagitilir.
+- Faz 4'te `guven` cozulur: verified profiller, provider sayfalar ve rating/review ile topluluk icinde kim guvenilir sorusu cevaplanir.
+- Faz 5'te `gelir` cozulur: advertiser araclari, commercial paketler ve opsiyonel DM/live mode ile surdurulebilir ticari model kurulur.
+- Faz 6'da `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari ve AI destekleri ile global platform haline gelinir.
 
 ## Iletisim Katmani Evrimi
 
 Urunun iletisim mimarisi bir anda tam chat'e donmemelidir. Onerilen evrim su sekilde:
 
 - `Faz 1`: thread, comment, reply ve mention bazli asenkron iletisim
-- `Faz 2`: topic group icinde admin kontrollu `Quick Rooms` ve kisa sureli canli akis
-- `Faz 3`: opsiyonel DM, provider-musteri iletisimi ve ihtiyaca gore `Group Live Mode`
-- `Faz 4`: farkli community tiplerine gore ayarlanabilen daha esnek iletisim policy'leri
+- `Faz 2`: asenkron yapiyi guclendirir; chat katmani yok
+- `Faz 3`: topic group icinde admin kontrollu `Quick Rooms` ve kisa sureli canli akis
+- `Faz 4`: asenkron; guven katmani kurulur
+- `Faz 5`: opsiyonel DM, provider-musteri iletisimi ve ihtiyaca gore `Group Live Mode`
+- `Faz 6`: farkli community tiplerine gore ayarlanabilen daha esnek iletisim policy'leri
 
 Ana ilke degismez:
 
@@ -187,12 +193,12 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 
 ## Dokuman Yapisi
 
-- [Faz 1 - Pilot Migration](/Users/benanaktas/project/community/docs/roadmap/phase-1-pilot-migration.md)
-- [Faz 2 - Daily Usage and Admin Operations](/Users/benanaktas/project/community/docs/roadmap/phase-2-daily-usage-and-ops.md)
-- [Faz 3 - Trust and Monetization](/Users/benanaktas/project/community/docs/roadmap/phase-3-trust-and-monetization.md)
-- [Faz 4 - Expansion and Intelligence](/Users/benanaktas/project/community/docs/roadmap/phase-4-expansion-and-intelligence.md)
-
-Cross-cutting konular artik ayri destek dosyalari yerine Faz 1-3 dokumanlarinin icine dagitildi.
+- [Faz 1 - Pilot Migration](phase-1-pilot-migration.md)
+- [Faz 2 - Retention & Engagement](phase-2-retention-and-engagement.md)
+- [Faz 3 - Admin Olgunlugu & Operasyon](phase-3-admin-maturity-and-ops.md)
+- [Faz 4 - Guven](phase-4-trust.md)
+- [Faz 5 - Monetization & Ticari Model](phase-5-monetization-and-commercial.md)
+- [Faz 6 - Expansion & Intelligence](phase-6-expansion-and-intelligence.md)
 
 ## Kararlastirilan Ilk Kararlar
 
