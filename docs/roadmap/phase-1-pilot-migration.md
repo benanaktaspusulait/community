@@ -223,7 +223,7 @@ Faz 1'de tek katilim yolu invite link olacak; ama invite link tek tip olarak ele
 
 - admin email veya telefon listesi yukleme ile toplu davet gonderebilmeli
 - her davet kisisellestirilmis invite link icermeli
-- gonderiminzaman asimi veya teslim edilememe durumunda admin bildirilmeli
+- gonderim zaman asimi veya teslim edilememe durumunda admin bildirilmeli
 - bu ozellik migration concierge operasyonunun temel araci olacak
 
 **Join request (private community):**

@@ -46,16 +46,16 @@ Boylece platform merkezi kontrol ile topluluk bazli delegasyonu dengeler.
 
 ### 2.1 Sub-admin Group Acma Yetkisi Acilis Kriterleri
 
-Faz 1'de sub-admin'in yeni group acmamasi kararlastirilmisti; Faz 3'te bu yetki kontrollü olarak acilabilir.
+Faz 1'de sub-admin'in yeni group acmamasi kararlastirilmisti; Faz 3'te bu yetki kontrollu olarak acilabilir.
 
 Ama bu yetki herkese otomatik verilmemeli. Acilis kriterleri:
 
-- sub-admin en az 30 gun aktif olarak gorev yapmiş olmali
+- sub-admin en az 30 gun aktif olarak gorev yapmis olmali
 - yonetimi altindaki alanda sikayet orani dusuk olmali (admin tanimli esik)
 - community admin tarafindan acikca onaylanmali; varsayilan kapali kalmali
 - yetki scoped olmali: sub-admin sadece kendi atandigi lokasyon veya topic altinda alt group acabilmeli; ana community veya baska scope'ta degil
 
-Bu kriterler olmadan yetki delegasyonu kaosa donusuyor. Admin `Scoped if enabled` sec secenegini gormeli, kriterleri gorup aktive edebilmeli.
+Bu kriterler olmadan yetki delegasyonu kaosa donusur. Admin `Scoped if enabled` secenegini gormeli, kriterleri gorup aktive edebilmeli.
 
 ### 2.2 Faz 3 Permission Snapshot
 
@@ -96,7 +96,7 @@ Oncelik platform geneli ban degil, once group duzenini korumaktir.
 
 ### 5. Admin Dashboard
 
-Adminlerin toplulugu yonetigini hissetmesi icin dashboard gerekir:
+Adminlerin toplulugu yonettigini hissetmesi icin dashboard gerekir:
 
 - bekleyen raporlar ve onay kuyruklari
 - sikayet esigine yaklasan kullanicilar
@@ -116,11 +116,11 @@ Bu bilgi admini daha etkili yonetici yapar.
 
 ### 5.2 Admin Devir ve Transfer Mekanizmasi
 
-Bir community admini toplulugu baska birine devretmek isteyebilir. Bu senaryo planlanmadan birakilirsatopluluk sahipsiz kalabilir veya platform mudahalesi gerekir.
+Bir community admini toplulugu baska birine devretmek isteyebilir. Bu senaryo planlanmadan birakilirsa topluluk sahipsiz kalabilir veya platform mudahalesi gerekir.
 
 Faz 3'te minimum devir akisi:
 
-- mevcut community admin baskasini `admin aday`olarak atayabilmeli
+- mevcut community admin baskasini `admin aday` olarak atayabilmeli
 - aday kabul ederse tam admin yetkisi devredilir
 - eski admin tercihine gore sub-admin olarak kalabilir veya ayrilabilir
 - devir loglari platform admin tarafindan gorulebilmeli
@@ -198,7 +198,7 @@ Hafif poll sistemi:
 
 ### 11. Hassas Konular Icin Guvenli Paylasim
 
-Bazi konular insanlarin acik kimlikle yazmak istemedigi alanlardır:
+Bazi konular insanlarin acik kimlikle yazmak istemedigi alanlardir:
 
 - saglik
 - aile ici sorunlar

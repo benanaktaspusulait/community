@@ -16,7 +16,7 @@ Guven altyapisi erken gelirse:
 
 Faz 3'te operasyonel ve Faz 2'de engagement temeli kurulduktan sonra guven katmani anlamli hale gelir.
 
-Bu faz ayni zamanda Faz 3'te kurulan otomasyon temellerinin (duplicate detection, auto-FAQ, admin dashboard) calistigi varsayimiyla ilerler. Admin operasyon yuku azalmadan guven katmani icin gerekli kapasiteyi ayirmak zorlaşır.
+Bu faz ayni zamanda Faz 3'te kurulan otomasyon temellerinin (duplicate detection, auto-FAQ, admin dashboard) calistigi varsayimiyla ilerler. Admin operasyon yuku azalmadan guven katmani icin gerekli kapasiteyi ayirmak zorlasir.
 
 ## Faz 4 Kapsami
 
@@ -80,10 +80,11 @@ Topluluktaki neyin islediginin gorunmesi deger uretir:
 - `bu ilan cevaplandi`
 - `bu rehber en cok kaydedilenler arasinda`
 
-**Dispute Resolution (Opsiyonel):**
+**Dispute Handling (Opsiyonel):**
 
-- ozellikle yuksek montanli veya riskli hizmetlerde (kira, ev tasima) admin onayli guvenli odeme veya depozito tutma opsiyonlarinin arastirilmasi
-- hizmet veren ve alan arasindaki anlasmazliklarin moderatörlere raporlanma akisi
+- ozellikle yuksek riskli hizmetlerde platformun parayi veya depozitoyu dogrudan tutmasi Faz 4 kapsaminda olmamali
+- bunun yerine taraflar arasi belge/paylasim, moderatora escalasyon ve ileride third-party escrow benzeri modellerin arastirilmasi dusunulebilir
+- hizmet veren ve alan arasindaki anlasmazliklarin moderatorlere raporlanma akisi
 
 Bu tip sonuc sinyalleri yeni kullaniciya platformun gercek fayda uretebildigini gosterir.
 

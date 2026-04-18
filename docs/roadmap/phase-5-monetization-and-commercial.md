@@ -14,7 +14,7 @@ Monetization erken gelirse:
 - provider sayfalar yokken kampanya hedefleme anlamsiz olur
 - yeterli community aktivitesi olmadan advertiser ROI dili bos kalir
 
-Guven ve aktivite temeli oturduğunda monetizasyon dogru esiktir.
+Guven ve aktivite temeli oturdugunda monetizasyon dogru esiktir.
 
 ## Ilk Ticari Tez
 
@@ -99,7 +99,7 @@ Advertiser / provider'a kurulacak dil:
 - begeni veya `Faydali buldum` gibi pozitif sinyaller
 - telefon, mesaj veya site tiklamasi gibi niyet aksiyonlari
 
-Community admin tarafinda ROI dili farklıdır:
+Community admin tarafinda ROI dili farklidir:
 
 - tekrar eden sorularin azalmasi
 - moderasyon yukunun dusmesi
