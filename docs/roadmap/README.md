@@ -25,6 +25,8 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 8. Ilk gelir modeli son kullanicidan degil; advertiser, provider ve operasyon yukunu azaltmak isteyen community admin tarafindan gelmelidir.
 9. Lokasyon urunun cekirdek sinyali olmali; ama kullanici, post ve reklam ayni lokasyon mantigi ile modellenmemelidir.
 10. Lokasyon verisi varsayilan olarak hassas olmamali; sehir, bolge veya postcode district seviyesinde tutulup gorunurlugu kullanici tarafindan kontrol edilebilmelidir.
+11. Chat katmani varsa bile community memory'i bozmamali; degerli sohbetler thread, FAQ veya kaynak yapisina donusturulebilmelidir.
+12. Ad network gelir modeli olabilir; ancak bu katman native community reklaminin yerine degil, kontrollu ek gelir ve fill kaynagi olarak ele alinmalidir.
 
 ## Faz Ozeti
 
@@ -107,6 +109,19 @@ Roadmap'te sira bilerek bu sekilde:
 - Faz 3'te `guven ve gelir` cozulur: verified business, reviews, reklam arayuzu, monetization ve opsiyonel birebir (DM) veya grup bazli canli modlar.
 - Faz 4'te `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari, AI destekleri.
 
+## Iletisim Katmani Evrimi
+
+Urunun iletisim mimarisi bir anda tam chat'e donmemelidir. Onerilen evrim su sekilde:
+
+- `Faz 1`: thread, comment, reply ve mention bazli asenkron iletisim
+- `Faz 2`: topic group icinde admin kontrollu `Quick Rooms` ve kisa sureli canli akis
+- `Faz 3`: opsiyonel DM, provider-musteri iletisimi ve ihtiyaca gore `Group Live Mode`
+- `Faz 4`: farkli community tiplerine gore ayarlanabilen daha esnek iletisim policy'leri
+
+Ana ilke degismez:
+
+`Kalici bilgi thread'de yasar, chat ise koordinasyon ve hiz icin kullanilir.`
+
 ## Gecisi Hakli Cikaran Katmanlar
 
 Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve Telegram'dan kullanici cekmesi icin su katmanlar gercekten hissedilmelidir:
@@ -116,6 +131,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
 - `Admin AI & Automation`: Duplicate tespiti, auto-FAQ ve thread ozetleme ile moderasyon yukunun azalmasi
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
+- `Hybrid communication`: gerekiyorsa canli konusma olmali ama bu konusmalar bilgi hafizasini yok etmemeli
 - `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `ev ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
 - `Location relevance`: kullaniciya alakasiz sehir veya hizmet alanindaki icerikler gosterilmemeli
 - `Outcome state`: ilan, soru veya yardim istegi `acik`, `cozuldu`, `eslesti`, `kapandi` gibi durumlar tasimeli
@@ -126,6 +142,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Link ve medya arsivi`: daha once paylasilan link, video ve gorsellere mesaj akisini kazimadan dogrudan erisim olmali
 - `Hafif anketler ve karar akislari`: topluluk kararlari veya hizli yoklamalar grup sohbetine dagilmamali
 - `Web-first discovery`: login oncesi preview, paylasilabilir public thread ve indexlenebilir faydali sayfalar ile disaridan deger gosterilmeli
+- `Layered monetization`: native advertiser, provider paketleri ve ileride ad network fill birlikte ama kontrollu calisabilmeli
 
 ## Ana Kullanim Senaryolari
 

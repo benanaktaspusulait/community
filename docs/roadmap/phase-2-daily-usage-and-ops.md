@@ -292,6 +292,16 @@ Bu fazda su ozellikler dusunulmelidir:
 
 Bu katman, toplulugun "olu" gorunmesini engeller ama derinlemesine bilgi saklama (thread) onceligini bozmaz.
 
+Quick Rooms icin Faz 2 kurallari net olmalidir:
+
+- her group'ta varsayilan acik olmamali; admin veya sub-admin bazli aktive edilmelidir
+- sureli / gecici oda acma mantigi desteklenmelidir
+- oda kapaninca degerli mesajlar gerekirse `thread'e donustur`, `FAQ'ya ekle` veya `kaynak olarak sabitle` akisina girebilmelidir
+- hassas veya duzen gerektiren group'larda Quick Room kapali tutulabilmelidir
+- raporlama, mute ve room-level moderasyon ayni moderator altyapisi ile calismalidir
+
+Boylece canlilik gelir, ama bilgi yine kaybolmaz.
+
 ### 8.1 Polls ve Hafif Karar Mekanikleri
 
 Facebook Groups ve Telegram'da topluluklar cok sik hizli yoklama yapar:

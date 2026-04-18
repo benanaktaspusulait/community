@@ -347,6 +347,29 @@ Bu, mevcut group akisini topluluk hafizasina ceviren ana mekaniktir.
 
 Yardim istekleri de bu thread mantigina oturmali; boylece ayni ihtiyac yeniden dogdugunda eski cevaplara donulebilir.
 
+### 5.1 Faz 1 Iletisim Katmani
+
+Faz 1'de chat deneyimi tamamen kaldirilmamis olur; ama bilincli sekilde asenkron yapida tutulur.
+
+Bu fazda iletisim sadece su katmanlardan olusmalidir:
+
+- thread altinda yorum
+- yoruma reply
+- solved / best answer
+- mention veya bildirim ile birini geri cagirma
+
+Yani kullanici etkileisimi vardir, ama bu etkileisim mesaj nehri gibi akip gitmez.
+
+Faz 1 kurali:
+
+- degerli bilgi thread icinde kalir
+- admin veya member ayrica DM ile konusmaz
+- canli group chat acilmaz
+
+Bu sinir, urunun ilk farkini korur:
+
+`mesajlasma degil, bulunabilir community hafizasi`
+
 ### 6. Arama ve Filtreleme
 
 Faz 1'in en kritik farklastirici ozelligi budur.

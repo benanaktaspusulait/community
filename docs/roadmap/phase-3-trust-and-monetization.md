@@ -224,6 +224,31 @@ Burada da urunun ana ilkesi korunur:
 
 Monetization, kullanici deneyimini zorla bozan degil, secimli gorunurluge dayali bir model ustune kurulur.
 
+### 4.5 Ad Network / Programmatic Gelir Katmani
+
+Native community reklamlari ana monetization modeli olmaya devam eder. Ama olcek arttiginda Google Ads / AdMob benzeri bir ad network katmani da ek gelir icin dusunulebilir.
+
+Bu katmanin dogru kullanimi su sekilde olmali:
+
+- once `native advertiser` ve `provider` inventory kullanilir
+- bos kalan veya satilmayan uygun alanlar icin ad network fill devreye girer
+- public web preview sayfalari, open guide / resource ekranlari ve hassas olmayan discovery yuzleri ilk aday alanlardir
+- login olmamis ya da public trafik bu model icin daha dogru olabilir
+
+Asagidaki alanlarda ise ad network mantigi ya kapali olmali ya da cok dikkatli sinirlanmalidir:
+
+- private community ic akislari
+- hassas konu group'lari: saglik, hukuki, aile ici sorunlar
+- DM veya birebir iletisim ekranlari
+- aktif `Yardim Istegi` / cozum odakli kritik akisin tam ortasi
+
+Ana kurallar:
+
+- kullanici reklam gormeyi kapattiysa ad network reklami da gormemelidir
+- network reklamlari acikca etiketlenmelidir
+- frekans limiti ve kalite filtreleri olmalidir
+- network reklamlari yerel topluluk relevance'ini bozmamalidir
+
 ### 5. Premium veya Pro Katmanlari
 
 Bu fazda farkli gelir akislari test edilebilir:
@@ -265,6 +290,17 @@ Faz 3'te guven ve monetization oturduktan sonra, derin etkilesim isteyen kullani
 - **Group Live Mode**: Belirli topic group'lar icin admin tarafindan aktif edilebilen tam zamanli chat modu (asenkron thread yapisina paralel veya ic ice).
 
 Bu ozellikler varsayilan olarak kapali gelip, topluluk ihtiyacina gore admin tarafindan yonetilebilir.
+
+Opsiyonel DM ve live mode icin minimum guvenlik kurallari olmalidir:
+
+- ilk temas gerekirse `contact request` veya `message request` ile baslamalidir
+- provider ve advertiser tarafinda engelleme, raporlama ve spam siniri olmali
+- admin isterse bazi group'larda DM baslatmayi kisitlayabilmeli
+- live mode icindeki onemli bilgi gerekiyorsa tekrar thread'e veya kaynaga donusturulebilmelidir
+
+Buradaki mantik sunu korur:
+
+`Chat koordinasyon ve iliski kurar; hafiza ise yine thread ve kaynak yapisinda yasar.`
 
 ### 6. Reputation Katmani
 

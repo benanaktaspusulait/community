@@ -100,6 +100,17 @@ Olcek arttikca gelir modelleri de cesitlenebilir:
 - topluluk bazli admin planlari
 - verified provider subscriptions
 - partner marketplace entegrasyonlari
+- ad network mediation ve fill optimization
+
+Bu noktada programmatic veya ad network gelir modeli daha olgun hale getirilebilir:
+
+- farkli ulke ve dil bazli ad source secimi
+- public web inventory ile app inventory ayrimi
+- native advertiser ile ad network arasinda yield dengesi
+
+Ama ana ilke burada da degismez:
+
+- topluluk relevance'i ve kullanici kontrolu, network gelirinden daha onceliklidir
 
 ## Faz 4 Basari Kriterleri
 
