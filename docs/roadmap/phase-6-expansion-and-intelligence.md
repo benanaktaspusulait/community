@@ -4,7 +4,7 @@
 
 Faz 6'da urun, tek bir diaspora veya tek bir ulkeye hizmet eden cozum olmaktan cikip genellenebilir bir global community platformuna donusur.
 
-Bu fazin ikinci odagi, biriken community hafizasini daha akilli ve daha erisilebilir kilmaktir.
+Bu fazin ikinci odagi, onceki fazlarda baslayan kurasyon ve erken AI yardimlarini daha akilli, daha erisilebilir ve daha genellenebilir hale getirmektir.
 
 ## Expansion Boyutu
 
@@ -51,18 +51,18 @@ Sistem locale-aware hale gelmeli.
 
 ### 3. AI Discovery ve Intelligence Layer
 
-Bu fazda AI, platformun ana vaadi olan `Community Memory`yi korumak ve erisilebilir kilmak icin kritik rol oynar:
+Faz 3'te baslayan ozetleme, duplicate yonlendirme ve admin yardimcilari burada daha gelismis bir intelligence katmanina donusur. Bu fazda AI, platformun ana vaadi olan `Community Memory`yi korumak ve erisilebilir kilmak icin kritik rol oynar:
 
 - **Semantic Search**: Sadece kelime eslesmesi degil, `MK civari cocuk doktoru` arayan birine `Milton Keynes pediatri tavsiyeleri` thread'ini getirebilen akilli arama.
-- **Thread Summarization**: Yuzlerce yorum iceren uzun bir tartismanin ana ciktilarini 3 maddede ozetleme.
+- **Thread Summarization**: Yuzlerce yorum iceren uzun bir tartismanin ana ciktilarini daha yuksek kaliteyle ozetleme.
 - **Auto-tagging & Categorization**: Postlarin icerigine gore otomatik etiketlenmesi ve dogru topic group'a yonlendirilmesi.
-- **Admin AI Automation**: Duplicate tespiti, auto-FAQ onerisi ve moderasyon yuku azaltma Faz 3'te basladi; bu fazda AI ile guclendirilir.
+- **Admin AI Automation**: Duplicate tespiti, auto-FAQ onerisi ve moderasyon yuku azaltma Faz 3'te basladi; bu fazda daha guclu baglam, locale ve veri katmaniyla zenginlesir.
 
 AI, ana urun yerine gecen degil; community hafizasini daha kullanisli yapan katman olarak konumlanmali.
 
 ### 3.1 Community AI Assistant (Sor ve Cevap Al)
 
-Bu ozellik urunun en guclu uzun vadeli farklilastiricisidir. Toplulukta biriken tum bilgi — thread'ler, cevaplar, FAQ'lar, rehberler, yardim istegi sonuclari, provider tavsiyeleri, etkinlik arsivleri — uzerinde calisan, kullanicinin dogal dille soru sorup cevap aldigi bir AI asistandir.
+Bu ozellik urunun en guclu uzun vadeli farklilastiricisidir. Faz 3'te admin yardimcisi olarak baslayan AI burada toplulukta biriken tum bilgi — thread'ler, cevaplar, FAQ'lar, rehberler, yardim istegi sonuclari, provider tavsiyeleri, etkinlik arsivleri — uzerinde calisan, kullanicinin dogal dille soru sorup cevap aldigi daha olgun bir asistana donusur.
 
 **Temel kullanim senaryolari:**
 

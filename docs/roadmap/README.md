@@ -27,15 +27,35 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 10. Lokasyon verisi varsayilan olarak hassas olmamali; sehir, bolge veya postcode district seviyesinde tutulup gorunurlugu kullanici tarafindan kontrol edilebilmelidir.
 11. Chat katmani varsa bile community memory'i bozmamali; degerli sohbetler thread, FAQ veya kaynak yapisina donusturulebilmelidir.
 12. Ad network gelir modeli olabilir; ancak bu katman native community reklaminin yerine degil, kontrollu ek gelir ve fill kaynagi olarak ele alinmalidir.
+13. Icerik stratejisi `once deger, sonra akis` mantigiyla kurulmalidir; bos sohbet veya dusuk sinyalli paylasim ana feed'i doldurmamalidir.
+14. Pilot asamada icerik modeli `curated-first, organic-second` olmalidir; admin, moderator ve migration concierge ilk faydali kutuphaneyi olusturmadan platform tamamen organik akisa birakilmamalidir.
+15. En cok tekrar eden ihtiyaclar serbest metin degil, template ve `cozum karti` mantigiyla toplanmalidir.
+
+## Icerik Stratejisi ve Anti-Junk Kurallari
+
+Bu urun bilgi hafizasini koruyacaksa, icerik stratejisi de bastan buna gore kurgulanmalidir.
+
+Temel kurallar:
+
+- `Altin Bilgi Kutuphanesi`: En cok sorulan, en cok kaydedilen ve en cok referans verilen bilgiler Wiki / FAQ mantigiyla sabitlenmelidir.
+- `Structured templates`: Ilan, yardim istegi ve benzeri yuksek niyetli icerikler zorunlu alanlarla acilmalidir; serbest metin tek basina yeterli olmamalidir.
+- `Cozum kartlari`: Sadece soru-cevap degil, adim adim checklist veya net cozum formatina donebilen icerikler one cikarilmalidir.
+- `Curated-first baslangic`: Ilk pilotlarda icerigin omurgasi admin, moderator ve migration concierge tarafindan kurulmali; organik akis bunun ustune eklenmelidir.
+- `No general chat feed`: Ana deneyim `merhaba, nasilsiniz` akisina donmemeli; sohbet sadece sinirli odalarda ve kontrollu sekilde kalmalidir.
+- `Duplicate deflection`: Ayni soru tekrar sorulmadan once sistem kullaniciyi mevcut thread, FAQ veya rehbere yonlendirmelidir.
+- `Ads in their lane`: Reklam serbest olabilir; ama reklam sadece sponsorlu akis, reklam yerlestirmesi veya reklam kategorisinde gorunmeli, normal topluluk icerigi gibi davranmamalidir.
+- `See first, then join`: Kullanici kaydolmadan once platformda gercekten faydali bilgi oldugunu gorebilmelidir.
+
+Fazlar arasindaki sira kullanici geri bildirimiyle esnetilebilir; ama bu kurallar degismemelidir.
 
 ## Faz Ozeti
 
 | Faz | Ana amac | Cikis sonucu |
 | --- | --- | --- |
-| Faz 1 | 1-3 mevcut WhatsApp, Facebook veya Telegram grubunu tasiyabilecek pilot urun | Aranabilir, thread bazli (asenkron), davetiye ile girilen community platformu |
-| Faz 2 | Kullanicinin platforma duzenli olarak geri gelmesini saglamak | Kisisel feed, saved search, keyword alerts, matching ve lifecycle ile retention motoru |
-| Faz 3 | Admin operasyonunu olgunlastirmak ve is yukunu azaltmak | Rol delegasyonu, approval engine, admin dashboard, quick rooms, otomasyon temelleri |
-| Faz 4 | Toplulukta kimlerin guvenilir oldugunu gorunur kilmak | Verified profiles, provider sayfalar, rating/review sistemi, reputation |
+| Faz 1 | 1-3 mevcut WhatsApp, Facebook veya Telegram grubunu tasiyabilecek pilot urun | Aranabilir, thread bazli (asenkron), template destekli, `Altin Bilgi Kutuphanesi` olan community platformu |
+| Faz 2 | Kullanicinin platforma duzenli olarak geri gelmesini saglamak ve ilk guven sinyallerini kurmak | Saved search, keyword alerts, matching, `community-approved` rehberler ve hafif validation ile retention motoru |
+| Faz 3 | Admin operasyonunu olgunlastirmak, kurasyonu sistemlestirmek ve erken AI ozetleme getirmek | Rol delegasyonu, approval engine, admin dashboard, admin picks, weekly ozetler, quick rooms ve AI destekli duplicate / summary katmani |
+| Faz 4 | Toplulukta kimlerin guvenilir oldugunu derinlestirmek | Verified profiles, provider sayfalar, rating/review sistemi, reputation |
 | Faz 5 | Surdurulebilir gelir modeli kurmak | Advertiser araclari, commercial paketler, DM/live mode ve ad network |
 | Faz 6 | Birden fazla ulke ve community tipine acilmak | Global topluluk platformu, AI/intelligence katman ve locale destegi |
 
@@ -106,12 +126,12 @@ Kisaca:
 
 Roadmap'te sira bilerek bu sekilde:
 
-- Faz 1'de once `tasinma sebebi` cozulur: bilgi kaybi, arama, grup duzeni. Chat sadece thread/comment bazli asenkron yapidadir.
-- Faz 2'de `geri gelme sebebi` cozulur: saved search, keyword alerts, kisisel feed ve yardim istegi matching ile duzenli kullanim aliskanligi kurulur.
-- Faz 3'te `admin operasyonu` cozulur: rol delegasyonu, approval engine, admin dashboard ve quick rooms ile yonetim yuku dagitilir.
-- Faz 4'te `guven` cozulur: verified profiller, provider sayfalar ve rating/review ile topluluk icinde kim guvenilir sorusu cevaplanir.
+- Faz 1'de once `tasinma sebebi` cozulur: bilgi kaybi, arama, yapilandirilmis ilan / request akisi ve `Altin Bilgi Kutuphanesi`. Chat sadece thread/comment bazli asenkron yapidadir.
+- Faz 2'de `geri gelme sebebi` cozulur: saved search, keyword alerts, kisisel feed ve yardim istegi matching ile duzenli kullanim aliskanligi kurulur; ayni fazda temel trust/validation sinyalleri de erken cekilir.
+- Faz 3'te `admin operasyonu + kurasyon` cozulur: rol delegasyonu, approval engine, admin dashboard, admin picks ve AI destekli ozetleme ile bilgi yigin degil, duzenli kutuphane gibi kalir.
+- Faz 4'te `gelismis guven` cozulur: verified profiller, provider sayfalar ve rating/review ile topluluk icinde kim guvenilir sorusu derinlestirilir.
 - Faz 5'te `gelir` cozulur: advertiser araclari, commercial paketler ve opsiyonel DM/live mode ile surdurulebilir ticari model kurulur.
-- Faz 6'da `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari ve AI destekleri ile global platform haline gelinir.
+- Faz 6'da `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari ve gelismis AI destekleri ile global platform haline gelinir.
 
 ## Iletisim Katmani Evrimi
 
@@ -133,16 +153,21 @@ Ana ilke degismez:
 Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve Telegram'dan kullanici cekmesi icin su katmanlar gercekten hissedilmelidir:
 
 - `Arama + solved + pinned bilgi`: eski bilgi gercekten bulunabilmeli
+- `Altin Bilgi Kutuphanesi`: toplulugun en cok sordugu sorular daimi FAQ / Wiki mantigiyla yasamali
 - `Saved search + keyword alerts`: kullanici ihtiyacini sistem takip etmeli
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
 - `Admin automation`: Duplicate tespiti, auto-FAQ ve thread ozetleme ile moderasyon yukunun azalmasi; AI guclendirmesi daha sonra eklenebilmeli
+- `Admin picks ve kurasyon`: toplulugun en faydali icerikleri duzenli olarak one cikarilmali
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
 - `Hybrid communication`: gerekiyorsa canli konusma olmali ama bu konusmalar bilgi hafizasini yok etmemeli
 - `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `ev ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
+- `Structured listings`: `Satilik`, `Kiralik`, `Is Ariyorum` gibi ilanlarda fiyat, lokasyon, durum ve benzeri zorunlu alanlar olmali
+- `Cozum kartlari`: sik tekrarlanan konular duz mesaj yerine checklist / rehber / cozum kartina donusturulebilmeli
 - `Location relevance`: kullaniciya alakasiz sehir veya hizmet alanindaki icerikler gosterilmemeli
 - `Outcome state`: ilan, soru veya yardim istegi `acik`, `cozuldu`, `eslesti`, `kapandi` gibi durumlar tasimeli
 - `Approval engine`: join request, group request, resource publish ve hassas akislar tek mantikla yonetilebilmeli
 - `Guvenli paylasim`: hassas konular icin daha guvenli bir alan hissi olmali
+- `Lightweight trust early`: verified user, approved rehber veya faydali uye sinyalleri cok gec kalmamali
 - `Join approval + giris sorulari`: private community'lerde adminin uye kabulunu kontrol etmesi kolay olmali
 - `Kaynak kutuphanesi`: dosya, form, checklist ve sabit rehberler tek yerde durmali
 - `Link ve medya arsivi`: daha once paylasilan link, video ve gorsellere mesaj akisini kazimadan dogrudan erisim olmali
@@ -194,9 +219,9 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 ## Dokuman Yapisi
 
 - [Faz 1 - Pilot Migration](phase-1-pilot-migration.md)
-- [Faz 2 - Retention & Engagement](phase-2-retention-and-engagement.md)
-- [Faz 3 - Admin Olgunlugu & Operasyon](phase-3-admin-maturity-and-ops.md)
-- [Faz 4 - Guven](phase-4-trust.md)
+- [Faz 2 - Retention, Validation ve Erken Guven](phase-2-retention-and-engagement.md)
+- [Faz 3 - Admin Olgunlugu, Kurasyon ve Erken AI](phase-3-admin-maturity-and-ops.md)
+- [Faz 4 - Gelismis Guven](phase-4-trust.md)
 - [Faz 5 - Monetization & Ticari Model](phase-5-monetization-and-commercial.md)
 - [Faz 6 - Expansion & Intelligence](phase-6-expansion-and-intelligence.md)
 

@@ -1,10 +1,10 @@
-# Faz 3 - Admin Olgunlugu ve Operasyon
+# Faz 3 - Admin Olgunlugu, Kurasyon ve Erken AI
 
 ## Fazin Amaci
 
-Faz 3, topluluk yoneticilerinin platformu olcekle yonetebilecegi operasyonel olgunlugu kurar.
+Faz 3, topluluk yoneticilerinin platformu olcekle yonetebilecegi operasyonel olgunlugu kurar; ayni zamanda bilgi kalitesini koruyan kurasyon ve erken AI ozetleme katmanini devreye alir.
 
-Faz 1-2'de temel admin araclari vardir. Faz 3 ise admin is yukunu ciddi sekilde azaltir, rol delegasyonunu duzenler ve topluluk operasyonunu otomasyona tasimayi baslatir.
+Faz 1-2'de temel admin araclari ve ilk trust sinyalleri vardir. Faz 3 ise admin is yukunu ciddi sekilde azaltir, rol delegasyonunu duzenler, topluluk operasyonunu otomasyona tasimayi baslatir ve icerigin cop veri yigini haline gelmesini engeller.
 
 ## Bu Faz Neyi Cozer
 
@@ -14,10 +14,11 @@ Faz 2 sonrasinda tipik admin sorunlari:
 - cok sayida sub-admin varsa yetkiler karisik hale geliyor
 - ayni soru tekrar tekrar geliyor, FAQ akisi yeterli degil
 - moderasyon yukleri elle yapilan islemlerle yonetilemez hale geliyor
+- degerli icerik one cikmadigi icin toplulukta bilgi var ama bulunmasi zorlasiyor
 
 Bu faz su soruyu cevaplar:
 
-`Admin neden bu toplulugu buradan yonetmeye devam etsin?`
+`Admin neden bu toplulugu buradan yonetmeye devam etsin ve kullanici neden burada kalmaya devam etsin?`
 
 ## Faz 3 Kapsami
 
@@ -114,7 +115,37 @@ Bu bilgi admini daha etkili yonetici yapar.
 - **Auto-FAQ Suggestion**: Admin'in cok sik cevapladigi thread'leri tek tikla FAQ listesine ekleyebilmesi.
 - **Admin ROI Gorunurlugu**: Tekrar eden soru azalma egilimi, cevaplanmayan thread sayisindaki dusus, onay kuyruklarinin durumu ve en cok sonuc ureten topic group'lar.
 
-### 5.2 Admin Devir ve Transfer Mekanizmasi
+### 5.2 Kurasyon Katmani ve Admin Picks
+
+Toplulugun en degerli bilgisi sadece var olmakla kalmamali; duzenli olarak one cikarilmalidir.
+
+Bu fazda admin ve moderator tarafinda asagidaki kurasyon akislari olmalidir:
+
+- `Admin Pick`: haftanin en degerli 5 basligini one cikarma
+- solved thread'i `rehber` veya `cozum karti` statusune yukseltme
+- eski ama hala cok aranan icerigi `guncellendi` etiketiyle tekrar one alma
+- faydali ama daginik yorumlari tek ozet postta birlestirme
+
+Bu katman, toplulugu sadece aktif degil ayni zamanda okunabilir tutar.
+
+### 5.3 Haftalik Ozetler ve Erken AI Destegi
+
+Faz 3'te AI toplulugun yerine dusunen genel bir asistan gibi degil; adminin kurasyon isini hizlandiran yardimci katman gibi calismalidir.
+
+Ilk AI destekleri:
+
+- uzun thread'ler icin `3 maddede ozet` onerisi
+- duplicate thread acarken benzer cozum karti veya FAQ onerisi
+- haftalik topluluk ozetini draft olarak hazirlama
+- tekrar eden ayni sorular icin `bunu rehbere donusturmek ister misin?` onerisi
+
+Kritik sinir:
+
+- AI sadece ilk taslagi uretir
+- yayinlama karari admin veya moderator tarafinda kalir
+- AI cevabi topluluk hafizasinin yerini almaz; onu daha bulunur yapar
+
+### 5.4 Admin Devir ve Transfer Mekanizmasi
 
 Bir community admini toplulugu baska birine devretmek isteyebilir. Bu senaryo planlanmadan birakilirsa topluluk sahipsiz kalabilir veya platform mudahalesi gerekir.
 
@@ -179,6 +210,7 @@ Quick Rooms icin kurallar:
 - sureli / gecici oda acma destekler
 - oda kapaninca degerli mesajlar `thread'e donustur`, `FAQ'ya ekle` veya `kaynak olarak sabitle` akisina girebilir
 - raporlama, mute ve room-level moderasyon ayni moderator altyapisi ile calisir
+- genel `geyik` veya limitsiz sohbet ana deneyime tasinmaz; Quick Rooms sadece baglamsal ve sinirli kullanim icin vardir
 
 Boylece canlilik gelir, bilgi kaybolmaz.
 
@@ -218,18 +250,19 @@ Bu ozellik dogru kurgulanirsa mevcut platformlarda insanlarin yazmaya cekindigi 
 - role delegation sayesinde ana admin uzerindeki operasyon yukunun azalmasi
 - bekleyen onay ve moderasyon kuyruklarinin yonetilebilir hale gelmesi
 - tekrar eden soru azalma egilimine dair admin ROI metrigi
+- admin pick veya haftalik ozet ureten aktif community sayisinin artmasi
+- ozetlenen veya cozum kartina donusen thread'lerin tekrar kullanilma orani
 - reklam sikayeti yonetilebilir seviyede kalmasi
 - poll ve quick room kullanim oraninin artmasi
 - migration araclari ile yeni topluluk kurulus suresinin kisalmasi
 
 ## Faz 3'te Disarida Kalabilecekler
 
-- verified profiller → Faz 4
-- rating ve review → Faz 4
+- derin verification, provider sayfalari ve full review sistemi → Faz 4
 - advertiser billing ve kampanya → Faz 5
 - DM ve live mode → Faz 5
-- AI → Faz 6
+- tam community AI assistant, semantik arama ve cross-community intelligence → Faz 6
 
 ## Faz 3 Cikisinda Beklenen Sonuc
 
-`Topluluk yonetmek artik tek kisinin omuzunda degil; delegasyon, otomasyon temelleri ve operasyon gorunurlugu ile admin daha az kaos, daha cok etki ile calisabiliyor.`
+`Topluluk yonetmek artik tek kisinin omuzunda degil; delegasyon, kurasyon, erken AI destekleri ve operasyon gorunurlugu ile admin daha az kaos, daha cok etki ile calisabiliyor.`

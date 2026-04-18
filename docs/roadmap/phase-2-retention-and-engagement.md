@@ -1,10 +1,10 @@
-# Faz 2 - Retention & Engagement
+# Faz 2 - Retention, Validation ve Erken Guven
 
 ## Fazin Amaci
 
-Faz 2, kullanicinin platforma sadece ihtiyac aninda degil; duzenli olarak geri gelmesini saglar.
+Faz 2, kullanicinin platforma sadece ihtiyac aninda degil; duzenli olarak geri gelmesini ve burada guvenilir sinyaller bulmasini saglar.
 
-Faz 1 tasinma icin yeterlidir. Faz 2 ise tekrar tekrar geri gelmek icin gereklidir.
+Faz 1 tasinma icin yeterlidir. Faz 2 ise tekrar tekrar geri gelmek ve burada kime guvenilecegini anlamaya baslamak icin gereklidir.
 
 ## Bu Faz Neyi Cozer
 
@@ -19,6 +19,10 @@ Faz 2 bu sorulara cevap verir:
 
 `Kullanici neden haftada birden fazla kez geri gelsin?`
 
+Bu faza geri bildirim dogrultusunda bir ek karar daha eklenir:
+
+`Temel trust ve validation sinyalleri Faz 4'e kadar beklememeli; retention'in parcasi olarak daha erken gelmelidir.`
+
 ## Faz 2 Basari Tanimi
 
 Faz 2 basarili sayilacaksa:
@@ -28,6 +32,7 @@ Faz 2 basarili sayilacaksa:
 - yardim istegi acip eslesme beklemeye devam edebilmeli
 - takip ettigi konu ve linklere kolayca donebilmeli
 - urun haftada en az bir kez acilacak kadar `pull` hissi yaratmali
+- kullanici hangi bilginin admin veya topluluk tarafindan dogrulanmis oldugunu ayirt edebilmeli
 
 ## Faz 2 Kapsami
 
@@ -140,6 +145,48 @@ Bu template'ler:
 - matching kalitesini arttirir
 - advertiser ve provider tarafinda daha net talep sinyali uretir
 
+### 5.1 Hafif Trust ve Validation Katmani
+
+Faz 2'de tam trust sistemi kurulmaz; ama temel sinyaller artik gorunur olmaya baslamalidir.
+
+Ilk seviye validation ogeleri:
+
+- `verified member lite`: email / telefon + topluluk ici temel guven sinyali
+- `trusted contributor`: faydali cevaplari veya rehber katkilari sik onaylanan uye rozeti
+- `community-approved provider`: topluluk admini veya moderatoru tarafindan ilk seviye uygun bulunan hizmet veren etiketi
+
+Bu sinyallerin amaci agir bir KYC sistemi kurmak degil; kullaniciya `herkes ayni degil` hissini erken vermektir.
+
+### 5.2 Dogrulanmis Rehberler ve Community-Approved Listeler
+
+`Altin Bilgi Kutuphanesi` sadece sabit FAQ'dan ibaret kalmamalidir. Faz 2'de asagidaki icerikler ayrisabilmelidir:
+
+- admin onayli rehberler
+- topluluk tarafindan en cok referans verilen sabit cevaplar
+- belirli lokasyonlar icin `onerilen provider listesi`
+- `bu rehber guncel mi` sinyali
+
+Ornekler:
+
+- `Londra'da muhasebeci secerken dikkat edilecekler`
+- `Milton Keynes nursery shortlist`
+- `Yeni gelenler icin ilk hafta checklist'i`
+
+Bu icerikler, tamamen serbest thread'lerden farkli olarak `dogrulanmis rehber` etiketiyle ayrisabilmelidir.
+
+### 5.3 Faydalilik ve Hafif Reputation Sinyalleri
+
+Tam review sistemi Faz 4'e kalabilir; ama Faz 2'de faydali katkilarin gorunur olmasi gerekir.
+
+Temel sinyaller:
+
+- `Faydali buldum`
+- kaydetme sayisi
+- cozum olarak secilme
+- rehbere donusturulen thread sayisi
+
+Bu sinyaller hem kullaniciya rehberlik eder hem de ileride Faz 4'teki reputation katmanina girdi saglar.
+
 ### 6. Saved Content ve Kisisel Kutuphane
 
 Kullanici:
@@ -199,6 +246,7 @@ Push bildirimlere ek olarak daha olgun bir digest sistemi:
 - cevap bekleyen sorular
 - takip edilen group'taki onemli gelismeler
 - saved search eslesmeleri
+- admin veya moderator tarafindan one cikarilan `haftanin en degerli basliklari`
 
 Bu, urunu rahatsiz edici degil faydali hale getirir.
 
@@ -254,6 +302,18 @@ Temel reklam sistemi Faz 1'de kuruldu. Bu fazda yalnizca operasyonel iyilestirme
 
 Derin analitik ve commercial packaging Faz 5'e kalmali.
 
+### 13. Genel Chat Yerine Kontrollu Geri Gelme
+
+Faz 2'de retention'i arttirmak icin ana feed'in serbest sohbetle dolmasi kolay ama yanlis bir yoldur.
+
+Bu nedenle:
+
+- ana deneyim hala arama, takip, saved search ve dogrulanmis bilgi ustune kurulu kalmali
+- `general chat` acmak retention taktigi olarak kullanilmamali
+- kullanicinin geri gelme sebebi yeni bilgi, yeni eslesme veya yeni sonuc olmali
+
+Bu urun ancak boylece WhatsApp'tan farkli kalir.
+
 ## Faz 2 Basari Kriterleri
 
 - haftalik aktif kullanici orani artmali
@@ -262,16 +322,18 @@ Derin analitik ve commercial packaging Faz 5'e kalmali.
 - cevaplanmayan soru orani dusmeli
 - yardim isteklerinin eslesme ve sonuca donme orani artmali
 - haftalik geri gelen kullanici oraninin saved search ve request updates ile artmasi
+- topluluk tarafindan onayli rehber veya provider etiketlerinin gorulme ve kullanilma orani artmali
+- faydali sinyal alan cevap veya rehberlerin tekrar kullanilma orani artmali
 
 ## Faz 2'de Disarida Kalabilecekler
 
 - gelismis group yonetimi ve rol delegasyonu → Faz 3
 - admin dashboard ve otomasyon → Faz 3
 - quick rooms, poll → Faz 3
-- verified profiller ve review sistemi → Faz 4
+- tam verification, derin provider profilleri ve full review sistemi → Faz 4
 - advertiser billing ve kampanya → Faz 5
-- AI → Faz 6
+- gelismis AI assistant ve semantik katman → Faz 6
 
 ## Faz 2 Cikisinda Beklenen Sonuc
 
-`Kullanici platformu sadece bilgi icin degil, takip icin de kullaniyor. Sistem kullanici adina calisarak yeni eslesmeleri, cevaplanmis istekleri ve ilgili icerigi hatirlatmaya basliyor.`
+`Kullanici platformu sadece bilgi icin degil, takip ve temel guven sinyalleri icin de kullaniyor. Sistem kullanici adina yeni eslesmeleri ve ilgili icerigi takip ederken, hangi rehberin ve hangi kisinin daha guvenilir oldugunu da gostermeye basliyor.`

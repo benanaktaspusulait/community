@@ -84,6 +84,25 @@ Bu nedenle onboarding ve ilk ekranlar, bos feed hissi vermemeli; dogrudan:
 
 gostermelidir.
 
+## Faz 1 Icerik Stratejisi
+
+Pilot asamada icerik tamamen organik akisla birakilmamalidir. Faz 1 icin dogru model:
+
+- `curated-first`: ilk faydali kutuphane admin, moderator ve migration concierge tarafindan kurulur
+- `organic-second`: uye katkisi bunun ustune gelir
+- `memory-first`: feed'de ne kadar cok post oldugu degil, ne kadar hizli sonuc bulundugu onemlidir
+
+Bu nedenle Faz 1'de:
+
+- ana sayfa genel geyik veya serbest chat akisina donmemelidir
+- en faydali icerikler `FAQ`, `rehber`, `cozum karti` veya `solved thread` olarak sabitlenmelidir
+- tekrar eden konular serbest post olmaktan cikartilip template ve yonlendirme ile duzenlenmelidir
+- adminler toplulugu sadece moderasyonla degil, aktif kurasyonla da yonetmelidir
+
+Ilk pilot icin icerik karari net olmalidir:
+
+`Baslangicta kaliteyi admin destekli kurasyon korur; tamamen organik akis ancak bu temel oturduktan sonra saglikli hale gelir.`
+
 ## Faz 1 Kapsami
 
 ### 1. Community Hiyerarsisi
@@ -324,7 +343,24 @@ Tum postlarda en az su alanlar olmali:
 - olusturma tarihi
 - durum / status
 
-### 4.1 Yardim Istegi / Need Request Akisi
+### 4.1 Yapilandirilmis Template'ler
+
+Ozellikle yuksek niyetli icerikler serbest metinle acilmamalidir. Faz 1'de en az su template mantigi olmalidir:
+
+- `Kiralik / oda ilani`: fiyat, lokasyon, oda tipi, tasinma tarihi, iletisim sekli
+- `Is ilani`: rol, lokasyon, calisma tipi, ucret araligi opsiyonel, basvuru yolu
+- `Is ariyorum`: aranan rol, lokasyon, deneyim ozeti, calisma tercihi
+- `Satilik`: urun adi, fiyat, durum, lokasyon, teslim sekli
+- `Provider ariyorum`: hangi hizmet, lokasyon, butce opsiyonel, aciliyet
+
+Bu template'ler sayesinde:
+
+- filtreleme gercekten ise yarar
+- arama kalitesi artar
+- ayni ihtiyaclar karsilastirilabilir hale gelir
+- topluluk kirliligi azalir
+
+### 4.2 Yardim Istegi / Need Request Akisi
 
 Bu urunde `yardim istiyorum` tipi icerik ayri bir deger tasir. Cunku bircok gercek kullanim sunlardan olusur:
 
@@ -355,7 +391,27 @@ Lokasyon kullaniminda Faz 1 kurali su olmali:
 
 Boylece kullanici alakasiz sehir veya bolge icerigiyle bogulmaz.
 
-### 4.2 Sonuc ve Status Katmani (Content Lifecycle)
+### 4.3 Cozum Kartlari
+
+Bazi sorular her hafta yeniden sorulur. Bunlarin sadece yorumlu bir thread olarak kalmasi yeterli degildir.
+
+Faz 1'de belirli icerikler `Cozum Karti` formatina donusturulebilmelidir:
+
+- sorun veya ihtiyac basligi
+- kisa ozet
+- adim adim checklist
+- gerekiyorsa belge, link veya form baglantilari
+- altinda topluluk tartismasi ve guncellemeler
+
+Ornek:
+
+- `Ehliyetimi nasil degistiririm?`
+- `Londra'da dogru muhasebeciyi nasil secerim?`
+- `Milton Keynes'te nursery bakarken neye dikkat etmeliyim?`
+
+Bu format, community memory'yi duz mesajlardan daha kullanisli hale getirir.
+
+### 4.4 Sonuc ve Status Katmani (Content Lifecycle)
 
 Mevcut platformlarda bir post acildiktan sonra sonuc cogu zaman kaybolur. Bu urunde ise post'un kaderi gorunur olmalidir.
 
@@ -433,13 +489,16 @@ Faz 1'de en azindan su davranis olmali:
 
 Bu ozellik, ozellikle Telegram ve Facebook gruplarinda biriken eski faydali icerigi daha kullanisli hale getirir.
 
-### 7. Pinned Bilgi ve FAQ
+### 7. Altin Bilgi Kutuphanesi
+
+Her community, WhatsApp ve Telegram'dan ayrisan degerini burada hissettirmelidir. Bu nedenle Faz 1'de basit ama guclu bir `Altin Bilgi Kutuphanesi` olmalidir.
 
 Her community ve topic group icin:
 
 - pinned posts
 - sik sorulan sorular
 - onboarding rehberleri
+- wiki benzeri sabit rehber sayfalari
 - dosya veya dokuman eklenebilen temel kaynak postlari
 - sabitlenmis onemli link ve medya koleksiyonlari
 
@@ -447,7 +506,30 @@ olmalidir.
 
 Yeni gelen kullanici eski icerigi kazimak zorunda kalmadan once bunlari gormelidir.
 
-### 7.1 Cold Start ve Seed Operasyonu
+Kutuphane mantigi su sekilde calismalidir:
+
+- en cok tekrar eden sorular once thread olarak dogar
+- sonra admin veya moderator tarafindan FAQ / rehber / cozum kartina yukseltilir
+- eskiyen veya gecerliligini kaybeden bilgi acikca guncellenir veya arsivlenir
+
+Bu, platformun zamanla cop veri yigini yerine topluluk hafizasina donusmesini saglar.
+
+### 7.1 Admin Curated Seed Mantigi
+
+Pilot asamada ilk icerik omurgasi admin destekli olmali; tamamen organik olmamalidir.
+
+Faz 1'de beklenen model:
+
+- ilk rehberler admin veya migration concierge tarafindan girilir
+- ilk FAQ listesi topluluktaki en cok sorulanlardan derlenir
+- ilk provider listeleri ve tavsiye thread'leri moderator kontroluyle duzenlenir
+- daha sonra kullanici katkisiyla bu kutuphane buyur
+
+Kisacasi:
+
+`Ilk pilotta icerik sahibi once topluluk yonetimidir; topluluk uyeleri daha sonra bunu zenginlestirir.`
+
+### 7.2 Cold Start ve Seed Operasyonu
 
 Faz 1 teknik olarak dogru olsa bile bos hissediyorsa migration basarisiz olur.
 
@@ -458,10 +540,11 @@ Bu nedenle ilk topluluklar icin operasyonel olarak su minimum paket hazirlanmali
 - en cok paylasilan link ve medya icin baslangic arsivi
 - en az 10-20 provider, ilan veya tavsiye sinyali
 - ilk pinned FAQ ve hos geldin rehberi
+- en az birkac `Cozum Karti`
 
 Bu, urunun ilk gunden `burasi bos` degil `burasi ise yariyor` hissi vermesini saglar.
 
-### 7.2 Migration Concierge ve Admin Onboarding
+### 7.3 Migration Concierge ve Admin Onboarding
 
 Ilk topluluklari sadece self-serve tasimaya calismak risklidir.
 
@@ -529,6 +612,18 @@ Faz 1'de basit ama etkili model su olabilir:
 
 Bu ozellik private topluluk kalitesini korur ve Facebook Groups'taki aliskanligi daha rahat tasir.
 
+### 8.3 Tekrarlayan Icerigi Daha Acarken Kirma
+
+Faz 1'de bile ayni sorunun tekrar tekrar acilmasi pasif sekilde izlenmemelidir.
+
+Minimum davranis:
+
+- kullanici baslik yazarken benzer thread'ler onerilmeli
+- ilgili FAQ veya rehber varsa once gosterilmeli
+- admin duplicate thread'i ana thread'e yonlendirebilmeli
+
+AI destekli versiyon daha sonra gelir; ama kullaniciya `bu daha once cevaplandi` hissi Faz 1'de bile verilmelidir.
+
 ### 9. Reklam Sistemi - Faz 1
 
 Reklam normal post degil, ayri bir akis olmalidir.
@@ -552,6 +647,13 @@ Bu nedenle kullanici seviyesinde net bir tercih olmali:
 - reklam gosterme
 
 `Reklam gosterme` secen kullanici feed, liste ve onerilerde reklam gormemelidir.
+
+Bir diger kritik kural:
+
+- reklam sadece `Reklam Ver` akisindan sisteme girmeli
+- sponsorlu icerik acikca etiketlenmeli
+- normal `Saglik`, `Gezi`, `Is` veya benzeri topic akislari reklamla kirletilmemeli
+- reklam veren normal post acip sponsorluymus gibi davranamamali; bu moderasyon sebebi olmalidir
 
 Tam adres bu fazda zorunlu olmamalidir. Ama kullaniciya alakasiz reklam gostermemek icin reklam tarafinda en az sehir, bolge veya hizmet alani seviyesinde lokasyon net olmalidir.
 

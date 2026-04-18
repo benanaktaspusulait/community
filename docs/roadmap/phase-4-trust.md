@@ -1,20 +1,20 @@
-# Faz 4 - Guven
+# Faz 4 - Gelismis Guven
 
 ## Fazin Amaci
 
-Faz 4, topluluktaki kimlerin guvenilir oldugunu gorunur kilmak icin gerekli altyapiyi kurar.
+Faz 4, topluluktaki kimlerin guvenilir oldugunu daha derin ve daha olceklenebilir sekilde gorunur kilmak icin gerekli altyapiyi kurar.
 
-Faz 3'te operasyon yukleri azalip admin araclari olgunlasir. Faz 4 ise bir adim ilerleyerek kullanicinin `Bu kisi guvenilir mi?` sorusuna platform uzerinden cevap bulabilmesini saglar.
+Faz 2'de temel validation sinyalleri, Faz 3'te kurasyon ve admin olgunlugu gelmistir. Faz 4 ise bir adim ilerleyerek kullanicinin `Bu kisi guvenilir mi?` sorusuna platform uzerinden daha guclu cevap bulabilmesini saglar.
 
 ## Bu Faz Neden Simdi Geliyor
 
-Guven altyapisi erken gelirse:
+Bu fazdaki daha derin trust mekanizmalari erken gelirse:
 
 - review sistemi kullanilmaz; toplulukta yeterli aktivite yoktur
-- verified profiller anlamsiz kalir; hangi baglamda dogrulandigi belirsizdir
+- verified profiller veya review sistemi anlamsiz kalir; hangi baglamda dogrulandigi belirsizdir
 - provider sayfalarini dolduracak yeterli talep yoktur
 
-Faz 3'te operasyonel ve Faz 2'de engagement temeli kurulduktan sonra guven katmani anlamli hale gelir.
+Faz 2'de ilk validation sinyalleri ve Faz 3'te operasyonel temel kurulduktan sonra daha derin guven katmani anlamli hale gelir.
 
 Bu faz ayni zamanda Faz 3'te kurulan otomasyon temellerinin (duplicate detection, auto-FAQ, admin dashboard) calistigi varsayimiyla ilerler. Admin operasyon yuku azalmadan guven katmani icin gerekli kapasiteyi ayirmak zorlasir.
 
