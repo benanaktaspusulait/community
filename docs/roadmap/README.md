@@ -23,6 +23,8 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 6. Ana community acma yetkisi kontrollu olmali; alt yapilar ise yetki devri ile yonetilebilmelidir.
 7. Ilk giris use-case'i net olmali: is, ev, hizmet ve yardim istekleri urunun ilk wedge'i olarak ele alinmali.
 8. Ilk gelir modeli son kullanicidan degil; advertiser, provider ve operasyon yukunu azaltmak isteyen community admin tarafindan gelmelidir.
+9. Lokasyon urunun cekirdek sinyali olmali; ama kullanici, post ve reklam ayni lokasyon mantigi ile modellenmemelidir.
+10. Lokasyon verisi varsayilan olarak hassas olmamali; sehir, bolge veya postcode district seviyesinde tutulup gorunurlugu kullanici tarafindan kontrol edilebilmelidir.
 
 ## Faz Ozeti
 
@@ -114,6 +116,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
 - `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `ev ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
+- `Location relevance`: kullaniciya alakasiz sehir veya hizmet alanindaki icerikler gosterilmemeli
 - `Outcome state`: ilan, soru veya yardim istegi `acik`, `cozuldu`, `eslesti`, `kapandi` gibi durumlar tasimeli
 - `Approval engine`: join request, group request, resource publish ve hassas akislar tek mantikla yonetilebilmeli
 - `Guvenli paylasim`: hassas konular icin daha guvenli bir alan hissi olmali
@@ -128,7 +131,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 Bu urun ilk gunden su davranislari desteklemelidir:
 
 - Bir kullanici davetiye linki ile community'ye katilir.
-- Kendi lokasyonuna ve ilgilendigi konu gruplarina girer.
+- Kendi lokasyonunu secip gorunurluk seviyesini belirler, sonra ilgilendigi konu gruplarina girer.
 - Eski sorulari arayarak bulur.
 - Daha once paylasilmis link, video veya gorsellere dogrudan gider.
 - Gerekirse `Yardim Istegi` acarak ihtiyacini net formatta topluluga iletir.

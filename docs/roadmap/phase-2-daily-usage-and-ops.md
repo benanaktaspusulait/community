@@ -118,6 +118,26 @@ Bu fazda:
 
 ozellikleri gerekir.
 
+### 3.0.1 Lokasyon Tercihleri ve Hassasiyet Seviyesi
+
+Faz 2'de lokasyon modeli kullanici tarafinda biraz daha olgunlasmalidir.
+
+Bu seviyede:
+
+- base location guncelleme
+- birden fazla ilgilenilen lokasyon takip etme
+- arama ve alert'lerde lokasyon kapsamini daraltma veya genisletme
+- profilde gorunen lokasyon hassasiyetini ayarlama
+
+dusunulmelidir.
+
+Ornek:
+
+- kullanici Manchester'da yasayip London jobs takip etmek isteyebilir
+- ama profilinde sadece `North West` gorunsun isteyebilir
+
+Bu esneklik olmadan urun ya fazla kisa menzilli ya da fazla ifsaci hale gelir.
+
 ### 3.1 Gecisi Guclendiren Faz 2 Degeri
 
 Faz 2'de kullanici sadece aramak icin degil, takip etmek icin de gelmelidir.

@@ -107,6 +107,8 @@ Ilk fazdaki temel `Reklam Ver` akisi bu fazda daha olgun hale gelir:
 - advertiser profili
 - kampanya olusturma
 - lokasyon ve topic hedefleme
+- hizmet verilen lokasyonlari veya service area'yi tanimlama
+- varsa fiziksel is yeri lokasyonunu ayri belirtme
 - baslangic ve bitis tarihi
 - performans goruntuleme
 - temel butce ve gosterim mantigi
@@ -121,6 +123,14 @@ Bu raporlama sadece vanity metric olmamali. Reklam veren su ayrimi gorebilmelidi
 - `Negatif sinyal`: reklam gizleme, ilgilenmiyorum, sikayet
 
 Bu sayede advertiser sadece reklami kac kisinin gordugunu degil, reklamin gercekten fayda uretip uretmedigini de anlayabilir.
+
+Reklam lokasyon modelinde net ayrim korunmalidir:
+
+- `target location`: reklamin kimlere gosterilecegi
+- `service area`: hizmetin verildigi alan
+- `business location`: varsa fiziksel nokta
+
+Bu ayrim olmazsa reklam relevance'i hizla duser ve kullanici deneyimi bozulur.
 
 ### 4.1 Commercial Packaging
 

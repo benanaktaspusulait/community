@@ -102,6 +102,27 @@ Ornek:
 
 Bu sayede kullanici hem nereye ait oldugunu hem de hangi konuda yazistigini net gorur.
 
+### 1.0.1 Temel Lokasyon Modeli
+
+Bu urunde lokasyon opsiyonel bir sus degil, cekirdek relevance sinyalidir.
+
+Ama lokasyon tek tip dusunulmemelidir. Faz 1'de en az su ayrim net olmalidir:
+
+- `User location`: kullanicinin ana bolgesi
+- `Content location`: post, ilan veya yardim isteginin ilgili oldugu lokasyon
+- `Ad location`: reklamin hedefledigi veya hizmet verdigi lokasyon
+
+Bu uc veri ayni alan gibi modellenirse hem gizlilik hem de relevance bozulur.
+
+Faz 1 icin onerilen temel model:
+
+- kullanici onboarding'de bir `base location` secer
+- bu alan tam adres degil; sehir, bolge veya postcode district seviyesinde tutulur
+- kullanici bu bilginin profilde ne kadar gorunecegini secebilir
+- sistem, feed ve aramada bu lokasyonu relevance icin kullanir
+
+Tam adres veya hassas adres bilgisi Faz 1'in default'u olmamalidir.
+
 ### 1.1 Community Acma ve Yetki Modeli
 
 Faz 1'de community acma tam serbest olmamalidir. Aksi halde cok hizli sekilde duplicate, bos veya dusuk kaliteli alanlar olusur.
@@ -184,6 +205,7 @@ Bu nedenle:
 - community veya belirli group icin invite link olusturma
 - invite link ile hizli kayit ve join akisi
 - ilk giriste lokasyon ve ilgilenilen group secimi
+- lokasyon gorunurlugu icin basit tercih: `profilde goster`, `sadece community icinde goster`, `sadece sistem kullansin`
 - WhatsApp, Facebook veya Telegram'da paylasilabilecek preview / invite kartlari
 - tam kayit olmadan once temel pinned bilgi ve community degerini gosteren hafif preview deneyimi
 - private topluluklar icin `join request` ve admin onay akisi
@@ -289,6 +311,13 @@ Minimum alanlar:
 - durum: `acik`, `eslesme bekliyor`, `cozuldu`, `kapandi`
 
 Bu sayede topluluk daha hizli cevap verir ve ayni ihtiyac daha sonra aranabilir hale gelir.
+
+Lokasyon kullaniminda Faz 1 kurali su olmali:
+
+- `Soru`, `Ilan` ve `Yardim Istegi` tiplerinde `content location` neredeyse zorunlu olmali
+- sadece genel tavsiye veya duyuru tipi iceriklerde daha gevsek davranilabilir
+
+Boylece kullanici alakasiz sehir veya bolge icerigiyle bogulmaz.
 
 ### 4.2 Sonuc ve Status Katmani
 
@@ -450,6 +479,7 @@ Ilk fazda:
 - her kullanici `Reklam Ver` ekranindan reklam olusturabilir
 - reklam sponsorlu olarak etiketlenir
 - reklam hedef lokasyon ve hedef konu secimi yapabilir
+- reklam veren en azindan `target location` ve `service area` girebilmelidir
 - reklam normal postlardan ayri veri modelinde tutulur
 
 En kritik kural:
@@ -463,6 +493,8 @@ Bu nedenle kullanici seviyesinde net bir tercih olmali:
 - reklam gosterme
 
 `Reklam gosterme` secen kullanici feed, liste ve onerilerde reklam gormemelidir.
+
+Tam adres bu fazda zorunlu olmamalidir. Ama kullaniciya alakasiz reklam gostermemek icin reklam tarafinda en az sehir, bolge veya hizmet alani seviyesinde lokasyon net olmalidir.
 
 ### 9.1 Ilk Sales Yonu
 
