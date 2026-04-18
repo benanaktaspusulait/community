@@ -21,6 +21,8 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 4. Reklam serbest olmali, ancak reklam gosterimi tamamen kullanici tercihine bagli olmali.
 5. Normal post ile sponsorlu reklam ayni veri modeli ve ayni gorunurluk mantigi ile calismamali.
 6. Ana community acma yetkisi kontrollu olmali; alt yapilar ise yetki devri ile yonetilebilmelidir.
+7. Ilk giris use-case'i net olmali: is, ev, hizmet ve yardim istekleri urunun ilk wedge'i olarak ele alinmali.
+8. Ilk gelir modeli son kullanicidan degil; advertiser, provider ve operasyon yukunu azaltmak isteyen community admin tarafindan gelmelidir.
 
 ## Faz Ozeti
 
@@ -30,6 +32,53 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 | Faz 2 | Gunluk kullanim ve admin operasyonlarini guclendirmek | Toplulugun ana akis platformu olmak |
 | Faz 3 | Guven ve gelir modelini urune yerlestirmek | Verified profiles, reviews, advertisers ve premium araclari |
 | Faz 4 | Birden fazla ulke ve community tipine acilmak | Global topluluk platformu ve intelligence layer |
+
+## Ilk Giris Stratejisi
+
+Bu urun ilk gunden her seyi cozen generic bir community app gibi konumlanmamali.
+
+Ilk wedge su olmalidir:
+
+- tekrar eden pratik ihtiyaclar: `oda ariyorum`, `ev ariyorum`, `is ariyorum`, `muhasebeci ariyorum`
+- grup adminlerinin en cok yoruldugu operasyonlar: duzen, onay, moderasyon, tekrar sorular
+- advertiser ve service provider'larin olculebilir fayda gorecegi yerel demand alanlari
+
+Bu nedenle ilk giris noktasi:
+
+- genel sohbet degil
+- buyuk sosyal feed degil
+- `structured requests + searchable community memory + admin control`
+
+olmali.
+
+## Ilk ICP ve Buyer'lar
+
+Ilk donemde urunun ayni anda herkese satilmaya calismasi risklidir. En net hedef segmentler:
+
+- `Community admin`: mevcut WhatsApp, Facebook Group veya Telegram yapisini tasimak isteyen yonetici
+- `Power user`: surekli soru cevaplayan veya tavsiye veren aktif uye
+- `Need-driven member`: is, ev, hizmet veya yardim arayan uye
+- `Provider / advertiser`: topluluga kontrollu sekilde ulasmak isteyen hizmet veren veya isletme
+
+Ilk para kazanma acisindan en olasi buyer'lar:
+
+- advertiser veya provider paketleri
+- buyuk community admin'leri icin pro tooling
+- migration veya setup destegi isteyen topluluklar
+
+## Aha Moment
+
+Bu urunun ilk dakikadaki degeri cok net hissedilmelidir.
+
+Beklenen `aha moment` senaryolari:
+
+- yeni kullanici eski bir cevabi arayip 1 dakika icinde bulur
+- kullanici `Yardim Istegi` acip dogru ilan, provider veya eski thread ile eslesir
+- admin ayni sorunun tekrarini azaltan thread, FAQ ve onay akislarini tek yerde gorur
+
+Kisaca:
+
+`Burada bilgi kaybolmuyor, ihtiyacim daha hizli cozuluyor ve admin olmak daha kolay.`
 
 ## Fazlar Arasi Gecis Mantigi
 
@@ -49,11 +98,14 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
 - `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `ev ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
+- `Outcome state`: ilan, soru veya yardim istegi `acik`, `cozuldu`, `eslesti`, `kapandi` gibi durumlar tasimeli
+- `Approval engine`: join request, group request, resource publish ve hassas akislar tek mantikla yonetilebilmeli
 - `Guvenli paylasim`: hassas konular icin daha guvenli bir alan hissi olmali
 - `Join approval + giris sorulari`: private community'lerde adminin uye kabulunu kontrol etmesi kolay olmali
 - `Kaynak kutuphanesi`: dosya, form, checklist ve sabit rehberler tek yerde durmali
 - `Link ve medya arsivi`: daha once paylasilan link, video ve gorsellere mesaj akisini kazimadan dogrudan erisim olmali
 - `Hafif anketler ve karar akislari`: topluluk kararlari veya hizli yoklamalar grup sohbetine dagilmamali
+- `Web-first discovery`: login oncesi preview, paylasilabilir public thread ve indexlenebilir faydali sayfalar ile disaridan deger gosterilmeli
 
 ## Ana Kullanim Senaryolari
 
@@ -64,8 +116,10 @@ Bu urun ilk gunden su davranislari desteklemelidir:
 - Eski sorulari arayarak bulur.
 - Daha once paylasilmis link, video veya gorsellere dogrudan gider.
 - Gerekirse `Yardim Istegi` acarak ihtiyacini net formatta topluluga iletir.
+- Gerekirse yardim isteginin durumunu `acik`, `eslesme bulundu` veya `kapandi` olarak takip eder.
 - Gerekirse yeni bir soru veya ilan acar.
 - Bir admin group kurallarini uygular ve pinned bilgileri yonetir.
+- Bir admin join request, group talebi veya kaynak yayina alma gibi onaylari tek kuyruktan yonetir.
 - Bir ana community admini, kendi alt lokasyon veya topic alanlari icin sub-admin atayabilir.
 - Bir kullanici uygunsuz bir uyeyi `Sikayet Et` butonu ile raporlar.
 - Bir admin, biriken sikayetlere bakip ilgili kullaniciyi group'tan cikarir.
@@ -88,6 +142,11 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 - reklam tiklanma ve gizlenme orani
 - reklam bazli pozitif aksiyon orani
 - advertiser tekrar kampanya acma orani
+- ilk oturumda arama veya request acma orani
+- admin basina tekrar eden soru azalmasi
+- yardim isteklerinin sonuca donme orani
+- migration yapilan community'lerde 30 gunluk aktiflik
+- community admin veya advertiser icin olculebilir ROI hikayesi olusma orani
 
 ## Dokuman Yapisi
 
@@ -106,6 +165,8 @@ Ileride netlestirilmesi gereken ama simdiden takip edilmesi faydali konular:
 - sub-admin yeni group acabilecek mi, yoksa sadece request mi gonderecek
 - moderator mute ve remove yetkileri hangi community tiplerinde varsayilan acik olacak
 - community admin advertiser kurallarina ne kadar mudahil olabilecek
+- ilk commercial package olarak `admin pro` mu yoksa `provider / advertiser` paketi mi one alinacak
+- ilk migration motion self-serve mi yoksa concierge destekli mi olacak
 
 ## Kisa Sonuc
 

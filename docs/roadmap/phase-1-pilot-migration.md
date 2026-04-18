@@ -15,6 +15,29 @@ Bu fazda hedef, tum community hayatini dijitallestirmek degil; su iki sorunu coz
 - cok aktif community uyeleri
 - sik soru soran yeni gelen kullanicilar
 - is, ev, hizmet veya tavsiye paylasan uyeler
+- hizli sonuc arayan `yardim istegi` kullanicilari
+
+## Ilk Wedge ve PM Odagi
+
+Faz 1'de urun tum community davranislarini ayni anda kazanmaya calismamalidir.
+
+Ilk giris use-case'i net olmalidir:
+
+- `oda ariyorum`
+- `ev ariyorum`
+- `is ariyorum`
+- `provider veya tavsiye ariyorum`
+
+Bu use-case'ler secilmelidir cunku:
+
+- tekrar frekanslari yuksektir
+- insanlar mevcut gruplarda bunlari surekli tekrar sorar
+- topluluk hafizasi ve arama burada hemen deger uretir
+- advertiser ve provider tarafi icin ileride ticari zemin hazirlar
+
+Bu nedenle Faz 1'in ana urun tezi:
+
+`Bir community'de en sik tekrar eden ihtiyaclari, chat yerine yapili ve aranabilir hale getirmek.`
 
 ## Faz 1 Basari Tanimi
 
@@ -26,6 +49,24 @@ Faz 1 basarili sayilacaksa sunlar gerceklesmeli:
 - ayni sorularin tekrar orani dusmeye baslamali
 - en az birkac grup gunluk akisi mevcut platformlar yerine burada dondurmeye baslamali
 - problemli kullanicilar `Sikayet Et` akisi ile moderatorlere hizlica iletilebilmeli
+- yeni kullanici ilk oturumda ya cevabi bulmali ya da kolayca `Yardim Istegi` acabildigini anlamalidir
+
+## Faz 1 Aha Moment
+
+Faz 1'in ilk 1-2 dakikada gostermesi gereken deger su olmalidir:
+
+- aradigim seyin burada daha once sorulmus cevabi var
+- yoksa bunu duz mesaj gibi degil, net formatta acabiliyorum
+- admin bu platformu daha duzenli yonetiyor
+
+Bu nedenle onboarding ve ilk ekranlar, bos feed hissi vermemeli; dogrudan:
+
+- solved thread'ler
+- populer yardim istekleri
+- pinned kaynaklar
+- ilgili lokasyon veya topic group'lar
+
+gostermelidir.
 
 ## Faz 1 Kapsami
 
@@ -125,7 +166,20 @@ Bu nedenle:
 
 olmazsa olmazdir.
 
-### 2.1 Gecisi Hakli Cikaran Faz 1 Deneyimi
+### 2.1 Approval Engine Temelleri
+
+Faz 1'de onay gerektiren butun akislar farkli yerlerde daginik kalmamali; ortak bir mantikla ele alinmalidir.
+
+Ilk fazda tek kuyruk mantigina oturtulabilecek approval tipleri:
+
+- join request onayi
+- yeni location veya topic talebi
+- hassas group'larda post yayin onayi gerekiyorsa bu akis
+- pinned kaynak veya rehber yayinlama onayi
+
+Boylece admin veya sub-admin `hangi talep nereye geldi` diye farkli ekranlarda kaybolmaz.
+
+### 2.2 Gecisi Hakli Cikaran Faz 1 Deneyimi
 
 Faz 1'de kullaniciya hemen deger gostermezsen gecis olmaz. Bu nedenle ilk surumde su hissettirilmeli:
 
@@ -141,6 +195,18 @@ Bu hissi olusturacak ilk deneyim:
 - paylasildiginda disarida da anlasilan preview kartlari
 - login oncesi okunabilen hafif web preview veya acik ozet ekranlari
 - `oda ariyorum` gibi yardim isteklerinin de burada acildigini gosteren net ornekler
+
+### 2.3 Web-first Discovery ve Shareability
+
+Bu urun sadece mobile icinde gorunurse Facebook Groups replacement acisindan zayif kalir.
+
+Faz 1'de en azindan su gorunur yuzler olmali:
+
+- davetiye veya thread preview linkleri
+- public veya yarim-public faydali thread ozetleri
+- arama motoruna acilabilecek rehber veya kaynak sayfalari
+
+Ama amac tam public social network olmak degil; disaridan bakan kullaniciya burada deger oldugunu gostermektir.
 
 ### 3. Topic Group Yapisi
 
@@ -173,6 +239,7 @@ Tum postlarda en az su alanlar olmali:
 - group
 - olusturan kullanici
 - olusturma tarihi
+- durum / status
 
 ### 4.1 Yardim Istegi / Need Request Akisi
 
@@ -194,8 +261,21 @@ Minimum alanlar:
 - aciliyet optional
 - butce optional
 - tercih edilen iletisim sekli
+- durum: `acik`, `eslesme bekliyor`, `cozuldu`, `kapandi`
 
 Bu sayede topluluk daha hizli cevap verir ve ayni ihtiyac daha sonra aranabilir hale gelir.
+
+### 4.2 Sonuc ve Status Katmani
+
+Mevcut platformlarda bir post acildiktan sonra sonuc cogu zaman kaybolur. Bu urunde ise post'un kaderi gorunur olmalidir.
+
+Ilk fazda temel status mantigi yeterlidir:
+
+- `Acik`
+- `Cozuldu`
+- `Kapandi`
+
+Ozellikle `Yardim Istegi`, ilan ve soru tiplerinde bu status'ler, yeni kullanicinin hangi icerigin hala gecerli oldugunu anlamasini kolaylastirir.
 
 ### 5. Thread ve Yorumlar
 
@@ -253,6 +333,33 @@ Her community ve topic group icin:
 olmalidir.
 
 Yeni gelen kullanici eski icerigi kazimak zorunda kalmadan once bunlari gormelidir.
+
+### 7.1 Cold Start ve Seed Operasyonu
+
+Faz 1 teknik olarak dogru olsa bile bos hissediyorsa migration basarisiz olur.
+
+Bu nedenle ilk topluluklar icin operasyonel olarak su minimum paket hazirlanmalidir:
+
+- en az 20-30 solved veya rehber niteliginde seed thread
+- her ana topic icin en az 5 yardim istegi veya ornek request
+- en cok paylasilan link ve medya icin baslangic arsivi
+- en az 10-20 provider, ilan veya tavsiye sinyali
+- ilk pinned FAQ ve hos geldin rehberi
+
+Bu, urunun ilk gunden `burasi bos` degil `burasi ise yariyor` hissi vermesini saglar.
+
+### 7.2 Migration Concierge ve Admin Onboarding
+
+Ilk topluluklari sadece self-serve tasimaya calismak risklidir.
+
+Faz 1'de ozellikle ilk buyuk community'ler icin su destek modeli dusunulmelidir:
+
+- admin ile birlikte ilk group yapisini kurma
+- mevcut kurallari ve FAQ'lari urune tasima
+- eski yararli thread'leri veya linkleri seed icerige donusturme
+- ilk invite ve paylasim metinlerini hazirlama
+
+Bu operasyon, daha sonra urunlesebilecek bir `migration concierge` teklifinin de temelini atar.
 
 ### 8. Moderasyon Temelleri
 
@@ -327,6 +434,18 @@ Bu nedenle kullanici seviyesinde net bir tercih olmali:
 
 `Reklam gosterme` secen kullanici feed, liste ve onerilerde reklam gormemelidir.
 
+### 9.1 Ilk Sales Yonu
+
+Faz 1'de reklam tarafi gelir motoru olmaktan cok ileride satilabilir bir capability olarak dogrulanir.
+
+Bu nedenle ilk ticari odak:
+
+- advertiser'a self-serve reklam verme mantigini gostermek
+- provider veya isletmenin topluluga kontrollu erisim saglayabildigini kanitlamak
+- reklam gostermeyen kullanicinin deneyimini bozmadan bunu yapmak
+
+Ilk fazin amaci buyuk reklam geliri degil; `buradan olculebilir fayda cikabilir` sinyalini almaktir.
+
 ### 10. Temel Bildirimler
 
 Ilk fazda sadece gerekli bildirimler olmali:
@@ -364,6 +483,7 @@ Asagidaki konular bu fazda bilerek disarida birakilmali:
 - anket ve poll sisteminin gelismis versiyonu
 - odeme, checkout veya reklam open auction modeli
 - detayli analytics ve growth automation
+- agir enterprise sales configurasyonlari
 
 ## Faz 1 Cikisinda Beklenen Sonuc
 
@@ -372,3 +492,7 @@ Bu faz sonunda urun su cumleyle anlatilabilmelidir:
 `Davetiye ile girilen, konu bazli ayrilmis, aranabilir ve reklam gorunurlugu kullanici tarafindan kontrol edilen community platformu.`
 
 Eger bu net bir sekilde calisiyorsa Faz 2'ye gecmek anlamlidir.
+
+Bu noktada ayrica sunu da gosterebilmelidir:
+
+`Yeni kullanici burada daha hizli sonuc buluyor; admin ise mevcut gruplara gore daha az kaos yonetiyor.`

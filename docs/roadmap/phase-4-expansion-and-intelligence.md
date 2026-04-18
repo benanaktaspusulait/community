@@ -78,6 +78,20 @@ Bu fazda yeni community kurmak cok kolay olmalidir:
 
 Boylece urun tek tek elle kurulan topluluklardan cikip platform seviyesine gelir.
 
+### 5.1 Repeatable Launch Playbook
+
+Expansion sadece feature ile olmaz; tekrar edilebilir launch modeli de gerekir.
+
+Bu fazda sunlar standart hale getirilebilir:
+
+- yeni community icin seed content paketleri
+- migration checklist'leri
+- admin onboarding playbook'u
+- ilk advertiser veya provider onboarding seti
+- case study ve referans kullanim materyalleri
+
+Bu katman product ve sales ekiplerinin yeni ulke veya community tiplerine daha hizli acilmasini saglar.
+
 ### 6. Global Monetization Variants
 
 Olcek arttikca gelir modelleri de cesitlenebilir:

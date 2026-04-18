@@ -17,6 +17,10 @@ Faz 1'den sonra tipik sorunlar sunlar olur:
 
 Faz 2, bu operasyonel ve davranissal sorunlari cozer.
 
+Bu faz ayni zamanda su urun sorusunu da cevaplar:
+
+`Kullanici neden haftada birden fazla kez geri gelsin?`
+
 ## Faz 2 Kapsami
 
 ### 1. Gelismis Group Yonetimi
@@ -42,7 +46,21 @@ Faz 2'de rol modeli daha olgun hale gelmelidir:
 
 Boylece platform merkezi kontrol ile topluluk bazli delegasyonu dengeler.
 
-### 1.1.1 Faz 2 Permission Evolution
+### 1.1.1 Approval Engine Genislemesi
+
+Faz 1'de baslayan approval mantigi bu fazda daha platform seviyesinde hale gelmelidir.
+
+Ayni approval altyapisi uzerinden yonetilebilecek akislar:
+
+- join request ve giris sorulari
+- yeni location veya topic acma talepleri
+- hassas post veya yarim-anonim paylasim onayi
+- pinned kaynak, rehber veya kutuphane icerigi yayin onayi
+- advertiser veya provider icin belirli community'lerde ek inceleme gerekiyorsa bu akis
+
+Bu birden fazla moderator veya sub-admin olan topluluklarda ciddi operasyon kazanci yaratir.
+
+### 1.1.2 Faz 2 Permission Evolution
 
 Faz 2'de Faz 1'deki sabit rol modeli biraz daha esneyebilir:
 
@@ -119,6 +137,33 @@ Ornek:
 
 Bu sayede yardim istegi sadece pasif post olarak kalmaz; eslesme ve aksiyon baslatan bir modele donusur.
 
+### 3.3 Retention Loop ve Haftalik Geri Gelme Sebebi
+
+Faz 2'de urunun geri gelme sebepleri acik tasarlanmalidir:
+
+- saved search sonucunda yeni eslesme gelmesi
+- takip edilen request veya ilanin durum degistirmesi
+- kaydedilen link, medya veya rehberlere yeni ekler gelmesi
+- admin veya moderator olarak bekleyen onay ve islem kuyrugu olmasi
+
+Boylece urun sadece ihtiyac aninda acilan degil, duzenli kontrol edilen topluluk merkezi haline gelir.
+
+### 3.4 Outcome ve Lifecycle Mantigi
+
+Faz 1'de baslayan status modeli bu fazda daha anlamli lifecycle'a donusmelidir.
+
+Ozellikle `Yardim Istegi`, ilan ve soru tiplerinde:
+
+- `Acik`
+- `Eslesme bulundu`
+- `Cozuldu`
+- `Kapandi`
+- `Suresi doldu`
+
+gibi durumlar izlenebilir olmalidir.
+
+Bu sayede hem kullanici hem de admin, toplulukta gercekten neyin sonuc urettigini gorebilir.
+
 ### 4. Saved Content ve Kisisel Kutuphane
 
 Kullanici:
@@ -169,6 +214,18 @@ Bu fazda eski topluluk birikimini daha iyi tasimak gerekir:
 
 Bu sayede bir admin yeni community kurarken bos sayfadan baslamaz.
 
+### 6.1 Web Discovery ve Public Value Layer
+
+Facebook Groups replacement icin growth sadece invite ile sinirli kalmamalidir.
+
+Bu fazda daha olgun bir dis yuz dusunulmelidir:
+
+- public veya indexlenebilir solved thread sayfalari
+- rehber, kaynak ve FAQ landing sayfalari
+- toplulugun en cok kullanilan kutuphane alanlari icin paylasilabilir public gorunumler
+
+Bu katman, urune login olmadan once bile `burada gercek deger var` hissi verir.
+
 ### 7. Bildirim ve Ozet Mantigi
 
 Sadece anlik push yerine daha olgun bir bildirim sistemi gerekir:
@@ -179,6 +236,19 @@ Sadece anlik push yerine daha olgun bir bildirim sistemi gerekir:
 - sadece kullanicinin secili alanlari
 
 Bu, urunu rahatsiz edici degil faydali hale getirir.
+
+### 7.1 Admin ROI ve Operasyon Gorunurlugu
+
+Community admin'i bu urunu neden tutmaya devam edecegini somut gorebilmelidir.
+
+Bu nedenle Faz 2 dashboard veya ozetlerinde en azindan su faydalar gosterilmelidir:
+
+- tekrar eden soru azalma egilimi
+- cevaplanmayan thread sayisindaki dusus
+- bekleyen onay ve moderasyon kuyruklarinin durumu
+- en cok sonuc ureten topic group'lar
+
+Bu sadece analytics degil; admin'e `burada operasyon daha iyi yonetiliyor` sinyalidir.
 
 ### 8. Hizli Etkilesim Katmani
 
@@ -226,6 +296,24 @@ Bu nedenle Faz 2'de su model dusunulmelidir:
 Bu ozellik dogru kurgulanirsa, mevcut platformlarda insanlarin yazmaya cekindigi bircok hassas konu burada cozulmeye baslar.
 
 Bu da kullaniciya sadece duzen degil, daha once sormaya cesaret edemedigi konular icin deger verir.
+
+### 9.1 Structured Request Template'leri
+
+Faz 2'de `Yardim Istegi` sadece bos metinle acilan bir tip olarak kalmamalidir.
+
+En sik use-case'ler icin hazir akislara gecilebilir:
+
+- `oda ariyorum`
+- `oda arkadasi ariyorum`
+- `ev ariyorum`
+- `is ariyorum`
+- `provider ariyorum`
+
+Bu template'ler:
+
+- eksik bilgi oranini dusurur
+- matching kalitesini arttirir
+- advertiser ve provider tarafinda daha net talep sinyali uretir
 
 ## Faz 2'de Reklam Tarafi
 
@@ -275,6 +363,8 @@ Yine de temel ilke degismez:
 - poll ve kaynak kutuphanesi kullanim oraninin artmasi
 - link ve medya arsivi kullanim oraninin artmasi
 - yardim isteklerinin cevaplanma ve sonuca donme orani artmali
+- haftalik geri gelen kullanici oraninin saved search ve request updates ile artmasi
+- adminin operasyon faydasini gosteren metriklerin olumlu yone gitmesi
 
 ## Faz 2'de Hala Disarida Kalabilecekler
 
