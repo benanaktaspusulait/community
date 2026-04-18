@@ -110,16 +110,39 @@ Bu nedenle Faz 4'te supply-side health metrikleri izlenmeli. Kullanici gelir ama
 
 ### 6. Event-Lite ve RSVP Katmani
 
-Facebook Groups replacement icin zaman zaman etkinlik veya bulusma planlama ihtiyaci dogabilir.
+Diaspora topluluklarinda etkinlik planlama cok dogal bir ihtiyactir: iftar yemekleri, piknikler, networking bulusmalari, yardim kampanyalari, veliler toplantisi gibi.
 
-Tam kapsamli event platformu gerekmez. Hafif model:
+Facebook Groups'ta bu ihtiyac daginik mesajlarla cozulur ve sonra kaybolur. Bu urunde etkinlik yapili ve izlenebilir olmalidir.
 
-- bulusma veya etkinlik postunu RSVP ile acma
-- kim geliyor goruntuleme
-- tarih ve lokasyon bilgisini yapili saklama
-- bildirim: etkinlik yaklasinca katilimcilara hatirlat
+Faz 4'te tam event platformu gerekmez. Ama temel akis saglamdir:
 
-Bu Facebook Groups replacement tarafini guclendirir ama urunu tam event app'e cevirmeden ilerler.
+**Etkinlik olusturma:**
+
+- etkinlik tipi: bulusma, toplanti, yardim kampanyasi, sosyal etkinlik
+- baslik, aciklama, tarih ve saat (baslangic + bitis)
+- lokasyon: fiziksel adres veya online link
+- kapasite limiti (opsiyonel)
+- organizator: etkinligi kimin olusturdugu acik olmali
+
+**Katilim yonetimi:**
+
+- RSVP: gidecegim / belki / gidemiyorum
+- kim geliyor goruntuleme (organizator ve katilimcilar icin)
+- kapasite doldugunda bekleme listesi
+- katilim iptal edebilme
+
+**Bildirim ve hatirlat:**
+
+- etkinlik yaklasinca katilimcilara push hatirlat (1 gun once, 1 saat once)
+- etkinlik iptal veya degisiklik durumunda tum katilimcilara bildirim
+- RSVP yapanlara son dakika guncellemeleri
+
+**Etkinlik sonrasi:**
+
+- etkinlik bittikten sonra thread'e donusmeli; katilimcilar yorum birakabilmeli
+- etkinlik arsivde kalmali; benzer etkinlik planlandiginda referans olarak kullanilabilmeli
+
+Bu katman Facebook Groups replacement'i guclendirir ama urunu Eventbrite'a cevirmez. Bilet satisi, odeme ve gelismis takvim entegrasyonu bu fazda yok; Faz 6'da degerlendirilir.
 
 ### 7. Icerik Backup ve Export
 

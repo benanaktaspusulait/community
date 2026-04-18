@@ -99,7 +99,40 @@ Bu fazda standart hale getirilebilecekler:
 
 Bu katman product ve sales ekiplerinin yeni ulke veya community tiplerine daha hizli acilmasini saglar.
 
-### 6. Global Monetization Variants
+### 6. Gelismis Etkinlik Planlama
+
+Faz 4'te Event-Lite, Faz 5'te sponsor etkinlik kuruldu. Faz 6'da etkinlik modulu farkli topluluk tiplerine uyum saglayacak sekilde genisler.
+
+**Tekrar eden etkinlikler:**
+
+- haftalik bulusma, aylik toplanti gibi periyodik etkinlik tanimlama
+- her tekrarin katilim ve arsivinin ayri tutulmasi
+- admin icin tekrar sablonu: tarih otomatik onerisi, ayni katilimcilara bildirim
+
+**Coklu organizator:**
+
+- bir etkinligi birden fazla admin veya sub-admin birlikte yonetebilmeli
+- gorev paylasimi: biri mekan, digeri iletisim, ucuncusu katilim listesi
+
+**Bilet ve kayit (opsiyonel):**
+
+- ucretli veya ucretsiz kayit formu
+- kapasite ve bekleme listesi yonetimi
+- basit odeme entegrasyonu (community admin icin gelir)
+- bu ozellik her community'de varsayilan degil; admin tarafindan aktive edilmeli
+
+**Takvim entegrasyonu:**
+
+- etkinliklerin Google Calendar veya Apple Calendar'a tek tikla eklenmesi
+- community bazli etkinlik takvimi gorunumu
+
+**Etkinlik arsivi ve bilgi birikimi:**
+
+- gecmis etkinlikler community hafizasina katki saglamali
+- etkinlik sonrasi thread'ler, paylasilan gorseller ve ciktilar arsivlenmeli
+- benzer yeni etkinlik acilarken gecmis veriler referans olarak gosterilmeli
+
+### 7. Global Monetization Variants
 
 Olcek arttikca gelir modelleri cesitlenebilir:
 

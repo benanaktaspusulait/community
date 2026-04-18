@@ -187,7 +187,23 @@ Guven ve monetizasyon oturunca derin etkilesim isteyen kullanicilar icin ek chat
 
 `Chat koordinasyon ve iliski kurar; hafiza ise yine thread ve kaynak yapisinda yasar.`
 
-### 8. Premium veya Pro Katmanlari
+### 8. Etkinlik ve Monetization Baglantisi
+
+Faz 4'te kurulan Event-Lite altyapisi bu fazda ticari katmanla bulusur.
+
+**Sponsorlu etkinlik:**
+
+- advertiser veya provider bir topluluk etkinligini sponsor olarak destekleyebilir
+- sponsor ismi ve logosu etkinlik sayfasinda gorunur; ama etkinlik icerigi sponsor tarafindan kontrol edilmez
+- sponsorluk reklam paketine dahil edilebilir veya ayri satilabirli
+
+**Provider etkinlikleri:**
+
+- verified provider kendi adina etkinlik acabilir: tanitim toplantisi, ucretsiz danisma gunu vb.
+- bu etkinlikler sponsorlu icerik olarak etiketlenmeli
+- reklam gostermeyi kapatan kullaniciya bu etkinlikler de gosterilmemeli
+
+### 9. Premium veya Pro Katmanlari
 
 Bu fazda farkli gelir akislari test edilebilir:
 
