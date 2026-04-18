@@ -74,6 +74,11 @@ Faz 2'de Faz 1'deki sabit rol modeli biraz daha esneyebilir:
 
 Bu evrim kontrollu olmalidir. Faz 2'de bile billing, top-level role atama ve ana community acilisi merkezi kalmalidir.
 
+Advertiser tarafinda da yetki siniri net kalmalidir:
+
+- community admin kendi toplulugunda hangi reklam tiplerinin kabul edilecegine ve nerede gorunecegine mudahil olabilir
+- pricing, billing ve platform geneli reklam politikalari merkezi kalir
+
 ### 1.2 Kullanici Sikayet Esikleri
 
 Faz 1'de temel raporlama vardir. Faz 2'de bu akis daha akilli hale gelir:

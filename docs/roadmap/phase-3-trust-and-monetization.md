@@ -33,6 +33,20 @@ Ilk buyer segmentleri daha gercekci sekilde sunlar olabilir:
 
 Bu nedenle Faz 3'te odak, son kullanicidan para almak degil; topluluk ustundeki profesyonel veya operasyonel ihtiyaclari urunlestirmektir.
 
+## Ilk Commercial Sequence
+
+Bu roadmap icin onerilen sira su olmalidir:
+
+1. `Provider / Advertiser Starter`
+2. `Migration Concierge`
+3. `Community Admin Pro`
+
+Bu sira sunu kabul eder:
+
+- ilk tekrarlanabilir gelir advertiser veya provider tarafindan daha kolay gelir
+- ilk community'leri kazanmak icin concierge destek gerekir
+- admin pro ise ancak operasyon faydasi net olustuktan sonra daha rahat satilir
+
 ## Faz 3 Kapsami
 
 ### 1. Verified Profiles
@@ -120,6 +134,8 @@ En mantikli ilk paketleme eksenleri:
 
 Bu paketlerin her biri farkli buyer'a farkli ROI dili ile anlatilmalidir.
 
+Ama ilk productized paket olarak one alinmasi gereken `Provider / Advertiser Starter` tarafidir.
+
 ### 4.2 Advertiser Dashboard
 
 Faz 3'te advertiser experience artik urunun gelir modelinin parcasi haline gelir. Bu nedenle dashboard daha olgun olmalidir.
@@ -175,6 +191,18 @@ Advertiser reporting guclenirken kullanici mahremiyeti korunmalidir:
 - community admin ancak kendi topluluguna ait toplu reklam ozetlerini gorebilir
 
 Bu sinirlar korunmazsa advertiser reporting urune guven kaybettirebilir.
+
+Community admin'in advertiser tarafina mudahalesi ise su sinirda kalmalidir:
+
+- kendi community'sinde hangi reklam kategorilerinin uygun oldugu
+- hangi alanlarda sponsorlu gorunurluk verilecegi
+- yerel kalite veya topluluk kuralina gore reklam onayi
+
+Ama su alanlar merkezi kalmalidir:
+
+- billing ve odeme akislari
+- platform genelindeki reklam urunu ve fiyatlari
+- advertiser hesap seviyesindeki ust politikalar
 
 Burada da urunun ana ilkesi korunur:
 

@@ -66,6 +66,22 @@ Ilk para kazanma acisindan en olasi buyer'lar:
 - buyuk community admin'leri icin pro tooling
 - migration veya setup destegi isteyen topluluklar
 
+## Ilk Pilot Secimi
+
+Ilk launch market'i fazla genis tutulmamalidir. En mantikli ilk pilot:
+
+- `Community tipi`: UK Turks
+- `Yapi`: tek bir yogun sehir veya sehir kumesi etrafinda baslayan topluluk
+- `Hero flow`: `oda ariyorum / ev ariyorum`
+- `Destekleyici flow`: `provider veya tavsiye ariyorum`
+
+Bu secim sunu dengeler:
+
+- yuksek tekrar eden ihtiyac
+- hizli `aha moment`
+- topluluk hafizasi icin net fayda
+- advertiser veya provider tarafina uzanabilecek ilk ticari zemin
+
 ## Aha Moment
 
 Bu urunun ilk dakikadaki degeri cok net hissedilmelidir.
@@ -157,16 +173,16 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 
 Cross-cutting konular artik ayri destek dosyalari yerine Faz 1-3 dokumanlarinin icine dagitildi.
 
-## Acik Kararlar
+## Kararlastirilan Ilk Kararlar
 
-Ileride netlestirilmesi gereken ama simdiden takip edilmesi faydali konular:
+Su noktalar icin bu roadmap artik net yon onermektedir:
 
-- `community founder` ayri bir rol mu olacak, yoksa community admin ile ayni mi kalacak
-- sub-admin yeni group acabilecek mi, yoksa sadece request mi gonderecek
-- moderator mute ve remove yetkileri hangi community tiplerinde varsayilan acik olacak
-- community admin advertiser kurallarina ne kadar mudahil olabilecek
-- ilk commercial package olarak `admin pro` mu yoksa `provider / advertiser` paketi mi one alinacak
-- ilk migration motion self-serve mi yoksa concierge destekli mi olacak
+- `Community founder` erken fazda ayri rol olmamali; Faz 1-2'de community admin ile ayni rolde ele alinmali
+- `Sub-admin` Faz 1'de yeni group acmamalidir; sadece request gonderebilmeli, scoped create yetkisi Faz 2'de kontrollu acilabilmelidir
+- `Moderator` kendi kapsaminda varsayilan olarak mute uygulayabilmeli; remove ise community policy veya esik bazli yetki ile calismalidir
+- `Community admin` kendi toplulugundaki reklam uygunlugu, yerlesimi ve yerel kurallara mudahil olabilmeli; fiyatlama, billing ve platform geneli reklam kurallari merkezi kalmalidir
+- ilk productized commercial package `Provider / Advertiser Starter` olmalidir; `Admin Pro` ikinci adimda gelmelidir
+- ilk migration motion self-serve degil, `concierge-led` baslamalidir; daha sonra Faz 2 ile hibrit self-serve modele donmelidir
 
 ## Kisa Sonuc
 

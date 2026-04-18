@@ -17,6 +17,22 @@ Bu fazda hedef, tum community hayatini dijitallestirmek degil; su iki sorunu coz
 - is, ev, hizmet veya tavsiye paylasan uyeler
 - hizli sonuc arayan `yardim istegi` kullanicilari
 
+## Ilk Pilot Community ve Hero Use-case
+
+Faz 1 icin onerilen ilk pilot:
+
+- `Community tipi`: UK Turks
+- `Scope`: tek bir yogun lokasyon veya sehir kumesi
+- `Hero request`: `oda ariyorum / ev ariyorum`
+- `Supporting request`: `provider veya tavsiye ariyorum`
+
+Buradaki urun mantigi sunlardir:
+
+- ev ve oda talepleri cok tekrar eder
+- yeni gelen kullanici icin hizli deger yaratir
+- topluluk hafizasi burada hemen ise yarar
+- provider arayisi ise daha sonra advertiser paketine baglanabilecek ticari sinyal uretir
+
 ## Ilk Wedge ve PM Odagi
 
 Faz 1'de urun tum community davranislarini ayni anda kazanmaya calismamalidir.
@@ -108,6 +124,8 @@ Faz 1'de bile tek tip admin yeterli olmayabilir. En azindan su roller dusunulmel
 - `Moderator`: icerik ve uye moderasyonu yapar
 - `Member`: normal kullanici
 
+Erken faz karari olarak `community founder` ayri bir rol olmamali; Faz 1'de community admin ile ayni yetki setinde ele alinmalidir.
+
 ### 1.3 Sub-admin Mantigi
 
 Sub-admin rolu bu urun icin cok faydalidir. Cunku buyuk bir community icinde her seyi tek adminin yonetmesi gercekci olmaz.
@@ -130,6 +148,8 @@ Sub-admin'in sahip olmamasi gereken yetkiler:
 
 Bu ayrim, hem operasyonu dagitir hem de yetki karmasasini azaltir.
 
+Faz 1 karari olarak sub-admin yeni group acmamalidir. Yeni location veya topic ihtiyaci varsa talep acmali; scoped create yetkisi ancak Faz 2'de ve explicit izinle verilebilmelidir.
+
 ### 1.4 Faz 1 Permission Snapshot
 
 Faz 1'de sistemi basit tutmak icin yetki dagilimi de sade olmalidir:
@@ -149,6 +169,11 @@ Bu snapshot'in ana mantigi su:
 - operasyon community admin ve sub-admin uzerine dagilir
 - moderatorler yapi kurmaz, duzeni korur
 - member sadece kullanir, raporlar, katki verir
+
+Moderator tarafinda ilk varsayilan mantik su olmalidir:
+
+- scoped `mute` varsayilan olarak acik olabilir
+- scoped `remove` community policy veya report threshold ile sinirlanmalidir
 
 ### 2. Davetiye Ile Katilim
 
@@ -360,6 +385,11 @@ Faz 1'de ozellikle ilk buyuk community'ler icin su destek modeli dusunulmelidir:
 - ilk invite ve paylasim metinlerini hazirlama
 
 Bu operasyon, daha sonra urunlesebilecek bir `migration concierge` teklifinin de temelini atar.
+
+Bu nedenle Faz 1 icin net karar:
+
+- ilk 3-5 anchor community concierge-led tasinmalidir
+- self-serve migration daha sonra bu operasyonun sade lestirilmis hali olarak urune eklenmelidir
 
 ### 8. Moderasyon Temelleri
 
