@@ -537,7 +537,7 @@ Bu ozellik, sadece chat replacement degil ayni zamanda bilgi kutuphanesi hissi v
 Asagidaki konular bu fazda bilerek disarida birakilmali:
 
 - DM veya private chat
-- full real-time group chat
+- full real-time group chat (Faz 1'de sadece thread/comment bazli asenkron iletisim vardir)
 - AI assistant
 - gelismis kimlik dogrulama
 - rating ve review sistemi
@@ -551,7 +551,7 @@ Asagidaki konular bu fazda bilerek disarida birakilmali:
 
 Bu faz sonunda urun su cumleyle anlatilabilmelidir:
 
-`Davetiye ile girilen, konu bazli ayrilmis, aranabilir ve reklam gorunurlugu kullanici tarafindan kontrol edilen community platformu.`
+`Davetiye ile girilen, konu bazli ayrilmis, asenkron thread yapisiyla hafiza olusturan, aranabilir ve reklam gorunurlugu kullanici tarafindan kontrol edilen community platformu.`
 
 Eger bu net bir sekilde calisiyorsa Faz 2'ye gecmek anlamlidir.
 

@@ -253,6 +253,15 @@ Bu, Facebook Groups replacement tarafini guclendirir ama urunu gereksiz yere tam
 
 Reklamsiz deneyimi para ile satmak bu urun icin zorunlu olmayabilir, cunku reklam kapatma tercihi zaten urun ilkesine dahildir.
 
+### 5.3 Opsiyonel Canli Modlar ve DM
+
+Faz 3'te guven ve monetization oturduktan sonra, derin etkilesim isteyen kullanici ve gruplar icin ek chat katmanlari acilabilir:
+
+- **Opsiyonel DM (Birebir Chat)**: Ozellikle hizmet verenler (provider) ve musteriler arasinda veya guvenli iletisim ihtiyaci olan uyeler arasinda.
+- **Group Live Mode**: Belirli topic group'lar icin admin tarafindan aktif edilebilen tam zamanli chat modu (asenkron thread yapisina paralel veya ic ice).
+
+Bu ozellikler varsayilan olarak kapali gelip, topluluk ihtiyacina gore admin tarafindan yonetilebilir.
+
 ### 6. Reputation Katmani
 
 Sadece verification yetmez. Davranis bazli sinyaller de gerekir:

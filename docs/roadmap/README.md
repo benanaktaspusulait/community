@@ -2,7 +2,7 @@
 
 Bu roadmap'in amaci, mevcutta cok sayida olan WhatsApp, Facebook Groups ve Telegram community gruplarinin yerini alabilecek bir urunun adim adim nasil kurulacagini netlestirmektir.
 
-Bu urun klasik bir chat app degil. Ana vaadi su:
+Bu urun klasik bir chat-first uygulama degil. Ana vaadi su:
 
 - community bilgisini kaybetmeden saklamak
 - yeni gelen kullanicinin eski bilgiye hizli ulasmasini saglamak
@@ -15,7 +15,7 @@ Bu urun klasik bir chat app degil. Ana vaadi su:
 
 Bu plan boyunca degismemesi gereken ana kararlar:
 
-1. `Chat-first` degil, `community memory + structured actions` urunu olmali.
+1. `Chat-first` degil, `community memory + structured actions` urunu olmali. Ancak toplulugun canli kalmasi icin fazlar ilerledikce kontrollu bir chat katmani eklenmelidir.
 2. Tek feed yerine `community > location > topic group` hiyerarsisi olmali.
 3. Her topic group kendi konusu icinde kalmali; konu disi paylasim moderasyonla yonetilmeli.
 4. Reklam serbest olmali, ancak reklam gosterimi tamamen kullanici tercihine bagli olmali.
@@ -30,9 +30,9 @@ Bu plan boyunca degismemesi gereken ana kararlar:
 
 | Faz | Ana amac | Cikis sonucu |
 | --- | --- | --- |
-| Faz 1 | 1-3 mevcut WhatsApp, Facebook veya Telegram grubunu tasiyabilecek pilot urun | Aranabilir, thread bazli, davetiye ile girilen community platformu |
-| Faz 2 | Gunluk kullanim ve admin operasyonlarini guclendirmek | Toplulugun ana akis platformu olmak |
-| Faz 3 | Guven ve gelir modelini urune yerlestirmek | Verified profiles, reviews, advertisers ve premium araclari |
+| Faz 1 | 1-3 mevcut WhatsApp, Facebook veya Telegram grubunu tasiyabilecek pilot urun | Aranabilir, thread bazli (asenkron), davetiye ile girilen community platformu |
+| Faz 2 | Gunluk kullanim ve admin operasyonlarini guclendirmek | Toplulugun ana akis platformu ve hafif canli etkilesim (quick rooms) |
+| Faz 3 | Guven ve gelir modelini urune yerlestirmek | Verified profiles, reviews, monetization ve opsiyonel DM / group live mode |
 | Faz 4 | Birden fazla ulke ve community tipine acilmak | Global topluluk platformu ve intelligence layer |
 
 ## Ilk Giris Stratejisi
@@ -102,9 +102,9 @@ Kisaca:
 
 Roadmap'te sira bilerek bu sekilde:
 
-- Faz 1'de once `tasinma sebebi` cozulur: bilgi kaybi, arama, grup duzeni.
-- Faz 2'de `geri gelme sebebi` cozulur: aktif kullanim, admin kolayligi, tekrar gelen akis.
-- Faz 3'te `guven ve gelir` cozulur: verified business, reviews, reklam arayuzu, monetization.
+- Faz 1'de once `tasinma sebebi` cozulur: bilgi kaybi, arama, grup duzeni. Chat sadece thread/comment bazli asenkron yapidadir.
+- Faz 2'de `geri gelme sebebi` cozulur: aktif kullanim, admin kolayligi, hafif live chat (quick rooms) ve kisa sureli etkilesim.
+- Faz 3'te `guven ve gelir` cozulur: verified business, reviews, reklam arayuzu, monetization ve opsiyonel birebir (DM) veya grup bazli canli modlar.
 - Faz 4'te `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari, AI destekleri.
 
 ## Gecisi Hakli Cikaran Katmanlar

@@ -275,17 +275,18 @@ Bu nedenle Faz 2 dashboard veya ozetlerinde en azindan su faydalar gosterilmelid
 
 Bu sadece analytics degil; admin'e `burada operasyon daha iyi yonetiliyor` sinyalidir.
 
-### 8. Hizli Etkilesim Katmani
+### 8. Hafif Canli Etkilesim Katmani (Quick Rooms)
 
-Tam anlamiyla chat olmadan da topluluk canli tutulabilir.
+Tam anlamiyla chat-first olmadan da topluluk canli tutulabilir. Faz 2'de asenkron yapiya hafif bir "canlilik" eklenir.
 
-Bu fazda hafif etkilesim eklenebilir:
+Bu fazda su ozellikler dusunulmelidir:
 
+- **Quick Rooms**: Topic group icinde acilabilen, gecici veya kalici hafif chat alanlari (tam mesajlasma yerine daha cok canli akis odagi).
 - hizli reaksiyonlar
-- kisa status update tipleri
-- acil duyuru formatlari
+- kisa status update tipleri (status bubble)
+- acil duyuru formatlari (real-time notification ile)
 
-Ama yine de urun `chat-first` hale getirilmemelidir.
+Bu katman, toplulugun "olu" gorunmesini engeller ama derinlemesine bilgi saklama (thread) onceligini bozmaz.
 
 ### 8.1 Polls ve Hafif Karar Mekanikleri
 
