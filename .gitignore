@@ -1,0 +1,177 @@
+# ------------------------------------------------------------
+# OS / Filesystem noise
+# ------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100/
+.Trashes/
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------
+# Editors / IDEs
+# ------------------------------------------------------------
+.idea/
+.vscode/
+.fleet/
+*.iml
+*.ipr
+*.iws
+*.code-workspace
+*.suo
+*.user
+*.userossc
+*.swp
+*.swo
+*.tmp
+*~
+
+# ------------------------------------------------------------
+# Environment / secrets / machine-local config
+# Keep example templates committed, ignore real local files.
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+*.env.local
+*.local
+local.properties
+secrets/
+*.pem
+*.key
+*.p12
+*.jks
+
+# ------------------------------------------------------------
+# Logs / runtime / temp
+# ------------------------------------------------------------
+logs/
+log/
+*.log
+*.pid
+*.pid.lock
+*.seed
+*.err
+*.out
+tmp/
+temp/
+.tmp/
+.cache/
+
+# ------------------------------------------------------------
+# Archives / exports
+# ------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# ------------------------------------------------------------
+# Node / frontend tooling
+# ------------------------------------------------------------
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.parcel-cache/
+.turbo/
+.nx/
+.eslintcache
+.stylelintcache
+coverage/
+.nyc_output/
+dist/
+
+# Framework build outputs
+.next/
+.nuxt/
+.svelte-kit/
+.angular/
+.vercel/
+.netlify/
+
+# Expo / React Native
+.expo/
+.expo-shared/
+.metro-health-check*
+
+# ------------------------------------------------------------
+# Java / Kotlin / Quarkus / Maven / Gradle
+# ------------------------------------------------------------
+.gradle/
+build/
+out/
+target/
+quarkus-app/
+.classpath
+.project
+.settings/
+.factorypath
+.mvn/timing.properties
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# ------------------------------------------------------------
+# Android / iOS generated files
+# ------------------------------------------------------------
+android/.cxx/
+android/.gradle/
+android/local.properties
+android/**/build/
+android/captures/
+android/.externalNativeBuild/
+
+ios/DerivedData/
+ios/build/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcuserstate
+
+# ------------------------------------------------------------
+# Testing / reports
+# ------------------------------------------------------------
+reports/
+test-results/
+playwright-report/
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+junit.xml
+
+# ------------------------------------------------------------
+# Databases / local app state
+# ------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+*.mv.db
+*.trace.db
+
+# ------------------------------------------------------------
+# Containers / local infra
+# ------------------------------------------------------------
+.devcontainer/
+docker-data/
+
+# ------------------------------------------------------------
+# Project-specific placeholders for future app builds
+# ------------------------------------------------------------
+public/build/
+storybook-static/
+
