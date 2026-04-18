@@ -8,6 +8,7 @@ Bu urun klasik bir chat app degil. Ana vaadi su:
 - yeni gelen kullanicinin eski bilgiye hizli ulasmasini saglamak
 - konu bazli gruplari ve grup kurallarini korumak
 - ilan, tavsiye ve sorulari organize etmek
+- yardim ve ihtiyac taleplerini yapili sekilde toplamak
 - reklam gostermeyi kullanici kontrolune birakmak
 
 ## Urun Prensipleri
@@ -47,7 +48,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Saved search + keyword alerts`: kullanici ihtiyacini sistem takip etmeli
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
-- `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
+- `Structured requests`: insanlar post degil sonuc acmali; `oda ariyorum`, `ev ariyorum`, `eleman ariyorum`, `muhasebeci ariyorum` gibi
 - `Guvenli paylasim`: hassas konular icin daha guvenli bir alan hissi olmali
 - `Join approval + giris sorulari`: private community'lerde adminin uye kabulunu kontrol etmesi kolay olmali
 - `Kaynak kutuphanesi`: dosya, form, checklist ve sabit rehberler tek yerde durmali
@@ -62,6 +63,7 @@ Bu urun ilk gunden su davranislari desteklemelidir:
 - Kendi lokasyonuna ve ilgilendigi konu gruplarina girer.
 - Eski sorulari arayarak bulur.
 - Daha once paylasilmis link, video veya gorsellere dogrudan gider.
+- Gerekirse `Yardim Istegi` acarak ihtiyacini net formatta topluluga iletir.
 - Gerekirse yeni bir soru veya ilan acar.
 - Bir admin group kurallarini uygular ve pinned bilgileri yonetir.
 - Bir ana community admini, kendi alt lokasyon veya topic alanlari icin sub-admin atayabilir.

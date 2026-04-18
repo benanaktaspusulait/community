@@ -140,6 +140,7 @@ Bu hissi olusturacak ilk deneyim:
 - `solved` veya `best answer` isaretli thread'lerin hemen gosterilmesi
 - paylasildiginda disarida da anlasilan preview kartlari
 - login oncesi okunabilen hafif web preview veya acik ozet ekranlari
+- `oda ariyorum` gibi yardim isteklerinin de burada acildigini gosteren net ornekler
 
 ### 3. Topic Group Yapisi
 
@@ -162,6 +163,7 @@ Normal icerikler duz mesaj olmamali. Ilk fazda yeterli post tipleri:
 - Duyuru
 - Ilan
 - Tavsiye
+- Yardim Istegi
 
 Tum postlarda en az su alanlar olmali:
 
@@ -171,6 +173,29 @@ Tum postlarda en az su alanlar olmali:
 - group
 - olusturan kullanici
 - olusturma tarihi
+
+### 4.1 Yardim Istegi / Need Request Akisi
+
+Bu urunde `yardim istiyorum` tipi icerik ayri bir deger tasir. Cunku bircok gercek kullanim sunlardan olusur:
+
+- `oda ariyorum`
+- `ev ariyorum`
+- `is ariyorum`
+- `cocuk bakicisi ariyorum`
+- `guvenilir muhasebeci ariyorum`
+
+Bu tip icerikler ne tam soru ne tam ilandir. Bu nedenle Faz 1'de `Yardim Istegi` birinci sinif post tipi olmali.
+
+Minimum alanlar:
+
+- ne ariyor
+- lokasyon
+- kategori
+- aciliyet optional
+- butce optional
+- tercih edilen iletisim sekli
+
+Bu sayede topluluk daha hizli cevap verir ve ayni ihtiyac daha sonra aranabilir hale gelir.
 
 ### 5. Thread ve Yorumlar
 
@@ -184,6 +209,8 @@ olmalidir.
 
 Bu, mevcut group akisini topluluk hafizasina ceviren ana mekaniktir.
 
+Yardim istekleri de bu thread mantigina oturmali; boylece ayni ihtiyac yeniden dogdugunda eski cevaplara donulebilir.
+
 ### 6. Arama ve Filtreleme
 
 Faz 1'in en kritik farklastirici ozelligi budur.
@@ -194,6 +221,7 @@ Minimum arama ozellikleri:
 - lokasyona gore filtre
 - topic group'a gore filtre
 - post tipine gore filtre
+- sadece `Yardim Istegi` postlarini filtreleme
 - sadece link iceren paylasimlari filtreleme
 - sadece gorsel veya video iceren paylasimlari filtreleme
 
@@ -306,6 +334,7 @@ Ilk fazda sadece gerekli bildirimler olmali:
 - postuna yorum geldi
 - soruna cevap geldi
 - takip ettigi group'ta yeni duyuru var
+- yardim istegine cevap veya teklif geldi
 
 Spam hissi yaratacak notification yogunlugundan kacinilmalidir.
 

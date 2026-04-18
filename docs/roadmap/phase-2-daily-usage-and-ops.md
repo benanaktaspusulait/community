@@ -91,6 +91,7 @@ Bu fazda:
 - sessize alma ve takipten cikma
 - saved search ve keyword alert'leri
 - `MK room`, `Turkish accountant`, `contractor jobs` gibi ihtiyac bazli bildirimler
+- sadece `Yardim Istegi` akisini takip etme
 
 ozellikleri gerekir.
 
@@ -105,6 +106,18 @@ Bu noktada en guclu farklastiricilar:
 - ayni seyi tekrar tekrar aramak zorunda kalmamam
 
 Bu yuzden `saved search + keyword alerts` bu fazin en guclu gecis ozelliklerinden biridir.
+
+### 3.2 Yardim Istegi Matching
+
+Faz 2'de `Yardim Istegi` daha guclu bir akisa donusmelidir.
+
+Ornek:
+
+- `oda ariyorum` istegi acan kullaniciya ilgili oda ilanlari onerilebilir
+- `muhasebeci ariyorum` istegine uygun provider veya eski tavsiye thread'leri gosterilebilir
+- ilgili advertiser veya hizmet verenlere bu istekten haberdar olma imkani verilebilir
+
+Bu sayede yardim istegi sadece pasif post olarak kalmaz; eslesme ve aksiyon baslatan bir modele donusur.
 
 ### 4. Saved Content ve Kisisel Kutuphane
 
@@ -261,6 +274,7 @@ Yine de temel ilke degismez:
 - role delegation sayesinde ana admin uzerindeki operasyon yukunun azalmasi
 - poll ve kaynak kutuphanesi kullanim oraninin artmasi
 - link ve medya arsivi kullanim oraninin artmasi
+- yardim isteklerinin cevaplanma ve sonuca donme orani artmali
 
 ## Faz 2'de Hala Disarida Kalabilecekler
 
