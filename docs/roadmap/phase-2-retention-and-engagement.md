@@ -161,7 +161,7 @@ Group icindeki medya ve linklere dogrudan erisim bu fazda guclenmelidir:
 
 Kullanici `o video neredeydi` diye eski thread kazimak zorunda kalmamali; dogrudan ilgili kutuphaneye gitmeli.
 
-### 7. Bildirim Yonetimi
+### 7. Bildirim Yonetimi ve Kanal Stratejisi
 
 Kullanicinin bildirimlerini granular kontrol etmesi gerekir.
 
@@ -174,12 +174,20 @@ Kullanicinin bildirimlerini granular kontrol etmesi gerekir.
 - saved search'te yeni icerik eslesti
 - takip edilen request durum degistirdi
 
+**Kanal onceligi ve fallback:**
+
+- birincil kanal: **push** (uygulama yuklu ve push izni varsa)
+- push calismazsa veya izin yoksa: **email** (kullanici email dogrulamasi tamamlamissa)
+- **SMS** engagement bildirimi icin kullanilmamali; sadece Faz 1'deki guvenlik akislari icin gecerlidir
+- kullanici push iznini iptal ederse sistem email'e otomatik gecmeli; kullanici bunu bildirim tercihlerinden gorebilmeli
+
 **Kullanici kontrolleri:**
 
 - group bazli bildirim acma / kapama
 - bildirim frekansi: aninda, gunluk ozet, haftalik ozet
-- bildirim kanali: push, email, uygulama ici
-- `Sessiz mod` belirli saatler icin
+- bildirim kanali tercihi: push, email, uygulama ici
+- `Sessiz mod` belirli saatler icin (orn: 22:00 - 08:00 arasi bildirim gelmesin)
+- bildirim tipi bazli kontrol: yorum bildirimleri acik, duyuru bildirimleri kapali gibi
 
 Bildirim yogunlugu kullanicinin kendisine gore ayarlanabilmeli. Varsayilan agresif olmamali.
 
@@ -205,7 +213,24 @@ Faz 2'de urunun geri gelme sebepleri acik tasarlanmalidir:
 
 Boylece urun sadece ihtiyac aninda acilan degil, duzenli kontrol edilen topluluk merkezi haline gelir.
 
-### 10. Admin Gorünürlük Altyapisi
+### 10. Uye Buyume Mekanikleri
+
+Faz 1'de invite link ile manuel tasinma yapildi. Faz 2'de buyumenin sistem destegi olmasi gerekir.
+
+**Referral / uye getir:**
+
+- mevcut uye topluluk linkini paylastiginda kimin getirdigi izlenmeli
+- admin hangi kanaldan (WhatsApp, Instagram, dogrudan link) kac kisi geldigini gorebilmeli
+- referral takibi reklama donusmemeli; sadece admin analytics icin kullanilmali
+
+**Organik keşif artisi:**
+
+- public community'lerde `katil` akisini kolaylastirmak (Faz 1'de basladi)
+- web discovery sayfalarinin arama motoruna acilmasi (Faz 3'te olgunlasacak; ama Faz 2'de altyapi hazir olmali)
+
+Bu mekanikler admin'in `insanlari nereden getirdigini` anlamasina yardim eder ve ileride farkli kanallar denenmesini mumkun kilar.
+
+### 11. Admin Gorünürlük Altyapisi
 
 Faz 3'te admin dashboard acilacak; o dashboardun gosterecegi metrikler bu fazda birikmeye baslamali.
 

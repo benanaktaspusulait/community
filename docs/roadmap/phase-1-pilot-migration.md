@@ -196,22 +196,56 @@ Moderator tarafinda ilk varsayilan mantik su olmalidir:
 - scoped `mute` varsayilan olarak acik olabilir
 - scoped `remove` community policy veya report threshold ile sinirlanmalidir
 
-### 2. Davetiye Ile Katilim
+### 2. Uyelik ve Katilim Yollari
 
-Mevcut WhatsApp, Facebook Group ve Telegram adminleri insanlari kolayca tasiyabilmeli.
+Faz 1'de tek katilim yolu invite link olacak; ama invite link tek tip olarak ele alinmamali.
 
-Bu nedenle:
+**Invite link:**
 
-- community veya belirli group icin invite link olusturma
-- invite link ile hizli kayit ve join akisi
-- ilk giriste lokasyon ve ilgilenilen group secimi
-- lokasyon gorunurlugu icin basit tercih: `profilde goster`, `sadece community icinde goster`, `sadece sistem kullansin`
-- WhatsApp, Facebook veya Telegram'da paylasilabilecek preview / invite kartlari
-- tam kayit olmadan once temel pinned bilgi ve community degerini gosteren hafif preview deneyimi
-- private topluluklar icin `join request` ve admin onay akisi
-- istege bagli `giris sorulari` ile uye on elemesi
+- community veya belirli group icin olusturulabilmeli
+- link ile hizli kayit ve join akisi olmali
+- suresi ve kullanim limiti ayarlanabilmeli (orn: 7 gun gecerli, max 50 kullanim)
+- iptal edilebilmeli
 
-olmazsa olmazdir.
+**QR kod:**
+
+- her invite link icin otomatik QR kod olusturulmali
+- in-person etkinlik, toplanti veya masa ustu materyallerinde kullanilabilmeli
+- QR kodu scan eden kullanici ayni invite link akisina girmeli
+
+**Social login:**
+
+- Google ve Apple ile giris kayit friction'ini dusurur
+- ozellikle invite link sonrasi gelen yeni kullanici icin kritiktir; email + sifre akisi bu noktada kaybettirir
+- social login varsayilan seceneklerden biri olmali; email + sifre alternatif olarak kalmali
+
+**Bulk invite (migration icin):**
+
+- admin email veya telefon listesi yukleme ile toplu davet gonderebilmeli
+- her davet kisisellestirilmis invite link icermeli
+- gonderiminzaman asimi veya teslim edilememe durumunda admin bildirilmeli
+- bu ozellik migration concierge operasyonunun temel araci olacak
+
+**Join request (private community):**
+
+- private topluluklar icin invite link olmadan `Katilmak Istiyorum` akisi
+- adminin gorecegi kisa giris sorulari
+- onay, red veya beklemeye alma
+
+**Web preview → self-registration (public community):**
+
+- public community'lerde web preview'dan `Katil` butonuna basan kullanici kayit akisina girmeli
+- invite link beklenmemeli; topluluk public olarak isaretlendiyse direkt kayit acik olmali
+- community admin community'yi public / yarim-public / private olarak tanimlamali
+
+**Lokasyon ve ilgi secimi:**
+
+- ilk giriste lokasyon secimi ve ilgilenilen topic group secimi
+- lokasyon gorunurlugu tercihi: `profilde goster`, `sadece community icinde goster`, `sadece sistem kullansin`
+
+**WhatsApp ve iMessage preview kartlari:**
+
+- paylasildiginda kart gorunumu icin OG tag'ler olmali
 
 ### 2.1 Approval Engine Temelleri
 
@@ -541,6 +575,24 @@ Ilk fazda sadece gerekli bildirimler olmali:
 - soruna cevap geldi
 - takip ettigi group'ta yeni duyuru var
 - yardim istegine cevap veya teklif geldi
+
+Faz 1'de bildirim kanali **uygulama ici (in-app)** ve **push** olmali. Email ve SMS kapsami asagida tanimlanmistir.
+
+**Email — sadece transactional:**
+
+- email dogrulama
+- sifre sifirlama
+- join request onaylandi / reddedildi
+- account ile ilgili onemli degisiklikler
+
+Engagement emaili (haftalik digest vb.) Faz 1'de olmamali; spam olarak algilanma riski yuksektir.
+
+**SMS — sadece kritik guvenlik:**
+
+- email dogrulama alternatifleri olarak SMS OTP (telefon dogrulama aktif edilmisse)
+- sifre sifirlama SMS'i (email'e erisim yoksa fallback)
+
+SMS ile engagement bildirimi veya community alert gondermek Faz 1 kapsami disindadir.
 
 Spam hissi yaratacak notification yogunlugundan kacinilmalidir.
 
