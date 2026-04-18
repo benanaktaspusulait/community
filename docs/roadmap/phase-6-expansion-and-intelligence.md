@@ -56,14 +56,80 @@ Bu fazda AI, platformun ana vaadi olan `Community Memory`yi korumak ve erisilebi
 - **Semantic Search**: Sadece kelime eslesmesi degil, `MK civari cocuk doktoru` arayan birine `Milton Keynes pediatri tavsiyeleri` thread'ini getirebilen akilli arama.
 - **Thread Summarization**: Yuzlerce yorum iceren uzun bir tartismanin ana ciktilarini 3 maddede ozetleme.
 - **Auto-tagging & Categorization**: Postlarin icerigine gore otomatik etiketlenmesi ve dogru topic group'a yonlendirilmesi.
-- **Community Knowledge Assistant**: Toplulukta daha once sorulmus ve cozulmus binlerce sorudan beslenen, yeni gelenlere rehberlik eden AI botu.
 - **Admin AI Automation**: Duplicate tespiti, auto-FAQ onerisi ve moderasyon yuku azaltma Faz 3'te basladi; bu fazda AI ile guclendirilir.
 
 AI, ana urun yerine gecen degil; community hafizasini daha kullanisli yapan katman olarak konumlanmali.
 
+### 3.1 Community AI Assistant (Sor ve Cevap Al)
+
+Bu ozellik urunun en guclu uzun vadeli farklilastiricisidir. Toplulukta biriken tum bilgi — thread'ler, cevaplar, FAQ'lar, rehberler, yardim istegi sonuclari, provider tavsiyeleri, etkinlik arsivleri — uzerinde calisan, kullanicinin dogal dille soru sorup cevap aldigi bir AI asistandir.
+
+**Temel kullanim senaryolari:**
+
+- `MK'de guvenilir cocuk doktoru var mi?` → AI toplulukta daha once onerilmis doktorlari, review'lari ve ilgili thread'leri birlestirerek cevap verir
+- `Kiralik oda ariyorum, 500 sterlin civari, dogu Londra` → AI acik ilanlari, benzer gecmis istekleri ve tavsiye thread'lerini getirir
+- `Ingiltere'de muhasebeci secerken nelere dikkat etmeliyim?` → AI toplulukta daha once paylasilan deneyimleri ve rehberleri ozetler
+- `Bu hafta MK'de ne etkinlik var?` → AI aktif etkinlikleri listeler
+
+**Cevap modeli:**
+
+- AI kendi bilgisinden degil, yalnizca topluluk verisinden cevap uretmeli
+- her cevabin altinda kaynak thread ve post linkleri gosterilmeli; kullanici teyit edebilmeli
+- AI `bu konuda toplulukta bilgi bulamadim` diyebilmeli; uydurma cevap vermemeli
+- cevap yeterli degilse kullaniciya `Bu konuda yeni bir soru veya yardim istegi acmak ister misin?` secenegi sunulmali
+
+**Topluluk katilimi ve ortak yazisma:**
+
+AI cevabi karanlik bir kutuda kalmamali; topluluk icinde gorunur olmali ve diger uyeler katkida bulunabilmeli.
+
+- AI'a sorulan soru ve AI'in verdigi cevap, ilgili group icinde bir thread olarak gorunur olmali
+- diger uyeler bu thread'e yorum yapabilmeli: duzelme, ek bilgi, farkli deneyim paylasabilmeli
+- AI cevabi `baslangic noktasi` olmali; topluluk katkisiyla zenginlesen canli bir thread'e donusmeli
+- AI cevabi ile topluluk cevaplari gorsel olarak ayirt edilebilmeli (orn: AI cevabi farkli etiket veya renk ile isaretli)
+- eger topluluk uyelerinden gelen cevap AI cevabindan daha faydali bulunursa, `best answer` o cevaba gecebilmeli
+- AI cevabi sadece kullaniciya degil topluluga da deger uretmeli: ayni soruyu soran baskasi bu thread'i bulabilmeli
+
+Bu yaklasim iki onemli sorunu cozer:
+
+- AI yanlis veya eksik cevap verdiyse topluluk duzeltir; bilgi kalitesi arttirir
+- AI dogru cevap verdiyse bile insan deneyimi onu zenginlestirir; soru sadece bilgi degil guven ve iliski de tasir
+
+AI bu modelde `ilk cevabi veren` rolundedir; `son sozu soyleyen` degil. Topluluk hafizasi hem AI hem insan katkisiyla buyur.
+
+**Kapsam ve sinirlar:**
+
+- AI sadece kullanicinin erisim yetkisi olan community, group ve thread verisi uzerinden cevap vermeli
+- private group icerigi, baskasinin DM'i veya hassas paylasim modundaki icerik AI tarafindan ozetlenmemeli
+- AI cevaplarinin dogru ve guncel olup olmadigini kullanici `Faydali / Yanlis / Eskimis` ile isaretleyebilmeli; bu geri bildirim modeli iyilestirmeli
+
+**Farkli kullanici tipleri icin deger:**
+
+- `Yeni uye`: topluluga ilk kez gelen birisi arama yapmak yerine sorusunu sorar ve community hafizasindan aninda cevap alir; onboarding suresini kisaltir
+- `Aktif uye`: daha once gormedigi eski bilgiye AI uzerinden ulasir; tekrar soru acmak zorunda kalmaz
+- `Admin`: tekrar eden sorulari AI karsilar; admin yuku duser
+- `Provider / advertiser`: talep sinyallerini AI uzerinden gorebilir (orn: `muhasebeci ariyorum` tipinde kac istek var)
+
+**Admin kontrol katmani:**
+
+- community admin AI asistani acabilir veya kapatabilir
+- belirli group'larda AI cevap vermesini engelleyebilir (orn: hassas konular)
+- AI'nin kullandigi kaynak havuzunu sinirlandirabilir (orn: sadece solved thread ve FAQ)
+- AI cevaplarinin basinda `Bu bilgi topluluk uyelerinin paylasimlarindan derlenmistir; profesyonel tavsiye yerine gecmez` uyarisi varsayilan olarak gosterilmeli
+
+**Teknik yaklasim (high-level):**
+
+- topluluk verisi uzerinde calisacak bir RAG (Retrieval-Augmented Generation) modeli
+- veri indeksleme: thread, yorum, FAQ, rehber, kaynak, etkinlik arsivi, provider profilleri
+- indeks guncelleme: yeni icerik eklendikce veya status degistikce (solved, closed) indeks guncellenmeli
+- dil destegi: topluluk dili veya kullanicinin tercih dili uzerinden cevap uretebilmeli
+
+Bu ozellik community memory'nin son halkasini tamamlar:
+
+`Bilgi birikti → aranabilir oldu → simdi sorulabilir hale geldi.`
+
 ### 4. Advanced Knowledge Graph
 
-Biriken bilgi sadece post listesi olarak kalmamali.
+Biriken bilgi sadece post listesi olarak kalmamali. Knowledge graph, AI Assistant'in arkasindaki yapisal katmandir.
 
 Zamanla:
 
@@ -73,6 +139,8 @@ Zamanla:
 - hizmet veren ve tavsiye grafi
 
 gibi yapilar ustunden daha akilli kesif deneyimi kurulabilir.
+
+Knowledge graph ayni zamanda AI Assistant'in cevap kalitesini arttirir. AI sadece duz metin aramasi yapmak yerine, graf uzerinden `bu provider su konuda en cok onerilmis`, `bu lokasyonda bu tip ihtiyac en cok sorulmus` gibi yapisal bilgiyi kullanarak daha dogru ve baglamli cevap verebilir.
 
 ### 5. Community Creation at Scale
 
