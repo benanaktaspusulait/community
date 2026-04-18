@@ -102,7 +102,7 @@ Ornek:
 
 Bu sayede kullanici hem nereye ait oldugunu hem de hangi konuda yazistigini net gorur.
 
-### 1.0.1 Temel Lokasyon Modeli
+### 1.1 Temel Lokasyon Modeli
 
 Bu urunde lokasyon opsiyonel bir sus degil, cekirdek relevance sinyalidir.
 
@@ -123,7 +123,7 @@ Faz 1 icin onerilen temel model:
 
 Tam adres veya hassas adres bilgisi Faz 1'in default'u olmamalidir.
 
-### 1.1 Community Acma ve Yetki Modeli
+### 1.2 Community Acma ve Yetki Modeli
 
 Faz 1'de community acma tam serbest olmamalidir. Aksi halde cok hizli sekilde duplicate, bos veya dusuk kaliteli alanlar olusur.
 
@@ -135,7 +135,7 @@ Bu nedenle Faz 1 icin onerilen model:
 
 Bu model erken fazda kaliteyi korur ve ayni sehir veya ayni konu icin 10 farkli daginik topluluk olusmasini engeller.
 
-### 1.2 Rol Katmanlari
+### 1.3 Rol Katmanlari
 
 Faz 1'de bile tek tip admin yeterli olmayabilir. En azindan su roller dusunulmelidir:
 
@@ -147,7 +147,7 @@ Faz 1'de bile tek tip admin yeterli olmayabilir. En azindan su roller dusunulmel
 
 Erken faz karari olarak `community founder` ayri bir rol olmamali; Faz 1'de community admin ile ayni yetki setinde ele alinmalidir.
 
-### 1.3 Sub-admin Mantigi
+### 1.4 Sub-admin Mantigi
 
 Sub-admin rolu bu urun icin cok faydalidir. Cunku buyuk bir community icinde her seyi tek adminin yonetmesi gercekci olmaz.
 
@@ -169,16 +169,16 @@ Sub-admin'in sahip olmamasi gereken yetkiler:
 
 Bu ayrim, hem operasyonu dagitir hem de yetki karmasasini azaltir.
 
-Faz 1 karari olarak sub-admin yeni group acmamalidir. Yeni location veya topic ihtiyaci varsa talep acmali; scoped create yetkisi ancak Faz 2'de ve explicit izinle verilebilmelidir.
+Faz 1 karari olarak sub-admin yeni group acmamalidir. Yeni location veya topic ihtiyaci varsa talep acmali; scoped create yetkisi ancak Faz 3'te ve explicit izinle verilebilmelidir.
 
-### 1.4 Faz 1 Permission Snapshot
+### 1.5 Faz 1 Permission Snapshot
 
 Faz 1'de sistemi basit tutmak icin yetki dagilimi de sade olmalidir:
 
 | Aksiyon | Platform admin | Community admin | Sub-admin | Moderator | Member |
 | --- | --- | --- | --- | --- | --- |
 | Ana community ac | Yes | No by default | No | No | No |
-| Location community / topic group ac | Yes | Yes | No by default | No | No |
+| Location community / topic group ac | Yes | Yes | No (Faz 3'te acilabilir) | No | No |
 | Sub-admin ata | Yes | Yes in own community | No | No | No |
 | Moderator ata | Yes | Yes in own community | No | No | No |
 | Invite link olustur | Yes | Yes | Scoped | No by default | No |

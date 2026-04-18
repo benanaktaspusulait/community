@@ -204,12 +204,12 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 
 Su noktalar icin bu roadmap artik net yon onermektedir:
 
-- `Community founder` erken fazda ayri rol olmamali; Faz 1-2'de community admin ile ayni rolde ele alinmali
-- `Sub-admin` Faz 1'de yeni group acmamalidir; sadece request gonderebilmeli, scoped create yetkisi Faz 2'de kontrollu acilabilmelidir
+- `Community founder` erken fazda ayri rol olmamali; Faz 1'de community admin ile ayni rolde ele alinmali
+- `Sub-admin` Faz 1'de yeni group acmamalidir; sadece request gonderebilmeli, scoped create yetkisi Faz 3'te kontrollu acilabilmelidir
 - `Moderator` kendi kapsaminda varsayilan olarak mute uygulayabilmeli; remove ise community policy veya esik bazli yetki ile calismalidir
 - `Community admin` kendi toplulugundaki reklam uygunlugu, yerlesimi ve yerel kurallara mudahil olabilmeli; fiyatlama, billing ve platform geneli reklam kurallari merkezi kalmalidir
 - ilk productized commercial package `Provider / Advertiser Starter` olmalidir; `Admin Pro` ikinci adimda gelmelidir
-- ilk migration motion self-serve degil, `concierge-led` baslamalidir; daha sonra Faz 2 ile hibrit self-serve modele donmelidir
+- ilk migration motion self-serve degil, `concierge-led` baslamalidir; daha sonra Faz 3 ile hibrit self-serve modele donmelidir
 
 ## Kisa Sonuc
 

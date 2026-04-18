@@ -243,7 +243,7 @@ Faz 2'de altyapisal olarak loglanmasi gereken sinyaller:
 
 Bu veri Faz 2'de kullaniciya gosterilmez; arka planda toplanir. Faz 3'te admin dashboard acildiginda anlamli geri bildirim verebilmesi icin bu birikimin olmasi gerekir.
 
-### 11. Reklam Tarafinda Faz 2 Iyilestirmesi
+### 12. Reklam Tarafinda Faz 2 Iyilestirmesi
 
 Temel reklam sistemi Faz 1'de kuruldu. Bu fazda yalnizca operasyonel iyilestirme yeterlidir:
 

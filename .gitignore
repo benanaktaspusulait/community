@@ -175,3 +175,4 @@ docker-data/
 public/build/
 storybook-static/
 
+/.claude/settings.local.json
