@@ -6,7 +6,7 @@ export function SplashScreen() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const t = setTimeout(() => navigate('/'), 2200)
+    const t = setTimeout(() => navigate('/feed'), 2200)
     return () => clearTimeout(t)
   }, [navigate])
 
@@ -19,7 +19,7 @@ export function SplashScreen() {
         </div>
         <div className="text-center">
           <h1 className="text-3xl font-bold text-white tracking-tight">Community</h1>
-          <p className="text-white/70 text-sm mt-1">Milton Keynes</p>
+          <p className="text-white/70 text-sm mt-1">Connect. Share. Belong.</p>
         </div>
       </div>
 
