@@ -1,0 +1,113 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { TopBar } from '../components/ui/TopBar'
+import { BottomNav } from '../components/ui/BottomNav'
+import { Badge } from '../components/ui/Badge'
+import { Card } from '../components/ui/Card'
+import { Plus, MessageCircle, Users, ChevronRight } from 'lucide-react'
+
+const members = [
+  { id: '1', name: 'Ali Y.', role: 'Admin', avatar: 'A' },
+  { id: '2', name: 'Ayşe K.', role: 'Member', avatar: 'A' },
+  { id: '3', name: 'Mehmet D.', role: 'Member', avatar: 'M' },
+  { id: '4', name: 'Sara L.', role: 'Member', avatar: 'S' },
+  { id: '5', name: 'Fatma K.', role: 'Member', avatar: 'F' },
+]
+
+const threads = [
+  { id: '1', type: 'help' as const, title: 'Looking for a room in MK centre', replies: 5, time: '20m ago', status: 'open' },
+  { id: '2', type: 'solved' as const, title: 'Best letting agents in Milton Keynes?', replies: 12, time: '2h ago', status: 'solved' },
+  { id: '3', type: 'resource' as const, title: 'Renting checklist — what to check before signing', replies: 0, time: '1d ago', status: 'pinned' },
+  { id: '4', type: 'help' as const, title: 'Anyone know a good plumber near Bletchley?', replies: 3, time: '3h ago', status: 'open' },
+  { id: '5', type: 'open' as const, title: 'Room available in Wolverton — £550/month', replies: 7, time: '5h ago', status: 'open' },
+]
+
+export function TopicGroup() {
+  const navigate = useNavigate()
+  const [tab, setTab] = useState<'threads' | 'members'>('threads')
+
+  return (
+    <div className="flex flex-col h-full bg-[#f8f9fb]">
+      {/* header */}
+      <div className="bg-white border-b border-[#e4e7ec]">
+        <TopBar title="Housing" back />
+        <div className="px-4 pb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3 text-xs text-gray-400">
+            <span className="flex items-center gap-1"><Users size={12} /> 248 members</span>
+            <span className="flex items-center gap-1"><MessageCircle size={12} /> 34 threads</span>
+          </div>
+          <button className="text-xs text-[#4f6ef7] font-semibold border border-[#4f6ef7] rounded-full px-3 py-1">
+            Rules
+          </button>
+        </div>
+
+        {/* filter tabs */}
+        <div className="flex gap-1 px-4 pb-3 overflow-x-auto no-scrollbar">
+          <button
+            onClick={() => setTab('threads')}
+            className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${tab === 'threads' ? 'bg-[#4f6ef7] text-white border-[#4f6ef7]' : 'bg-white text-gray-600 border-[#e4e7ec]'}`}
+          >Threads</button>
+          {['Open', 'Solved', 'Resources'].map(t => (
+            <button key={t} className="shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border bg-white text-gray-600 border-[#e4e7ec]">{t}</button>
+          ))}
+          <button
+            onClick={() => setTab('members')}
+            className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${tab === 'members' ? 'bg-[#4f6ef7] text-white border-[#4f6ef7]' : 'bg-white text-gray-600 border-[#e4e7ec]'}`}
+          >Members</button>
+        </div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto pb-20 px-4 pt-3 flex flex-col gap-3">
+        {tab === 'threads' && threads.map(t => (
+          <Card key={t.id} onClick={() => navigate('/thread')} className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              {t.status === 'pinned' && (
+                <span className="text-[10px] font-semibold text-[#4f6ef7] bg-[#e0eaff] px-2 py-0.5 rounded-full">📌 Pinned</span>
+              )}
+              <Badge variant={t.type} />
+            </div>
+            <p className="text-sm font-semibold text-gray-900 leading-snug">{t.title}</p>
+            <div className="flex items-center justify-between text-xs text-gray-400">
+              <span className="flex items-center gap-1">
+                <MessageCircle size={11} /> {t.replies} replies
+              </span>
+              <span>{t.time}</span>
+            </div>
+          </Card>
+        ))}
+
+        {tab === 'members' && (
+          <>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">248 members</p>
+            {members.map(m => (
+              <button
+                key={m.id}
+                onClick={() => navigate('/member')}
+                className="flex items-center gap-3 bg-white rounded-xl border border-[#e4e7ec] px-4 py-3"
+              >
+                <div className="w-9 h-9 rounded-full bg-[#e0eaff] flex items-center justify-center text-sm font-bold text-[#4f6ef7]">
+                  {m.avatar}
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-sm font-semibold text-gray-900">{m.name}</p>
+                  <p className="text-xs text-gray-400">{m.role}</p>
+                </div>
+                <ChevronRight size={14} className="text-gray-300" />
+              </button>
+            ))}
+          </>
+        )}
+      </div>
+
+      {/* FAB */}
+      <button
+        onClick={() => navigate('/create')}
+        className="fixed bottom-20 right-6 w-14 h-14 bg-[#4f6ef7] rounded-2xl shadow-lg flex items-center justify-center text-white z-30"
+      >
+        <Plus size={24} />
+      </button>
+
+      <BottomNav />
+    </div>
+  )
+}
