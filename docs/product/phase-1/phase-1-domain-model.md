@@ -10,7 +10,7 @@ Translate Phase 1 flows and screens into a domain model that is:
 
 ## Phase 1 Modeling Decisions (recap)
 
-See decision log: `phase-1-decisions.md` (K1-K9).
+See decision log: `phase-1-decisions.md` (K1-K11).
 
 ---
 
@@ -44,7 +44,7 @@ See decision log: `phase-1-decisions.md` (K1-K9).
   - `id`
   - `communityId`
   - `name`
-  - `type`: `TOPIC | LOCATION` (optional but helpful for navigation rules)
+  - `type`: `TOPIC | LOCATION | SPECIAL_DAY` (optional but helpful for navigation rules)
   - `visibility`: `PUBLIC | PRIVATE` (optional; if absent, inherit from community)
 
 ### `Membership`
@@ -273,6 +273,22 @@ See decision log: `phase-1-decisions.md` (K1-K9).
   - `scopeId` (nullable when PLATFORM)
   - `createdAt`
 
+### `SpecialDayGroup`
+
+- **Purpose**: time-boxed community group for special days (e.g. Eid, national holidays). Members from other groups in the same community receive an invitation banner during the active window.
+- **Key fields**
+  - `id`
+  - `communityId`
+  - `groupId` (the underlying `Group` record; type is always `SPECIAL_DAY`)
+  - `name`
+  - `eventDate`
+  - `activeFrom`
+  - `activeTo`
+  - `invitedGroupIds` (list of group ids whose members receive the invitation banner)
+  - `status`: `UPCOMING | ACTIVE | ENDED`
+  - `createdByUserId`
+  - `createdAt`, `updatedAt`
+
 ---
 
 ## Relationships (high-level)
@@ -281,6 +297,8 @@ See decision log: `phase-1-decisions.md` (K1-K9).
 - `User 0..* JoinRequest`
 - `User 0..* GroupRequest`
 - `Community 1..* Group`
+- `Community 0..* SpecialDayGroup`
+- `SpecialDayGroup 1..1 Group`
 - `Community 0..* Invite`
 - `Community 0..* Membership`
 - `Community 0..* GroupRequest`
@@ -320,3 +338,7 @@ See decision log: `phase-1-decisions.md` (K1-K9).
 - An active `ModerationAction(actionType=VIEWER_MODE)` must block create/reply/comment/ad actions within its scope.
 - `VIEWER_MODE` must target a user, so `targetType=USER` and `targetUserId` are required.
 - `VIEWER_MODE` must always have an `expiresAt` value.
+- A `ModerationAction` scope is always `GROUP` or `COMMUNITY`; it is never community-wide by default. Removing or restricting a member from one group does not affect their membership or permissions in other groups.
+- `SpecialDayGroup.activeTo` must be after `SpecialDayGroup.activeFrom`.
+- After `activeTo`, the underlying `Group` becomes read-only (no new threads or posts); existing content is preserved as an archive.
+- Invitation banners are sent to all active members of `invitedGroupIds` when `status` transitions to `ACTIVE`.

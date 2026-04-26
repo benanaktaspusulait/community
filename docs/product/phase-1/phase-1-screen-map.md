@@ -56,6 +56,7 @@ Phase 1 navigation should remain simple.
 | Community Home | P0 | Show core community info | Join topic, view rules, search community | Member, visitor, pending |
 | Location Community | P0 | Separate location-based content | Open feed, create local post, view groups | No local posts, not joined |
 | Topic Group | P0 | Maintain topic discipline | View posts, create in topic, view rules | Joined, not joined, post approval on |
+| Special Day Group | P1 | Time-boxed community event space | View posts, post, join from invitation banner | Upcoming, active, ended (read-only archive) |
 | Post Detail / Thread | P0 | Durable conversation and answers | Comment, reply, save, report, mark solved | Open, solved, locked, removed |
 | Comment Composer | P0 | Compose a proper reply | Add comment, attach link/image | Rate limited, approval required |
 | Search Home | P0 | Quick entry to community memory | Search, recent searches, filters | No query, popular queries |

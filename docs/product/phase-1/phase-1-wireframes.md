@@ -11,7 +11,7 @@ This is **not visual design**. It is a low-fidelity wireframe pack meant to vali
 
 ## Phase 1 Decisions (K1-K9)
 
-See decision log: `phase-1-decisions.md` (K1-K9).
+See decision log: `phase-1-decisions.md` (K1-K11).
 
 ## Conventions (used across all wireframes)
 
@@ -494,6 +494,69 @@ Admin: `AdminApprovalQueue` -> `ApprovalDetail` -> approve/reject
 
 ---
 
+### S18) `SpecialDayGroup` (Authenticated)
+
+- **Purpose**: Community-specific special day groups (e.g. Eid, 23 Nisan, Ramazan Bayramı). These are time-boxed groups that receive cross-group invitations so members from other groups can participate.
+- **Primary actions**: Join, Post, View invitations.
+- **States**: upcoming (pre-event), active (event window), ended (read-only archive), no-permission.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ < Back                          Ramazan Bayramı 2025  [LIVE]  │
+├──────────────────────────────────────────────────────────────┤
+│ Special day group • Ends in 2 days                            │
+│ Invited from: Housing, Jobs, Health groups                    │
+│                                                              │
+│ ┌──────────────────────────────────────────────────────────┐  │
+│ │ [Pinned] Admin greeting message                           │  │
+│ └──────────────────────────────────────────────────────────┘  │
+│                                                              │
+│ ┌──────────────────────────────────────────────────────────┐  │
+│ │ [Thread] "Bayram namazı saatleri - Milton Keynes"         │  │
+│ │ 8 replies • 1h ago                                        │  │
+│ └──────────────────────────────────────────────────────────┘  │
+│ ┌──────────────────────────────────────────────────────────┐  │
+│ │ [Thread] "Bayram yemeği organizasyonu"                    │  │
+│ │ 4 replies • 3h ago                                        │  │
+│ └──────────────────────────────────────────────────────────┘  │
+│                                                              │
+│ [ + Post ]                                                    │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**Invitation banner (shown in other groups during active window)**
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ 🎉 Ramazan Bayramı grubu aktif                                │
+│ Tüm üyeler davetlidir.              [ Gruba git ]             │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**Admin: Create Special Day Group**
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ < Back                          Create special day group      │
+├──────────────────────────────────────────────────────────────┤
+│ Name *                                                        │
+│ [________________________________________________________]     │
+│                                                              │
+│ Event date *                                                  │
+│ [ Date picker ]                                               │
+│                                                              │
+│ Active window *                                               │
+│ From [ Date ] To [ Date ]                                     │
+│                                                              │
+│ Invite from groups *                                          │
+│ [ ] Housing  [ ] Jobs  [ ] Health  [ ] Legal  [ ] All         │
+│                                                              │
+│ [ Cancel ]                                    [ Create ]      │
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## What this wireframe pack validates (checklist)
 
 - Join + onboarding produces a non-empty first-value experience
@@ -504,3 +567,24 @@ Admin: `AdminApprovalQueue` -> `ApprovalDetail` -> approve/reject
 - Viewer mode gives admins a reversible, time-boxed penalty before removal
 - Ad preference is explicit and enforceable in surfaces
 - Ad creation and approval loop is coherent
+- Special day groups are time-boxed, cross-group invitations are sent automatically, and the group becomes read-only after the event window ends
+
+---
+
+## Next Step: Visual Design
+
+Wireframes are complete. The next phase is visual design (high-fidelity UI).
+
+Design work should start from the P0 critical journeys:
+
+1. J1 — Join → Onboarding → First value
+2. J2 — Search → Find → Resolve
+3. J3 — Create help request → Replies → Close
+4. J4 — Ads off (user) + Ad creation + Approval
+5. J5 — Report → Admin resolves
+
+Design deliverables expected:
+- Design system / component library (colors, typography, spacing, icons)
+- High-fidelity screens for all P0 screens in the screen map
+- Interaction states: loading, empty, error, no-permission, viewer-mode
+- Mobile-first; responsive web is a secondary target for Phase 1

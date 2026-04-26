@@ -27,6 +27,7 @@ These are the journeys that must stay coherent across flows, screens, wireframes
 - `J3`: Create help request -> replies -> close
 - `J4`: Ads off + ad creation + admin approval
 - `J5`: Report content -> admin resolves with warn/viewer-mode/remove
+- `J6`: Admin creates special day group -> cross-group invitations sent -> members participate -> group ends as read-only archive
 
 ## Consistency Guardrails
 
@@ -34,13 +35,15 @@ These are the journeys that must stay coherent across flows, screens, wireframes
 - `Resource`, `Knowledge card`, and `Solution card` refer to the same Phase 1 concept.
 - Phase 1 search scope is `Thread + Resource`.
 - Anonymous users only see preview cards/snippets, not full content browsing.
-- Viewer-mode penalty is scoped, time-boxed, and represented as a moderation action.
+- Viewer-mode penalty is scoped to a specific group by default; community-wide restriction requires explicit escalation.
+- Moderation actions (viewer mode, removal) are group-scoped; they do not affect the member's access in other groups.
+- Special day groups are time-boxed; they become read-only archives after the event window ends.
 
 ## Next Work
 
 After this documentation pack is stable, the suggested next work is:
 
-1. API contract draft for Phase 1 journeys
-2. Database schema draft from the domain model
-3. Backend module boundaries from the C4 component view
+1. [Technology documentation](../technology/README.md)
+2. API contract draft for Phase 1 journeys
+3. Database schema draft from the domain model
 4. Mobile/web implementation backlog

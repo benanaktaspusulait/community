@@ -63,6 +63,20 @@ If a doc needs one of these decisions, it should **reference it** instead of red
 - **Workflow**: every approval item has a target type, target id, status, reviewer, reason, and audit timestamps.
 - **Reason**: admins should not need separate operational patterns for every approval type.
 
+## K10 — Special day groups
+
+- **Decision**: Special day groups (e.g. Eid, 23 Nisan, Ramazan Bayramı) are time-boxed `Group` records with `type=SPECIAL_DAY`, managed via a `SpecialDayGroup` entity.
+- **Behavior**: when the active window starts, invitation banners are sent to all active members of the selected invited groups. Participation is opt-in.
+- **After event**: the group transitions to `ENDED` and becomes read-only. Content is preserved as an archive.
+- **Creation**: admin/mod only.
+
+## K11 — Moderation scope is group-based by default
+
+- **Decision**: viewer mode and removal actions are scoped to a specific group (or location community). They are never community-wide by default.
+- **Implication**: a member restricted in one group can still participate normally in all other groups they belong to.
+- **Escalation**: a community-wide restriction requires an explicit escalation step and is not the default action.
+- **Reason**: proportional moderation; a member who posts off-topic in one group should not lose access to unrelated groups.
+
 ---
 
 ## Phase 1 boundary decisions (global)

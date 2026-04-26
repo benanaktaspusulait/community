@@ -41,6 +41,7 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
         component moderation "Moderation" "Reports, queues, decisions, enforcement actions." "Backend module"
         component ads "Ads" "Ad drafts/submission, approval integration, status transitions." "Backend module"
         component approvals "Approvals" "Approval queue and decisions for join requests, ads, resources, sensitive posts, and group requests." "Backend module"
+        component groupManagement "Group Management" "Handles group creation, special day groups, and invitation routing." "Backend module"
       }
     }
 
@@ -73,14 +74,17 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
     client -> moderation "Creates reports" "HTTPS/JSON"
     client -> ads "Creates/edits ads (creator)" "HTTPS/JSON"
     client -> approvals "Reviews/decides approvals (admin/mod)" "HTTPS/JSON"
+    client -> groupManagement "Creates groups and sends invitations" "HTTPS/JSON"
 
     auth -> database "Stores identities, sessions, preferences" "SQL"
     rbac -> database "Stores role assignments" "SQL"
     content -> database "Stores communities/groups/threads/posts" "SQL"
     library -> database "Stores resources and provenance links" "SQL"
     moderation -> database "Stores reports and moderation decisions" "SQL"
+    moderation -> groupManagement "Enforces group removal or viewer-mode limits" "Internal API"
     ads -> database "Stores ads and statuses" "SQL"
     approvals -> database "Stores approval items and decisions" "SQL"
+    groupManagement -> database "Stores groups and invitations" "SQL"
     searchModule -> database "DB-backed keyword search (Phase 1 baseline)" "SQL"
     searchModule -> search "Queries index (when enabled)" "HTTP/Index API"
     content -> search "Indexes threads (when enabled)" "HTTP/Index API"
@@ -192,7 +196,21 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
       moderation -> database "Persist report"
       moderator -> client "Open reports queue"
       client -> moderation "Warn / set viewer mode / remove / dismiss"
+      moderation -> groupManagement "Enforce group-level viewer-mode or removal"
+      groupManagement -> database "Persist group membership state change"
       moderation -> database "Persist resolution and enforcement action"
+    }
+
+    dynamic communityPlatform "J6-special-day-groups" {
+      title "Dynamic — J6 Special Day Groups and Invitations"
+      description "Platform admin creates a special group (e.g. 23 April) and routes invitations to other group members."
+      platformAdmin -> client "Create special day group"
+      client -> groupManagement "Create group"
+      groupManagement -> database "Persist group"
+      platformAdmin -> client "Trigger cross-group invitations"
+      client -> groupManagement "Initiate invite dispatch"
+      groupManagement -> database "Lookup target members"
+      groupManagement -> notifications "Publish invite events"
     }
 
     styles {

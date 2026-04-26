@@ -316,12 +316,14 @@ Member behavior can deteriorate. Admins need a simple, traceable workflow to han
 
 1. The admin/moderator opens a reported member or member detail.
 2. They choose `Set viewer mode`.
-3. They select the scope: topic group, location community, or whole community.
+3. They select the scope: **a specific topic group or location community** (never the whole community by default).
 4. They select a duration, for example 1, 3, 7, 14, or 30 days.
-5. The affected user remains a member but becomes read-only in that scope.
-6. During viewer mode, the user can read/search/save content but cannot create threads, reply, comment, advertise, or react in the scoped area.
+5. The affected user remains a member of all other groups and can participate normally there. Only the scoped group is restricted.
+6. During viewer mode in the scoped group, the user can read/search/save content but cannot create threads, reply, comment, advertise, or react.
 7. The system shows the user why the restriction exists and when it expires.
 8. When the duration ends, the restriction automatically expires unless an admin extends or escalates it.
+
+> **Scope rule**: moderation actions are group-scoped by default. Removing or restricting a member from one group does not affect their membership or permissions in other groups. A community-wide action requires an explicit escalation step.
 
 ### Happy Path: Block
 
@@ -465,6 +467,37 @@ Even in a pilot, users need trust in account, privacy, and data rights.
 ### Phase 1 Boundary
 
 Full self-service export and advanced data management can wait until Phase 4, but the request path and support process must be clear in Phase 1.
+
+## Flow 15: Special Day Groups
+
+### Problem
+
+Community events like Eid, national holidays (23 Nisan), or local celebrations need a dedicated space. Members from other topic groups should be aware and able to participate without permanently joining a new group.
+
+### Happy Path
+
+1. Admin creates a special day group with a name, event date, active window (from/to), and selects which groups to invite.
+2. When the active window starts, an invitation banner appears in the feeds of all members belonging to the invited groups.
+3. Members can tap the banner to enter the special day group and participate.
+4. During the active window, the group behaves like a normal topic group: threads, replies, and moderation all apply.
+5. When the active window ends, the group transitions to `ENDED` status and becomes read-only. Existing content is preserved as an archive.
+6. Members can still browse the archive after the event.
+
+### Decision Points
+
+| Question | Decision |
+| --- | --- |
+| Who can create a special day group? | Admin/mod only |
+| Are invitations mandatory? | No; members can ignore the banner |
+| Does joining the special day group affect other memberships? | No; it is a separate, time-boxed membership |
+| What happens to content after the event? | Read-only archive; not deleted |
+
+### Output
+
+- special day group record
+- invitation banners sent to invited group members
+- time-boxed participation
+- read-only archive after event ends
 
 ## Out of Scope for Phase 1
 
