@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { Phone } from './components/ui/Phone'
 import { ScreenIndex } from './screens/ScreenIndex'
-import { AuthLanding } from './screens/AuthLanding'
 import { PublicPreview } from './screens/PublicPreview'
 import { InviteLanding } from './screens/InviteLanding'
 import { JoinPending } from './screens/JoinPending'
