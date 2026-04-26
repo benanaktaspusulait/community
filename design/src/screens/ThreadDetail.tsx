@@ -81,7 +81,7 @@ export function ThreadDetail() {
             Prefer somewhere close to the centre or with good bus links. Any leads appreciated!
           </div>
           <div className="flex items-center justify-between text-xs text-gray-400">
-            <span>Housing • by <span className="font-medium text-gray-600">Ali Y.</span></span>
+            <span>Housing • by <button className="font-medium text-gray-600 hover:text-[#4f6ef7]" onClick={() => navigate('/member')}>Ali Y.</button></span>
             <span>3h ago</span>
           </div>
           <div className="flex gap-2 pt-1">
@@ -135,10 +135,10 @@ export function ThreadDetail() {
                 {/* author row */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-[#e0eaff] flex items-center justify-center text-xs font-bold text-[#4f6ef7]">
+                    <button onClick={() => navigate('/member')} className="w-7 h-7 rounded-full bg-[#e0eaff] flex items-center justify-center text-xs font-bold text-[#4f6ef7]">
                       {r.avatar}
-                    </div>
-                    <span className="text-xs font-semibold text-gray-800">{r.author}</span>
+                    </button>
+                    <button onClick={() => navigate('/member')} className="text-xs font-semibold text-gray-800 hover:text-[#4f6ef7]">{r.author}</button>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-gray-400">{r.time}</span>

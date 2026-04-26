@@ -5,37 +5,11 @@ import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 
 const feed = [
-  {
-    id: '1', type: 'resource' as const,
-    title: 'How to rent a room in the UK',
-    meta: 'Checklist • Updated 2d ago', pinned: true, signal: 'Admin pick',
-  },
-  {
-    id: '2', type: 'help' as const,
-    title: 'Looking for a room in Milton Keynes',
-    meta: 'Budget £600 • Move-in Apr • Housing • 3 replies', pinned: false, signal: 'Open request',
-  },
-  {
-    id: '3', type: 'solved' as const,
-    title: "Driver's licence change steps",
-    meta: 'Legal • 12 replies', pinned: false, signal: 'Solved',
-  },
-  {
-    id: '4', type: 'help' as const,
-    title: 'Anyone know a good GP near MK centre?',
-    meta: 'Health • 5 replies', pinned: false, signal: 'Nearby',
-  },
-  {
-    id: '5', type: 'resource' as const,
-    title: 'National Insurance number — step by step',
-    meta: 'Legal • Updated 1w ago', pinned: false, signal: 'Library',
-  },
-]
-
-const stats = [
-  { label: 'Answers', value: '128', icon: BookOpen },
-  { label: 'Solved', value: '76%', icon: CheckCircle2 },
-  { label: 'Reports', value: '2', icon: ShieldCheck },
+  { id: '1', type: 'resource' as const, title: 'How to rent a room in the UK', meta: 'Checklist • Updated 2d ago', pinned: true, signal: 'Admin pick' },
+  { id: '2', type: 'help' as const, title: 'Looking for a room in Milton Keynes', meta: 'Budget £600 • Move-in Apr • Housing • 3 replies', pinned: false, signal: 'Open request' },
+  { id: '3', type: 'solved' as const, title: "Driver's licence change steps", meta: 'Legal • 12 replies', pinned: false, signal: 'Solved' },
+  { id: '4', type: 'help' as const, title: 'Anyone know a good GP near MK centre?', meta: 'Health • 5 replies', pinned: false, signal: 'Nearby' },
+  { id: '5', type: 'resource' as const, title: 'National Insurance number — step by step', meta: 'Legal • Updated 1w ago', pinned: false, signal: 'Library' },
 ]
 
 function SpecialDayBanner({ onClick }: { onClick: () => void }) {
@@ -69,7 +43,9 @@ export function HomeFeed() {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/62">Milton Keynes</p>
-            <h1 className="mt-1 text-2xl font-black tracking-[-0.05em]">Community memory</h1>
+            <button onClick={() => navigate('/community')} className="mt-1 text-2xl font-black tracking-[-0.05em] text-left hover:text-white/80 transition-colors">
+              Community memory
+            </button>
           </div>
           <div className="flex gap-2">
             <button
@@ -91,12 +67,16 @@ export function HomeFeed() {
         </div>
 
         <div className="mt-5 grid grid-cols-3 gap-2">
-          {stats.map(({ label, value, icon: Icon }) => (
-            <div key={label} className="rounded-[18px] bg-white/14 p-3 backdrop-blur">
+          {[
+            { label: 'Answers', value: '128', icon: BookOpen, to: '/library' },
+            { label: 'Solved', value: '76%', icon: CheckCircle2, to: '/search' },
+            { label: 'Reports', value: '2', icon: ShieldCheck, to: '/admin/reports' },
+          ].map(({ label, value, icon: Icon, to }) => (
+            <button key={label} onClick={() => navigate(to)} className="rounded-[18px] bg-white/14 p-3 backdrop-blur text-left hover:bg-white/22 transition-colors">
               <Icon size={15} className="text-white/76" />
               <p className="mt-2 text-lg font-black tracking-[-0.04em]">{value}</p>
               <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">{label}</p>
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -162,3 +142,4 @@ export function HomeFeed() {
     </div>
   )
 }
+

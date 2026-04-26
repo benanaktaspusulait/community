@@ -28,15 +28,15 @@ export function PublicPreview() {
 
         <div className="mt-5 grid grid-cols-3 gap-2">
           {[
-            { icon: Users, value: '1.2k', label: 'Members' },
-            { icon: BookOpen, value: '128', label: 'Answers' },
-            { icon: MessageCircle, value: '76%', label: 'Solved' },
-          ].map(({ icon: Icon, value, label }) => (
-            <div key={label} className="rounded-[18px] bg-white/14 p-3 backdrop-blur">
+            { icon: Users, value: '1.2k', label: 'Members', to: '/community' },
+            { icon: BookOpen, value: '128', label: 'Answers', to: '/library' },
+            { icon: MessageCircle, value: '76%', label: 'Solved', to: '/search' },
+          ].map(({ icon: Icon, value, label, to }) => (
+            <button key={label} onClick={() => navigate(to)} className="rounded-[18px] bg-white/14 p-3 backdrop-blur text-left hover:bg-white/22 transition-colors">
               <Icon size={15} className="text-white/75" />
               <p className="mt-2 text-lg font-black tracking-[-0.04em]">{value}</p>
               <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">{label}</p>
-            </div>
+            </button>
           ))}
         </div>
       </div>

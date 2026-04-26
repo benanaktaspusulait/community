@@ -57,7 +57,7 @@ export function AuthLanding() {
           <Button className="w-full py-3.5 text-base" onClick={() => navigate('/join')}>
             Join community
           </Button>
-          <Button variant="secondary" className="w-full py-3.5 text-base" onClick={() => navigate('/feed')}>
+          <Button variant="secondary" className="w-full py-3.5 text-base" onClick={() => navigate('/preview')}>
             Preview product
           </Button>
           <button
