@@ -31,9 +31,17 @@ export function CommunityHome() {
           <p className="text-white/70 text-xs mt-1">
             A structured community for Turkish-speaking residents of Milton Keynes.
           </p>
-          <button className="mt-2 bg-white text-[#4f6ef7] text-xs font-bold px-4 py-2 rounded-xl w-fit">
-            Joined ✓
-          </button>
+          <div className="mt-2 flex gap-2">
+            <button className="bg-white text-[#4f6ef7] text-xs font-bold px-4 py-2 rounded-xl w-fit">
+              Joined ✓
+            </button>
+            <button
+              onClick={() => navigate('/invite')}
+              className="bg-white/15 text-white text-xs font-bold px-4 py-2 rounded-xl w-fit ring-1 ring-white/25"
+            >
+              Invite people
+            </button>
+          </div>
         </div>
 
         <div className="px-4 pt-4 flex flex-col gap-4">

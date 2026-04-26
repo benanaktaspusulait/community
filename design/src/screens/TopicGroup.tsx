@@ -4,7 +4,7 @@ import { TopBar } from '../components/ui/TopBar'
 import { BottomNav } from '../components/ui/BottomNav'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
-import { Plus, MessageCircle, Users, ChevronRight, MoreVertical, Shield, Flag, Eye } from 'lucide-react'
+import { Plus, MessageCircle, Users, ChevronRight, MoreVertical, Shield, Flag, Eye, UserPlus } from 'lucide-react'
 
 const members = [
   { id: '1', name: 'Ali Y.', role: 'Admin', avatar: 'A', posts: 24 },
@@ -45,9 +45,17 @@ export function TopicGroup() {
             <span className="flex items-center gap-1"><Users size={12} /> 248 members</span>
             <span className="flex items-center gap-1"><MessageCircle size={12} /> 34 threads</span>
           </div>
-          <button className="text-xs text-[#4f6ef7] font-semibold border border-[#4f6ef7] rounded-full px-3 py-1">
-            Rules
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => navigate('/invite')}
+              className="flex items-center gap-1 text-xs text-[#4f6ef7] font-semibold border border-[#4f6ef7] rounded-full px-3 py-1"
+            >
+              <UserPlus size={12} /> Invite
+            </button>
+            <button className="text-xs text-[#4f6ef7] font-semibold border border-[#4f6ef7] rounded-full px-3 py-1">
+              Rules
+            </button>
+          </div>
         </div>
 
         <div className="flex gap-1 px-4 pb-3 overflow-x-auto no-scrollbar">

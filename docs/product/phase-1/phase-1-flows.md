@@ -40,7 +40,7 @@ The goal of Phase 1 is not to build a new social media or chat app. The goal is 
 
 | Priority | Flow |
 | --- | --- |
-| P0 | Public preview, invite/join, onboarding, feed, search, structured post, help request, comment/thread, report, ad preference |
+| P0 | Public preview, invite/join, direct user invite, onboarding, feed, search, structured post, help request, comment/thread, report, ad preference |
 | P0 | Admin approval queue, viewer-mode penalty, member removal, pinned/knowledge-card management, topic/location setup |
 | P1 | Ad creation + basic ad approval, QR invite, data request, media/link archive |
 | P1 | Public thread/resource preview, duplicate deflection, account deletion |
@@ -59,6 +59,7 @@ Before leaving WhatsApp/Facebook/Telegram, users want to see real value here.
 | Entry | Example |
 | --- | --- |
 | Invite link | A join link shared in the WhatsApp group |
+| Direct invite | A phone/email invite sent to a specific person |
 | Public community preview | A community page opened via Google or a shared web link |
 | Public thread/resource preview | A shared solved thread, FAQ, or knowledge card |
 | QR code | Scanned at an event, school, local business, etc. |
@@ -89,6 +90,38 @@ Before leaving WhatsApp/Facebook/Telegram, users want to see real value here.
 - membership status
 - source attribution: invite, public preview, QR, shared thread
 - initial topic/location selection
+
+## Flow 1b: Invite People from Existing Groups
+
+### Problem
+
+Admins and active members need a practical migration bridge. Sharing one generic link is not enough when they want to invite specific people from an existing WhatsApp, Facebook, or Telegram group.
+
+### Happy Path
+
+1. Admin/mod opens `Invite People` from Admin tools or a topic group.
+2. They select the invite scope: community, location group, or topic group.
+3. They choose invite mode: shareable link, QR code, direct email/phone invite, or bulk paste.
+4. For direct invites, the system stores only a normalized/hashable contact reference until the recipient signs up.
+5. The recipient receives the invite and opens the scoped invite landing.
+6. If the target group is public, signup creates the scoped membership.
+7. If the target group is private, signup creates a join request linked to the invite.
+8. Admin can see sent, opened, accepted, expired, and revoked invite statuses.
+
+### Rules
+
+- Direct invites are always scoped. Inviting someone to `Housing` does not automatically give access to `Health` or other groups.
+- Members may share invite links only when the group setting allows member invites.
+- Admin/mod direct invites can bypass generic discovery but still respect private-group approval rules if configured.
+- Duplicate invites to the same normalized contact and scope should be merged or shown as already invited.
+- Revoking an invite stops future acceptance but does not remove members who already joined.
+
+### Output
+
+- invite record
+- optional invite recipient records
+- source attribution for accepted users
+- migration funnel metrics: sent, opened, accepted, expired, revoked
 
 ## Flow 2: Onboarding
 
@@ -499,6 +532,18 @@ Community events like Eid, national holidays (23 Nisan), or local celebrations n
 - time-boxed participation
 - read-only archive after event ends
 
+## Phase 1 Design Gap Review
+
+The current design/prototype should explicitly cover:
+
+| Gap | Resolution |
+| --- | --- |
+| Direct user invite was not visible enough | Add `Invite People` screen and admin invite hub |
+| Admin `Invite links` tool was not actionable | Route admin tools to invite management |
+| Existing helper screens were not reachable | Add routes/index entries for splash, map picker, and push notification preview |
+| Special day invitations existed in docs but needed UI continuity | Keep banner entry and ensure invite language is visible in feed/special-day screens |
+| Group-scoped moderation could be misunderstood | Keep viewer-mode/removal wording as group-scoped in flows, docs, and screens |
+
 ## Out of Scope for Phase 1
 
 - full chat or DMs
@@ -535,3 +580,5 @@ Community events like Eid, national holidays (23 Nisan), or local celebrations n
 | Advertisement | ad |
 | Approval item | approval |
 | Invite link | invite |
+| Direct invite | invite + invite recipient |
+| Invite recipient | invite recipient |

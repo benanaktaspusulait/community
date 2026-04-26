@@ -46,6 +46,14 @@ export function LocationSetup() {
 
         {/* search */}
         <div className="flex flex-col gap-3">
+          <button
+            onClick={() => navigate('/location/map')}
+            className="flex items-center justify-between rounded-2xl border border-brand-100 bg-brand-50 px-4 py-3 text-left text-sm font-bold text-brand-700"
+          >
+            Pick from map
+            <MapPin size={16} />
+          </button>
+
           <div className="flex items-center gap-2 bg-[#f8f9fb] rounded-xl border border-[#e4e7ec] px-3 py-2.5">
             <Search size={15} className="text-gray-400 shrink-0" />
             <input

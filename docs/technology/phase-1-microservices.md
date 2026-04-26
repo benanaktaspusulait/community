@@ -105,6 +105,7 @@ Purpose:
 - community and group structure
 - membership lifecycle
 - invite links
+- direct user invites and invite recipient tracking
 - join requests
 - group creation requests
 - scoped role assignments
@@ -116,6 +117,7 @@ Owns:
 - `Group`
 - `Membership`
 - `Invite`
+- `InviteRecipient`
 - `JoinRequest`
 - `GroupRequest`
 - `RoleAssignment`
@@ -133,6 +135,8 @@ Key APIs:
 - create group
 - request group creation
 - create invite
+- create direct invite recipients
+- resend or revoke invite
 - join by invite
 - submit join request
 - approve or reject join request
@@ -154,6 +158,10 @@ Publishes:
 - `community-membership-created`
 - `community-membership-removed`
 - `community-invite-created`
+- `community-invite-recipient-sent`
+- `community-invite-recipient-opened`
+- `community-invite-recipient-accepted`
+- `community-invite-revoked`
 - `community-join-request-submitted`
 - `community-join-request-approved`
 - `community-join-request-rejected`
@@ -491,6 +499,8 @@ Consumes:
 
 - `community-join-request-approved`
 - `community-join-request-rejected`
+- `community-invite-recipient-sent`
+- `community-invite-recipient-accepted`
 - `community-special-day-group-activated`
 - `content-post-created`
 - `knowledge-resource-published`
@@ -546,6 +556,7 @@ Introduce when meetups and calendar workflows become a dedicated product surface
 | `Group` | `community-service` | Topic, location, or special day container. |
 | `Membership` | `community-service` | Required for group write access. |
 | `Invite` | `community-service` | Migration bridge and private access. |
+| `InviteRecipient` | `community-service` | Direct/bulk invite delivery and acceptance status. |
 | `JoinRequest` | `community-service` | Decision may be surfaced through `trust-ops-service`. |
 | `GroupRequest` | `community-service` | Approval workflow may be coordinated by `trust-ops-service`. |
 | `RoleAssignment` | `community-service` | Scoped admin/mod/creator roles. |
@@ -626,6 +637,11 @@ Recommended Phase 1 topics:
 - `community-group-created`
 - `community-membership-created`
 - `community-membership-removed`
+- `community-invite-created`
+- `community-invite-recipient-sent`
+- `community-invite-recipient-opened`
+- `community-invite-recipient-accepted`
+- `community-invite-revoked`
 - `community-join-request-submitted`
 - `community-role-assigned`
 - `community-special-day-group-activated`

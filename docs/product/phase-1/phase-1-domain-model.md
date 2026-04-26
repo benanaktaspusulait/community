@@ -68,13 +68,32 @@ See decision log: `phase-1-decisions.md` (K1-K11).
   - `id`
   - `communityId`
   - `groupId` (nullable)
+  - `inviteType`: `LINK | QR | DIRECT | BULK_IMPORT | SPECIAL_DAY`
   - `tokenHash`
   - `createdByUserId`
+  - `createdByRole`: `MEMBER | MOD | ADMIN`
   - `status`: `ACTIVE | REVOKED | EXPIRED`
   - `maxUses` (nullable)
   - `usedCount`
   - `expiresAt` (nullable)
+  - `requiresApproval`: boolean
+  - `allowedChannels`: `LINK | EMAIL | SMS | WHATSAPP | QR` list
   - `createdAt`
+
+### `InviteRecipient`
+
+- **Purpose**: delivery/status tracking for direct or bulk invites without storing unnecessary contact data in plain text.
+- **Key fields**
+  - `id`
+  - `inviteId`
+  - `targetUserId` (nullable until matched after signup)
+  - `contactHash` (nullable when target user already exists)
+  - `contactDisplayMasked` (nullable, e.g. `a***@mail.com` or `+44***123`)
+  - `deliveryChannel`: `EMAIL | SMS | WHATSAPP | MANUAL_COPY`
+  - `status`: `QUEUED | SENT | OPENED | ACCEPTED | EXPIRED | REVOKED | FAILED`
+  - `lastSentAt` (nullable)
+  - `acceptedAt` (nullable)
+  - `createdAt`, `updatedAt`
 
 ### `JoinRequest`
 
@@ -305,6 +324,7 @@ See decision log: `phase-1-decisions.md` (K1-K11).
 - `Group 0..* Membership`
 - `Invite 0..* Membership`
 - `Invite 0..* JoinRequest`
+- `Invite 0..* InviteRecipient`
 - `Group 1..* Thread`
 - `Thread 1..* Post`
 - `Community 1..* Resource`
@@ -342,3 +362,7 @@ See decision log: `phase-1-decisions.md` (K1-K11).
 - `SpecialDayGroup.activeTo` must be after `SpecialDayGroup.activeFrom`.
 - After `activeTo`, the underlying `Group` becomes read-only (no new threads or posts); existing content is preserved as an archive.
 - Invitation banners are sent to all active members of `invitedGroupIds` when `status` transitions to `ACTIVE`.
+- A direct `Invite` must have at least one `InviteRecipient`.
+- An invite to a group grants or requests access only for that group; it does not grant access to sibling groups.
+- `InviteRecipient.contactHash` must be derived from a normalized contact value and must not expose raw email/phone in operational views.
+- `InviteRecipient.status=ACCEPTED` requires either `targetUserId` or a created `Membership`/`JoinRequest` linked to the invite.

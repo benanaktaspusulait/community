@@ -213,6 +213,21 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
       groupManagement -> notifications "Publish invite events"
     }
 
+    dynamic communityPlatform "J7-direct-user-invite" {
+      title "Dynamic — J7 Direct User Invite"
+      description "Admin/member creates a scoped invite and a recipient joins only the target community/group."
+      moderator -> client "Open invite hub"
+      client -> groupManagement "Create scoped invite link or direct invite"
+      groupManagement -> database "Persist invite and invite recipients"
+      groupManagement -> notifications "Request invite delivery"
+      notifications -> emailSms "Deliver email/SMS invite when selected"
+      visitor -> client "Open invite link"
+      client -> auth "Signup/login if needed"
+      client -> groupManagement "Accept invite"
+      groupManagement -> database "Create membership or join request for invite scope only"
+      groupManagement -> notifications "Notify admin/member of acceptance"
+    }
+
     styles {
       element "Person" {
         shape person

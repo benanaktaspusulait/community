@@ -15,7 +15,7 @@ This C4 model is authored in **Structurizr DSL**.
 - **System Context**: `context`
 - **Container**: `containers`
 - **Component (Backend API)**: `components`
-- **Dynamic journeys**: `J1` to `J6` covering join, search, help request, ads, moderation, and special day groups.
+- **Dynamic journeys**: `J1` to `J7` covering join, search, help request, ads, moderation, special day groups, and direct user invitations.
 
 ## How to render
 

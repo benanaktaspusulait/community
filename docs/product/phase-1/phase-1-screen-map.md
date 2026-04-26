@@ -56,6 +56,7 @@ Phase 1 navigation should remain simple.
 | Community Home | P0 | Show core community info | Join topic, view rules, search community | Member, visitor, pending |
 | Location Community | P0 | Separate location-based content | Open feed, create local post, view groups | No local posts, not joined |
 | Topic Group | P0 | Maintain topic discipline | View posts, create in topic, view rules | Joined, not joined, post approval on |
+| Invite People | P0 | Help admins/members migrate real people from old groups | Create scoped link, direct invite by email/phone, copy/share QR | Private group approval, expired invite, limit reached |
 | Special Day Group | P1 | Time-boxed community event space | View posts, post, join from invitation banner | Upcoming, active, ended (read-only archive) |
 | Post Detail / Thread | P0 | Durable conversation and answers | Comment, reply, save, report, mark solved | Open, solved, locked, removed |
 | Comment Composer | P0 | Compose a proper reply | Add comment, attach link/image | Rate limited, approval required |
@@ -99,7 +100,7 @@ Phase 1 navigation should remain simple.
 | Community Structure | P0 | Manage location/topic structure | Add/edit group, assign admin | Duplicate group, permission missing |
 | Topic Group Settings | P0 | Enforce topic rules | Edit rules, post approval, pinned items | Approval on/off, locked group |
 | Role Management | P0 | Assign sub-admin and moderator roles | Assign role, revoke role | Scope required, owner protected |
-| Invite Links | P0 | Start migration | Create link, revoke, copy, QR | Expired, limit reached |
+| Invite Links & User Invites | P0 | Start migration and invite specific people | Create link, direct invite, bulk paste, revoke, copy, QR | Expired, limit reached, duplicate invite |
 | Knowledge Library Manager | P0 | Curate the library | Create card, edit, publish, archive | Draft, pending, published |
 | Admin Picks | P1 | Promote weekly high-value content | Pick thread, write summary, publish | No picks, draft |
 | Ad Approval | P1 | Protect ad quality | Approve, reject, request edit | Sensitive category, reported advertiser |
@@ -147,6 +148,7 @@ In the first design sprint, P0 screens are sufficient:
 - Profile, location, topic, and ad-preference onboarding
 - Home Feed
 - Topic Group
+- Invite People
 - Search Home and Search Results
 - Post Detail / Thread
 - Create Type Picker
@@ -163,7 +165,7 @@ In the first design sprint, P0 screens are sufficient:
 - Reports Queue
 - Member Detail (Admin)
 - Community Structure
-- Invite Links
+- Invite Links & User Invites
 - Knowledge Library Manager
 
 ## Decisions to Preserve in Design
@@ -190,3 +192,4 @@ The wireframe set should first cover these 5 critical journeys:
 3. A user creates a “I’m looking for a room” help request.
 4. A user disables ads; an advertiser creates an ad.
 5. An admin manages join requests, reports, and knowledge-card approvals.
+6. An admin/member invites people from an existing WhatsApp/Facebook/Telegram group into a scoped topic/location group.

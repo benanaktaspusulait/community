@@ -5,10 +5,12 @@ const sections = [
   {
     title: '🔐 Auth & Onboarding',
     screens: [
+      { path: '/splash', label: 'Splash Screen' },
       { path: '/', label: 'Auth Landing' },
       { path: '/join', label: 'Join' },
       { path: '/verify', label: 'Verify Code' },
       { path: '/onboarding/location', label: 'Onboarding — Location setup' },
+      { path: '/location/map', label: 'Map Location Picker' },
       { path: '/onboarding', label: 'Onboarding — Interests' },
     ],
   },
@@ -17,8 +19,10 @@ const sections = [
     screens: [
       { path: '/feed', label: 'Home Feed' },
       { path: '/notifications', label: 'Notifications' },
+      { path: '/notifications/push-demo', label: 'Push Notification Preview' },
       { path: '/community', label: 'Community Home' },
       { path: '/group', label: 'Topic Group (thread list)' },
+      { path: '/invite', label: 'Invite People' },
       { path: '/group/create', label: 'Create Group (admin)' },
       { path: '/group/suggest', label: 'Suggest Group (member)' },
       { path: '/thread', label: 'Thread Detail (replies + library save)' },
@@ -60,6 +64,7 @@ const sections = [
     title: '🛡️ Admin',
     screens: [
       { path: '/admin', label: 'Admin Home' },
+      { path: '/admin/invites', label: 'Invite Links & User Invites' },
       { path: '/admin/reports', label: 'Reports Queue (şikayetleri görme)' },
       { path: '/admin/approvals', label: 'Approval Queue' },
       { path: '/admin/moderation', label: 'Member Moderation (warn / viewer / remove)' },

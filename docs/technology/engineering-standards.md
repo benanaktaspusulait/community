@@ -205,7 +205,7 @@ Search must cover:
 - resources (title, body, tags)
 - attachment and shared link metadata
 - help request and listing template fields
-- ads metadata — only when the user's `showAds` preference is `true`
+- ads metadata when ads are searchable; query and delivery APIs must filter ads out when the user's `showAds` preference is `false`
 
 ---
 
@@ -224,6 +224,7 @@ Search must cover:
 - enforce domain-level authorization (membership, role, scope)
 - verify active membership before allowing writes
 - check viewer-mode penalty before allowing create/reply/comment/ad actions
+- enforce invite scope so a group invite cannot grant access to sibling groups
 - audit sensitive decisions (moderation, approvals, role changes)
 
 ---

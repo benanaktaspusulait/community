@@ -10,6 +10,13 @@ const queues = [
   { icon: BookOpen, label: 'Library manager', count: 2, urgent: false, to: '/admin/approvals' },
 ]
 
+const tools = [
+  { label: 'Invite links & user invites', to: '/admin/invites' },
+  { label: 'Community structure', to: '/community' },
+  { label: 'Role management', to: '/group' },
+  { label: 'Audit log', to: '/admin/reports' },
+]
+
 export function AdminHome() {
   const navigate = useNavigate()
 
@@ -69,12 +76,13 @@ export function AdminHome() {
         {/* tools */}
         <div>
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Tools</p>
-          {['Invite links', 'Community structure', 'Role management', 'Audit log'].map(t => (
+          {tools.map(t => (
             <button
-              key={t}
+              key={t.label}
+              onClick={() => navigate(t.to)}
               className="w-full flex items-center justify-between bg-white rounded-xl border border-[#e4e7ec] px-4 py-3 mb-2 text-sm font-medium text-gray-800"
             >
-              {t}
+              {t.label}
               <ChevronRight size={14} className="text-gray-300" />
             </button>
           ))}
