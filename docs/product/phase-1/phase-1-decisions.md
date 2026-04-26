@@ -46,8 +46,8 @@ If a doc needs one of these decisions, it should **reference it** instead of red
 ## K7 — Temporary viewer mode penalty
 
 - **Decision**: Phase 1 moderation includes a temporary `VIEWER_MODE` enforcement action.
-- **Behavior**: the user stays in the scoped community/group but can only read/search/save until the penalty expires.
-- **Scope**: group or community scoped; platform-wide viewer mode is an escalation path, not the default.
+- **Behavior**: the user stays in the scoped group but can only read/search/save until the penalty expires.
+- **Scope**: group scoped in Phase 1.
 - **Duration**: admins/moderators must choose an expiry duration (for example 1, 3, 7, 14, or 30 days).
 - **Non-goal**: viewer mode is not the same as removing a user and should not silently hide the penalty from the affected user.
 
@@ -72,9 +72,9 @@ If a doc needs one of these decisions, it should **reference it** instead of red
 
 ## K11 — Moderation scope is group-based by default
 
-- **Decision**: viewer mode and removal actions are scoped to a specific group (or location community). They are never community-wide by default.
+- **Decision**: viewer mode and removal actions are scoped to a specific group in Phase 1.
 - **Implication**: a member restricted in one group can still participate normally in all other groups they belong to.
-- **Escalation**: a community-wide restriction requires an explicit escalation step and is not the default action.
+- **Escalation**: platform/community suspension is a separate escalation action, not the normal viewer-mode/remove flow.
 - **Reason**: proportional moderation; a member who posts off-topic in one group should not lose access to unrelated groups.
 
 ---

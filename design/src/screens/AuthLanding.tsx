@@ -60,6 +60,12 @@ export function AuthLanding() {
           <Button variant="secondary" className="w-full py-3.5 text-base" onClick={() => navigate('/feed')}>
             Preview product
           </Button>
+          <button
+            onClick={() => navigate('/preview')}
+            className="text-center text-xs font-extrabold text-brand-700"
+          >
+            View public community preview
+          </button>
           <p className="text-center text-[11px] leading-4 text-muted/70">
             Designed for communities moving from WhatsApp, Facebook, and Telegram groups.
           </p>

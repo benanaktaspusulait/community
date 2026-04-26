@@ -17,6 +17,7 @@ The goal is to clarify the following before implementation and keep UX, domain, 
 4. [Phase 1 Decision Log](phase-1/phase-1-decisions.md)
 5. [Phase 1 Domain Model](phase-1/phase-1-domain-model.md)
 6. [Phase 1 C4 Diagrams](phase-1/phase-1-c4.md)
+7. [High-Fidelity React Prototype](../../design/README.md)
 
 ## Phase 1 Critical Journeys
 
@@ -28,7 +29,7 @@ These are the journeys that must stay coherent across flows, screens, wireframes
 - `J4`: Ads off + ad creation + admin approval
 - `J5`: Report content -> admin resolves with warn/viewer-mode/remove
 - `J6`: Admin creates special day group -> cross-group invitations sent -> members participate -> group ends as read-only archive
-- `J7`: Admin/member invites people -> recipient opens invite -> joins the scoped group/community
+- `J7`: Admin/member invites people -> recipient opens invite -> joins the scoped community/group
 
 ## Consistency Guardrails
 
@@ -36,16 +37,15 @@ These are the journeys that must stay coherent across flows, screens, wireframes
 - `Resource`, `Knowledge card`, and `Solution card` refer to the same Phase 1 concept.
 - Phase 1 search scope is `Thread + Resource`.
 - Anonymous users only see preview cards/snippets, not full content browsing.
-- Viewer-mode penalty is scoped to a specific group by default; community-wide restriction requires explicit escalation.
+- Viewer-mode penalty is scoped to a specific group in Phase 1.
 - Moderation actions (viewer mode, removal) are group-scoped; they do not affect the member's access in other groups.
 - Special day groups are time-boxed; they become read-only archives after the event window ends.
 - Direct user invitations are scoped to one community/group and must not grant broader access than the invite scope.
 
 ## Next Work
 
-After this documentation pack is stable, the suggested next work is:
+After this documentation pack and design prototype are stable, the suggested next work is:
 
-1. [Technology documentation](../technology/README.md)
-2. API contract draft for Phase 1 journeys
-3. Database schema draft from the domain model
-4. Mobile/web implementation backlog
+1. API contract draft for Phase 1 journeys
+2. Database schema draft from the domain model
+3. Mobile/web implementation backlog

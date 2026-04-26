@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# Community Phase 1 Design Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder contains the high-fidelity React prototype for the Phase 1 Community product.
 
-Currently, two official plugins are available:
+The prototype is intentionally mobile-first. It validates the product promise:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- replace noisy WhatsApp/Facebook/Telegram groups with structured community memory
+- make old answers, links, files, and resources findable
+- keep topic groups disciplined
+- support scoped invites, reports, viewer-mode penalties, ads, and admin operations
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide icons
 
-## Expanding the ESLint configuration
+## Run Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the local Vite URL and start from:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+/screens
 ```
+
+The `/screens` index links to every prototype screen inside a mobile phone shell.
+
+## Validation
+
+```bash
+npm run lint
+npm run build
+```
+
+Both commands should pass before committing design changes.
+
+## Key Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/screens` | Prototype screen index |
+| `/preview` | Public community preview |
+| `/invite/landing` | Scoped invite landing |
+| `/join/pending` | Private group join pending |
+| `/feed` | Member home feed |
+| `/group` | Topic group |
+| `/invite` | Member/admin invite people flow |
+| `/search` | Community memory search |
+| `/create` | Structured create picker and help request |
+| `/library` | Knowledge library |
+| `/media` | Media and links archive |
+| `/admin` | Admin operations home |
+| `/admin/invites` | Invite links and direct user invites |
+| `/admin/library` | Knowledge library manager |
+| `/admin/moderation` | Group-scoped moderation actions |
+
+## Design Notes
+
+- The prototype is not a production app. It is a clickable design artifact.
+- The visual direction uses warm community colors, glass panels, and a premium phone shell.
+- Viewer mode and member removal are group-scoped in Phase 1.
+- Direct invites are scoped to a community preview or a specific group; they must not grant broader access than the invite scope.
+- Ads can be created by users, but ad visibility remains user-controlled.

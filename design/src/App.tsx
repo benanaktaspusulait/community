@@ -2,6 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 import { Phone } from './components/ui/Phone'
 import { ScreenIndex } from './screens/ScreenIndex'
 import { AuthLanding } from './screens/AuthLanding'
+import { PublicPreview } from './screens/PublicPreview'
+import { InviteLanding } from './screens/InviteLanding'
+import { JoinPending } from './screens/JoinPending'
 import { Join } from './screens/Join'
 import { VerifyCode } from './screens/VerifyCode'
 import { OnboardingInterests } from './screens/OnboardingInterests'
@@ -22,6 +25,7 @@ import { ThreadDetail } from './screens/ThreadDetail'
 import { ReportModal } from './screens/ReportModal'
 import { LibraryHome } from './screens/LibraryHome'
 import { ResourceDetail } from './screens/ResourceDetail'
+import { MediaArchive } from './screens/MediaArchive'
 import { SpecialDayGroup } from './screens/SpecialDayGroup'
 import { AdCreate } from './screens/AdCreate'
 import { Settings } from './screens/Settings'
@@ -32,10 +36,14 @@ import { AdminModeration } from './screens/AdminModeration'
 import { AdminReportsQueue } from './screens/AdminReportsQueue'
 import { ApprovalQueue } from './screens/ApprovalQueue'
 import { SplashScreen } from './screens/SplashScreen'
+import { AdminLibraryManager } from './screens/AdminLibraryManager'
 
 const phoneRoutes = [
   { path: '/splash', element: <SplashScreen /> },
   { path: '/', element: <AuthLanding /> },
+  { path: '/preview', element: <PublicPreview /> },
+  { path: '/invite/landing', element: <InviteLanding /> },
+  { path: '/join/pending', element: <JoinPending /> },
   { path: '/join', element: <Join /> },
   { path: '/verify', element: <VerifyCode /> },
   { path: '/onboarding', element: <OnboardingInterests /> },
@@ -57,6 +65,7 @@ const phoneRoutes = [
   { path: '/report', element: <ReportModal /> },
   { path: '/library', element: <LibraryHome /> },
   { path: '/resource', element: <ResourceDetail /> },
+  { path: '/media', element: <MediaArchive /> },
   { path: '/special-day', element: <SpecialDayGroup /> },
   { path: '/ad/create', element: <AdCreate /> },
   { path: '/settings', element: <Settings /> },
@@ -67,6 +76,7 @@ const phoneRoutes = [
   { path: '/admin/moderation', element: <AdminModeration /> },
   { path: '/admin/reports', element: <AdminReportsQueue /> },
   { path: '/admin/approvals', element: <ApprovalQueue /> },
+  { path: '/admin/library', element: <AdminLibraryManager /> },
 ]
 
 export default function App() {

@@ -32,7 +32,7 @@ The goal of Phase 1 is not to build a new social media or chat app. The goal is 
 | Power user | Answers questions, suggests resources, generates high-signal contributions |
 | Advertiser / provider | Person or business that wants to post an ad/service/commercial notice |
 | Moderator | Scoped authority managing content and member behavior |
-| Sub-admin | Admin responsible for a specific location community or topic group |
+| Sub-admin | Admin responsible for a specific location group or topic group |
 | Community admin | Responsible for operating a community |
 | Platform admin | Controls platform-level policies and community creation |
 
@@ -100,7 +100,7 @@ Admins and active members need a practical migration bridge. Sharing one generic
 ### Happy Path
 
 1. Admin/mod opens `Invite People` from Admin tools or a topic group.
-2. They select the invite scope: community, location group, or topic group.
+2. They select the invite scope: community preview, location group, or topic group.
 3. They choose invite mode: shareable link, QR code, direct email/phone invite, or bulk paste.
 4. For direct invites, the system stores only a normalized/hashable contact reference until the recipient signs up.
 5. The recipient receives the invite and opens the scoped invite landing.
@@ -349,14 +349,14 @@ Member behavior can deteriorate. Admins need a simple, traceable workflow to han
 
 1. The admin/moderator opens a reported member or member detail.
 2. They choose `Set viewer mode`.
-3. They select the scope: **a specific topic group or location community** (never the whole community by default).
+3. They select the scope: **a specific topic group/location group**.
 4. They select a duration, for example 1, 3, 7, 14, or 30 days.
 5. The affected user remains a member of all other groups and can participate normally there. Only the scoped group is restricted.
 6. During viewer mode in the scoped group, the user can read/search/save content but cannot create threads, reply, comment, advertise, or react.
 7. The system shows the user why the restriction exists and when it expires.
 8. When the duration ends, the restriction automatically expires unless an admin extends or escalates it.
 
-> **Scope rule**: moderation actions are group-scoped by default. Removing or restricting a member from one group does not affect their membership or permissions in other groups. A community-wide action requires an explicit escalation step.
+> **Scope rule**: Phase 1 moderation actions are group-scoped. Removing or restricting a member from one group does not affect their membership or permissions in other groups. A platform/community suspension is a separate escalation path.
 
 ### Happy Path: Block
 

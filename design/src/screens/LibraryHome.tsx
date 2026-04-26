@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { BottomNav } from '../components/ui/BottomNav'
 import { Card } from '../components/ui/Card'
+import { FileText, Image, Link2, PlayCircle } from 'lucide-react'
 
 const categories = ['Housing', 'Legal', 'Health', 'Jobs', 'Services', 'Travel']
 
@@ -30,6 +31,19 @@ export function LibraryHome() {
             ))}
           </div>
         </div>
+
+        <Card onClick={() => navigate('/media')} className="flex items-center gap-3">
+          <div className="grid h-12 w-12 shrink-0 grid-cols-2 place-items-center rounded-2xl bg-brand-50 text-brand-700">
+            <Link2 size={13} />
+            <Image size={13} />
+            <PlayCircle size={13} />
+            <FileText size={13} />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-black tracking-[-0.02em] text-ink">Media & links archive</p>
+            <p className="mt-1 text-xs leading-5 text-muted">Find old links, images, videos, and files directly.</p>
+          </div>
+        </Card>
 
         {/* featured */}
         <div>

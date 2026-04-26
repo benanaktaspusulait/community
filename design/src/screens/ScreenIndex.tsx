@@ -7,7 +7,10 @@ const sections = [
     screens: [
       { path: '/splash', label: 'Splash Screen' },
       { path: '/', label: 'Auth Landing' },
+      { path: '/preview', label: 'Public Community Preview' },
+      { path: '/invite/landing', label: 'Invite Landing' },
       { path: '/join', label: 'Join' },
+      { path: '/join/pending', label: 'Join Pending' },
       { path: '/verify', label: 'Verify Code' },
       { path: '/onboarding/location', label: 'Onboarding — Location setup' },
       { path: '/location/map', label: 'Map Location Picker' },
@@ -44,6 +47,7 @@ const sections = [
     screens: [
       { path: '/library', label: 'Library Home' },
       { path: '/resource', label: 'Resource Detail' },
+      { path: '/media', label: 'Media & Links Archive' },
     ],
   },
   {
@@ -67,6 +71,7 @@ const sections = [
       { path: '/admin/invites', label: 'Invite Links & User Invites' },
       { path: '/admin/reports', label: 'Reports Queue (şikayetleri görme)' },
       { path: '/admin/approvals', label: 'Approval Queue' },
+      { path: '/admin/library', label: 'Knowledge Library Manager' },
       { path: '/admin/moderation', label: 'Member Moderation (warn / viewer / remove)' },
     ],
   },

@@ -130,7 +130,7 @@ For each critical screen, the following states should be considered:
 | Rejected | Explain reason and next step to the user |
 | Removed | Old shared links should not break after moderation |
 | Reported | Owner/admin behavior must be defined for reported content |
-| Viewer mode active | User can read/search but cannot create or reply in the scoped area |
+| Viewer mode active | User can read/search but cannot create or reply in the scoped group |
 | Ads off | If the user disabled ads, ad placements must be hidden |
 | No results | Transition from search to structured request creation |
 | Duplicate found | Deflect to existing knowledge before posting |
@@ -177,15 +177,13 @@ In the first design sprint, P0 screens are sufficient:
 - The ad-create flow must be separate from the normal post-create flow.
 - Admin actions must work with scoped permissions.
 - Report and block must be reachable in 1–2 taps.
-- Viewer mode must be visible to both admin and affected user with scope, reason, and expiry date.
+- Viewer mode must be visible to both admin and affected user with group scope, reason, and expiry date.
 - Library and knowledge cards must be visible in primary navigation.
 - Media/link archive must be directly accessible under Library.
 
-## Next Step
+## Design Prototype Coverage
 
-After this screen map, the first artifact to produce is the low-fidelity wireframe set.
-
-The wireframe set should first cover these 5 critical journeys:
+The high-fidelity React prototype in `design/` now covers the core Phase 1 journeys:
 
 1. A visitor joins from a preview.
 2. A user searches and finds existing knowledge.
@@ -193,3 +191,5 @@ The wireframe set should first cover these 5 critical journeys:
 4. A user disables ads; an advertiser creates an ad.
 5. An admin manages join requests, reports, and knowledge-card approvals.
 6. An admin/member invites people from an existing WhatsApp/Facebook/Telegram group into a scoped topic/location group.
+
+Remaining work should now move from screen discovery to API contracts, persistence design, and implementation backlog.

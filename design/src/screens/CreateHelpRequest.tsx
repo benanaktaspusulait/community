@@ -11,6 +11,7 @@ const types = [
   { key: 'room', label: '🏠 Looking for a room', desc: 'Structured room search' },
   { key: 'question', label: '❓ Question', desc: 'Ask the community' },
   { key: 'listing', label: '📦 Listing', desc: 'Sell, rent or offer something' },
+  { key: 'ad', label: '📢 Advertise', desc: 'Create a reviewed community ad' },
 ]
 export function CreateHelpRequest() {
   const navigate = useNavigate()
@@ -40,6 +41,7 @@ export function CreateHelpRequest() {
                 key={t.key}
                 onClick={() => {
                   if (t.key === 'listing') { navigate('/listing/create'); return }
+                  if (t.key === 'ad') { navigate('/ad/create'); return }
                   setSelectedType(t.key); setStep('form')
                 }}
                 className="flex items-center gap-4 bg-[#f8f9fb] border border-[#e4e7ec] rounded-2xl px-4 py-4 text-left hover:border-[#4f6ef7] transition-colors"
@@ -59,7 +61,7 @@ export function CreateHelpRequest() {
 
   return (
     <div className="flex flex-col h-full bg-white">
-      <TopBar title={isRoom ? 'Looking for a room' : 'Help request'} back />
+      <TopBar title={isRoom ? 'Looking for a room' : selectedType === 'question' ? 'Question' : 'Help request'} back />
       <div className="flex-1 overflow-y-auto px-4 pt-4 pb-4 flex flex-col gap-4">
 
         {/* group picker */}

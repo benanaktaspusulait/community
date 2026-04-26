@@ -372,8 +372,8 @@ Key APIs:
 
 Viewer-mode rule:
 
-- `VIEWER_MODE` must be scoped to a specific group or location community; it is never community-wide by default
-- community-wide restriction requires an explicit escalation step
+- `VIEWER_MODE` must be scoped to a specific group in Phase 1
+- platform/community suspension is a separate escalation action, not the normal viewer-mode flow
 - `VIEWER_MODE` must always have `expiresAt`
 - active viewer mode blocks create, reply, comment, and ad submission in that scope only; the user retains full access in all other groups
 - read access remains available unless a separate suspension action is introduced
@@ -750,7 +750,7 @@ Viewer mode:
 - blocks ad submission
 - does not remove read access
 - has a start and expiry date
-- is scoped to community or group
+- is scoped to one group in Phase 1
 
 ## Location Data
 

@@ -7,7 +7,7 @@ const queues = [
   { icon: Users, label: 'Join requests', count: 7, urgent: false, to: '/admin/approvals' },
   { icon: Flag, label: 'Reports queue', count: 3, urgent: true, to: '/admin/reports' },
   { icon: ClipboardList, label: 'Approval queue', count: 5, urgent: false, to: '/admin/approvals' },
-  { icon: BookOpen, label: 'Library manager', count: 2, urgent: false, to: '/admin/approvals' },
+  { icon: BookOpen, label: 'Library manager', count: 2, urgent: false, to: '/admin/library' },
 ]
 
 const tools = [

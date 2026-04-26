@@ -8,6 +8,7 @@ import clsx from 'clsx'
 
 const durations = ['1 day', '3 days', '7 days', '14 days', '30 days']
 type Action = 'warn' | 'viewer' | 'remove' | ''
+const scopes = ['Housing group', 'Health group', 'Jobs group', 'Services group']
 
 const reportHistory = [
   { id: '1', reason: 'Spam', group: 'Housing', time: '3d ago', action: 'Warning sent' },
@@ -72,7 +73,7 @@ export function AdminModeration() {
             <Shield size={12} /> Scope
           </p>
           <div className="flex gap-2">
-            {['Housing group', 'All groups'].map(s => (
+            {scopes.map(s => (
               <button
                 key={s}
                 onClick={() => setScope(s)}
@@ -88,7 +89,7 @@ export function AdminModeration() {
             ))}
           </div>
           <p className="text-[10px] text-gray-400">
-            Actions are group-scoped by default. "All groups" requires escalation.
+            Viewer mode and removal are group-scoped in Phase 1. Platform escalation is separate from this action.
           </p>
         </Card>
 

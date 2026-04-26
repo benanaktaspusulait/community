@@ -231,7 +231,7 @@ See decision log: `phase-1-decisions.md` (K1-K11).
   - `targetId`
   - `targetUserId` (nullable; required for user-scoped actions)
   - `createdByUserId`
-  - `scopeType`: `COMMUNITY | GROUP`
+  - `scopeType`: `GROUP` (Phase 1)
   - `scopeId`
   - `actionType`: `WARN | VIEWER_MODE | REMOVE_CONTENT | REMOVE_MEMBER | ESCALATE`
   - `reasonCode`: `SPAM | SCAM | HARASSMENT | OFF_TOPIC | INAPPROPRIATE_CONTENT | OTHER`
@@ -358,7 +358,7 @@ See decision log: `phase-1-decisions.md` (K1-K11).
 - An active `ModerationAction(actionType=VIEWER_MODE)` must block create/reply/comment/ad actions within its scope.
 - `VIEWER_MODE` must target a user, so `targetType=USER` and `targetUserId` are required.
 - `VIEWER_MODE` must always have an `expiresAt` value.
-- A `ModerationAction` scope is always `GROUP` or `COMMUNITY`; it is never community-wide by default. Removing or restricting a member from one group does not affect their membership or permissions in other groups.
+- A `ModerationAction(actionType=VIEWER_MODE | REMOVE_MEMBER)` is group-scoped in Phase 1. Removing or restricting a member from one group does not affect their membership or permissions in other groups.
 - `SpecialDayGroup.activeTo` must be after `SpecialDayGroup.activeFrom`.
 - After `activeTo`, the underlying `Group` becomes read-only (no new threads or posts); existing content is preserved as an archive.
 - Invitation banners are sent to all active members of `invitedGroupIds` when `status` transitions to `ACTIVE`.

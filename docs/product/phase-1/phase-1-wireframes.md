@@ -571,11 +571,11 @@ Admin: `AdminApprovalQueue` -> `ApprovalDetail` -> approve/reject
 
 ---
 
-## Next Step: Visual Design
+## High-Fidelity Prototype Status
 
-Wireframes are complete. The next phase is visual design (high-fidelity UI).
+Wireframes are complete and the high-fidelity React prototype now exists in `design/`.
 
-Design work should start from the P0 critical journeys:
+The prototype covers the P0 critical journeys:
 
 1. J1 — Join → Onboarding → First value
 2. J2 — Search → Find → Resolve
@@ -583,8 +583,12 @@ Design work should start from the P0 critical journeys:
 4. J4 — Ads off (user) + Ad creation + Approval
 5. J5 — Report → Admin resolves
 
-Design deliverables expected:
-- Design system / component library (colors, typography, spacing, icons)
-- High-fidelity screens for all P0 screens in the screen map
-- Interaction states: loading, empty, error, no-permission, viewer-mode
-- Mobile-first; responsive web is a secondary target for Phase 1
+Prototype deliverables completed:
+
+- design system / shared UI components
+- mobile phone shell
+- high-fidelity screens for the P0/P1 prototype set
+- invite, search, create, library, media archive, moderation, ads, and admin operations flows
+- interaction states for pending, expired invite, no-permission style constraints, viewer-mode, and empty/preview states
+
+Next work should move to API contracts, database schema, and implementation backlog.
