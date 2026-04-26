@@ -105,6 +105,28 @@ Ilk pilot icin icerik karari net olmalidir:
 
 ## Faz 1 Kapsami
 
+### 0. Faz 1 Scope Kontrolu
+
+Faz 1 genis gorunebilir; bunun nedeni pilot migration'in bos, guvensiz veya daginik hissedilirse calismayacak olmasidir. Yine de uygulama sirasinda kapsam iki katmana ayrilmalidir:
+
+**Core pilot:**
+
+- community / location / topic group yapisi
+- invite, join request ve public preview akislarinin temeli
+- structured post, yardim istegi, template ve thread yapisi
+- arama, filtre, FAQ / Altin Bilgi Kutuphanesi ve temel medya-link erisimi
+- temel moderasyon, sikayet, block ve reklam gorunurluk tercihi
+
+**Launch guardrails:**
+
+- hesap silme ve veri talep sureci
+- rate limiting ve spam sinyalleri
+- reklam onayi
+- deep link ve preview davranisi
+- iki dilli UI temeli
+
+Core pilot calismadan guardrails tek basina deger yaratmaz. Guardrails olmadan da pilot guven kaybeder. Bu nedenle ikisi ayni fazda dusunulur, ama implementasyon onceligi core pilot olmalidir.
+
 ### 1. Community Hiyerarsisi
 
 Yapi su sekilde olmali:
@@ -148,7 +170,7 @@ Faz 1'de community acma tam serbest olmamalidir. Aksi halde cok hizli sekilde du
 
 Bu nedenle Faz 1 icin onerilen model:
 
-- `Ana community` sadece platform adminleri veya platform tarafindan onaylanmis community founder/admin tarafindan acilabilir
+- `Ana community` sadece platform adminleri veya platform tarafindan onaylanmis community admin tarafindan acilabilir
 - `Location community` ve `topic group` parent community altinda olusur
 - parent community admini, kendi yapisi icinde yeni alt alan acma yetkisine sahip olabilir
 
@@ -217,7 +239,7 @@ Moderator tarafinda ilk varsayilan mantik su olmalidir:
 
 ### 2. Uyelik ve Katilim Yollari
 
-Faz 1'de tek katilim yolu invite link olacak; ama invite link tek tip olarak ele alinmamali.
+Faz 1'de ana katilim yolu invite link olmalidir; ama public ve private community farklari nedeniyle katilim kanallari tek tip ele alinmamalidir.
 
 **Invite link:**
 
@@ -251,7 +273,7 @@ Faz 1'de tek katilim yolu invite link olacak; ama invite link tek tip olarak ele
 - adminin gorecegi kisa giris sorulari
 - onay, red veya beklemeye alma
 
-**Web preview → self-registration (public community):**
+**Web preview -> self-registration (public community):**
 
 - public community'lerde web preview'dan `Katil` butonuna basan kullanici kayit akisina girmeli
 - invite link beklenmemeli; topluluk public olarak isaretlendiyse direkt kayit acik olmali
@@ -289,7 +311,7 @@ Faz 1'de kullaniciya hemen deger gostermezsen gecis olmaz. Bu nedenle ilk surumd
 
 Bu hissi olusturacak ilk deneyim:
 
-- **Welcome Thread**: Her yeni uyanin topluluk kurallarini ve ilk adimlari gorebilecegi sabit onboarding postu.
+- **Welcome Thread**: Her yeni uyenin topluluk kurallarini ve ilk adimlari gorebilecegi sabit onboarding postu.
 - **Member Bio & Interests**: Ilk giriste kisa bir tanitim ve ilgi duyulan `topic group`larin secimi (feed'i kisisellestirmek icin).
 - lokasyon ve ilgi alanina gore hizli onboarding
 - en faydali pinned thread'lerin one cikmasi
@@ -325,7 +347,7 @@ Her uye icin temel bir profil yapisi olmali. Bu profil sosyal ag profili gibi ag
 - acik yardim istekleri ve paylasimlari
 - `Sikayet Et` butonu
 
-Profil, kimin guvenilir oldugunu anlamanin ilk adagidir. Faz 2'de faydalilik sinyalleri, Faz 4'te verified badge'ler bu profilin ustune biner.
+Profil, kimin guvenilir oldugunu anlamanin ilk adimidir. Faz 2'de faydalilik sinyalleri, Faz 4'te verified badge'ler bu profilin ustune biner.
 
 ### 2.5 Feed ve Kesif Mantigi
 
@@ -598,7 +620,7 @@ Bu operasyon, daha sonra urunlesebilecek bir `migration concierge` teklifinin de
 Bu nedenle Faz 1 icin net karar:
 
 - ilk 3-5 anchor community concierge-led tasinmalidir
-- self-serve migration daha sonra bu operasyonun sade lestirilmis hali olarak urune eklenmelidir
+- self-serve migration daha sonra bu operasyonun sadelestirilmis hali olarak urune eklenmelidir
 
 ### 8. Moderasyon Temelleri
 
@@ -678,8 +700,9 @@ UK pazari GDPR kapsamindadir. Bu nedenle Faz 1'den itibaren kullanicinin veri ha
 
 **Veri indir:**
 
-- kullanici kendi verisini JSON veya CSV olarak indirebilmeli (postlar, yorumlar, kaydedilenler)
-- bu islem Faz 4'teki admin export'tan farklidir; bireysel kullanici hakki olarak Faz 1'de olmali
+- Faz 1'de kullanici kendi verisini talep edebilmeli; bu talep destek veya admin operasyonu ile manuel / yari-manuel islenebilir
+- self-serve JSON veya CSV export Faz 4'teki daha olgun export altyapisiyla urunlesmelidir
+- bu islem Faz 4'teki admin export'tan farklidir; bireysel kullanici hakki olarak Faz 1'de politika ve surec seviyesinde tanimli olmali
 
 **Gizlilik ilkesi:**
 
@@ -698,6 +721,18 @@ Minimum davranis:
 
 AI destekli versiyon daha sonra gelir; ama kullaniciya `bu daha once cevaplandi` hissi Faz 1'de bile verilmelidir.
 
+### 8.6 Hassas Konu ve Sorumluluk Sinirlari
+
+Saglik, hukuk, finans ve aile gibi topic group'larda bilgi paylasimi daha dikkatli ele alinmalidir.
+
+Faz 1'de minimum kurallar:
+
+- bu alanlarda paylasilan cevaplar profesyonel tavsiye yerine gecmez uyarisi tasimeli
+- adminler gerekli gordugunde post onayi veya daha siki moderasyon acabilmeli
+- acil durum veya yuksek riskli konular icin kullanici profesyonel destek almaya yonlendirilmelidir
+
+Bu kural, bilgi hafizasini korurken platformun yanlis guven hissi uretmesini engeller.
+
 ### 9. Reklam Sistemi - Faz 1
 
 Reklam normal post degil, ayri bir akis olmalidir.
@@ -709,6 +744,7 @@ Ilk fazda:
 - reklam hedef lokasyon ve hedef konu secimi yapabilir
 - reklam veren en azindan `target location` ve `service area` girebilmelidir
 - reklam normal postlardan ayri veri modelinde tutulur
+- reklam yayina cikmadan once en azindan basit admin veya platform onayindan gecmelidir
 
 En kritik kural:
 
@@ -728,6 +764,7 @@ Bir diger kritik kural:
 - sponsorlu icerik acikca etiketlenmeli
 - normal `Saglik`, `Gezi`, `Is` veya benzeri topic akislari reklamla kirletilmemeli
 - reklam veren normal post acip sponsorluymus gibi davranamamali; bu moderasyon sebebi olmalidir
+- onay bekleyen reklam kullaniciya `pending review` olarak gorunmeli, feed'e dusmemelidir
 
 Tam adres bu fazda zorunlu olmamalidir. Ama kullaniciya alakasiz reklam gostermemek icin reklam tarafinda en az sehir, bolge veya hizmet alani seviyesinde lokasyon net olmalidir.
 
@@ -754,7 +791,7 @@ Ilk fazda sadece gerekli bildirimler olmali:
 
 Faz 1'de bildirim kanali **uygulama ici (in-app)** ve **push** olmali. Email ve SMS kapsami asagida tanimlanmistir.
 
-**Email — sadece transactional:**
+**Email - sadece transactional:**
 
 - email dogrulama
 - sifre sifirlama
@@ -763,7 +800,7 @@ Faz 1'de bildirim kanali **uygulama ici (in-app)** ve **push** olmali. Email ve 
 
 Engagement emaili (haftalik digest vb.) Faz 1'de olmamali; spam olarak algilanma riski yuksektir.
 
-**SMS — sadece kritik guvenlik:**
+**SMS - sadece kritik guvenlik:**
 
 - email dogrulama alternatifleri olarak SMS OTP (telefon dogrulama aktif edilmisse)
 - sifre sifirlama SMS'i (email'e erisim yoksa fallback)
@@ -811,7 +848,7 @@ Faz 1 icin minimum guvenlik katmani:
 **Yeni uye throttle:**
 - ilk 24-48 saatte yeni uye post limiti uygulanmali (ornek: ilk gun max 5 post)
 - bu limit community admin tarafindan ayarlanabilmeli
-- verified veya invite ile gelen uyeler icin limit daha gevse tutulabilmeli
+- email dogrulamasi tamamlanmis veya guvenilir invite ile gelen uyeler icin limit daha gevse tutulabilmeli
 
 **Spam sinyali:**
 - kisa surede cok sayida tekrar post acma otomatik flag uretmeli
@@ -825,7 +862,7 @@ Faz 1'de zorunlu davranislar:
 
 - invite linki uygulamayi aciyorsa dogru group veya community'e dogrudan gondermeli
 - uygulama yuklu degilse web preview sonrasi install + otomatik yonlendirme akisi olmali
-- belirli bir thread'in linki paylasildiginda o thread'e deep link calismalı
+- belirli bir thread'in linki paylasildiginda o thread'e deep link calismali
 - link preview meta tag'leri (og:title, og:description, og:image) olmali; WhatsApp ve iMessage'da kart gorunumu saglanmali
 - suresi dolmus veya iptal edilmis invite linkleri net hata mesaji vermeli, sessizce bos ekran acmamali
 
@@ -839,7 +876,7 @@ Asagidaki konular bu fazda bilerek disarida birakilmali:
 - gelismis kimlik dogrulama
 - rating ve review sistemi
 - event modulu
-- anket ve poll sisteminin gelismis versiyonu
+- anket ve poll sistemi
 - odeme, checkout veya reklam open auction modeli
 - detayli analytics ve growth automation
 - agir enterprise sales configurasyonlari
@@ -848,7 +885,7 @@ Asagidaki konular bu fazda bilerek disarida birakilmali:
 
 Bu faz sonunda urun su cumleyle anlatilabilmelidir:
 
-`Davetiye ile girilen, konu bazli ayrilmis, asenkron thread yapisiyla hafiza olusturan, aranabilir ve reklam gorunurlugu kullanici tarafindan kontrol edilen community platformu.`
+`Davetiye, public preview veya join request ile girilen; konu bazli ayrilmis, asenkron thread yapisiyla hafiza olusturan, aranabilir ve reklam gorunurlugu kullanici tarafindan kontrol edilen community platformu.`
 
 Eger bu net bir sekilde calisiyorsa Faz 2'ye gecmek anlamlidir.
 

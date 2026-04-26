@@ -55,8 +55,8 @@ Fazlar arasindaki sira kullanici geri bildirimiyle esnetilebilir; ama bu kuralla
 | Faz 1 | 1-3 mevcut WhatsApp, Facebook veya Telegram grubunu tasiyabilecek pilot urun | Aranabilir, thread bazli (asenkron), template destekli, `Altin Bilgi Kutuphanesi` olan community platformu |
 | Faz 2 | Kullanicinin platforma duzenli olarak geri gelmesini saglamak ve ilk guven sinyallerini kurmak | Saved search, keyword alerts, matching, `community-approved` rehberler ve hafif validation ile retention motoru |
 | Faz 3 | Admin operasyonunu olgunlastirmak, kurasyonu sistemlestirmek ve erken AI ozetleme getirmek | Rol delegasyonu, approval engine, admin dashboard, admin picks, weekly ozetler, quick rooms ve AI destekli duplicate / summary katmani |
-| Faz 4 | Toplulukta kimlerin guvenilir oldugunu derinlestirmek | Verified profiles, provider sayfalar, rating/review sistemi, reputation |
-| Faz 5 | Surdurulebilir gelir modeli kurmak | Advertiser araclari, commercial paketler, DM/live mode ve ad network |
+| Faz 4 | Toplulukta kimlerin guvenilir oldugunu derinlestirmek ve sosyal kanit uretmek | Verified profiles, provider sayfalar, rating/review sistemi, reputation, event-lite ve referans community kanitlari |
+| Faz 5 | Surdurulebilir gelir modeli kurmak | Advertiser araclari, billing, commercial paketler, DM/live mode ve ad network |
 | Faz 6 | Birden fazla ulke ve community tipine acilmak | Global topluluk platformu, AI/intelligence katman ve locale destegi |
 
 ## Ilk Giris Stratejisi
@@ -129,9 +129,21 @@ Roadmap'te sira bilerek bu sekilde:
 - Faz 1'de once `tasinma sebebi` cozulur: bilgi kaybi, arama, yapilandirilmis ilan / request akisi ve `Altin Bilgi Kutuphanesi`. Chat sadece thread/comment bazli asenkron yapidadir.
 - Faz 2'de `geri gelme sebebi` cozulur: saved search, keyword alerts, kisisel feed ve yardim istegi matching ile duzenli kullanim aliskanligi kurulur; ayni fazda temel trust/validation sinyalleri de erken cekilir.
 - Faz 3'te `admin operasyonu + kurasyon` cozulur: rol delegasyonu, approval engine, admin dashboard, admin picks ve AI destekli ozetleme ile bilgi yigin degil, duzenli kutuphane gibi kalir.
-- Faz 4'te `gelismis guven` cozulur: verified profiller, provider sayfalar ve rating/review ile topluluk icinde kim guvenilir sorusu derinlestirilir.
-- Faz 5'te `gelir` cozulur: advertiser araclari, commercial paketler ve opsiyonel DM/live mode ile surdurulebilir ticari model kurulur.
+- Faz 4'te `gelismis guven + sosyal kanit` cozulur: verified profiller, provider sayfalar, rating/review, event-lite ve referans community kanitlariyla topluluk icinde kim guvenilir ve platform ne kadar ise yariyor sorulari derinlestirilir.
+- Faz 5'te `gelir` cozulur: advertiser araclari, billing, commercial paketler ve opsiyonel DM/live mode ile surdurulebilir ticari model kurulur.
 - Faz 6'da `olcek ve farklilasma` cozulur: farkli ulkeler, farkli etnik veya ilgi topluluklari ve gelismis AI destekleri ile global platform haline gelinir.
+
+## Faz Gecis Kapilari
+
+Fazlar takvimle degil, kanitla gecilmelidir. Bir fazin tamamlanmis sayilmasi icin minimum karar kapilari:
+
+- `Faz 1 -> Faz 2`: en az 1-3 pilot topluluk aktif kullanilmali; arama, structured request, Altin Bilgi Kutuphanesi ve temel moderasyon calisir olmali.
+- `Faz 2 -> Faz 3`: kullanicilar saved search, alert veya request update ile geri donuyor olmali; temel trust sinyalleri ve dogrulanmis rehberler gercek kullanim almali.
+- `Faz 3 -> Faz 4`: admin operasyonu tek kisiye bagimli olmaktan cikmali; approval queue, role delegation, admin picks ve erken AI ozetleme admin is yukunu olculebilir azaltmali.
+- `Faz 4 -> Faz 5`: provider / business sayfalari, review ve reputation sinyalleri yeterli hacme ulasmali; advertiser icin guven ve ROI hikayesi kurulabilmeli.
+- `Faz 5 -> Faz 6`: en az bir community modelinde retention ve gelir tekrarlanabilir olmali; yeni community kurma playbook'u tekrar kullanilabilir hale gelmeli.
+
+Bu kapilar net degilse sonraki faza gecmek yerine mevcut fazdaki adoption, kalite veya operasyon problemi cozulmelidir.
 
 ## Iletisim Katmani Evrimi
 
@@ -140,7 +152,7 @@ Urunun iletisim mimarisi bir anda tam chat'e donmemelidir. Onerilen evrim su sek
 - `Faz 1`: thread, comment, reply ve mention bazli asenkron iletisim
 - `Faz 2`: asenkron yapiyi guclendirir; chat katmani yok
 - `Faz 3`: topic group icinde admin kontrollu `Quick Rooms` ve kisa sureli canli akis
-- `Faz 4`: asenkron; guven katmani kurulur
+- `Faz 4`: asenkron; guven ve sosyal kanit katmani kurulur
 - `Faz 5`: opsiyonel DM, provider-musteri iletisimi ve ihtiyaca gore `Group Live Mode`
 - `Faz 6`: farkli community tiplerine gore ayarlanabilen daha esnek iletisim policy'leri
 
@@ -156,7 +168,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 - `Altin Bilgi Kutuphanesi`: toplulugun en cok sordugu sorular daimi FAQ / Wiki mantigiyla yasamali
 - `Saved search + keyword alerts`: kullanici ihtiyacini sistem takip etmeli
 - `Admin tools + sub-admin delegation`: toplulugu yonetmek ciddi sekilde kolaylasmali
-- `Admin automation`: Duplicate tespiti, auto-FAQ ve thread ozetleme ile moderasyon yukunun azalmasi; AI guclendirmesi daha sonra eklenebilmeli
+- `Admin automation`: Duplicate tespiti, auto-FAQ ve thread ozetleme ile moderasyon yukunun azalmasi; ilk AI yardimi Faz 3'te baslamali, gelismis semantik katman Faz 6'ya kalmalidir
 - `Admin picks ve kurasyon`: toplulugun en faydali icerikleri duzenli olarak one cikarilmali
 - `Migration bridge`: preview kartlari ve paylasilabilir thread ozetleri ile gecis kolaylasmali
 - `Hybrid communication`: gerekiyorsa canli konusma olmali ama bu konusmalar bilgi hafizasini yok etmemeli
@@ -179,7 +191,7 @@ Bu urun sadece daha duzenli oldugu icin kazanmaz. WhatsApp, Facebook Groups ve T
 
 Bu urun ilk gunden su davranislari desteklemelidir:
 
-- Bir kullanici davetiye linki ile community'ye katilir.
+- Bir kullanici davetiye linki, public preview veya join request ile community'ye katilir.
 - Kendi lokasyonunu secip gorunurluk seviyesini belirler, sonra ilgilendigi konu gruplarina girer.
 - Eski sorulari arayarak bulur.
 - Daha once paylasilmis link, video veya gorsellere dogrudan gider.
@@ -191,7 +203,7 @@ Bu urun ilk gunden su davranislari desteklemelidir:
 - Bir ana community admini, kendi alt lokasyon veya topic alanlari icin sub-admin atayabilir.
 - Bir kullanici uygunsuz bir uyeyi `Sikayet Et` butonu ile raporlar.
 - Bir admin, biriken sikayetlere bakip ilgili kullaniciyi group'tan cikarir.
-- Bir kullanici `Reklam Ver` akisindan reklam olusturur.
+- Bir kullanici `Reklam Ver` akisindan reklam olusturur; reklam basit onaydan sonra yayina girer.
 - Reklam gormek istemeyen kullanici ayarlardan bunu tamamen kapatir.
 
 ## Basari Kriterleri
@@ -226,7 +238,7 @@ Roadmap boyunca takip edilmesi gereken cekirdek metrikler:
 - [Faz 1 - Pilot Migration](phase-1-pilot-migration.md)
 - [Faz 2 - Retention, Validation ve Erken Guven](phase-2-retention-and-engagement.md)
 - [Faz 3 - Admin Olgunlugu, Kurasyon ve Erken AI](phase-3-admin-maturity-and-ops.md)
-- [Faz 4 - Gelismis Guven](phase-4-trust.md)
+- [Faz 4 - Gelismis Guven ve Sosyal Kanit](phase-4-trust.md)
 - [Faz 5 - Monetization & Ticari Model](phase-5-monetization-and-commercial.md)
 - [Faz 6 - Expansion & Intelligence](phase-6-expansion-and-intelligence.md)
 
@@ -240,6 +252,7 @@ Su noktalar icin bu roadmap artik net yon onermektedir:
 - `Community admin` kendi toplulugundaki reklam uygunlugu, yerlesimi ve yerel kurallara mudahil olabilmeli; fiyatlama, billing ve platform geneli reklam kurallari merkezi kalmalidir
 - ilk productized commercial package `Provider / Advertiser Starter` olmalidir; `Admin Pro` ikinci adimda gelmelidir
 - ilk migration motion self-serve degil, `concierge-led` baslamalidir; daha sonra Faz 3 ile hibrit self-serve modele donmelidir
+- reklam capability'si Faz 1'de dogrulanmali, ama billing ve gercek ticari paketleme Faz 5'te olgunlasmalidir
 
 ## Kisa Sonuc
 

@@ -91,11 +91,12 @@ Ornek davranislar:
 
 Bu ozellik community memory mantigini gercekten calisir hale getirir.
 
-**Thread merge / redirect:**
+**Temel yonlendirme, tam merge daha sonra:**
 
-- admin veya moderator bir thread'i mevcut benzer thread ile birlestirirse
-- eski thread linke donusmeli; kullanici oraya tikladiginda ana thread'e gitmeli
-- duplicate acip cevap bekleyen kullaniciya bildirim gitmeli
+- Faz 2'de sistem kullaniciyi mevcut thread'e yonlendirmeli ve duplicate acma ihtiyacini azaltmali
+- admin veya moderator duplicate thread'i `ana thread'e yonlendirildi` durumuna alabilmeli
+- tam thread merge, yorum tasima ve gelismis birlestirme akislari Faz 3'teki admin operasyon kapsaminda olgunlasmali
+- duplicate acip cevap bekleyen kullaniciya ilgili ana thread bildirimi gitmeli
 
 ### 4. Yardim Istegi Matching
 
@@ -136,8 +137,8 @@ Faz 2'de temel arsivleme mantigi:
 - `Kapandi` veya `Suresi doldu` status'undeki icerikler arama sonuclarinda daha dusuk oncelik alir
 - belirli sure (orn: 6 ay) boyunca hic etkilesim almamis icerikler `arsiv` statusune otomatik gecebilir
 - arsivlenen icerik silinmez; ama feed ve arama'da varsayilan olarak gizlenir
-- kullanici veya admin arsivlenenmis icerigi tekrar aktif edebilir (orn: eski ama hala gecerli bir rehber)
-- `Cozum Karti`, `Rehber` ve `FAQ` arsivleme kurallarina tabi olmamali; bunlar aktif kalir ve admin tarafindan guncellenir
+- kullanici veya admin arsivlenmis icerigi tekrar aktif edebilir (orn: eski ama hala gecerli bir rehber)
+- `Cozum Karti`, `Rehber` ve `FAQ` otomatik arsivleme kurallarina tabi olmamali; bunlar aktif kalir ve admin tarafindan guncellenir
 
 Bu mantik olmadan topluluk hafizasi zamanla cop yigini haline gelir. Arsivleme, community memory'nin kaliteli kalmasi icin gerekli hijyendir.
 
@@ -285,14 +286,14 @@ Faz 1'de invite link ile manuel tasinma yapildi. Faz 2'de buyumenin sistem deste
 - admin hangi kanaldan (WhatsApp, Instagram, dogrudan link) kac kisi geldigini gorebilmeli
 - referral takibi reklama donusmemeli; sadece admin analytics icin kullanilmali
 
-**Organik keşif artisi:**
+**Organik kesif artisi:**
 
 - public community'lerde `katil` akisini kolaylastirmak (Faz 1'de basladi)
 - web discovery sayfalarinin arama motoruna acilmasi (Faz 3'te olgunlasacak; ama Faz 2'de altyapi hazir olmali)
 
 Bu mekanikler admin'in `insanlari nereden getirdigini` anlamasina yardim eder ve ileride farkli kanallar denenmesini mumkun kilar.
 
-### 11. Admin Gorünürlük Altyapisi
+### 11. Admin Gorunurluk Altyapisi
 
 Faz 3'te admin dashboard acilacak; o dashboardun gosterecegi metrikler bu fazda birikmeye baslamali.
 
@@ -341,12 +342,12 @@ Bu urun ancak boylece WhatsApp'tan farkli kalir.
 
 ## Faz 2'de Disarida Kalabilecekler
 
-- gelismis group yonetimi ve rol delegasyonu → Faz 3
-- admin dashboard ve otomasyon → Faz 3
-- quick rooms, poll → Faz 3
-- tam verification, derin provider profilleri ve full review sistemi → Faz 4
-- advertiser billing ve kampanya → Faz 5
-- gelismis AI assistant ve semantik katman → Faz 6
+- gelismis group yonetimi ve rol delegasyonu -> Faz 3
+- admin dashboard ve otomasyon -> Faz 3
+- quick rooms, poll -> Faz 3
+- tam verification, derin provider profilleri ve full review sistemi -> Faz 4
+- advertiser billing ve kampanya -> Faz 5
+- gelismis AI assistant ve semantik katman -> Faz 6
 
 ## Faz 2 Cikisinda Beklenen Sonuc
 

@@ -141,7 +141,44 @@ Ama su alanlar merkezi kalmali:
 - platform genelindeki reklam urunu ve fiyatlari
 - advertiser hesap seviyesindeki ust politikalar
 
-### 6. Ad Network ve Programmatic Katman
+### 6. Billing ve Commercial Operations
+
+Faz 5'te sadece reklam gostermek yetmez; ticari operasyonun da guvenilir calismasi gerekir.
+
+Minimum kapsam:
+
+- advertiser veya provider icin hesap tipi: bireysel, sole trader, business
+- odeme yontemi ekleme ve kampanya icin ucretlendirme
+- fatura veya receipt olusturma
+- kampanya iptal, durdurma ve iade politikalari
+- promo credit veya ilk kampanya kredisi destegi
+- community admin pro veya migration concierge gibi paketler icin manuel teklif / invoice akisi
+- billing hatalarinda destek ve dispute sureci
+
+Erken Faz 5'te odeme modeli cok karmasik olmamali. Ilk hedef:
+
+- basit paketler
+- net fiyatlama
+- manuel override imkani
+- kullanici mahremiyetini bozmayan raporlama
+
+Open auction, real-time bidding veya karmasik revenue share modelleri bu fazin ilk iterasyonunda olmamalidir.
+
+### 7. Advertiser Policy ve Kalite Kurallari
+
+Para kazanmaya baslayinca platform kalitesini koruyacak ticari kurallar da net olmali.
+
+Minimum kurallar:
+
+- yaniltici iddia, sahte indirim veya abartili sonuc vaadi yasaklanmali
+- saglik, hukuk ve finans gibi hassas kategorilerde daha siki reklam onayi olmali
+- kullanici `reklam gosterme` dediyse native reklam, sponsored event ve ad network reklami gormemeli
+- ayni advertiser'in kisa surede cok fazla reklam varyasyonu acmasi spam sinyali uretmeli
+- tekrar sikayet alan advertiser icin kampanya durdurma veya hesap inceleme akisi olmali
+
+Bu katman, reklam gelirinin community guvenini yemesini engeller.
+
+### 8. Ad Network ve Programmatic Katman
 
 Native community reklamlari ana monetization modeli olmaya devam eder. Olcek arttiginda programmatic katman ek gelir saglayabilir.
 
@@ -165,7 +202,7 @@ Ana kurallar:
 - frekans limiti ve kalite filtreleri olmali
 - network reklamlari yerel topluluk relevance'ini bozmamali
 
-### 7. Opsiyonel DM ve Group Live Mode
+### 9. Opsiyonel DM ve Group Live Mode
 
 Guven ve monetizasyon oturunca derin etkilesim isteyen kullanicilar icin ek chat katmanlari acilabilir.
 
@@ -187,7 +224,7 @@ Guven ve monetizasyon oturunca derin etkilesim isteyen kullanicilar icin ek chat
 
 `Chat koordinasyon ve iliski kurar; hafiza ise yine thread ve kaynak yapisinda yasar.`
 
-### 8. Etkinlik ve Monetization Baglantisi
+### 10. Etkinlik ve Monetization Baglantisi
 
 Faz 4'te kurulan Event-Lite altyapisi bu fazda ticari katmanla bulusur.
 
@@ -195,7 +232,7 @@ Faz 4'te kurulan Event-Lite altyapisi bu fazda ticari katmanla bulusur.
 
 - advertiser veya provider bir topluluk etkinligini sponsor olarak destekleyebilir
 - sponsor ismi ve logosu etkinlik sayfasinda gorunur; ama etkinlik icerigi sponsor tarafindan kontrol edilmez
-- sponsorluk reklam paketine dahil edilebilir veya ayri satilabirli
+- sponsorluk reklam paketine dahil edilebilir veya ayri satilabilir
 
 **Provider etkinlikleri:**
 
@@ -203,7 +240,7 @@ Faz 4'te kurulan Event-Lite altyapisi bu fazda ticari katmanla bulusur.
 - bu etkinlikler sponsorlu icerik olarak etiketlenmeli
 - reklam gostermeyi kapatan kullaniciya bu etkinlikler de gosterilmemeli
 
-### 9. Premium veya Pro Katmanlari
+### 11. Premium veya Pro Katmanlari
 
 Bu fazda farkli gelir akislari test edilebilir:
 
@@ -226,6 +263,7 @@ Reklamsiz deneyimi para ile satmak bu urun icin zorunlu olmayabilir; cunku rekla
 
 - advertiser yogunlugunun topluluk kalitesini dusurmesi
 - advertiser reporting'in mahremiyet sinirlarini asmasi
+- billing, iade veya reklam onay surecinin guven kaybi yaratmasi
 - DM ve live mode'un community memory'i yeniden bosaltmasi
 
 Bu nedenle monetization ve chat katmani birlikte ama kontrollu sekilde cikmali.

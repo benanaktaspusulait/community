@@ -160,9 +160,9 @@ Buyuk topluluklar icin community'nin sahipsiz kalmamasi kritik platform guvences
 
 ### 6. Reklam Moderasyon Akisi
 
-Faz 1'de reklam `Reklam Ver` akisindan self-serve olusturulabiliyordu. Ama icerigin nasil denetlendigi tanimlanmamisti.
+Faz 1'de reklam `Reklam Ver` akisindan olusturulup basit onayla yayina alinabiliyordu. Faz 3'te bu akis daha olgun reklam moderasyonuna donusmelidir.
 
-Faz 3'te temel reklam moderasyon modeli olmali:
+Faz 3'te gelismis reklam moderasyon modeli olmali:
 
 - yeni reklam olusturuldugunda otomatik basit kural kontrolu (yasak kelime, yaniltici iddia sinyali)
 - community admin kendi toplulugunda hangi reklam kategorilerinin gorunecegine karar verebilmeli
@@ -258,10 +258,10 @@ Bu ozellik dogru kurgulanirsa mevcut platformlarda insanlarin yazmaya cekindigi 
 
 ## Faz 3'te Disarida Kalabilecekler
 
-- derin verification, provider sayfalari ve full review sistemi → Faz 4
-- advertiser billing ve kampanya → Faz 5
-- DM ve live mode → Faz 5
-- tam community AI assistant, semantik arama ve cross-community intelligence → Faz 6
+- derin verification, provider sayfalari ve full review sistemi -> Faz 4
+- advertiser billing ve kampanya -> Faz 5
+- DM ve live mode -> Faz 5
+- tam community AI assistant, semantik arama ve cross-community intelligence -> Faz 6
 
 ## Faz 3 Cikisinda Beklenen Sonuc
 

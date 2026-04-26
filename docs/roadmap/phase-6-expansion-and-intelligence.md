@@ -62,14 +62,14 @@ AI, ana urun yerine gecen degil; community hafizasini daha kullanisli yapan katm
 
 ### 3.1 Community AI Assistant (Sor ve Cevap Al)
 
-Bu ozellik urunun en guclu uzun vadeli farklilastiricisidir. Faz 3'te admin yardimcisi olarak baslayan AI burada toplulukta biriken tum bilgi — thread'ler, cevaplar, FAQ'lar, rehberler, yardim istegi sonuclari, provider tavsiyeleri, etkinlik arsivleri — uzerinde calisan, kullanicinin dogal dille soru sorup cevap aldigi daha olgun bir asistana donusur.
+Bu ozellik urunun en guclu uzun vadeli farklilastiricisidir. Faz 3'te admin yardimcisi olarak baslayan AI burada toplulukta biriken tum bilgi, thread'ler, cevaplar, FAQ'lar, rehberler, yardim istegi sonuclari, provider tavsiyeleri ve etkinlik arsivleri uzerinde calisan, kullanicinin dogal dille soru sorup cevap aldigi daha olgun bir asistana donusur.
 
 **Temel kullanim senaryolari:**
 
-- `MK'de guvenilir cocuk doktoru var mi?` → AI toplulukta daha once onerilmis doktorlari, review'lari ve ilgili thread'leri birlestirerek cevap verir
-- `Kiralik oda ariyorum, 500 sterlin civari, dogu Londra` → AI acik ilanlari, benzer gecmis istekleri ve tavsiye thread'lerini getirir
-- `Ingiltere'de muhasebeci secerken nelere dikkat etmeliyim?` → AI toplulukta daha once paylasilan deneyimleri ve rehberleri ozetler
-- `Bu hafta MK'de ne etkinlik var?` → AI aktif etkinlikleri listeler
+- `MK'de guvenilir cocuk doktoru var mi?` -> AI toplulukta daha once onerilmis doktorlari, review'lari ve ilgili thread'leri birlestirerek cevap verir
+- `Kiralik oda ariyorum, 500 sterlin civari, dogu Londra` -> AI acik ilanlari, benzer gecmis istekleri ve tavsiye thread'lerini getirir
+- `Ingiltere'de muhasebeci secerken nelere dikkat etmeliyim?` -> AI toplulukta daha once paylasilan deneyimleri ve rehberleri ozetler
+- `Bu hafta MK'de ne etkinlik var?` -> AI aktif etkinlikleri listeler
 
 **Cevap modeli:**
 
@@ -125,7 +125,7 @@ AI bu modelde `ilk cevabi veren` rolundedir; `son sozu soyleyen` degil. Topluluk
 
 Bu ozellik community memory'nin son halkasini tamamlar:
 
-`Bilgi birikti → aranabilir oldu → simdi sorulabilir hale geldi.`
+`Bilgi birikti -> aranabilir oldu -> simdi sorulabilir hale geldi.`
 
 ### 4. Advanced Knowledge Graph
 
@@ -233,7 +233,7 @@ Ana ilke burada da degismez:
 - ana urun vaadinin generic platforma donusup zayiflamasi
 - AI'nin community katkisini bastirmasi
 - farkli ulke ihtiyaclarinin asiri karmasik hale gelmesi
-- cok dilli icerik + AI katmaninin mahremiyet risklerini artirmasi (hassas icerik ozeti veya ceviride gizlilik sirismasi)
+- cok dilli icerik + AI katmaninin mahremiyet risklerini artirmasi (hassas icerik ozeti veya ceviride gizlilik sizmasi)
 
 Bu yuzden expansion, ozunden kopmadan yapilmalidir.
 

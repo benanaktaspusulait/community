@@ -1,14 +1,14 @@
-# Faz 4 - Gelismis Guven
+# Faz 4 - Gelismis Guven ve Sosyal Kanit
 
 ## Fazin Amaci
 
-Faz 4, topluluktaki kimlerin guvenilir oldugunu daha derin ve daha olceklenebilir sekilde gorunur kilmak icin gerekli altyapiyi kurar.
+Faz 4, topluluktaki kimlerin guvenilir oldugunu daha derin ve daha olceklenebilir sekilde gorunur kilmak ve platformun gercek hayatta sonuc urettigini kanitlamak icin gerekli altyapiyi kurar.
 
-Faz 2'de temel validation sinyalleri, Faz 3'te kurasyon ve admin olgunlugu gelmistir. Faz 4 ise bir adim ilerleyerek kullanicinin `Bu kisi guvenilir mi?` sorusuna platform uzerinden daha guclu cevap bulabilmesini saglar.
+Faz 2'de temel validation sinyalleri, Faz 3'te kurasyon ve admin olgunlugu gelmistir. Faz 4 ise bir adim ilerleyerek kullanicinin `Bu kisi guvenilir mi?` ve `Bu platform gercekten ise yariyor mu?` sorularina daha guclu cevap bulabilmesini saglar.
 
 ## Bu Faz Neden Simdi Geliyor
 
-Bu fazdaki daha derin trust mekanizmalari erken gelirse:
+Bu fazdaki daha derin trust ve sosyal kanit mekanizmalari erken gelirse:
 
 - review sistemi kullanilmaz; toplulukta yeterli aktivite yoktur
 - verified profiller veya review sistemi anlamsiz kalir; hangi baglamda dogrulandigi belirsizdir
@@ -17,6 +17,8 @@ Bu fazdaki daha derin trust mekanizmalari erken gelirse:
 Faz 2'de ilk validation sinyalleri ve Faz 3'te operasyonel temel kurulduktan sonra daha derin guven katmani anlamli hale gelir.
 
 Bu faz ayni zamanda Faz 3'te kurulan otomasyon temellerinin (duplicate detection, auto-FAQ, admin dashboard) calistigi varsayimiyla ilerler. Admin operasyon yuku azalmadan guven katmani icin gerekli kapasiteyi ayirmak zorlasir.
+
+Event-lite, export ve case study katmanlari bu fazda ana urunun onune gecmemelidir. Bunlar trust'i destekleyen sosyal kanit ve guvence araclari olarak konumlanmalidir.
 
 ## Faz 4 Kapsami
 
@@ -176,6 +178,8 @@ Bu katman Faz 5'teki ticari sales motion icin kritik destek saglar.
 - topluluktaki scam veya supheli icerik oraninin dusmesi
 - supply-side saglik metriklerinin izleniyor olmasi
 - referans community veya case study ureten topluluk sayisi
+- event-lite kullanan community sayisi ve etkinlik sonrasi thread olusma orani
+- export veya veri indirme talebinin basariyla tamamlanma orani
 
 ## Faz 4 Riskleri
 
@@ -185,10 +189,11 @@ Bu katman Faz 5'teki ticari sales motion icin kritik destek saglar.
 
 ## Faz 4'te Disarida Kalabilecekler
 
-- advertiser billing ve kampanya araclari → Faz 5
-- DM ve live mode → Faz 5
-- AI ve semantik katman → Faz 6
+- advertiser billing ve kampanya araclari -> Faz 5
+- DM ve live mode -> Faz 5
+- AI ve semantik katman -> Faz 6
+- gelismis etkinlik planlama, biletleme ve takvim entegrasyonlari -> Faz 6
 
 ## Faz 4 Cikisinda Beklenen Sonuc
 
-`Kullanici toplulukta kimin guvenilir oldugunu platforma bakarak anlayabiliyor. Hizmet arayan ile hizmet veren arasindaki guven koprusu artik topluluk hafizasina dayaniyor.`
+`Kullanici toplulukta kimin guvenilir oldugunu platforma bakarak anlayabiliyor. Hizmet arayan ile hizmet veren arasindaki guven koprusu artik topluluk hafizasina, sosyal kanita ve gorunur sonuc sinyallerine dayaniyor.`
