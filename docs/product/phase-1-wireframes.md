@@ -11,12 +11,7 @@ This is **not visual design**. It is a low-fidelity wireframe pack meant to vali
 
 ## Phase 1 Decisions (K1–K6)
 
-- **K1**: `Thread` is the parent entity; `Post` is a message inside a thread. A help request = `Thread(type=HELP_REQUEST)` + the first `Post`.
-- **K2**: Phase 1 includes reply/comment (add a new `Post` to a thread). No reactions/likes.
-- **K3**: No anonymous library/content browsing (only join/login).
-- **K4**: Phase 1 search scope: `Thread` + `Resource`. No `Ad` search.
-- **K5**: `Resource` creation is admin/mod only in Phase 1.
-- **K6**: Phase 1 ad creation minimum: no budget/schedule; targeting is `Group`; status: DRAFT -> SUBMITTED -> (APPROVED|REJECTED).
+See decision log: `docs/product/phase-1/phase-1-decisions.md` (K1–K6).
 
 ## Conventions (used across all wireframes)
 
