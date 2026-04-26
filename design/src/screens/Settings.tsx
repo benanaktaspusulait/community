@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
+import { LocationField } from '../components/ui/LocationField'
 import { CheckCircle2 } from 'lucide-react'
+import { useSavedLocation } from '../hooks/useSavedLocation'
 import clsx from 'clsx'
 
 type Vis = 'PUBLIC' | 'MEMBERS_ONLY' | 'HIDDEN'
@@ -29,6 +31,7 @@ export function Settings() {
   const navigate = useNavigate()
   const [showAds, setShowAds] = useState(false)
   const [locationVis, setLocationVis] = useState<Vis>('MEMBERS_ONLY')
+  const [location, setLocation] = useSavedLocation('Milton Keynes')
   const [lang, setLang] = useState('tr')
   const [notifs, setNotifs] = useState<Record<string, boolean>>({
     replies: true, threads: false, moderation: true, approvals: true, special: true,
@@ -141,6 +144,16 @@ export function Settings() {
 
         {/* location visibility */}
         <Card className="flex flex-col gap-3">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</p>
+          <LocationField
+            label="Primary area"
+            value={location}
+            onChange={setLocation}
+            placeholder="Choose from map"
+            returnTo="/settings"
+            helper="Used for profile, local content, listings, and service discovery."
+          />
+          <div className="h-px bg-[#f0f0f0]" />
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Location visibility</p>
           {([
             { key: 'PUBLIC', label: '🌍 Public', desc: 'Visible to all community members' },

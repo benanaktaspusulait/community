@@ -6,6 +6,7 @@ import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { ChevronRight, MapPin, Bell, Eye, Shield, Bookmark, MessageCircle, LogOut } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { useSavedLocation } from '../hooks/useSavedLocation'
 
 const myPosts = [
   { id: '1', type: 'help' as const, title: 'Looking for a room in MK centre', replies: 5, time: '2d ago' },
@@ -31,6 +32,7 @@ type Tab = 'posts' | 'saved' | 'groups'
 export function ProfileScreen() {
   const navigate = useNavigate()
   const [tab, setTab] = useState<Tab>('posts')
+  const [location] = useSavedLocation('Milton Keynes')
 
   return (
     <div className="flex flex-col h-full bg-[#f8f9fb]">
@@ -47,10 +49,10 @@ export function ProfileScreen() {
               <p className="font-bold text-gray-900 text-base">Ali Yılmaz</p>
               <p className="text-xs text-gray-400 mt-0.5">Member since Jan 2025</p>
               <button
-                onClick={() => navigate('/location/map')}
+                onClick={() => navigate('/location/map?returnTo=/profile')}
                 className="flex items-center gap-1 mt-1 text-xs text-gray-500 hover:text-[#4f6ef7]"
               >
-                <MapPin size={11} /> Milton Keynes
+                <MapPin size={11} /> {location}
               </button>
             </div>
             <button
@@ -153,12 +155,12 @@ export function ProfileScreen() {
             {settingsItems.map(({ icon: Icon, label, value, to }) => (
               <button
                 key={label}
-                onClick={() => navigate(to)}
+                onClick={() => navigate(label === 'Location' ? '/location/map?returnTo=/profile' : to)}
                 className="w-full flex items-center gap-3 bg-white rounded-xl border border-[#e4e7ec] px-4 py-3 mb-2"
               >
                 <Icon size={16} className="text-gray-400" />
                 <span className="flex-1 text-sm font-medium text-gray-800 text-left">{label}</span>
-                {value && <span className="text-xs text-gray-400">{value}</span>}
+                {value && <span className="text-xs text-gray-400">{label === 'Location' ? location : value}</span>}
                 <ChevronRight size={14} className="text-gray-300" />
               </button>
             ))}

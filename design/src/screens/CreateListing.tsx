@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Button } from '../components/ui/Button'
 import { Input, Textarea } from '../components/ui/Input'
-import { Camera, MapPin } from 'lucide-react'
+import { Camera } from 'lucide-react'
 import clsx from 'clsx'
+import { LocationField } from '../components/ui/LocationField'
+import { listingLocationKey, useSavedLocation } from '../hooks/useSavedLocation'
 
 type ListingType = 'for_sale' | 'for_rent' | 'looking_for_work' | 'service'
 
@@ -19,11 +21,15 @@ const conditions = ['New', 'Like new', 'Good', 'Fair', 'For parts']
 
 export function CreateListing() {
   const navigate = useNavigate()
-  const [type, setType] = useState<ListingType | null>(null)
+  const [searchParams] = useSearchParams()
+  const initialType = searchParams.get('type') as ListingType | null
+  const [type, setType] = useState<ListingType | null>(
+    listingTypes.some(item => item.key === initialType) ? initialType : null
+  )
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
   const [price, setPrice] = useState('')
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useSavedLocation('', listingLocationKey)
   const [condition, setCondition] = useState('')
   const [availability, setAvailability] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
@@ -163,21 +169,16 @@ export function CreateListing() {
           </div>
         )}
 
-        {/* location */}
-        <div className="flex flex-col gap-1">
-          <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            Location <span className="text-red-500">*</span>
-          </label>
-          <div className="flex items-center gap-2 bg-[#f8f9fb] rounded-xl border border-[#e4e7ec] px-3 py-2.5">
-            <MapPin size={14} className="text-gray-400 shrink-0" />
-            <input
-              value={location}
-              onChange={e => setLocation(e.target.value)}
-              placeholder="e.g. MK centre, Bletchley"
-              className="flex-1 bg-transparent text-sm outline-none placeholder:text-gray-400"
-            />
-          </div>
-        </div>
+        <LocationField
+          label={isService ? 'Service area' : isWork ? 'Preferred work area' : 'Location'}
+          value={location}
+          onChange={setLocation}
+          placeholder="Choose from map"
+          returnTo={`/listing/create?type=${type}`}
+          storageKey={listingLocationKey}
+          required
+          helper={isService ? 'Shown with your service listing so members know where you operate.' : undefined}
+        />
 
         {/* contact preference */}
         <div className="flex flex-col gap-1">

@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Button } from '../components/ui/Button'
 import { Input, Textarea } from '../components/ui/Input'
+import { LocationField } from '../components/ui/LocationField'
+import { roomSearchLocationKey, useSavedLocation } from '../hooks/useSavedLocation'
 import clsx from 'clsx'
 
 const groups = ['Housing', 'Legal', 'Health', 'Jobs', 'Services', 'Local']
@@ -15,13 +17,15 @@ const types = [
 ]
 export function CreateHelpRequest() {
   const navigate = useNavigate()
-  const [step, setStep] = useState<'type' | 'form'>('type')
-  const [selectedType, setSelectedType] = useState('')
+  const [searchParams] = useSearchParams()
+  const requestedType = searchParams.get('type') || ''
+  const [step, setStep] = useState<'type' | 'form'>(requestedType ? 'form' : 'type')
+  const [selectedType, setSelectedType] = useState(requestedType)
   const [group, setGroup] = useState('')
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [budget, setBudget] = useState('')
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useSavedLocation('', roomSearchLocationKey)
 
   const isRoom = selectedType === 'room'
   const canPublish = group && title && body && (!isRoom || (budget && location))
@@ -94,7 +98,15 @@ export function CreateHelpRequest() {
           <div className="bg-[#f0f4ff] rounded-2xl p-4 flex flex-col gap-3">
             <p className="text-xs font-semibold text-[#4f6ef7] uppercase tracking-wide">Room details</p>
             <Input label="Budget (£/month)" placeholder="e.g. 600" value={budget} onChange={setBudget} required />
-            <Input label="Preferred area" placeholder="e.g. MK centre, Bletchley" value={location} onChange={setLocation} required />
+            <LocationField
+              label="Preferred area"
+              value={location}
+              onChange={setLocation}
+              placeholder="Choose from map"
+              returnTo="/create?type=room"
+              storageKey={roomSearchLocationKey}
+              required
+            />
             <Input label="Move-in date" placeholder="e.g. 1 May 2025" />
           </div>
         )}

@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Button } from '../components/ui/Button'
 import { MapPin, Search, Navigation } from 'lucide-react'
 import clsx from 'clsx'
+import { savedLocationKey } from '../hooks/useSavedLocation'
 
 // Mock map pins — represent searchable areas
 const mapAreas = [
@@ -24,17 +25,28 @@ const suggestions = [
 
 export function MapLocationPicker() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const [selected, setSelected] = useState<string | null>(null)
   const [query, setQuery] = useState('')
   const [showSearch, setShowSearch] = useState(false)
+  const returnTo = searchParams.get('returnTo')
+  const storageKey = searchParams.get('storageKey') || savedLocationKey
 
   const filtered = suggestions.filter(s =>
     query === '' || s.toLowerCase().includes(query.toLowerCase())
   )
 
   const handleConfirm = () => {
-    // In a real app: save location and navigate back
-    navigate(-1)
+    if (selected) {
+      const district = mapAreas.find(a => a.name === selected)?.district || 'Milton Keynes'
+      localStorage.setItem(storageKey, selected)
+      localStorage.setItem(`${storageKey}-district`, district)
+    }
+    if (returnTo) {
+      navigate(returnTo)
+    } else {
+      navigate(-1)
+    }
   }
 
   return (
