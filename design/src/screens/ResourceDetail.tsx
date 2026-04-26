@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
-import { Bookmark, Share2, Flag } from 'lucide-react'
+import { Bookmark, Share2, Flag, Link } from 'lucide-react'
+import { useShare } from '../hooks/useShare'
 
 const steps = [
   'Check if your landlord requires a guarantor or references.',
@@ -12,7 +14,10 @@ const steps = [
 ]
 
 export function ResourceDetail() {
+  const navigate = useNavigate()
   const [saved, setSaved] = useState(false)
+  const { share, copied } = useShare()
+
   return (
     <div className="flex flex-col h-full bg-[#f8f9fb]">
       <TopBar
@@ -49,18 +54,35 @@ export function ResourceDetail() {
 
         <div className="bg-white rounded-2xl border border-[#e4e7ec] p-4 flex flex-col gap-2">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sources</p>
-          <button className="text-sm text-[#4f6ef7] text-left">→ Thread: "Room contract pitfalls"</button>
-          <button className="text-sm text-[#4f6ef7] text-left">→ Thread: "What to check before signing"</button>
+          <button onClick={() => navigate('/thread')} className="text-sm text-[#4f6ef7] text-left">
+            → Thread: "Room contract pitfalls"
+          </button>
+          <button onClick={() => navigate('/thread')} className="text-sm text-[#4f6ef7] text-left">
+            → Thread: "What to check before signing"
+          </button>
         </div>
 
+        {/* action buttons */}
         <div className="flex gap-3">
-          <button className="flex-1 flex items-center justify-center gap-2 border border-[#e4e7ec] rounded-xl py-2.5 text-sm text-gray-600 bg-white">
-            <Share2 size={14} /> Share
+          <button
+            onClick={() => share('Renting a room in the UK — checklist', 'Useful resource from MK Community')}
+            className="flex-1 flex items-center justify-center gap-2 border border-[#e4e7ec] rounded-xl py-2.5 text-sm font-medium text-gray-700 bg-white hover:border-[#4f6ef7] hover:text-[#4f6ef7] transition-colors"
+          >
+            {copied ? <><Link size={14} /> Copied!</> : <><Share2 size={14} /> Share</>}
           </button>
-          <button className="flex-1 flex items-center justify-center gap-2 border border-[#e4e7ec] rounded-xl py-2.5 text-sm text-gray-400 bg-white">
+          <button
+            onClick={() => navigate('/report')}
+            className="flex-1 flex items-center justify-center gap-2 border border-[#e4e7ec] rounded-xl py-2.5 text-sm font-medium text-gray-400 bg-white hover:border-red-300 hover:text-red-500 transition-colors"
+          >
             <Flag size={14} /> Report
           </button>
         </div>
+
+        {copied && (
+          <div className="text-center text-xs text-[#4f6ef7] font-medium -mt-2">
+            Link copied to clipboard ✓
+          </div>
+        )}
       </div>
     </div>
   )

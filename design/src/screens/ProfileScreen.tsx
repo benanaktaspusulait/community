@@ -4,7 +4,7 @@ import { TopBar } from '../components/ui/TopBar'
 import { BottomNav } from '../components/ui/BottomNav'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
-import { ChevronRight, MapPin, Bell, Eye, Shield, Bookmark, MessageCircle, MoreHorizontal } from 'lucide-react'
+import { ChevronRight, MapPin, Bell, Eye, Shield, Bookmark, MessageCircle } from 'lucide-react'
 
 const myPosts = [
   { id: '1', type: 'help' as const, title: 'Looking for a room in MK centre', replies: 5, time: '2d ago' },

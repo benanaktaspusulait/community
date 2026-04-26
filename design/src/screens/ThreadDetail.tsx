@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Badge } from '../components/ui/Badge'
-import { Flag, Bookmark, Send, CheckCircle2, BookMarked, MoreHorizontal } from 'lucide-react'
+import { Flag, Bookmark, Send, CheckCircle2, BookMarked, MoreHorizontal, Share2, Link } from 'lucide-react'
+import { useShare } from '../hooks/useShare'
 
 const replies = [
   {
@@ -39,6 +40,8 @@ export function ThreadDetail() {
   const [solutionId, setSolutionId] = useState<string | null>('3') // pre-selected
   const [addedToLibrary, setAddedToLibrary] = useState<string[]>([])
   const [menuOpen, setMenuOpen] = useState<string | null>(null)
+
+  const { share, copied } = useShare()
 
   const markSolution = (id: string) => {
     setSolutionId(id)
@@ -87,6 +90,12 @@ export function ThreadDetail() {
               onClick={() => navigate('/report')}
             >
               <Flag size={13} /> Report
+            </button>
+            <button
+              onClick={() => share('Looking for a room in Milton Keynes', 'Thread from MK Community')}
+              className="flex items-center gap-1 text-xs text-gray-400 hover:text-[#4f6ef7]"
+            >
+              {copied ? <><Link size={13} /> Copied!</> : <><Share2 size={13} /> Share</>}
             </button>
             {!solved && (
               <button
