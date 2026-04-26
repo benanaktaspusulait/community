@@ -5,11 +5,16 @@ import { AuthLanding } from './screens/AuthLanding'
 import { Join } from './screens/Join'
 import { VerifyCode } from './screens/VerifyCode'
 import { OnboardingInterests } from './screens/OnboardingInterests'
+import { LocationSetup } from './screens/LocationSetup'
 import { HomeFeed } from './screens/HomeFeed'
+import { Notifications } from './screens/Notifications'
 import { CommunityHome } from './screens/CommunityHome'
 import { TopicGroup } from './screens/TopicGroup'
+import { CreateGroup } from './screens/CreateGroup'
+import { SuggestGroup } from './screens/SuggestGroup'
 import { SearchScreen } from './screens/SearchScreen'
 import { CreateHelpRequest } from './screens/CreateHelpRequest'
+import { CreateListing } from './screens/CreateListing'
 import { ThreadDetail } from './screens/ThreadDetail'
 import { ReportModal } from './screens/ReportModal'
 import { LibraryHome } from './screens/LibraryHome'
@@ -29,11 +34,17 @@ const phoneRoutes = [
   { path: '/join', element: <Join /> },
   { path: '/verify', element: <VerifyCode /> },
   { path: '/onboarding', element: <OnboardingInterests /> },
+  { path: '/onboarding/location', element: <LocationSetup /> },
+  { path: '/onboarding/interests', element: <OnboardingInterests /> },
   { path: '/feed', element: <HomeFeed /> },
+  { path: '/notifications', element: <Notifications /> },
   { path: '/community', element: <CommunityHome /> },
   { path: '/group', element: <TopicGroup /> },
+  { path: '/group/create', element: <CreateGroup /> },
+  { path: '/group/suggest', element: <SuggestGroup /> },
   { path: '/search', element: <SearchScreen /> },
   { path: '/create', element: <CreateHelpRequest /> },
+  { path: '/listing/create', element: <CreateListing /> },
   { path: '/thread', element: <ThreadDetail /> },
   { path: '/report', element: <ReportModal /> },
   { path: '/library', element: <LibraryHome /> },

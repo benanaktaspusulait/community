@@ -4,7 +4,7 @@ import { TopBar } from '../components/ui/TopBar'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
-import { Flag, Ban, MessageCircle, MoreHorizontal } from 'lucide-react'
+import { Flag, Ban, MessageCircle } from 'lucide-react'
 
 const theirPosts = [
   { id: '1', type: 'help' as const, title: 'Looking for a room in MK centre', replies: 5, time: '2d ago' },
@@ -14,38 +14,11 @@ const theirPosts = [
 export function MemberProfile() {
   const navigate = useNavigate()
   const [blocked, setBlocked] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const [blockConfirm, setBlockConfirm] = useState(false)
 
   return (
     <div className="flex flex-col h-full bg-[#f8f9fb]">
-      <TopBar
-        title="Member"
-        back
-        action={
-          <button onClick={() => setMenuOpen(m => !m)} className="text-gray-500">
-            <MoreHorizontal size={20} />
-          </button>
-        }
-      />
-
-      {/* action menu */}
-      {menuOpen && (
-        <div className="absolute top-14 right-4 z-50 bg-white rounded-2xl border border-[#e4e7ec] shadow-xl overflow-hidden w-56">
-          <button
-            onClick={() => { setMenuOpen(false); navigate('/report?target=user') }}
-            className="w-full flex items-center gap-3 px-4 py-3 text-sm text-red-500 hover:bg-red-50"
-          >
-            <Flag size={15} /> Report this member
-          </button>
-          <button
-            onClick={() => { setMenuOpen(false); setBlockConfirm(true) }}
-            className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 border-t border-[#e4e7ec]"
-          >
-            <Ban size={15} /> {blocked ? 'Unblock member' : 'Block member'}
-          </button>
-        </div>
-      )}
+      <TopBar title="Member" back />
 
       {/* block confirm modal */}
       {blockConfirm && (

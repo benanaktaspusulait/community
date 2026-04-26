@@ -12,7 +12,6 @@ const types = [
   { key: 'question', label: '❓ Question', desc: 'Ask the community' },
   { key: 'listing', label: '📦 Listing', desc: 'Sell, rent or offer something' },
 ]
-
 export function CreateHelpRequest() {
   const navigate = useNavigate()
   const [step, setStep] = useState<'type' | 'form'>('type')
@@ -39,7 +38,10 @@ export function CreateHelpRequest() {
             {types.map(t => (
               <button
                 key={t.key}
-                onClick={() => { setSelectedType(t.key); setStep('form') }}
+                onClick={() => {
+                  if (t.key === 'listing') { navigate('/listing/create'); return }
+                  setSelectedType(t.key); setStep('form')
+                }}
                 className="flex items-center gap-4 bg-[#f8f9fb] border border-[#e4e7ec] rounded-2xl px-4 py-4 text-left hover:border-[#4f6ef7] transition-colors"
               >
                 <span className="text-2xl">{t.label.split(' ')[0]}</span>

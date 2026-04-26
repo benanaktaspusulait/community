@@ -68,7 +68,10 @@ export function HomeFeed() {
           >
             <Search size={18} />
           </button>
-          <button className="w-9 h-9 rounded-xl bg-[#f8f9fb] flex items-center justify-center text-gray-500 relative">
+          <button
+            onClick={() => navigate('/notifications')}
+            className="w-9 h-9 rounded-xl bg-[#f8f9fb] flex items-center justify-center text-gray-500 relative"
+          >
             <Bell size={18} />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
           </button>

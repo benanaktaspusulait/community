@@ -39,7 +39,15 @@ export function CommunityHome() {
         <div className="px-4 pt-4 flex flex-col gap-4">
           {/* topic groups */}
           <div>
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Topic groups</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Topic groups</p>
+              <button
+                onClick={() => navigate('/group/create')}
+                className="text-xs text-[#4f6ef7] font-semibold"
+              >
+                + New group
+              </button>
+            </div>
             <div className="flex flex-col gap-2">
               {groups.map(g => (
                 <button
@@ -55,6 +63,18 @@ export function CommunityHome() {
                   <ChevronRight size={14} className="text-gray-300" />
                 </button>
               ))}
+
+              {/* suggest a group — for members */}
+              <button
+                onClick={() => navigate('/group/suggest')}
+                className="flex items-center gap-3 border-2 border-dashed border-[#e4e7ec] rounded-xl px-4 py-3 hover:border-[#4f6ef7] transition-colors"
+              >
+                <span className="text-xl w-8">💡</span>
+                <div className="flex-1 text-left">
+                  <p className="text-sm font-semibold text-gray-500">Suggest a new group</p>
+                  <p className="text-xs text-gray-400">Send a suggestion to the admin</p>
+                </div>
+              </button>
             </div>
           </div>
 
