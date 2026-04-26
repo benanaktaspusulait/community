@@ -57,17 +57,21 @@ export function ProfileScreen() {
             </button>
           </div>
 
-          {/* stats */}
+          {/* stats — tıklanabilir, ilgili tab'a gider */}
           <div className="flex border-t border-[#e4e7ec]">
-            {[
-              { label: 'Posts', value: '12' },
-              { label: 'Replies', value: '34' },
-              { label: 'Saved', value: '8' },
-            ].map((s, i) => (
-              <div key={s.label} className={`flex-1 py-3 flex flex-col items-center gap-0.5 ${i < 2 ? 'border-r border-[#e4e7ec]' : ''}`}>
+            {([
+              { label: 'Posts', value: '12', tab: 'posts' as Tab },
+              { label: 'Replies', value: '34', tab: 'posts' as Tab },
+              { label: 'Saved', value: '8', tab: 'saved' as Tab },
+            ]).map((s, i) => (
+              <button
+                key={s.label}
+                onClick={() => setTab(s.tab)}
+                className={`flex-1 py-3 flex flex-col items-center gap-0.5 transition-colors ${i < 2 ? 'border-r border-[#e4e7ec]' : ''} ${tab === s.tab ? 'bg-[#f0f4ff]' : 'hover:bg-gray-50'}`}
+              >
                 <span className="text-base font-bold text-[#4f6ef7]">{s.value}</span>
                 <span className="text-[10px] text-gray-400">{s.label}</span>
-              </div>
+              </button>
             ))}
           </div>
 
