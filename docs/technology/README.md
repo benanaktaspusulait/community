@@ -4,33 +4,33 @@ This folder defines how the product decisions become an implementable technical 
 
 The goal is to keep the first implementation professional without over-engineering the pilot. Product documents explain what the platform must do; technology documents explain how the backend, data ownership, messaging, and service boundaries should be shaped.
 
-## Reference Standards
+## Technology Standards
 
-The first technology baseline is intentionally aligned with the standards observed in `/Users/benanaktas/project/mindocean`:
+The Community platform is built on the following proven conventions:
 
 - Quarkus service-per-folder backend style
-- Java 21 and Maven
-- gateway, core service, support service, and consumer service taxonomy
+- Java 21 LTS and Maven
+- Gateway, Core service, Support service, and Consumer service taxonomy
 - PostgreSQL as the primary source of truth
-- PgBouncer for database pooling
+- PgBouncer for database connection pooling
 - Flyway migrations per service
-- service-specific database users and least privilege access
-- Kafka for asynchronous integration
-- transactional outbox for database plus Kafka consistency
-- dash-separated Kafka topic names with `-dlq` dead-letter topics
-- Redis for cache, rate limiting, session-like state, and hot lookups
-- search index as an optional scale step, not a Phase 1 blocker
+- Service-specific database users with least-privilege access
+- Kafka for asynchronous integration between services
+- Transactional outbox for database + Kafka consistency
+- Dash-separated Kafka topic names with `-dlq` dead-letter topics
+- Redis for cache, rate limiting, session-adjacent state, and hot lookups
+- Search index as an optional scale step, not a Phase 1 blocker
 - SmallRye OpenAPI, JWT, Health, and Micrometer Prometheus endpoints
-- structured logging with correlation and trace identifiers
+- Structured logging with correlation and trace identifiers
 
 ## Reading Order
 
-1. [Mindocean Standards Applied to Community](mindocean-standards.md)
+1. [Engineering Standards](engineering-standards.md)
 2. [Phase 1 Microservice Boundaries](phase-1-microservices.md)
 
 ## Technology Principles
 
-- Product memory is a first-class feature, so content, knowledge, attachments, and search must be modeled intentionally.
+- Product memory is a first-class feature; content, knowledge, attachments, and search must be modeled intentionally.
 - Every service owns its data. Cross-service database joins are not allowed.
 - Phase 1 can use fewer deployables where that reduces risk, but logical boundaries must be clear from day one.
 - User trust and moderation are platform capabilities, not afterthoughts.
@@ -46,7 +46,7 @@ Product source of truth:
 - [Phase 1 Domain Model](../product/phase-1/phase-1-domain-model.md)
 - [Phase 1 C4 Diagrams](../product/phase-1/phase-1-c4.md)
 
-Technology source of truth starts here and should stay consistent with the Phase 1 domain model.
+Technology source of truth starts here and must stay consistent with the Phase 1 domain model.
 
 ## Current Technology Decision
 

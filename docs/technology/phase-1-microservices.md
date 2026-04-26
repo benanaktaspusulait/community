@@ -760,7 +760,7 @@ Rules:
 
 ## Initial Repository Shape
 
-When implementation starts, use a service-per-folder backend layout similar to Mindocean:
+When implementation starts, use a service-per-folder backend layout:
 
 ```text
 api/
@@ -778,6 +778,7 @@ docs/
   product/
   roadmap/
   technology/
+design/
 ```
 
 Shared code should stay small.
