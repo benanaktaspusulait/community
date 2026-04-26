@@ -144,7 +144,7 @@ ios/build/
 # ------------------------------------------------------------
 # Testing / reports
 # ------------------------------------------------------------
-reports/
+/reports/
 test-results/
 playwright-report/
 .pytest_cache/

@@ -10,6 +10,7 @@ The product direction is intentionally memory-first rather than chat-first: user
 - C4 architecture diagrams are modeled with Structurizr DSL.
 - Technology standards and Phase 1 microservice boundaries are drafted.
 - A high-fidelity React prototype covers the core Phase 1 user and admin journeys.
+- A dedicated Angular admin console prototype covers operational workflows for admins/moderators.
 
 ## Read First
 
@@ -18,6 +19,7 @@ The product direction is intentionally memory-first rather than chat-first: user
 3. [Technology Standards](docs/technology/README.md)
 4. [Structurizr C4 Workspace](docs/architecture/structurizr/README.md)
 5. [High-Fidelity Prototype](design/README.md)
+6. [Admin Console Prototype](admin/README.md)
 
 ## Phase 1 Commitments
 
@@ -39,11 +41,26 @@ npm run dev
 
 Open `/screens` in the prototype to review all available Phase 1 screens.
 
+## Admin Console
+
+```bash
+cd admin
+npm ci
+npm start
+```
+
+The Angular admin console focuses on approval queues, reports, members, groups, special-day operations, and knowledge-library curation.
+
 ## Validation
 
 ```bash
 cd design
 npm run lint
+npm run build
+```
+
+```bash
+cd admin
 npm run build
 ```
 

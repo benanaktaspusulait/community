@@ -13,15 +13,28 @@ import { AvatarModule } from 'primeng/avatar';
         <i class="pi pi-bars"></i>
       </button>
 
+      <div class="topbar-search">
+        <i class="pi pi-search"></i>
+        <input type="search" placeholder="Search members, reports, groups..." />
+      </div>
+
       <div class="topbar-right">
+        <div class="topbar-pilot">
+          <span>Scope</span>
+          <strong>MK Community</strong>
+        </div>
         <button class="topbar-icon-btn" pBadge value="3" severity="danger">
           <i class="pi pi-bell"></i>
         </button>
         <p-avatar label="A" shape="circle" styleClass="topbar-avatar" />
         <div class="topbar-user">
-          <span class="topbar-user-name">Admin</span>
+          <span class="topbar-user-name">Aylin Admin</span>
           <span class="topbar-user-role">Community Admin</span>
         </div>
+        <button class="logout-btn">
+          <i class="pi pi-sign-out"></i>
+          <span>Logout</span>
+        </button>
       </div>
     </header>
   `
