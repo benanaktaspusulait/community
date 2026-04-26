@@ -69,7 +69,7 @@ export function Notifications() {
       <TopBar title={`Notifications ${unreadCount > 0 ? `(${unreadCount})` : ''}`} back />
 
       <div className="flex-1 overflow-y-auto pb-20">
-        {notifs.map((n, i) => (
+        {notifs.map(n => (
           <button
             key={n.id}
             onClick={() => navigate(n.to)}

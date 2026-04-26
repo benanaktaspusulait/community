@@ -9,8 +9,8 @@ export function Card({ children, className, onClick }: {
     <div
       onClick={onClick}
       className={clsx(
-        'bg-white rounded-2xl border border-[#e4e7ec] p-4',
-        onClick && 'cursor-pointer active:scale-[0.98] transition-transform',
+        'app-card rounded-[22px] p-4',
+        onClick && 'cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_38px_rgba(43,35,25,0.1)] active:scale-[0.985]',
         className
       )}
     >

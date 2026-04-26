@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Button } from '../components/ui/Button'
 import clsx from 'clsx'
@@ -27,9 +26,8 @@ const statusColors: Record<string, string> = {
 }
 
 export function ApprovalQueue() {
-  const navigate = useNavigate()
   const [filter, setFilter] = useState<'All' | 'Pending' | 'Decided'>('All')
-  const [decisions, setDecisions] = useState<Record<string, 'approved' | 'rejected'>>({})
+  const [decisions, setDecisions] = useState<Partial<Record<string, 'approved' | 'rejected'>>>({})
 
   const filtered = items.filter(i => {
     if (filter === 'Pending') return i.status === 'pending' && !decisions[i.id]
@@ -61,7 +59,7 @@ export function ApprovalQueue() {
       <div className="flex-1 overflow-y-auto px-4 pt-3 pb-8 flex flex-col gap-3">
         {filtered.map(item => {
           const decided = decisions[item.id]
-          const currentStatus = decided ?? item.status
+          const currentStatus: Item['status'] = decided ?? item.status
           return (
             <div key={item.id} className="bg-white rounded-2xl border border-[#e4e7ec] p-4 flex flex-col gap-3">
               <div className="flex items-start justify-between gap-2">

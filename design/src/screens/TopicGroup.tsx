@@ -154,7 +154,7 @@ export function TopicGroup() {
 
       <button
         onClick={() => navigate('/create')}
-        className="fixed bottom-20 right-6 w-14 h-14 bg-[#4f6ef7] rounded-2xl shadow-lg flex items-center justify-center text-white z-30"
+        className="absolute bottom-[82px] right-5 z-30 flex h-14 w-14 items-center justify-center rounded-[22px] bg-ink text-white shadow-[0_18px_38px_rgba(23,33,31,0.28)] transition-transform active:scale-95"
       >
         <Plus size={24} />
       </button>

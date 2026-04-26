@@ -3,12 +3,12 @@ import clsx from 'clsx'
 type Variant = 'help' | 'resource' | 'solved' | 'open' | 'ad' | 'special'
 
 const styles: Record<Variant, string> = {
-  help:     'bg-orange-100 text-orange-700',
-  resource: 'bg-blue-100 text-blue-700',
-  solved:   'bg-green-100 text-green-700',
-  open:     'bg-gray-100 text-gray-600',
-  ad:       'bg-purple-100 text-purple-700',
-  special:  'bg-pink-100 text-pink-700',
+  help: 'bg-amber-100 text-amber-800 ring-1 ring-amber-200/70',
+  resource: 'bg-brand-50 text-brand-700 ring-1 ring-brand-100',
+  solved: 'bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200/80',
+  open: 'bg-stone-100 text-stone-700 ring-1 ring-stone-200',
+  ad: 'bg-orange-100 text-orange-800 ring-1 ring-orange-200',
+  special: 'bg-rose-100 text-rose-800 ring-1 ring-rose-200',
 }
 
 const labels: Record<Variant, string> = {
@@ -22,7 +22,7 @@ const labels: Record<Variant, string> = {
 
 export function Badge({ variant }: { variant: Variant }) {
   return (
-    <span className={clsx('text-[10px] font-semibold px-2 py-0.5 rounded-full', styles[variant])}>
+    <span className={clsx('w-fit text-[10px] font-extrabold px-2.5 py-1 rounded-full tracking-[-0.01em]', styles[variant])}>
       {labels[variant]}
     </span>
   )

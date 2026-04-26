@@ -12,14 +12,18 @@ const items = [
 
 export function BottomNav() {
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[390px] bg-white border-t border-[#e4e7ec] flex justify-around py-2 z-20">
+    <div className="absolute inset-x-0 bottom-0 z-30 flex justify-around border-t border-border/80 bg-card/92 px-2 pb-2 pt-2 backdrop-blur-xl">
       {items.map(({ to, icon: Icon, label }) => (
         <NavLink
           key={to}
           to={to}
           className={({ isActive }) =>
-            clsx('flex flex-col items-center gap-0.5 text-[10px] font-medium px-3 py-1 rounded-xl transition-colors',
-              isActive ? 'text-[#4f6ef7]' : 'text-gray-400 hover:text-gray-600')
+            clsx(
+              'flex min-w-14 flex-col items-center gap-0.5 rounded-2xl px-3 py-1.5 text-[10px] font-bold transition-all',
+              isActive
+                ? 'bg-brand-50 text-brand-700 shadow-sm'
+                : 'text-muted/65 hover:bg-black/5 hover:text-muted'
+            )
           }
         >
           <Icon size={22} />

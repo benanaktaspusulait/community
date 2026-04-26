@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { ArrowRight, Layers3, Smartphone } from 'lucide-react'
 
 const sections = [
   {
@@ -69,30 +70,59 @@ const sections = [
 export function ScreenIndex() {
   const navigate = useNavigate()
   return (
-    <div className="min-h-screen bg-[#f8f9fb] px-4 py-8">
-      <div className="max-w-sm mx-auto flex flex-col gap-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Design Prototype</h1>
-          <p className="text-sm text-gray-400">Phase 1 — all screens. Click any to preview in phone shell.</p>
+    <div className="min-h-screen px-5 py-8">
+      <div className="mx-auto flex max-w-5xl flex-col gap-8">
+        <div className="soft-panel overflow-hidden rounded-[32px]">
+          <div className="brand-gradient grid gap-6 p-7 text-white md:grid-cols-[1.15fr_0.85fr] md:p-9">
+            <div>
+              <p className="mb-3 w-fit rounded-full bg-white/16 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/78">
+                Phase 1 high fidelity
+              </p>
+              <h1 className="max-w-2xl text-4xl font-black leading-[0.95] tracking-[-0.06em] md:text-5xl">
+                Community app design prototype
+              </h1>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-white/74">
+                Browse the mobile screens that turn scattered WhatsApp, Facebook, and Telegram groups into structured community memory.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 self-end">
+              <div className="rounded-[24px] bg-white/14 p-4 backdrop-blur">
+                <Smartphone size={20} className="text-white/75" />
+                <p className="mt-4 text-2xl font-black tracking-[-0.05em]">30+</p>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/58">Screens</p>
+              </div>
+              <div className="rounded-[24px] bg-white/14 p-4 backdrop-blur">
+                <Layers3 size={20} className="text-white/75" />
+                <p className="mt-4 text-2xl font-black tracking-[-0.05em]">7</p>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/58">Journeys</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {sections.map(section => (
-          <div key={section.title}>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">{section.title}</p>
-            <div className="flex flex-col gap-1.5">
+        <div className="grid gap-5 md:grid-cols-2">
+          {sections.map(section => (
+            <div key={section.title} className="soft-panel rounded-[28px] p-4">
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-muted/70">{section.title}</p>
+              <div className="flex flex-col gap-2">
               {section.screens.map(s => (
                 <button
                   key={s.path}
                   onClick={() => navigate(s.path)}
-                  className="flex items-center justify-between bg-white rounded-xl border border-[#e4e7ec] px-4 py-3 text-sm font-medium text-gray-800 hover:border-[#4f6ef7] hover:text-[#4f6ef7] transition-colors text-left"
+                    className="group flex items-center justify-between rounded-2xl border border-border bg-white/68 px-4 py-3 text-left text-sm font-bold text-ink transition-all hover:-translate-y-0.5 hover:border-brand-500 hover:bg-white"
                 >
-                  {s.label}
-                  <span className="text-xs text-gray-300 font-mono">{s.path}</span>
+                    <span>{s.label}</span>
+                    <span className="flex items-center gap-2 text-xs font-mono text-muted/55 group-hover:text-brand-700">
+                      {s.path}
+                      <ArrowRight size={13} />
+                    </span>
                 </button>
               ))}
             </div>
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

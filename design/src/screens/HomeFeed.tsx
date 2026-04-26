@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Search, Bell, Plus } from 'lucide-react'
+import { Bell, BookOpen, CalendarDays, CheckCircle2, Plus, Search, ShieldCheck } from 'lucide-react'
 import { BottomNav } from '../components/ui/BottomNav'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
@@ -8,45 +8,55 @@ const feed = [
   {
     id: '1', type: 'resource' as const,
     title: 'How to rent a room in the UK',
-    meta: 'Checklist • Updated 2d ago', pinned: true,
+    meta: 'Checklist • Updated 2d ago', pinned: true, signal: 'Admin pick',
   },
   {
     id: '2', type: 'help' as const,
     title: 'Looking for a room in Milton Keynes',
-    meta: 'Budget £600 • Move-in Apr • Housing • 3 replies', pinned: false,
+    meta: 'Budget £600 • Move-in Apr • Housing • 3 replies', pinned: false, signal: 'Open request',
   },
   {
     id: '3', type: 'solved' as const,
     title: "Driver's licence change steps",
-    meta: 'Legal • 12 replies', pinned: false,
+    meta: 'Legal • 12 replies', pinned: false, signal: 'Solved',
   },
   {
     id: '4', type: 'help' as const,
     title: 'Anyone know a good GP near MK centre?',
-    meta: 'Health • 5 replies', pinned: false,
+    meta: 'Health • 5 replies', pinned: false, signal: 'Nearby',
   },
   {
     id: '5', type: 'resource' as const,
     title: 'National Insurance number — step by step',
-    meta: 'Legal • Updated 1w ago', pinned: false,
+    meta: 'Legal • Updated 1w ago', pinned: false, signal: 'Library',
   },
 ]
 
-// Special day banner
+const stats = [
+  { label: 'Answers', value: '128', icon: BookOpen },
+  { label: 'Solved', value: '76%', icon: CheckCircle2 },
+  { label: 'Reports', value: '2', icon: ShieldCheck },
+]
+
 function SpecialDayBanner({ onClick }: { onClick: () => void }) {
   return (
-    <div
+    <button
       onClick={onClick}
-      className="mx-4 mb-3 bg-gradient-to-r from-pink-500 to-orange-400 rounded-2xl p-4 flex items-center justify-between cursor-pointer"
+      className="mx-4 mb-4 flex w-[calc(100%-2rem)] items-center justify-between rounded-[26px] bg-gradient-to-br from-[#f7c66a] via-[#e98f45] to-[#bd5743] p-4 text-left shadow-[0_18px_38px_rgba(189,87,67,0.22)]"
     >
-      <div>
-        <p className="text-white font-bold text-sm">🎉 Ramazan Bayramı grubu aktif</p>
-        <p className="text-white/80 text-xs mt-0.5">Tüm üyeler davetlidir</p>
+      <div className="flex items-center gap-3">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur">
+          <CalendarDays size={21} />
+        </div>
+        <div>
+          <p className="text-sm font-black tracking-[-0.02em] text-white">Ramazan Bayrami group is live</p>
+          <p className="mt-0.5 text-xs font-medium text-white/82">Invites sent from Housing, Jobs, Health, and Local</p>
+        </div>
       </div>
-      <span className="text-white text-xs font-semibold bg-white/20 px-3 py-1.5 rounded-full">
-        Gruba git →
+      <span className="rounded-full bg-white/20 px-3 py-1.5 text-xs font-extrabold text-white">
+        Open
       </span>
-    </div>
+    </button>
   )
 }
 
@@ -54,40 +64,52 @@ export function HomeFeed() {
   const navigate = useNavigate()
 
   return (
-    <div className="flex flex-col h-full bg-[#f8f9fb]">
-      {/* header */}
-      <div className="bg-white px-4 pt-4 pb-3 flex items-center justify-between border-b border-[#e4e7ec]">
-        <div>
-          <p className="text-xs text-gray-400 font-medium">Milton Keynes</p>
-          <h1 className="text-lg font-bold text-gray-900">Community</h1>
+    <div className="relative flex h-full flex-col bg-[#f8f1e7]">
+      <div className="brand-gradient px-4 pb-5 pt-4 text-white">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/62">Milton Keynes</p>
+            <h1 className="mt-1 text-2xl font-black tracking-[-0.05em]">Community memory</h1>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => navigate('/search')}
+              className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/14 text-white backdrop-blur transition-colors hover:bg-white/22"
+              aria-label="Search"
+            >
+              <Search size={18} />
+            </button>
+            <button
+              onClick={() => navigate('/notifications')}
+              className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-white/14 text-white backdrop-blur transition-colors hover:bg-white/22"
+              aria-label="Notifications"
+            >
+              <Bell size={18} />
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#ffd166] ring-2 ring-[#168a7a]" />
+            </button>
+          </div>
         </div>
-        <div className="flex gap-2">
-          <button
-            onClick={() => navigate('/search')}
-            className="w-9 h-9 rounded-xl bg-[#f8f9fb] flex items-center justify-center text-gray-500"
-          >
-            <Search size={18} />
-          </button>
-          <button
-            onClick={() => navigate('/notifications')}
-            className="w-9 h-9 rounded-xl bg-[#f8f9fb] flex items-center justify-center text-gray-500 relative"
-          >
-            <Bell size={18} />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
-          </button>
+
+        <div className="mt-5 grid grid-cols-3 gap-2">
+          {stats.map(({ label, value, icon: Icon }) => (
+            <div key={label} className="rounded-[18px] bg-white/14 p-3 backdrop-blur">
+              <Icon size={15} className="text-white/76" />
+              <p className="mt-2 text-lg font-black tracking-[-0.04em]">{value}</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">{label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto pb-20">
-        {/* topic chips */}
-        <div className="flex gap-2 px-4 py-3 overflow-x-auto no-scrollbar">
+      <div className="flex-1 overflow-y-auto pb-24">
+        <div className="flex gap-2 overflow-x-auto px-4 py-4 no-scrollbar">
           {['All', 'Housing', 'Legal', 'Health', 'Jobs', 'Services'].map((t, i) => (
             <button
               key={t}
-              className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
+              className={`shrink-0 rounded-full border px-3.5 py-2 text-xs font-extrabold transition-colors ${
                 i === 0
-                  ? 'bg-[#4f6ef7] text-white border-[#4f6ef7]'
-                  : 'bg-white text-gray-600 border-[#e4e7ec]'
+                  ? 'border-ink bg-ink text-white'
+                  : 'border-border bg-white/80 text-muted hover:border-brand-500 hover:text-brand-700'
               }`}
             >
               {t}
@@ -95,32 +117,43 @@ export function HomeFeed() {
           ))}
         </div>
 
-        {/* special day banner */}
         <SpecialDayBanner onClick={() => navigate('/special-day')} />
 
-        {/* feed */}
+        <div className="mb-2 flex items-center justify-between px-4">
+          <div>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-muted/65">Today</p>
+            <h2 className="text-base font-black tracking-[-0.03em] text-ink">Useful updates</h2>
+          </div>
+          <button className="rounded-full bg-white/80 px-3 py-1.5 text-xs font-extrabold text-brand-700 ring-1 ring-border">
+            Curated
+          </button>
+        </div>
+
         <div className="flex flex-col gap-3 px-4">
           {feed.map(item => (
-            <Card key={item.id} onClick={() => navigate('/thread')} className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+            <Card key={item.id} onClick={() => navigate('/thread')} className="flex flex-col gap-3">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Badge variant={item.type} />
+                  <span className="text-[11px] font-bold text-muted/70">{item.signal}</span>
+                </div>
                 {item.pinned && (
-                  <span className="text-[10px] font-semibold text-[#4f6ef7] bg-[#e0eaff] px-2 py-0.5 rounded-full">
-                    📌 Pinned
+                  <span className="rounded-full bg-brand-50 px-2 py-1 text-[10px] font-extrabold text-brand-700">
+                    Pinned
                   </span>
                 )}
-                <Badge variant={item.type} />
               </div>
-              <p className="text-sm font-semibold text-gray-900 leading-snug">{item.title}</p>
-              <p className="text-xs text-gray-400">{item.meta}</p>
+              <p className="text-[15px] font-black leading-snug tracking-[-0.025em] text-ink">{item.title}</p>
+              <p className="text-xs font-medium text-muted">{item.meta}</p>
             </Card>
           ))}
         </div>
       </div>
 
-      {/* FAB */}
       <button
         onClick={() => navigate('/create')}
-        className="fixed bottom-20 right-6 w-14 h-14 bg-[#4f6ef7] rounded-2xl shadow-lg flex items-center justify-center text-white z-30"
+        className="absolute bottom-[82px] right-5 z-30 flex h-14 w-14 items-center justify-center rounded-[22px] bg-ink text-white shadow-[0_18px_38px_rgba(23,33,31,0.28)] transition-transform active:scale-95"
+        aria-label="Create"
       >
         <Plus size={24} />
       </button>

@@ -29,7 +29,7 @@ export function SpecialDayGroup() {
         <span className="text-3xl">🌙</span>
       </div>
 
-      <div className="flex-1 overflow-y-auto pb-24 px-4 pt-4 flex flex-col gap-3">
+      <div className="flex-1 overflow-y-auto pb-40 px-4 pt-4 flex flex-col gap-3">
         {/* pinned */}
         <div className="bg-[#fff8e1] border border-yellow-200 rounded-2xl p-4">
           <p className="text-[10px] font-bold text-yellow-600 uppercase tracking-wide mb-1">📌 Admin message</p>
@@ -51,13 +51,13 @@ export function SpecialDayGroup() {
       </div>
 
       {/* composer */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[390px] bg-white border-t border-[#e4e7ec] px-4 py-3 flex gap-2 items-end">
+      <div className="absolute inset-x-0 bottom-16 z-30 flex items-end gap-2 border-t border-border/80 bg-card/92 px-4 py-3 backdrop-blur-xl">
         <textarea
           rows={1}
           value={reply}
           onChange={e => setReply(e.target.value)}
           placeholder="Bayram mesajınızı yazın…"
-          className="flex-1 bg-[#f8f9fb] rounded-xl border border-[#e4e7ec] px-3 py-2.5 text-sm resize-none focus:outline-none focus:border-pink-400"
+          className="flex-1 resize-none rounded-[14px] border border-border bg-white/70 px-3 py-2.5 text-sm text-ink focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/20"
         />
         <button
           disabled={!reply}

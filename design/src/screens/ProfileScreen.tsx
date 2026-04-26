@@ -5,6 +5,7 @@ import { BottomNav } from '../components/ui/BottomNav'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { ChevronRight, MapPin, Bell, Eye, Shield, Bookmark, MessageCircle } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 const myPosts = [
   { id: '1', type: 'help' as const, title: 'Looking for a room in MK centre', replies: 5, time: '2d ago' },
@@ -81,7 +82,7 @@ export function ProfileScreen() {
               { key: 'posts', label: 'My posts', icon: MessageCircle },
               { key: 'saved', label: 'Saved', icon: Bookmark },
               { key: 'groups', label: 'Groups', icon: Shield },
-            ] as { key: Tab; label: string; icon: any }[]).map(t => (
+            ] as { key: Tab; label: string; icon: LucideIcon }[]).map(t => (
               <button
                 key={t.key}
                 onClick={() => setTab(t.key)}

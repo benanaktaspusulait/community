@@ -20,6 +20,7 @@ export function AdCreate() {
   const [group, setGroup] = useState('')
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
+  const selectedAdType = adTypes.find(t => t.key === adType)
 
   if (step === 'type') {
     return (
@@ -57,7 +58,9 @@ export function AdCreate() {
         <div className="flex-1 px-4 pt-6 flex flex-col gap-4">
           <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide">How your ad will look</p>
           <div className="bg-[#f8f9fb] border border-[#e4e7ec] rounded-2xl p-4 flex flex-col gap-2">
-            <span className="text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full w-fit">Ad • {group}</span>
+            <span className="text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full w-fit">
+              {selectedAdType?.label.split(' ').slice(1).join(' ') || 'Ad'} • {group}
+            </span>
             <p className="text-sm font-bold text-gray-900">{title || 'Your ad title'}</p>
             <p className="text-sm text-gray-600">{body || 'Your ad description will appear here.'}</p>
             <p className="text-xs text-[#4f6ef7] font-semibold mt-1">Contact →</p>

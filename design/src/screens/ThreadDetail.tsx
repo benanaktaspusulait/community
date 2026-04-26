@@ -199,17 +199,17 @@ export function ThreadDetail() {
       </div>
 
       {/* reply composer */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[390px] bg-white border-t border-[#e4e7ec] px-4 py-3 flex gap-2 items-end">
+      <div className="absolute inset-x-0 bottom-0 z-30 flex items-end gap-2 border-t border-border/80 bg-card/92 px-4 py-3 backdrop-blur-xl">
         <textarea
           rows={1}
           value={reply}
           onChange={e => setReply(e.target.value)}
           placeholder="Write a reply…"
-          className="flex-1 bg-[#f8f9fb] rounded-xl border border-[#e4e7ec] px-3 py-2.5 text-sm resize-none focus:outline-none focus:border-[#4f6ef7]"
+          className="flex-1 resize-none rounded-[14px] border border-border bg-white/70 px-3 py-2.5 text-sm text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         />
         <button
           disabled={!reply}
-          className="w-10 h-10 bg-[#4f6ef7] rounded-xl flex items-center justify-center text-white disabled:opacity-40"
+          className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-brand-600 text-white shadow-[0_10px_22px_rgba(13,111,99,0.2)] disabled:opacity-40"
         >
           <Send size={16} />
         </button>

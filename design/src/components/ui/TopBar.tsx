@@ -10,15 +10,19 @@ interface TopBarProps {
 export function TopBar({ title, back, action }: TopBarProps) {
   const navigate = useNavigate()
   return (
-    <div className="flex items-center justify-between px-4 py-3 bg-white border-b border-[#e4e7ec] sticky top-0 z-10">
+    <div className="sticky top-0 z-20 flex items-center justify-between border-b border-border/80 bg-card/85 px-4 py-3 backdrop-blur-xl">
       <div className="w-8">
         {back && (
-          <button onClick={() => navigate(-1)} className="text-gray-500 hover:text-gray-800">
+          <button
+            onClick={() => navigate(-1)}
+            className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-black/5 hover:text-ink"
+            aria-label="Go back"
+          >
             <ArrowLeft size={20} />
           </button>
         )}
       </div>
-      <span className="font-semibold text-sm text-gray-900">{title}</span>
+      <span className="text-sm font-extrabold tracking-[-0.02em] text-ink">{title}</span>
       <div className="w-8 flex justify-end">{action}</div>
     </div>
   )
