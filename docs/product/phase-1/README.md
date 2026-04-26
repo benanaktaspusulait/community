@@ -14,17 +14,17 @@ Phase 1 success depends on coherence more than volume:
 1. **Flows** → what must happen and why  
    Input: roadmap goals  
    Output: Phase 1 journeys + constraints  
-   - `../phase-1-flows.md`
+   - `phase-1-flows.md`
 
 2. **Screen map** → which screens exist and who sees them  
    Input: flows  
    Output: screen inventory + states + actions  
-   - `../phase-1-screen-map.md`
+   - `phase-1-screen-map.md`
 
 3. **Low-fi wireframes** → what we will test (logic, states, guardrails)  
    Input: screen map  
    Output: review-ready wireframe pack + critical journeys  
-   - `../phase-1-wireframes.md`
+   - `phase-1-wireframes.md`
 
 4. **Decision log** → the few decisions that keep everything aligned  
    Input: product intent  
@@ -34,12 +34,12 @@ Phase 1 success depends on coherence more than volume:
 5. **Domain model** → entities, relationships, invariants  
    Input: screens + decision log  
    Output: implementation-ready model language  
-   - `../phase-1-domain-model.md`
+   - `phase-1-domain-model.md`
 
 6. **C4 (Structurizr)** → architecture views driven by behavior  
    Input: domain + boundaries  
    Output: context/container/component diagrams  
-   - `../phase-1-c4.md`
+   - `phase-1-c4.md`
    - `../../architecture/structurizr/phase-1/workspace.dsl`
 
 ---

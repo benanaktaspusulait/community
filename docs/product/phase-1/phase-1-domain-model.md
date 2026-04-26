@@ -10,7 +10,7 @@ Translate Phase 1 flows and screens into a domain model that is:
 
 ## Phase 1 Modeling Decisions (recap)
 
-See decision log: `docs/product/phase-1/phase-1-decisions.md` (K1–K6).
+See decision log: `phase-1-decisions.md` (K1–K6).
 
 ---
 

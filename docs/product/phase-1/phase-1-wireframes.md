@@ -11,7 +11,7 @@ This is **not visual design**. It is a low-fidelity wireframe pack meant to vali
 
 ## Phase 1 Decisions (K1–K6)
 
-See decision log: `docs/product/phase-1/phase-1-decisions.md` (K1–K6).
+See decision log: `phase-1-decisions.md` (K1–K6).
 
 ## Conventions (used across all wireframes)
 
