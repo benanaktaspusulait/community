@@ -37,10 +37,12 @@ import { AdminReportsQueue } from './screens/AdminReportsQueue'
 import { ApprovalQueue } from './screens/ApprovalQueue'
 import { SplashScreen } from './screens/SplashScreen'
 import { AdminLibraryManager } from './screens/AdminLibraryManager'
+import { LandingHome } from './screens/LandingHome'
 
 const phoneRoutes = [
   { path: '/splash', element: <SplashScreen /> },
   { path: '/', element: <SplashScreen /> },
+  { path: '/landing', element: <LandingHome /> },
   { path: '/auth', element: <AuthLanding /> },
   { path: '/preview', element: <PublicPreview /> },
   { path: '/invite/landing', element: <InviteLanding /> },

@@ -47,6 +47,7 @@ Both commands should pass before committing design changes.
 | Route | Purpose |
 | --- | --- |
 | `/screens` | Prototype screen index |
+| `/landing` | New landing home with hero design |
 | `/preview` | Public community preview |
 | `/invite/landing` | Scoped invite landing |
 | `/join/pending` | Private group join pending |
