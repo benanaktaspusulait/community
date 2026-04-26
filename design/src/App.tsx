@@ -40,7 +40,7 @@ import { AdminLibraryManager } from './screens/AdminLibraryManager'
 
 const phoneRoutes = [
   { path: '/splash', element: <SplashScreen /> },
-  { path: '/', element: <HomeFeed /> },
+  { path: '/', element: <SplashScreen /> },
   { path: '/preview', element: <PublicPreview /> },
   { path: '/invite/landing', element: <InviteLanding /> },
   { path: '/join/pending', element: <JoinPending /> },
