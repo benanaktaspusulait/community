@@ -1,125 +1,123 @@
-# Faz 1 Product Flows
+# Phase 1 Product Flows
 
-## Amac
+## Goal
 
-Bu dokuman, Faz 1 roadmap'ini gercek kullanici ve admin akislarina indirger.
+This document translates the Phase 1 roadmap into real user and admin flows.
 
-Faz 1'in asil amaci yeni bir sosyal medya veya chat uygulamasi yapmak degildir. Amac, mevcut WhatsApp, Facebook Groups ve Telegram gruplarindaki bilgiyi:
+The goal of Phase 1 is not to build a new social media or chat app. The goal is to turn the knowledge inside existing WhatsApp, Facebook Groups, and Telegram communities into something that is:
 
-- aranabilir
-- kalici
-- konu bazli
-- onaylanabilir
-- filtrelenebilir
-- reklam tercihine saygili
+- searchable
+- durable
+- topic-based
+- approvable
+- filterable
+- respectful of ad preferences
 
-hale getirmektir.
+## Design Principles
 
-## Tasarim Prensipleri
+- `Memory-first`: If past knowledge cannot be found, the product fails.
+- `Structured-first`: Help requests, listings, questions, and recommendations must not be created as plain messages.
+- `Curated-first`: At pilot start, valuable knowledge should be created with admin/mod support.
+- `No general chat feed`: The main experience must not degrade into a free-form chat feed.
+- `Topic discipline`: Off-topic drift must be controllable (e.g. travel in health group, ads in travel group).
+- `User-controlled ads`: Anyone may create ads; seeing ads is a user choice.
+- `Scoped moderation`: Admins manage only the communities/locations/topics they are responsible for.
 
-- `Memory-first`: Eski bilgi bulunamiyorsa urun basarisizdir.
-- `Structured-first`: Yardim, ilan, soru ve tavsiye duz mesaj gibi acilmamalidir.
-- `Curated-first`: Pilot baslangicinda degerli bilgi admin ve moderator destegiyle olusturulmalidir.
-- `No general chat feed`: Ana deneyim serbest sohbet akisina donmemelidir.
-- `Topic discipline`: Saglik grubunda gezi, gezi grubunda reklam, ev grubunda alakasiz sohbet akmamalidir.
-- `User-controlled ads`: Reklam girmek serbesttir; reklam gormek kullanicinin tercihidir.
-- `Scoped moderation`: Her admin her seyi degil, yetkili oldugu community, location veya topic'i yonetmelidir.
+## Actors
 
-## Aktorler
-
-| Aktor | Tanimi |
+| Actor | Definition |
 | --- | --- |
-| Visitor | Public preview veya paylasilan link ile gelen, henuz uye olmayan kisi |
-| Member | Community veya group'a katilmis normal kullanici |
-| Power user | Soru cevaplayan, kaynak oneren, faydali uye sinyali ureten kullanici |
-| Advertiser / provider | Reklam, hizmet veya ticari duyuru girmek isteyen kisi ya da isletme |
-| Moderator | Icerik ve uye davranisini yoneten scoped yetkili |
-| Sub-admin | Belirli location community veya topic group'tan sorumlu admin |
-| Community admin | Ana community'nin operasyonundan sorumlu kisi |
-| Platform admin | Ana community acma, ust politika ve platform genelinde karar yetkisine sahip kisi |
+| Visitor | Arrives via a public preview or shared link, not yet a member |
+| Member | A normal user who joined a community or group |
+| Power user | Answers questions, suggests resources, generates high-signal contributions |
+| Advertiser / provider | Person or business that wants to post an ad/service/commercial notice |
+| Moderator | Scoped authority managing content and member behavior |
+| Sub-admin | Admin responsible for a specific location community or topic group |
+| Community admin | Responsible for operating a community |
+| Platform admin | Controls platform-level policies and community creation |
 
-## Faz 1 Flow Oncelikleri
+## Phase 1 Flow Priorities
 
-| Oncelik | Flow |
+| Priority | Flow |
 | --- | --- |
 | P0 | Public preview, invite/join, onboarding, feed, search, structured post, help request, comment/thread, report, ad preference |
-| P0 | Admin approval queue, member removal, pinned/Altin Bilgi management, topic/location setup |
-| P1 | Reklam olusturma ve temel reklam onayi, QR invite, data request, media/link archive |
+| P0 | Admin approval queue, member removal, pinned/knowledge-card management, topic/location setup |
+| P1 | Ad creation + basic ad approval, QR invite, data request, media/link archive |
 | P1 | Public thread/resource preview, duplicate deflection, account deletion |
 | P2 | Bulk invite import, advanced migration tooling, advanced ad reporting, manual weekly summary support |
 
-P0 akislar olmadan pilot migration calismaz. P1 akislar pilotu guvenli ve ikna edici yapar. P2 akislar Faz 1 icinde dusunulebilir ama ilk kullanilabilir surumu bloke etmemelidir.
+Without P0 flows, pilot migration cannot work. P1 flows make the pilot safer and more convincing. P2 can be explored within Phase 1 but must not block the first usable release.
 
 ## Flow 1: Public Preview -> Join
 
 ### Problem
 
-Kullanici WhatsApp, Facebook veya Telegram'dan cikmadan once burada gercek deger oldugunu gormek ister.
+Before leaving WhatsApp/Facebook/Telegram, users want to see real value here.
 
-### Giris Noktalari
+### Entry Points
 
-| Giris | Ornek |
+| Entry | Example |
 | --- | --- |
-| Invite link | Adminin WhatsApp grubunda paylastigi katilim linki |
-| Public community preview | Google veya paylasilan web linki ile acilan community sayfasi |
-| Public thread/resource preview | Paylasilan solved thread, FAQ veya cozum karti |
-| QR code | Etkinlik, cami, okul veya lokal isletmede scan edilen kod |
+| Invite link | A join link shared in the WhatsApp group |
+| Public community preview | A community page opened via Google or a shared web link |
+| Public thread/resource preview | A shared solved thread, FAQ, or knowledge card |
+| QR code | Scanned at an event, school, local business, etc. |
 
 ### Happy Path
 
-1. Visitor public preview sayfasini acar.
-2. Sistem community adini, lokasyonunu, topic group'larini ve secilmis faydali icerikleri gosterir.
-3. Visitor login olmadan sinirli sayida solved thread, Altin Bilgi ve aktif yardim istegi gorur.
-4. Visitor `Join` veya `Request to join` aksiyonunu secer.
-5. Public community ise kullanici kayit sonrasi katilir.
-6. Private community ise join request acilir ve admin onayi bekler.
-7. Invite link ile gelen kullanici uygun group'a direkt yonlendirilir.
+1. The visitor opens a public preview page.
+2. The system shows the community name, location, topic groups, and selected high-value content.
+3. Without login, the visitor can see a limited set of solved threads, knowledge cards, and active help requests.
+4. The visitor selects `Join` or `Request to join`.
+5. If the community is public, the user joins after signup.
+6. If the community is private, a join request is created and awaits admin approval.
+7. If the visitor arrived via an invite link, they are routed directly to the relevant group.
 
-### Karar Noktalari
+### Decision Points
 
-| Soru | Karar |
+| Question | Decision |
 | --- | --- |
-| Community public mi private mi | Public ise hizli join, private ise onay kuyrugu |
-| Invite link gecerli mi | Gecerliyse join akisi, degilse expired invite ekrani |
-| Kullanici zaten uye mi | Direkt ilgili community veya post'a yonlendirme |
-| Profil eksik mi | Onboarding'e yonlendirme |
+| Is the community public or private? | Public: fast join; private: approval queue |
+| Is the invite link valid? | If valid: join flow; if not: expired invite screen |
+| Is the user already a member? | Route directly to the community or content |
+| Is the profile incomplete? | Route to onboarding |
 
-### Cikti
+### Output
 
-- yeni member kaydi
+- new member record
 - membership status
 - source attribution: invite, public preview, QR, shared thread
-- ilk topic/location secimi
+- initial topic/location selection
 
 ## Flow 2: Onboarding
 
 ### Problem
 
-Kullanici cok form doldurmadan deger gormeli, ama sistemin relevance uretmesi icin minimum sinyaller alinmalidir.
+Users should see value without filling long forms, but the system still needs minimum signals to produce relevance.
 
 ### Happy Path
 
-1. Kullanici Google, Apple veya email ile giris yapar.
-2. Ad, gorunen isim ve temel profil alanlarini tamamlar.
-3. Base location secer: sehir, bolge veya postcode district.
-4. Lokasyon gorunurlugunu belirler.
-5. Ilgilendigi topic group'lari secer.
-6. Bildirim tercihlerini secer.
-7. Reklam gorunurluk tercihini belirler.
-8. Sistem ilk deger ekranini gosterir: populer solved thread, Altin Bilgi ve aktif yardim istekleri.
+1. The user signs in with Google, Apple, or email.
+2. They complete name/display name and basic profile fields.
+3. They choose a base location (city/area/postcode district).
+4. They choose location visibility.
+5. They select topic groups of interest.
+6. They set notification preferences.
+7. They set ad-visibility preference.
+8. The system shows a first-value screen: popular solved threads, knowledge cards, and active help requests.
 
-### Minimum Alanlar
+### Minimum Fields
 
-| Alan | Faz 1 Karari |
+| Field | Phase 1 decision |
 | --- | --- |
-| Display name | Zorunlu |
-| Login identity | Zorunlu |
-| Base location | Zorunlu, hassas adres degil |
-| Location visibility | Zorunlu tercih |
-| Topic interest | En az bir secim onerilir |
-| Ad preference | Default net gosterilmeli, kullanici degistirebilmeli |
+| Display name | Required |
+| Login identity | Required |
+| Base location | Required (not a precise address) |
+| Location visibility | Required choice |
+| Topic interest | At least one is recommended |
+| Ad preference | Must be explicit by default and user-changeable |
 
-### Cikti
+### Output
 
 - member profile
 - base location
@@ -128,97 +126,97 @@ Kullanici cok form doldurmadan deger gormeli, ama sistemin relevance uretmesi ic
 - notification preference
 - ad visibility preference
 
-## Flow 3: Home Feed ve Topic Discovery
+## Flow 3: Home Feed and Topic Discovery
 
 ### Problem
 
-Ana ekran bos veya daginik gorunurse kullanici mevcut gruba geri doner.
+If the home screen looks empty or chaotic, the user returns to the existing group.
 
 ### Happy Path
 
-1. Member home feed'i acar.
-2. Sistem kullanicinin base location, topic membership ve ad preference bilgisine gore feed olusturur.
-3. Ustte pinned bilgi, Altin Bilgi veya admin pick gorunur.
-4. Ardindan acik yardim istekleri, solved thread'ler ve yeni structured post'lar listelenir.
-5. Reklamlar sadece kullanici reklam gormeyi kabul ettiyse gosterilir.
-6. Kullanici topic group'a girerek sadece o konunun akisina bakar.
+1. The member opens the home feed.
+2. The system builds the feed based on base location, topic memberships, and ad preference.
+3. Pinned knowledge/admin picks appear at the top.
+4. Then open help requests, solved threads, and new structured posts.
+5. Ads are shown only if the user opted in to seeing ads.
+6. The user can enter a topic group to view a scoped feed for that topic.
 
-### Feed Icerik Tipleri
+### Feed Content Types
 
-| Tip | Feed Davranisi |
+| Type | Feed behavior |
 | --- | --- |
-| Pinned resource | Ustte sabit veya one cikan |
-| Solved thread | Arama ve feed'de yuksek sinyal |
-| Help request | Status ile gosterilir |
-| Listing | Template alanlariyla ozetlenir |
-| Question | Thread olarak acar |
-| Ad | Sadece ad preference izin verirse gosterilir |
+| Pinned resource | Fixed/featured at the top |
+| Solved thread | High-signal in search and feed |
+| Help request | Shown with status |
+| Listing | Summarized via template fields |
+| Question | Opens as a thread |
+| Ad | Only if ad preference allows |
 
-### Anti-Junk Kurallari
+### Anti-Junk Rules
 
-- Genel sohbet ana feed'de yer almamalidir.
-- Topic disi post, admin veya moderator tarafindan tasinabilmeli ya da kaldirilabilmelidir.
-- Duz metinli ilan, ilgili template'e donusturulmeden yayina alinmamalidir.
+- General chat must not appear in the main feed.
+- Off-topic posts must be movable/removable by admins/moderators.
+- Free-text listings must not be published without conversion into the correct template.
 
-## Flow 4: Search ve Duplicate Deflection
+## Flow 4: Search and Duplicate Deflection
 
 ### Problem
 
-Urunun WhatsApp, Facebook ve Telegram'a karsi en buyuk farki eski bilgiye erisimdir.
+The biggest differentiation vs WhatsApp/Facebook/Telegram is access to past knowledge.
 
 ### Happy Path
 
-1. Kullanici arama kutusuna ihtiyacini yazar.
-2. Sistem thread, cozum karti, FAQ, media, link, ilan ve yardim isteklerini birlikte arar.
-3. Kullanici kategori, lokasyon, topic group, status ve tarih ile filtreler.
-4. Sonuclar solved, saved, admin pick veya high engagement sinyallerine gore siralanir.
-5. Sonuc yoksa kullaniciya structured post veya yardim istegi acma onerilir.
-6. Yeni post yazarken sistem benzer eski icerikleri gosterir.
+1. The user types a need into search.
+2. The system searches across threads, knowledge cards, FAQs, media/links, listings, and help requests.
+3. The user filters by category, location, topic group, status, and date.
+4. Results are ranked by solved/saved/admin-pick/high-engagement signals.
+5. If there are no results, the user is nudged to create a structured post or help request.
+6. While creating a new post, the system shows similar existing content (duplicate deflection).
 
-### Arama Sonuc Tipleri
+### Search Result Types
 
-| Sonuc | Ornek |
+| Result | Example |
 | --- | --- |
-| Thread | `Ehliyet degisimi nasil yapilir?` |
-| Altin Bilgi | `UK'de oda kiralarken dikkat edilecekler` |
-| Help request | `Milton Keynes oda ariyorum` |
-| Listing | `Satilik bebek arabasi` |
-| Provider | `Community-approved muhasebeci` |
-| Media/link | Daha once paylasilan video, belge veya link |
+| Thread | `How do I change my driver’s license?` |
+| Knowledge card | `Things to watch for when renting a room in the UK` |
+| Help request | `Looking for a room in Milton Keynes` |
+| Listing | `Stroller for sale` |
+| Provider | `Community-approved accountant` |
+| Media/link | A previously shared video, document, or link |
 
-### Faz 1 Siniri
+### Phase 1 Boundary
 
-Faz 1'de semantik AI arama zorunlu degildir. Ancak keyword search, filtre, solved/pinned one cikarma ve yeni post oncesi benzer icerik gosterimi gereklidir.
+Semantic/AI search is not required in Phase 1. However, keyword search, filters, boosting solved/pinned content, and duplicate deflection before posting are required.
 
-## Flow 5: Yardim Istegi
+## Flow 5: Help Request
 
 ### Problem
 
-Kullanici bazen bilgi degil, sonuc ister. Ornek: `oda ariyorum`, `ev ariyorum`, `is ariyorum`, `muhasebeci ariyorum`.
+Sometimes users want an outcome, not information (e.g. “I’m looking for a room”, “I’m looking for a job”).
 
 ### Happy Path
 
-1. Kullanici `Create` ekranindan `Yardim Istegi` secer.
-2. Sistem yardim tipi sorar.
-3. Kullanici template alanlarini doldurur.
-4. Sistem benzer aktif istekleri ve ilgili Altin Bilgi'leri gosterir.
-5. Kullanici istegi yayinlar.
-6. Diger uyeler yorum, teklif, yonlendirme veya kaynak onerisi ekler.
-7. Kullanici status'u gunceller: `acik`, `eslesme bulundu`, `cozuldu`, `kapandi`.
-8. Cozulmus istek, ileride arama sonucunda faydali kaynak olarak gorunur.
+1. The user selects `Help request` from the `Create` flow.
+2. The system asks for the request type.
+3. The user fills in template fields.
+4. The system shows similar active requests and relevant knowledge cards.
+5. The user publishes the request.
+6. Other members add comments/offers/referrals/resources.
+7. The user updates status: `open`, `match found`, `solved`, `closed`.
+8. A solved request becomes a useful artifact for future search.
 
-### Oda Ariyorum Template Ornegi
+### “Looking for a room” Template Example
 
-| Alan | Zorunlu mu |
+| Field | Required? |
 | --- | --- |
-| Lokasyon | Yes |
-| Butce araligi | Yes |
-| Tasima tarihi | Yes |
-| Kisa aciklama | Yes |
-| Tercihler | No |
-| Iletisim tercihi | Yes |
+| Location | Yes |
+| Budget range | Yes |
+| Move-in date | Yes |
+| Short description | Yes |
+| Preferences | No |
+| Contact preference | Yes |
 
-### Cikti
+### Output
 
 - structured request
 - request status
@@ -226,251 +224,251 @@ Kullanici bazen bilgi degil, sonuc ister. Ornek: `oda ariyorum`, `ev ariyorum`, 
 - solved signal
 - future search artifact
 
-## Flow 6: Structured Post ve Listing
+## Flow 6: Structured Post and Listing
 
 ### Problem
 
-Serbest metin ilanlar hem aramayi hem filtrelemeyi hem de moderasyonu bozar.
+Free-text listings break search, filtering, and moderation.
 
 ### Happy Path
 
-1. Kullanici post tipi secer: soru, ilan, tavsiye, hizmet, satilik, kiralik, is ariyorum.
-2. Sistem ilgili template'i acar.
-3. Zorunlu alanlar tamamlanmadan publish edilmez.
-4. Hassas topic veya reklam sinyali varsa post approval queue'ya girebilir.
-5. Post yayinlandiktan sonra thread detayinda yorum alir.
-6. Post sahibi status, fiyat, lokasyon veya uygunluk bilgisini guncelleyebilir.
+1. The user selects a post type: question, listing, recommendation, service, for sale, for rent, looking for work.
+2. The system opens the relevant template.
+3. It cannot be published until required fields are filled.
+4. If the topic is sensitive or resembles an ad, it may enter an approval queue.
+5. After publishing, the thread receives comments.
+6. The owner can update status, price, location, or availability.
 
-### Template Kararlari
+### Template Decisions
 
-| Post Tipi | Zorunlu Alan Ornekleri |
+| Post type | Example required fields |
 | --- | --- |
-| Satilik | Fiyat, durum, lokasyon, foto |
-| Kiralik | Lokasyon, fiyat, tarih, uygunluk |
-| Is Ariyorum | Role, lokasyon, calisma tipi, deneyim |
-| Hizmet | Hizmet tipi, lokasyon, fiyat araligi, uygunluk |
-| Soru | Topic, lokasyon relevance, baslik |
+| For sale | Price, condition, location, photo |
+| For rent | Location, price, date, availability |
+| Looking for work | Role, location, work type, experience |
+| Service | Service type, location, price range, availability |
+| Question | Topic, location relevance, title |
 
-### Faz 1 Siniri
+### Phase 1 Boundary
 
-Payment, escrow, booking, full CRM veya delivery tracking Faz 1'de olmamalidir.
+Payment, escrow, booking, full CRM, and delivery tracking must not be in Phase 1.
 
-## Flow 7: Altin Bilgi ve Cozum Kartlari
-
-### Problem
-
-En degerli community bilgisi mesaj akisinda kaybolmamalidir.
-
-### Happy Path: Okuma
-
-1. Kullanici Library veya Search uzerinden Altin Bilgi'ye ulasir.
-2. Cozum karti adim adim bilgi, checklist, link ve related thread'leri gosterir.
-3. Kullanici kaydeder, paylasir veya guncelleme onerir.
-
-### Happy Path: Olusturma
-
-1. Admin veya moderator tekrar eden bir thread'i tespit eder.
-2. Thread ozetinden cozum karti taslagi olusturur.
-3. Gerekirse kaynak linkleri, medya ve checklist ekler.
-4. Admin review sonrasi karti yayinlar.
-5. Kart ilgili topic group ve arama sonuclarinda one cikar.
-
-### Cikti
-
-- kalici knowledge artifact
-- source thread baglantisi
-- owner/editor bilgisi
-- last updated tarihi
-- helpful/save sinyalleri
-
-## Flow 8: Media ve Link Archive
+## Flow 7: Knowledge Cards and Solution Cards
 
 ### Problem
 
-WhatsApp ve Telegram gruplarinda daha once paylasilan link, video, dosya veya gorseli bulmak zordur.
+The most valuable community knowledge must not get lost in message streams.
+
+### Happy Path: Reading
+
+1. The user reaches a knowledge card via Library or Search.
+2. The solution card shows step-by-step guidance, checklists, links, and related threads.
+3. The user saves, shares, or suggests an update.
+
+### Happy Path: Creation
+
+1. Admin/mod identifies a repeating thread.
+2. They draft a solution card from the thread summary.
+3. They add source links, media, and checklists if needed.
+4. After review, the card is published.
+5. The card is boosted in relevant topic groups and search results.
+
+### Output
+
+- durable knowledge artifact
+- source-thread link
+- owner/editor info
+- last updated time
+- helpful/save signals
+
+## Flow 8: Media and Link Archive
+
+### Problem
+
+It is hard to find previously shared links/videos/files/images in WhatsApp/Telegram groups.
 
 ### Happy Path
 
-1. Kullanici topic group icinde `Media & Links` alanini acar.
-2. Sistem link, video, gorsel ve dosyalari type, tarih, post ve topic'e gore listeler.
-3. Kullanici filtreler ve ilgili orijinal thread'e gider.
-4. Admin degerli link veya dosyayi Altin Bilgi'ye baglayabilir.
+1. The user opens `Media & Links` within a topic group.
+2. The system lists links, videos, images, and files by type/date/post/topic.
+3. The user filters and jumps to the original thread.
+4. Admin can attach a valuable link/file to a knowledge card.
 
-### Faz 1 Siniri
+### Phase 1 Boundary
 
-Faz 1'de medya arsivi temel listeleme ve filtreleme olarak dusunulmelidir. Otomatik OCR, transcript, video summary veya dosya icinden arama Faz 6 konusudur.
+In Phase 1, the media archive should be basic listing and filtering. OCR, transcripts, video summaries, and file-content search belong to Phase 6.
 
-## Flow 9: Sikayet, Block ve Group'tan Cikarma
+## Flow 9: Report, Block, and Removal from Group
 
 ### Problem
 
-Topluluklarda bazen kullanici davranisi bozulur. Adminin bununla basit ve izlenebilir sekilde ilgilenmesi gerekir.
+Member behavior can deteriorate. Admins need a simple, traceable workflow to handle it.
 
-### Happy Path: Sikayet
+### Happy Path: Report
 
-1. Kullanici post, yorum veya profil uzerinden `Sikayet Et` secer.
-2. Sistem sebep sorar: spam, taciz, konu disi, dolandiricilik, uygunsuz icerik, diger.
-3. Sikayet admin/moderator queue'ya duser.
-4. Sikayet edilen kullanici hakkinda report count ve history gorunur.
-5. Moderator aksiyon alir: no action, warn, mute, content remove, group remove, platform escalate.
+1. The user selects `Report` on a post/comment/profile.
+2. The system asks for a reason: spam, harassment, off-topic, scam, inappropriate content, other.
+3. The report enters the admin/mod queue.
+4. The reported user’s history and report count are visible.
+5. The moderator takes action: no action, warn, mute, remove content, remove from group, escalate to platform.
 
 ### Happy Path: Block
 
-1. Kullanici baska bir kullaniciyi block eder.
-2. Block edilen kisinin yorumlari ve profil etkilesimi kullanici icin sinirlanir.
-3. Block, admin moderation aksiyonundan ayridir.
+1. A user blocks another user.
+2. The blocked user’s comments and profile interactions are limited for that user.
+3. Block is separate from admin moderation actions.
 
-### Karar Noktalari
+### Decision Points
 
-| Sinyal | Aksiyon |
+| Signal | Action |
 | --- | --- |
-| Tekil dusuk risk sikayet | Moderator review |
-| Tekrarlayan spam | Mute veya group removal |
-| Dolandiricilik supheleri | Content remove, group removal, platform escalate |
-| Hassas konu zarari | Daha siki review ve disclaimer |
+| Single low-risk report | Moderator review |
+| Repeated spam | Mute or remove from group |
+| Scam suspicion | Remove content, remove from group, platform escalation |
+| Harm in sensitive topics | Stricter review and disclaimers |
 
-### Cikti
+### Output
 
 - report record
 - moderation decision
 - audit trail
-- scoped removal veya mute
+- scoped removal/mute
 
-## Flow 10: Reklam Gorunurluk Tercihi
+## Flow 10: Ad Visibility Preference
 
 ### Problem
 
-Reklam girmek serbest olabilir; ama kullanici reklam gormek istemiyorsa reklam gormemelidir.
+Creating ads may be allowed, but users should not see ads if they opted out.
 
 ### Happy Path
 
-1. Kullanici onboarding veya settings icinde reklam tercihini gorur.
-2. `Reklamlari goster` veya `Reklamlari gizle` secimi yapar.
-3. Sistem native ad, sponsored placement ve ileride ad network katmaninda bu tercihe uyar.
-4. Kullanici istedigi zaman tercihi degistirir.
+1. The user sees ad preference in onboarding or settings.
+2. They choose `Show ads` or `Hide ads`.
+3. The system respects this at feed ranking and (later) ad-delivery layers.
+4. The user can change the preference any time.
 
-### Karar
+### Decision
 
-Reklam tercihi sadece UI tercihi degil, feed ranking ve delivery seviyesinde uygulanmalidir.
+Ad preference is not only a UI setting; it must be enforced at ranking and delivery.
 
-### Cikti
+### Output
 
 - ad visibility preference
 - delivery eligibility signal
 - consent/change history
 
-## Flow 11: Reklam Olusturma ve Temel Onay
+## Flow 11: Ad Creation and Basic Approval
 
 ### Problem
 
-Provider ve lokal isletmeler community'ye ulasmak ister. Ancak denetimsiz reklam toplulugu sogutur.
+Providers/local businesses want to reach the community, but uncontrolled ads harm the community.
 
 ### Happy Path
 
-1. Kullanici `Reklam Ver` akisina girer.
-2. Reklam tipi secer: hizmet, isletme, etkinlik, duyuru, urun.
-3. Baslik, aciklama, lokasyon, hedef topic, gorsel ve tarih araligi girer.
-4. Sistem reklam preview'i gosterir.
-5. Reklam `pending review` durumuna gecer.
-6. Admin veya platform onayi sonrasi reklam aktif olur.
-7. Reklam sadece reklam gormeyi kabul eden ve hedef lokasyon/topic'e uyan kullanicilara gosterilir.
-8. Reklam veren temel performans sinyallerini gorur.
+1. The user enters the “Advertise” flow.
+2. They choose an ad type: service, business, event, announcement, product.
+3. They enter title, description, location, target topic, image, date range.
+4. The system shows an ad preview.
+5. The ad moves to `pending review`.
+6. After admin/platform approval, the ad becomes active.
+7. Ads are shown only to users who opted in and match targeting.
+8. The advertiser sees basic performance signals.
 
-### Temel Raporlama Sinyalleri
+### Basic Reporting Signals
 
-| Sinyal | Faz 1 / Faz 2 Yorumu |
+| Signal | Phase 1 / Phase 2 note |
 | --- | --- |
-| Impression | Faz 1'de basit sayac olabilir |
-| Click | Faz 1'de basit sayac olabilir |
-| Save | Fayda sinyali olarak guclu |
-| Helpful/like | Reklamin topluluk tarafindan nasil algilandigini gosterir |
-| Report/hide | Kalite ve policy sinyali |
+| Impression | Can be a simple counter in Phase 1 |
+| Click | Can be a simple counter in Phase 1 |
+| Save | Strong usefulness signal |
+| Helpful/like | Shows community sentiment (if implemented later) |
+| Report/hide | Quality/policy signal |
 
-### Faz 1 Siniri
+### Phase 1 Boundary
 
-Billing, campaign budget, advanced targeting ve detayli ROI dashboard Faz 5'e kalmalidir. Ancak reklam verenin `reklamim yayinlandi mi, goruldu mu, tiklandi mi` sorusuna erken cevap verilebilmelidir.
+Billing, campaign budgets, advanced targeting, and detailed ROI dashboards belong to Phase 5. However, Phase 1 should still answer early: “Was my ad published? Was it seen? Was it clicked?”
 
-## Flow 12: Admin Migration ve Community Setup
+## Flow 12: Admin Migration and Community Setup
 
 ### Problem
 
-Mevcut WhatsApp, Facebook veya Telegram admini yeni platforma gecmek icin kontrol, kolaylik ve guven ister.
+Existing WhatsApp/Facebook/Telegram admins want control, ease, and trust to migrate.
 
 ### Happy Path
 
-1. Platform admin veya community admin ana community taslagini acar.
-2. Lokasyon ve topic group yapisi belirlenir.
-3. Kurallar ve post tipleri tanimlanir.
-4. Ilk Altin Bilgi, FAQ ve seed thread'ler eklenir.
-5. Invite link ve QR kod hazirlanir.
-6. Admin mevcut grupta preview linkleri ve invite linki paylasir.
-7. Ilk uyeler gelir, onboarding olur ve pilot baslar.
+1. Platform admin or community admin creates the community draft.
+2. Location and topic-group structure is defined.
+3. Rules and post types are configured.
+4. Initial knowledge cards, FAQs, and seed threads are added.
+5. Invite links and QR codes are created.
+6. Admin shares preview and invite links in the existing group.
+7. First members join, complete onboarding, and the pilot starts.
 
 ### Minimum Setup Checklist
 
-| Alan | Gereklilik |
+| Item | Required? |
 | --- | --- |
-| Community name | Zorunlu |
-| Location scope | Zorunlu |
-| Topic groups | En az 3-5 baslangic grubu |
-| Rules | Zorunlu |
-| Seed content | En az temel FAQ ve cozum kartlari |
-| Admin roles | En az community admin |
-| Invite link | Zorunlu |
+| Community name | Required |
+| Location scope | Required |
+| Topic groups | At least 3–5 starter groups |
+| Rules | Required |
+| Seed content | At least basic FAQs and solution cards |
+| Admin roles | At least a community admin |
+| Invite link | Required |
 
 ## Flow 13: Approval Queue
 
 ### Problem
 
-Join request, reklam, kaynak yayinlama ve hassas post onaylari farkli yerlerde olursa admin operasyonu dagilir.
+If join requests, ads, resources, and sensitive post approvals are in different places, admin operations become fragmented.
 
 ### Happy Path
 
-1. Admin `Approval Queue` ekranini acar.
-2. Queue item tiplerini gorur: join request, ad review, resource publish, sensitive post, group request.
-3. Item detayinda context, risk sinyalleri ve onerilen aksiyonlari gorur.
-4. Admin approve, reject, request edit veya escalate karari verir.
-5. Sistem kullaniciya sonucu bildirir.
+1. Admin opens the `Approval Queue`.
+2. They see item types: join request, ad review, resource publish, sensitive post, group request.
+3. In the detail view they see context, risk signals, and suggested actions.
+4. Admin decides: approve, reject, request edits, or escalate.
+5. The system notifies the user of the outcome.
 
-### Cikti
+### Output
 
 - approval decision
 - audit trail
 - notification
 - published/rejected/pending status
 
-## Flow 14: Account ve Data Rights
+## Flow 14: Account and Data Rights
 
 ### Problem
 
-Pilot bile olsa kullanici hesap, gizlilik ve veri haklari konusunda guven duymalidir.
+Even in a pilot, users need trust in account, privacy, and data rights.
 
 ### Happy Path
 
-1. Kullanici settings icinde account alanina girer.
-2. Hesap silme veya data request aksiyonunu gorur.
-3. Faz 1'de data request manuel veya yari manuel surecle islenebilir.
-4. Hesap silme talebi onay adimindan sonra isleme alinir.
+1. The user opens account settings.
+2. They see actions for account deletion or data request.
+3. In Phase 1, data requests can be processed manually or semi-manually.
+4. Account deletion is processed after a confirmation step.
 
-### Faz 1 Siniri
+### Phase 1 Boundary
 
-Tam self-service export ve gelismis veri yonetimi Faz 4'e kalabilir. Ancak talep yolu ve destek sureci Faz 1'de net olmalidir.
+Full self-service export and advanced data management can wait until Phase 4, but the request path and support process must be clear in Phase 1.
 
-## Faz 1 Disinda Kalmasi Gerekenler
+## Out of Scope for Phase 1
 
-- tam chat veya DM
-- payment, escrow, booking ve delivery
-- full rating/review sistemi
+- full chat or DMs
+- payment, escrow, booking, delivery
+- full rating/review system
 - advanced AI assistant
 - advanced event management
-- full ad billing ve campaign optimization
+- full ad billing and campaign optimization
 - public API
-- cok detayli verification
-- kullanicilarin serbest ana community acmasi
+- heavy verification
+- users creating top-level communities freely
 
-## Tasarimdan Teknik Modele Donusecek Ana Nesneler
+## Key Objects That Translate into the Technical Model
 
-| Product Nesnesi | Teknik Model Adayi |
+| Product object | Candidate technical model |
 | --- | --- |
 | Community | community |
 | Location community | community node / location scope |
@@ -478,9 +476,9 @@ Tam self-service export ve gelismis veri yonetimi Faz 4'e kalabilir. Ancak talep
 | Membership | membership |
 | Role assignment | role binding |
 | Structured post | post + post type + template values |
-| Yardim istegi | request |
+| Help request | request |
 | Comment | comment |
-| Altin Bilgi | resource / knowledge card |
+| Knowledge card | resource / knowledge card |
 | Media/link archive item | attachment / link artifact |
 | Report | report |
 | Moderation decision | moderation action |

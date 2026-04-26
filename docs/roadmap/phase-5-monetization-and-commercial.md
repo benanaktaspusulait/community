@@ -1,273 +1,60 @@
-# Faz 5 - Monetization ve Ticari Model
+# Phase 5 — Monetization and Commercial Model
 
-## Fazin Amaci
+## Goal of the Phase
 
-Faz 5, urunun surdurulebilir gelir modelini kurar.
+Phase 5 establishes a sustainable business model without damaging community experience.
 
-Faz 4'te guven altyapisi ve provider sayfalar oturdu. Faz 5, bu altyapi uzerinden advertiser araclari, commercial paketler ve opsiyonel chat katmanlari ekler.
+The initial revenue focus is not end users; it is:
 
-## Bu Faz Neden Simdi Geliyor
+- providers/advertisers
+- community admins who want pro tooling and reduced operational load
 
-Monetization erken gelirse:
+## Success Definition
 
-- review sistemi olmadan advertiser'in guvenirligi belirsiz kalir
-- provider sayfalar yokken kampanya hedefleme anlamsiz olur
-- yeterli community aktivitesi olmadan advertiser ROI dili bos kalir
+Phase 5 is successful if:
 
-Guven ve aktivite temeli oturdugunda monetizasyon dogru esiktir.
+- commercial packages are clear and repeatable
+- billing works reliably
+- ads/providers create measurable value without harming trust
+- revenue can be forecasted from repeatable motions
 
-## Ilk Ticari Tez
+## Scope
 
-Bu urunun ilk satis hikayesi genel kullaniciya premium satmak olmamali.
+### 1) Provider / Advertiser Packages
 
-Ilk buyer segmentleri:
+- “Starter” package as first productized commercial offer
+- targeting by community/location/topic
+- creative review workflow (aligned with approvals)
+- basic reporting surfaces (impressions/clicks/saves/reports)
 
-- topluluga ulasmak isteyen `provider` veya `advertiser`
-- operasyonu buyuyen `community admin`
-- migration veya setup destegi isteyen buyuk topluluklar
+### 2) Billing and Invoicing
 
-Bu nedenle Faz 5'te odak son kullanicidan para almak degil; topluluk ustundeki profesyonel veya operasyonel ihtiyaclari urunlestirmektir.
+- subscription plans and entitlements
+- invoices/receipts
+- refunds/cancellations (policy-driven)
 
-## Ilk Commercial Sequence
+### 3) Commercial Admin Tooling
 
-Onerilen sira:
+- campaign management
+- creative library
+- compliance/policy enforcement
+- account management for providers
 
-1. `Provider / Advertiser Starter`
-2. `Migration Concierge`
-3. `Community Admin Pro`
+### 4) Optional DM / Live Mode (Commercial Use-Cases)
 
-Bu sira sunu kabul eder:
+If enabled, restrict to high-trust/commercial flows:
 
-- ilk tekrarlanabilir gelir advertiser veya provider tarafindan daha kolay gelir
-- ilk community'leri kazanmak icin concierge destek gerekir
-- admin pro ise ancak operasyon faydasi net olustuktan sonra daha rahat satilir
+- provider ↔ customer messaging
+- controlled “live mode” in specific groups
 
-## Faz 5 Kapsami
+### 5) Ad Network (Controlled Fill)
 
-### 1. Advertiser Araclari
+- treated as incremental revenue/fill, not the primary ad model
+- strict respect for user ad visibility preferences
 
-Faz 1'deki temel `Reklam Ver` akisi bu fazda olgun hale gelir:
+## Expected Outcome at the End of Phase 5
 
-- advertiser profili
-- kampanya olusturma
-- lokasyon ve topic hedefleme
-- hizmet verilen lokasyonlari (service area) tanimlama
-- varsa fiziksel is yeri lokasyonunu ayri belirtme
-- baslangic ve bitis tarihi
-- performans goruntuleme
-- temel butce ve gosterim mantigi
+- repeatable commercial motion exists
+- billing is stable
+- monetization layers remain in their lane and do not erode trust
 
-Reklam lokasyon modelinde net ayrim korunmali:
-
-- `target location`: reklamin kimlere gosterilecegi
-- `service area`: hizmetin verildigi alan
-- `business location`: varsa fiziksel nokta
-
-Bu ayrim olmazsa reklam relevance'i duser ve kullanici deneyimi bozulur.
-
-### 2. Advertiser Dashboard
-
-Advertiser experience artik urunun gelir modelinin parcasi haline gelir.
-
-Ana dashboard bloklari:
-
-- kampanya ozeti
-- hedef group ve lokasyon performansi
-- pozitif topluluk sinyalleri
-- ilgi sinyalleri
-- niyet aksiyonlari
-- negatif sinyaller
-
-Bu dashboard hem kucuk isletme sahibinin anlayabilecegi kadar sade, hem de tekrar reklam verme kararini destekleyecek kadar anlamli olmalidir.
-
-**Raporlama ayrimlari:**
-
-- `Erisim`: gosterim, unique reach
-- `Pozitif sinyal`: begeni, `Faydali buldum`, kaydetme
-- `Ilgi`: tiklama, profil ziyareti, detay ekrani acilisi
-- `Niyet`: telefon tiklama, mesaj baslatma, web site tiklama, rota alma
-- `Negatif sinyal`: reklam gizleme, ilgilenmiyorum, sikayet
-
-Advertiser sadece `goruldu` degil, `gercekten fayda uretiyor mu` sorusuna cevap bulabilmeli.
-
-### 3. Sales Story ve ROI Dili
-
-Advertiser / provider'a kurulacak dil:
-
-- dogru lokasyonda gorunurluk
-- ilgilenen toplulukta gercek ulasim
-- begeni veya `Faydali buldum` gibi pozitif sinyaller
-- telefon, mesaj veya site tiklamasi gibi niyet aksiyonlari
-
-Community admin tarafinda ROI dili farklidir:
-
-- tekrar eden sorularin azalmasi
-- moderasyon yukunun dusmesi
-- onay kuyruklarinin yonetilebilir hale gelmesi
-- toplulugun dagilmadan buyuyebilmesi
-
-Bu iki ROI dili farkli rapor anlatilarinda sunulmali.
-
-### 4. Commercial Packaging
-
-Net buyer bazli paket mantigi:
-
-- `Provider / Advertiser Starter`: gorunurluk, hedefleme, performans raporu
-- `Community Admin Pro`: gelismis admin araci, approval kapasitesi, operasyon dashboard'u
-- `Migration Concierge`: ilk tasima, setup ve seed icerik destegi
-
-Her paket farkli buyer'a farkli ROI dili ile anlatilmali.
-
-Ilk productized paket olarak `Provider / Advertiser Starter` one alinmalidir.
-
-### 5. Gizlilik ve Veri Paylasim Sinirlari
-
-Advertiser reporting guclenirken kullanici mahremiyeti korunmali:
-
-- bireysel kullanici kimligi advertiser ile paylasilmaz
-- kucuk segmentlerde aggregate veya anonymized veri gosterilir
-- varsayilan olarak advertiser sadece kendi reklamlarinin sonucunu gorur
-- community admin ancak kendi topluluguna ait toplu reklam ozetlerini gorebilir
-
-Community admin'in advertiser tarafina mudahalesi sinirda kalmali:
-
-- kendi community'sinde hangi reklam kategorilerinin uygun oldugu
-- hangi alanlarda sponsorlu gorunurluk verilecegi
-- yerel kalite veya topluluk kuralina gore reklam onayi
-
-Ama su alanlar merkezi kalmali:
-
-- billing ve odeme akislari
-- platform genelindeki reklam urunu ve fiyatlari
-- advertiser hesap seviyesindeki ust politikalar
-
-### 6. Billing ve Commercial Operations
-
-Faz 5'te sadece reklam gostermek yetmez; ticari operasyonun da guvenilir calismasi gerekir.
-
-Minimum kapsam:
-
-- advertiser veya provider icin hesap tipi: bireysel, sole trader, business
-- odeme yontemi ekleme ve kampanya icin ucretlendirme
-- fatura veya receipt olusturma
-- kampanya iptal, durdurma ve iade politikalari
-- promo credit veya ilk kampanya kredisi destegi
-- community admin pro veya migration concierge gibi paketler icin manuel teklif / invoice akisi
-- billing hatalarinda destek ve dispute sureci
-
-Erken Faz 5'te odeme modeli cok karmasik olmamali. Ilk hedef:
-
-- basit paketler
-- net fiyatlama
-- manuel override imkani
-- kullanici mahremiyetini bozmayan raporlama
-
-Open auction, real-time bidding veya karmasik revenue share modelleri bu fazin ilk iterasyonunda olmamalidir.
-
-### 7. Advertiser Policy ve Kalite Kurallari
-
-Para kazanmaya baslayinca platform kalitesini koruyacak ticari kurallar da net olmali.
-
-Minimum kurallar:
-
-- yaniltici iddia, sahte indirim veya abartili sonuc vaadi yasaklanmali
-- saglik, hukuk ve finans gibi hassas kategorilerde daha siki reklam onayi olmali
-- kullanici `reklam gosterme` dediyse native reklam, sponsored event ve ad network reklami gormemeli
-- ayni advertiser'in kisa surede cok fazla reklam varyasyonu acmasi spam sinyali uretmeli
-- tekrar sikayet alan advertiser icin kampanya durdurma veya hesap inceleme akisi olmali
-
-Bu katman, reklam gelirinin community guvenini yemesini engeller.
-
-### 8. Ad Network ve Programmatic Katman
-
-Native community reklamlari ana monetization modeli olmaya devam eder. Olcek arttiginda programmatic katman ek gelir saglayabilir.
-
-Dogru kullanim:
-
-- once `native advertiser` ve `provider` inventory kullanilir
-- bos kalan veya satilmayan uygun alanlar icin ad network fill devreye girer
-- public web preview sayfalari ve discovery yuzleri ilk aday alanlardir
-
-Asagidaki alanlarda ad network kapali veya cok dikkatli sinirlanmali olmalidir:
-
-- private community ic akislari
-- hassas konu group'lari: saglik, hukuki, aile ici sorunlar
-- DM veya birebir iletisim ekranlari
-- aktif `Yardim Istegi` kritik akis ortasi
-
-Ana kurallar:
-
-- kullanici reklam gormeyi kapattiysa ad network reklami da gormemeli
-- network reklamlari acikca etiketlenmeli
-- frekans limiti ve kalite filtreleri olmali
-- network reklamlari yerel topluluk relevance'ini bozmamali
-
-### 9. Opsiyonel DM ve Group Live Mode
-
-Guven ve monetizasyon oturunca derin etkilesim isteyen kullanicilar icin ek chat katmanlari acilabilir.
-
-**Opsiyonel DM (Birebir Chat):**
-
-- ozellikle hizmet verenler ve musteriler arasinda
-- veya guvenli iletisim ihtiyaci olan uyeler arasinda
-- ilk temas `contact request` ile baslamali
-- provider ve advertiser tarafinda engelleme, raporlama ve spam siniri olmali
-
-**Group Live Mode:**
-
-- belirli topic group'lar icin admin tarafindan aktive edilebilen tam zamanli chat modu
-- asenkron thread yapisina paralel veya ic ice calisabilir
-- varsayilan kapali; topluluk ihtiyacina gore admin yonetir
-- live mode icindeki onemli bilgi gerekiyorsa thread'e veya kaynaga donusturulebilmeli
-
-**Temel ilke degismez:**
-
-`Chat koordinasyon ve iliski kurar; hafiza ise yine thread ve kaynak yapisinda yasar.`
-
-### 10. Etkinlik ve Monetization Baglantisi
-
-Faz 4'te kurulan Event-Lite altyapisi bu fazda ticari katmanla bulusur.
-
-**Sponsorlu etkinlik:**
-
-- advertiser veya provider bir topluluk etkinligini sponsor olarak destekleyebilir
-- sponsor ismi ve logosu etkinlik sayfasinda gorunur; ama etkinlik icerigi sponsor tarafindan kontrol edilmez
-- sponsorluk reklam paketine dahil edilebilir veya ayri satilabilir
-
-**Provider etkinlikleri:**
-
-- verified provider kendi adina etkinlik acabilir: tanitim toplantisi, ucretsiz danisma gunu vb.
-- bu etkinlikler sponsorlu icerik olarak etiketlenmeli
-- reklam gostermeyi kapatan kullaniciya bu etkinlikler de gosterilmemeli
-
-### 11. Premium veya Pro Katmanlari
-
-Bu fazda farkli gelir akislari test edilebilir:
-
-- one cikan advertiser paketleri
-- service provider abonelikleri
-- community admin araclari icin pro paket
-- gelismis analytics ve visibility paketleri
-
-Reklamsiz deneyimi para ile satmak bu urun icin zorunlu olmayabilir; cunku reklam kapatma tercihi zaten urun ilkesine dahildir.
-
-## Faz 5 Basari Kriterleri
-
-- advertiser tekrar kullanim orani
-- reklam kampanyalarinda pozitif sinyal ve niyet aksiyonu ureten oran
-- farkli paket tiplerinde tekrar satin alma veya yenileme orani
-- migration concierge veya admin pro alan topluluklarda retention farki
-- DM veya live mode kullanim orani (istege bagli acilan gruplarda)
-
-## Faz 5 Riskleri
-
-- advertiser yogunlugunun topluluk kalitesini dusurmesi
-- advertiser reporting'in mahremiyet sinirlarini asmasi
-- billing, iade veya reklam onay surecinin guven kaybi yaratmasi
-- DM ve live mode'un community memory'i yeniden bosaltmasi
-
-Bu nedenle monetization ve chat katmani birlikte ama kontrollu sekilde cikmali.
-
-## Faz 5 Cikisinda Beklenen Sonuc
-
-`Platform sadece community conversation ortami degil; ayni zamanda guvenilir insanlari ve isletmeleri ayirt edebilen, ticari olarak surdurulebilir bir yapiya donusuyor. Gelir modeli kullanici deneyimini zorla bozmadan, secimli gorunurluge dayali olarak calisiyor.`

@@ -1,158 +1,158 @@
-# Faz 1 Screen Map
+# Phase 1 Screen Map
 
-## Amac
+## Goal
 
-Bu dokuman, Faz 1 product flow'larini ekran seviyesine indirger. Buradaki hedef detayli UI tasarimi yapmak degil; hangi ekranlarin pilot icin gerekli oldugunu, hangi ekranlarin sonraya kalabilecegini ve her ekranda hangi ana aksiyonlarin olmasi gerektigini netlestirmektir.
+This document translates Phase 1 product flows into a screen-level map. The goal is not detailed UI design; it is to clarify which screens are required for the pilot, which can wait, and what the primary actions and critical states are on each screen.
 
 ## Global Navigation
 
-Faz 1 icin ana uygulama navigasyonu sade kalmalidir.
+Phase 1 navigation should remain simple.
 
-| Alan | Amac |
+| Area | Goal |
 | --- | --- |
-| Home | Kullanicinin community, location ve topic'e gore faydali akis gormesi |
-| Search | Eski bilgi, thread, Altin Bilgi, ilan, medya ve link bulma |
-| Create | Structured post, yardim istegi, ilan veya reklam baslatma |
-| Library | Altin Bilgi, cozum kartlari, FAQ, kaynaklar, media/link archive |
-| Profile | Kullanici profili, saved items, ayarlar |
-| Admin | Sadece yetkili kullanicilara gorunen operasyon alani |
+| Home | Show a useful feed based on community, location, and topic |
+| Search | Find past information: threads, knowledge cards, listings, media, and links |
+| Create | Start a structured post, help request, listing, or ad |
+| Library | Knowledge cards, FAQs, resources, and media/link archive |
+| Profile | Profile, saved items, settings |
+| Admin | Operations area visible only to authorized users |
 
 ## Screen Priority
 
-| Oncelik | Anlam |
+| Priority | Meaning |
 | --- | --- |
-| P0 | Pilotun calismasi icin sart |
-| P1 | Pilotun guvenli ve ikna edici olmasi icin cok degerli |
-| P2 | Faz 1 icinde tasarlanabilir ama ilk surumu bloke etmemeli |
+| P0 | Required for the pilot to work |
+| P1 | Very valuable for a safe and convincing pilot |
+| P2 | Can be designed within Phase 1, but should not block the first usable release |
 
-## Visitor ve Join Screens
+## Visitor and Join Screens
 
-| Screen | Oncelik | Amac | Ana Aksiyonlar | Kritik State'ler |
+| Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Public Community Preview | P0 | Uye olmadan degeri gostermek | Join, Request to join, View sample content | Public, private, empty, invite-only |
-| Public Thread Preview | P1 | Paylasilan solved thread veya kaynakla acquisition saglamak | Join to reply, Save after join, Open community | Content available, login required, removed |
-| Public Resource Preview | P1 | Altin Bilgi veya cozum karti ile guven vermek | Join, Share, View related topics | Limited preview, full access after join |
-| Invite Landing | P0 | Invite linkten gelen kullaniciyi dogru community/group'a tasimak | Continue, Login, Create account | Valid, expired, revoked, usage limit reached |
-| Join Request | P0 | Private community katilim talebini almak | Submit request, answer entry questions | Pending, approved, rejected |
-| Join Pending | P0 | Bekleyen kullanicinin durumunu anlatmak | View preview, cancel request | Pending, rejected, approved |
+| Public Community Preview | P0 | Show value before joining | Join, request to join, view sample content | Public, private, empty, invite-only |
+| Public Thread Preview | P1 | Acquire via shared solved thread/resource | Join to reply, save after join, open community | Content available, login required, removed |
+| Public Resource Preview | P1 | Build trust via knowledge card | Join, share, view related topics | Limited preview, full access after join |
+| Invite Landing | P0 | Route invite-link traffic to the right community/group | Continue, login, create account | Valid, expired, revoked, usage limit reached |
+| Join Request | P0 | Capture join request for private communities | Submit request, answer entry questions | Pending, approved, rejected |
+| Join Pending | P0 | Explain waiting status | View preview, cancel request | Pending, rejected, approved |
 
-## Auth ve Onboarding Screens
+## Auth and Onboarding Screens
 
-| Screen | Oncelik | Amac | Ana Aksiyonlar | Kritik State'ler |
+| Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Login / Sign Up | P0 | Friction dusuk giris | Google, Apple, email | New user, returning user, blocked user |
-| Create Profile | P0 | Minimum profil bilgisi almak | Display name, optional photo | Missing name, duplicate identity |
-| Location Setup | P0 | Base location ve gorunurluk secmek | Select city/area, set visibility | No location, location hidden, invalid location |
-| Topic Selection | P0 | Ilk feed relevance'i kurmak | Select groups, skip with default | No groups, recommended groups |
-| Notification Preference | P1 | Spam hissini azaltmak | Choose topics, comment alerts | All off, topic-only, mentions only |
-| Ad Preference | P0 | Reklam gorunurlugunu kullaniciya birakmak | Show ads, hide ads | Ads on, ads off |
-| Welcome / First Value | P0 | Ilk oturumda faydayi gostermek | Open solved thread, open help request, search | Empty community, seeded content available |
+| Login / Sign Up | P0 | Low-friction entry | Google, Apple, email | New user, returning user, blocked user |
+| Create Profile | P0 | Collect minimum profile info | Display name, optional photo | Missing name, duplicate identity |
+| Location Setup | P0 | Choose base location and visibility | Select city/area, set visibility | No location, location hidden, invalid location |
+| Topic Selection | P0 | Establish initial feed relevance | Select groups, skip with default | No groups, recommended groups |
+| Notification Preference | P1 | Reduce “spam” feeling | Choose topics, comment alerts | All off, topic-only, mentions only |
+| Ad Preference | P0 | User controls ad visibility | Show ads, hide ads | Ads on, ads off |
+| Welcome / First Value | P0 | Show value in the first session | Open solved thread, open help request, search | Empty community, seeded content available |
 
 ## Member Screens
 
-| Screen | Oncelik | Amac | Ana Aksiyonlar | Kritik State'ler |
+| Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Home Feed | P0 | Relevance odakli akis | Open item, filter by topic/location, create | Empty, ads off, no permission |
-| Community Home | P0 | Ana community bilgisini gostermek | Join topic, view rules, search community | Member, visitor, pending |
-| Location Community | P0 | Bolgesel icerigi ayirmak | Open feed, create local post, view groups | No local posts, not joined |
-| Topic Group | P0 | Konu disiplinini korumak | View posts, create in topic, view rules | Joined, not joined, post approval on |
-| Post Detail / Thread | P0 | Kalici tartisma ve cevap | Comment, reply, save, report, mark solved | Open, solved, locked, removed |
-| Comment Composer | P0 | Duzgun cevap akisi | Add comment, attach link/image | Rate limited, approval required |
-| Search Home | P0 | Eski bilgiye hizli giris | Search, recent searches, filters | No query, popular queries |
-| Search Results | P0 | Sonuclari filtrelemek | Filter, sort, open result, create if none | No results, duplicate suggestions |
-| Create Type Picker | P0 | Serbest post yerine dogru template secmek | Question, help request, listing, ad | Permission missing, topic required |
-| Help Request Form | P0 | Ihtiyaci structured toplamak | Fill fields, preview, publish | Missing required fields, duplicate found |
-| Listing Form | P0 | Ilanlari filtrelenebilir yapmak | Fill price/location/status, upload image | Missing price, invalid location |
-| Question Form | P0 | Soruya topic ve lokasyon baglamak | Title, details, topic, location | Similar thread found |
-| Status Update Modal | P0 | Ihtiyac veya ilanin sonucunu isaretlemek | Open, matched, solved, closed | Owner only, admin override |
-| Saved Items | P1 | Faydayi geri donulebilir yapmak | Open saved, remove save | Empty saved |
-| Media & Links Archive | P1 | Eski link, video, dosya ve gorsellere ulasmak | Filter by type/topic/date, open thread | No media, removed source |
-| Library Home | P0 | Altin Bilgi ve FAQ'a erisim | Browse categories, search library | Empty, curated sections |
-| Cozum Karti Detail | P0 | Checklist ve rehber sunmak | Save, share, suggest update, open sources | Outdated, pending update |
-| Profile | P0 | Kullanici kimligi ve katkilar | View posts, edit profile, settings | Private profile, blocked |
-| Settings | P0 | Hesap ve tercihleri yonetmek | Location, notifications, ads, account | Ads off, data request pending |
-| Report Modal | P0 | Sikayeti kolay almak | Select reason, add note, submit | Already reported, blocked |
-| Block Confirmation | P1 | Kullanici bazli rahatsizligi azaltmak | Confirm block, cancel | Already blocked |
+| Home Feed | P0 | Relevance-first feed | Open item, filter by topic/location, create | Empty, ads off, no permission |
+| Community Home | P0 | Show core community info | Join topic, view rules, search community | Member, visitor, pending |
+| Location Community | P0 | Separate location-based content | Open feed, create local post, view groups | No local posts, not joined |
+| Topic Group | P0 | Maintain topic discipline | View posts, create in topic, view rules | Joined, not joined, post approval on |
+| Post Detail / Thread | P0 | Durable conversation and answers | Comment, reply, save, report, mark solved | Open, solved, locked, removed |
+| Comment Composer | P0 | Compose a proper reply | Add comment, attach link/image | Rate limited, approval required |
+| Search Home | P0 | Quick entry to community memory | Search, recent searches, filters | No query, popular queries |
+| Search Results | P0 | Filter and navigate results | Filter, sort, open result, create if none | No results, duplicate suggestions |
+| Create Type Picker | P0 | Enforce correct template (vs free-form post) | Question, help request, listing, ad | Permission missing, topic required |
+| Help Request Form | P0 | Capture need in a structured form | Fill fields, preview, publish | Missing required fields, duplicate found |
+| Listing Form | P0 | Make listings filterable | Fill price/location/status, upload image | Missing price, invalid location |
+| Question Form | P0 | Bind question to topic and location | Title, details, topic, location | Similar thread found |
+| Status Update Modal | P0 | Mark outcome for request/listing | Open, matched, solved, closed | Owner only, admin override |
+| Saved Items | P1 | Make value revisitable | Open saved, remove save | Empty saved |
+| Media & Links Archive | P1 | Find past links, videos, files, images | Filter by type/topic/date, open thread | No media, removed source |
+| Library Home | P0 | Access knowledge cards and FAQs | Browse categories, search library | Empty, curated sections |
+| Solution Card Detail | P0 | Provide checklist-style guidance | Save, share, suggest update, open sources | Outdated, pending update |
+| Profile | P0 | Identity and contributions | View posts, edit profile, settings | Private profile, blocked |
+| Settings | P0 | Manage account and preferences | Location, notifications, ads, account | Ads off, data request pending |
+| Report Modal | P0 | Lightweight reporting | Select reason, add note, submit | Already reported, blocked |
+| Block Confirmation | P1 | Reduce user-level harassment | Confirm block, cancel | Already blocked |
 
 ## Advertiser / Provider Screens
 
-| Screen | Oncelik | Amac | Ana Aksiyonlar | Kritik State'ler |
+| Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Reklam Ver Entry | P1 | Reklam akisini baslatmak | Choose ad type, continue | User not eligible, ads policy |
-| Ad Create Form | P1 | Reklami structured almak | Title, description, image, link, dates | Missing fields, policy warning |
-| Ad Targeting | P1 | Lokasyon ve topic hedeflemek | Select location, topic, service area | Too broad, no eligible audience |
-| Ad Preview | P1 | Reklamin nasil gorunecegini gostermek | Submit for review, edit | Ads off note, mobile preview |
-| Ad Status | P1 | Reklam vereni bekletmeden bilgilendirmek | View pending, edit rejected, pause | Pending, approved, rejected, paused |
-| Basic Ad Report | P2 | Faydayi gostermek | View impressions, clicks, saves, helpful, reports | Low data, no delivery |
+| “Advertise” Entry | P1 | Start the ad flow | Choose ad type, continue | User not eligible, ads policy |
+| Ad Create Form | P1 | Capture ad in a structured form | Title, description, image, link, dates | Missing fields, policy warning |
+| Ad Targeting | P1 | Target location and topic | Select location, topic, service area | Too broad, no eligible audience |
+| Ad Preview | P1 | Show how the ad will look | Submit for review, edit | Ads off note, mobile preview |
+| Ad Status | P1 | Keep advertiser informed | View pending, edit rejected, pause | Pending, approved, rejected, paused |
+| Basic Ad Report | P2 | Show early value | View impressions, clicks, saves, helpful, reports | Low data, no delivery |
 
 ## Admin Screens
 
-| Screen | Oncelik | Amac | Ana Aksiyonlar | Kritik State'ler |
+| Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Admin Home | P0 | Operasyon durumunu ozetlemek | Open queues, view alerts, quick actions | No pending work, high risk |
-| Approval Queue | P0 | Tum onaylari tek yerde toplamak | Approve, reject, request edit, escalate | Empty, filtered, overdue |
-| Approval Detail | P0 | Karar vermek icin context gostermek | View item, view user, decide | Missing context, already handled |
-| Join Requests | P0 | Private community uyeliklerini yonetmek | Approve, reject, message reason | Bulk pending, duplicate user |
-| Reports Queue | P0 | Sikayetleri islemek | Warn, mute, remove, no action | Multiple reports, high risk |
-| Member Detail Admin | P0 | Uye history ve aksiyonlarini gormek | View reports, mute, remove from group | Scoped permission, platform escalation |
-| Community Structure | P0 | Location ve topic yapisini gormek | Add/edit group, assign admin | Duplicate group, permission missing |
-| Topic Group Settings | P0 | Konu kurallarini uygulamak | Edit rules, post approval, pinned items | Approval on/off, locked group |
-| Role Management | P0 | Sub-admin ve moderator atamak | Assign role, revoke role | Scope required, owner protected |
-| Invite Links | P0 | Migration'i baslatmak | Create link, revoke, copy, QR | Expired, limit reached |
-| Altin Bilgi Manager | P0 | Kutuphaneyi curate etmek | Create card, edit, publish, archive | Draft, pending, published |
-| Admin Picks | P1 | Haftalik degerli icerigi one cikarmak | Pick thread, write summary, publish | No picks, draft |
-| Ad Approval | P1 | Reklam kalitesini korumak | Approve, reject, request edit | Sensitive category, reported advertiser |
-| Migration Checklist | P1 | Adminin tasinma surecini tamamlamasi | Seed content, create invites, publish preview | Incomplete, ready |
-| Audit Log | P1 | Admin kararlarini izlenebilir yapmak | Filter actions, open decision | No permission, retention limit |
+| Admin Home | P0 | Summarize operational status | Open queues, view alerts, quick actions | No pending work, high risk |
+| Approval Queue | P0 | Centralize approvals | Approve, reject, request edit, escalate | Empty, filtered, overdue |
+| Approval Detail | P0 | Provide context for decisions | View item, view user, decide | Missing context, already handled |
+| Join Requests | P0 | Manage private community memberships | Approve, reject, message reason | Bulk pending, duplicate user |
+| Reports Queue | P0 | Process reports | Warn, mute, remove, no action | Multiple reports, high risk |
+| Member Detail (Admin) | P0 | View member history and actions | View reports, mute, remove from group | Scoped permission, platform escalation |
+| Community Structure | P0 | Manage location/topic structure | Add/edit group, assign admin | Duplicate group, permission missing |
+| Topic Group Settings | P0 | Enforce topic rules | Edit rules, post approval, pinned items | Approval on/off, locked group |
+| Role Management | P0 | Assign sub-admin and moderator roles | Assign role, revoke role | Scope required, owner protected |
+| Invite Links | P0 | Start migration | Create link, revoke, copy, QR | Expired, limit reached |
+| Knowledge Library Manager | P0 | Curate the library | Create card, edit, publish, archive | Draft, pending, published |
+| Admin Picks | P1 | Promote weekly high-value content | Pick thread, write summary, publish | No picks, draft |
+| Ad Approval | P1 | Protect ad quality | Approve, reject, request edit | Sensitive category, reported advertiser |
+| Migration Checklist | P1 | Help admin complete migration | Seed content, create invites, publish preview | Incomplete, ready |
+| Audit Log | P1 | Make admin decisions traceable | Filter actions, open decision | No permission, retention limit |
 
 ## Platform Admin Screens
 
-| Screen | Oncelik | Amac | Ana Aksiyonlar | Kritik State'ler |
+| Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Platform Admin Home | P1 | Tum pilotlari izlemek | View communities, risk alerts | No pilots, active pilots |
-| Community Create / Approve | P1 | Ana community acilisini kontrollu tutmak | Create, approve, reject | Duplicate community |
-| Community Admin Assignment | P1 | Ana adminleri yonetmek | Assign admin, revoke admin | Owner conflict |
-| Platform Policy Settings | P2 | Genel policy'leri yonetmek | Edit ad policy, report thresholds | Requires rollout |
-| Platform Ad Review | P2 | Yuksek riskli reklamlari incelemek | Approve, reject, escalate | Sensitive category |
+| Platform Admin Home | P1 | Monitor all pilots | View communities, risk alerts | No pilots, active pilots |
+| Community Create / Approve | P1 | Keep community creation controlled | Create, approve, reject | Duplicate community |
+| Community Admin Assignment | P1 | Manage lead admins | Assign admin, revoke admin | Owner conflict |
+| Platform Policy Settings | P2 | Manage global policies | Edit ad policy, report thresholds | Requires rollout |
+| Platform Ad Review | P2 | Review high-risk ads | Approve, reject, escalate | Sensitive category |
 
 ## Required Cross-Screen States
 
-Her kritik ekran icin su state'ler tasarimda dusunulmelidir:
+For each critical screen, the following states should be considered:
 
-| State | Neden Gerekli |
+| State | Why it matters |
 | --- | --- |
-| Loading | Mobil deneyimde veri gecikmeleri normal |
-| Empty | Yeni pilotta bos alanlar olacak |
-| No permission | Scoped admin ve private community icin sart |
-| Pending approval | Join, ad, resource ve hassas postlarda gerekir |
-| Rejected | Kullaniciya neden ve sonraki adim anlatilmali |
-| Removed | Moderasyon sonrasi eski linkler kirilmamali |
-| Reported | Sikayet edilen icerik icin owner/admin davranisi net olmali |
-| Ads off | Kullanici reklamlari kapattiysa reklam alanlari gizlenmeli |
-| No results | Aramadan structured request'e gecis saglanmali |
-| Duplicate found | Yeni post oncesi mevcut bilgiye yonlendirme |
-| Expired invite | Migration linkleri icin kritik |
-| Rate limited | Spam ve kotu kullanim icin gerekli |
+| Loading | Network delays are normal on mobile |
+| Empty | A new pilot will have empty areas |
+| No permission | Required for scoped admins and private communities |
+| Pending approval | Needed for join, ads, resources, and sensitive posts |
+| Rejected | Explain reason and next step to the user |
+| Removed | Old shared links should not break after moderation |
+| Reported | Owner/admin behavior must be defined for reported content |
+| Ads off | If the user disabled ads, ad placements must be hidden |
+| No results | Transition from search to structured request creation |
+| Duplicate found | Deflect to existing knowledge before posting |
+| Expired invite | Critical for migration links |
+| Rate limited | Needed to prevent spam/abuse |
 
-## Faz 1 MVP Screen Set
+## Phase 1 MVP Screen Set
 
-Ilk tasarim sprintinde P0 ekranlar yeterlidir:
+In the first design sprint, P0 screens are sufficient:
 
 - Public Community Preview
 - Invite Landing
 - Join Request
 - Login / Sign Up
-- Profile, Location, Topic ve Ad Preference onboarding
+- Profile, location, topic, and ad-preference onboarding
 - Home Feed
 - Topic Group
-- Search Home ve Search Results
+- Search Home and Search Results
 - Post Detail / Thread
 - Create Type Picker
 - Help Request Form
 - Listing Form
 - Question Form
 - Library Home
-- Cozum Karti Detail
+- Solution Card Detail
 - Settings
 - Report Modal
 - Admin Home
@@ -161,29 +161,29 @@ Ilk tasarim sprintinde P0 ekranlar yeterlidir:
 - Reports Queue
 - Community Structure
 - Invite Links
-- Altin Bilgi Manager
+- Knowledge Library Manager
 
-## Tasarimda Ozellikle Korunacak Kararlar
+## Decisions to Preserve in Design
 
-- Ana ekran chat gibi davranmamalidir.
-- Create akisi kullaniciyi dogru template'e zorlamalidir.
-- Search sadece metin aramasi degil, eski community hafizasina giris kapisi olmalidir.
-- Ad preference onboarding ve settings icinde net gorunmelidir.
-- Reklam create akisi normal post create akisindan ayrilmalidir.
-- Admin aksiyonlari scoped permission ile calismalidir.
-- Sikayet ve block kullanici icin 1-2 tap ile ulasilabilir olmalidir.
-- Library ve Altin Bilgi ana navigasyonda gorunur olmalidir.
-- Media/link archive Library'nin altinda dogrudan erisilebilir olmalidir.
+- The home experience must not turn into a general chat feed.
+- The create flow must force the user into the correct template.
+- Search is not just text search; it is the entry point to community memory.
+- Ad preference must be explicit in onboarding and settings.
+- The ad-create flow must be separate from the normal post-create flow.
+- Admin actions must work with scoped permissions.
+- Report and block must be reachable in 1–2 taps.
+- Library and knowledge cards must be visible in primary navigation.
+- Media/link archive must be directly accessible under Library.
 
-## Sonraki Adim
+## Next Step
 
-Bu ekran haritasindan sonra ilk cikarilacak artefact low-fidelity wireframe setidir.
+After this screen map, the first artifact to produce is the low-fidelity wireframe set.
 
-Wireframe seti once su 5 kritik yolculugu gostermelidir:
+The wireframe set should first cover these 5 critical journeys:
 
-1. Visitor preview'dan uye olur.
-2. Kullanici eski bilgiyi arar ve bulur.
-3. Kullanici `oda ariyorum` yardim istegi acar.
-4. Kullanici reklam gormeyi kapatir, reklam veren reklam olusturur.
-5. Admin join request, report ve Altin Bilgi onayini yonetir.
+1. A visitor joins from a preview.
+2. A user searches and finds existing knowledge.
+3. A user creates a “I’m looking for a room” help request.
+4. A user disables ads; an advertiser creates an ad.
+5. An admin manages join requests, reports, and knowledge-card approvals.
 

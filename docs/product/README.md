@@ -1,26 +1,26 @@
 # Product Discovery Docs
 
-Bu klasor, roadmap kararlarini tasarim ve teknik mimariye baglayan urun dokumanlarini tutar.
+This folder contains product documents that connect roadmap decisions to UX and technical architecture.
 
-Amac, C4 diagramlarina veya backend tasarimina gecmeden once su sorulari netlestirmektir:
+The goal is to clarify the following before moving into C4 diagrams or backend design:
 
-- kullanici hangi akislarla deger goruyor
-- admin hangi akislarla operasyon yukunden kurtuluyor
-- hangi ekranlar Faz 1 icin gercekten gerekli
-- hangi veriler ve permission kararlarinin teknik modele donusmesi gerekiyor
+- which user flows create value
+- which admin flows reduce operational load
+- which screens are truly required for Phase 1
+- which data and permission decisions must translate into the technical model
 
-## Okuma Sirasi
+## Reading Order
 
-1. [Faz 1 Product Flows](phase-1-flows.md)
-2. [Faz 1 Screen Map](phase-1-screen-map.md)
+1. [Phase 1 Product Flows](phase-1-flows.md)
+2. [Phase 1 Screen Map](phase-1-screen-map.md)
+3. [Phase 1 Low-Fidelity Wireframes](phase-1-wireframes.md)
 
-## Sonraki Dokumanlar
+## Next Documents
 
-Bu iki dokumandan sonra onerilen sira:
+After these documents, the suggested order is:
 
-1. Faz 1 low-fidelity wireframe seti
-2. Faz 1 domain model
-3. C4 Context diagram
-4. C4 Container diagram
-5. C4 Component diagramlari
+1. Phase 1 domain model
+2. C4 Context diagram
+3. C4 Container diagram
+4. C4 Component diagrams
 
