@@ -163,7 +163,7 @@ export function ProfileScreen() {
               </button>
             ))}
             <button
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/auth')}
               className="w-full flex items-center gap-3 bg-white rounded-xl border border-[#e4e7ec] px-4 py-3 mb-2 text-gray-600"
             >
               <LogOut size={16} className="text-gray-400" />

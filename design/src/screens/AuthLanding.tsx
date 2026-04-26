@@ -61,7 +61,7 @@ export function AuthLanding() {
             Preview product
           </Button>
           <button
-            onClick={() => navigate('/preview')}
+            onClick={() => navigate('/join/pending')}
             className="text-center text-xs font-extrabold text-brand-700"
           >
             View public community preview

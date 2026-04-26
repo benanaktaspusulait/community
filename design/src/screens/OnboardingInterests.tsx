@@ -51,7 +51,7 @@ export function OnboardingInterests() {
 
       <div className="px-6 pb-10 flex gap-3">
         <Button variant="ghost" className="flex-1 py-3" onClick={() => navigate(-1)}>Back</Button>
-        <Button className="flex-1 py-3" onClick={() => navigate('/feed')} disabled={selected.length === 0}>
+        <Button className="flex-1 py-3" onClick={() => navigate('/onboarding/location')} disabled={selected.length === 0}>
           Next
         </Button>
       </div>

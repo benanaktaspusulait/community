@@ -121,7 +121,7 @@ export function LocationSetup() {
 
       <div className="px-6 pb-10 flex gap-3">
         <Button variant="ghost" className="flex-1 py-3" onClick={() => navigate(-1)}>Back</Button>
-        <Button className="flex-1 py-3" disabled={!selected} onClick={() => navigate('/onboarding/interests')}>
+        <Button className="flex-1 py-3" disabled={!selected} onClick={() => navigate('/feed')}>
           Next
         </Button>
       </div>

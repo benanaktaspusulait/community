@@ -37,7 +37,7 @@ export function Join() {
           </div>
 
           <button
-            onClick={() => navigate('/feed')}
+            onClick={() => navigate('/join')}
             className="w-full flex items-center justify-center gap-2 border border-[#e4e7ec] rounded-xl py-3 text-sm font-medium text-gray-700 hover:bg-gray-50"
           >
             <img src="https://www.google.com/favicon.ico" className="w-4 h-4" alt="" />

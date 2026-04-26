@@ -79,7 +79,7 @@ export function Settings() {
         <div className="text-5xl">👋</div>
         <h2 className="text-lg font-bold text-gray-900">Account deleted</h2>
         <p className="text-sm text-gray-500">Your account has been scheduled for deletion. You'll receive a confirmation email.</p>
-        <Button className="w-full py-3 mt-2" onClick={() => navigate('/')}>Back to start</Button>
+        <Button className="w-full py-3 mt-2" onClick={() => navigate('/auth')}>Back to start</Button>
       </div>
     )
   }
@@ -199,7 +199,7 @@ export function Settings() {
             🗑️ Delete account
           </button>
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/auth')}
             className="flex items-center gap-2 text-sm text-gray-600 py-2.5 font-medium"
           >
             🚪 Log out

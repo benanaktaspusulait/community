@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TopBar } from '../components/ui/TopBar'
 import { Button } from '../components/ui/Button'
@@ -20,6 +20,13 @@ export function AdCreate() {
   const [group, setGroup] = useState('')
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
+  const fileRef = useRef<HTMLInputElement>(null)
+
+  function handleImage(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (file) setImageUrl(URL.createObjectURL(file))
+  }
   const selectedAdType = adTypes.find(t => t.key === adType)
 
   if (step === 'type') {
@@ -107,10 +114,21 @@ export function AdCreate() {
 
         <div className="flex flex-col gap-1">
           <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Image (optional)</label>
-          <div className="border-2 border-dashed border-[#e4e7ec] rounded-xl py-6 flex flex-col items-center gap-2 text-gray-400">
-            <span className="text-2xl">📷</span>
-            <span className="text-xs">Tap to upload image</span>
-          </div>
+          {imageUrl ? (
+            <div className="relative w-full h-36 rounded-xl overflow-hidden">
+              <img src={imageUrl} className="w-full h-full object-cover" />
+              <button
+                onClick={() => setImageUrl(null)}
+                className="absolute top-2 right-2 bg-black/50 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center"
+              >✕</button>
+            </div>
+          ) : (
+            <label className="border-2 border-dashed border-[#e4e7ec] rounded-xl py-6 flex flex-col items-center gap-2 text-gray-400 cursor-pointer hover:border-[#4f6ef7]">
+              <span className="text-2xl">📷</span>
+              <span className="text-xs">Tap to upload image</span>
+              <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImage} />
+            </label>
+          )}
         </div>
       </div>
 

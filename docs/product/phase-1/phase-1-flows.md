@@ -511,7 +511,7 @@ Users need a clear and safe way to end their session, especially on shared devic
 
 1. The user opens Settings.
 2. They tap `Log out`.
-3. The system clears the local session and returns the user to the Auth Landing screen.
+3. The system clears the local session and returns the user to the Auth Landing screen (`/auth`).
 4. No confirmation step is required for logout (unlike account deletion).
 
 ### Rules
@@ -598,7 +598,7 @@ The current design/prototype should explicitly cover:
 | --- | --- | --- |
 | F1 Public preview → join | `/preview`, `/invite/landing`, `/join`, `/join/pending` | ✅ |
 | F1b Direct user invite | `/invite`, `/admin/invites` | ✅ |
-| F2 Onboarding | `/join`, `/verify`, `/onboarding/location`, `/location/map`, `/onboarding` | ✅ |
+| F2 Onboarding | `/join`, `/verify`, `/onboarding` (interests → step 1), `/onboarding/location` (step 2), `/location/map`, `/feed` | ✅ |
 | F3 Home feed | `/feed`, `/community`, `/group` | ✅ |
 | F4 Search + duplicate deflection | `/search` | ✅ |
 | F5 Help request | `/create`, `/thread` | ✅ |
@@ -611,12 +611,12 @@ The current design/prototype should explicitly cover:
 | F12 Admin migration setup | `/admin`, `/admin/invites`, `/group/create` | ✅ |
 | F13 Approval queue | `/admin/approvals` | ✅ |
 | F14 Account + data rights | `/settings` (delete account, request data) | ✅ |
-| F14b Session / logout | `/settings` (log out button → `/`) | ✅ |
+| F14b Session / logout | `/settings` (log out button → `/auth`) | ✅ |
 | F14c 1-1 chat decision | Documented as out of scope; contact preference shown in `/listing/create` and `/create` | ✅ |
 | F15 Special day groups | `/special-day`, `/group/create` (SPECIAL_DAY type) | ✅ |
 | Map location picker | `/location/map` — reachable from `/onboarding/location` via "Pick from map" button | ✅ |
 | Push notification preview | `/notifications/push-demo` | ✅ |
-| Splash screen | `/splash` | ✅ |
+| Splash screen | `/` → `/auth` (2.2s sonra otomatik yönlendirme) | ✅ |
 
 ## Out of Scope for Phase 1
 
