@@ -20,7 +20,7 @@ const myGroups = [
 ]
 
 const settingsItems = [
-  { icon: MapPin, label: 'Location', value: 'Milton Keynes', to: '/settings' },
+  { icon: MapPin, label: 'Location', value: 'Milton Keynes', to: '/location/map' },
   { icon: Bell, label: 'Notifications', value: 'Topics only', to: '/settings' },
   { icon: Eye, label: 'Ad preferences', value: 'Ads off', to: '/settings' },
   { icon: Shield, label: 'Admin panel', value: '', to: '/admin' },
@@ -46,9 +46,12 @@ export function ProfileScreen() {
             <div className="flex-1">
               <p className="font-bold text-gray-900 text-base">Ali Yılmaz</p>
               <p className="text-xs text-gray-400 mt-0.5">Member since Jan 2025</p>
-              <div className="flex items-center gap-1 mt-1 text-xs text-gray-500">
+              <button
+                onClick={() => navigate('/location/map')}
+                className="flex items-center gap-1 mt-1 text-xs text-gray-500 hover:text-[#4f6ef7]"
+              >
                 <MapPin size={11} /> Milton Keynes
-              </div>
+              </button>
             </div>
             <button
               onClick={() => navigate('/settings')}

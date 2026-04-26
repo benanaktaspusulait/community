@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Phone } from './components/ui/Phone'
 import { ScreenIndex } from './screens/ScreenIndex'
+import { AuthLanding } from './screens/AuthLanding'
 import { PublicPreview } from './screens/PublicPreview'
 import { InviteLanding } from './screens/InviteLanding'
 import { JoinPending } from './screens/JoinPending'
@@ -40,6 +41,7 @@ import { AdminLibraryManager } from './screens/AdminLibraryManager'
 const phoneRoutes = [
   { path: '/splash', element: <SplashScreen /> },
   { path: '/', element: <SplashScreen /> },
+  { path: '/auth', element: <AuthLanding /> },
   { path: '/preview', element: <PublicPreview /> },
   { path: '/invite/landing', element: <InviteLanding /> },
   { path: '/join/pending', element: <JoinPending /> },

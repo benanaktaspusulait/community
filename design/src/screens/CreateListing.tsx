@@ -26,7 +26,16 @@ export function CreateListing() {
   const [location, setLocation] = useState('')
   const [condition, setCondition] = useState('')
   const [availability, setAvailability] = useState('')
-  const [photos, setPhotos] = useState(0)
+  const [photos, setPhotos] = useState<string[]>([])
+
+  function handlePhotoAdd(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files || [])
+    files.forEach(file => {
+      const url = URL.createObjectURL(file)
+      setPhotos(p => p.length < 5 ? [...p, url] : p)
+    })
+    e.target.value = ''
+  }
 
   if (!type) {
     return (
@@ -70,28 +79,29 @@ export function CreateListing() {
 
       <div className="flex-1 overflow-y-auto px-4 pt-4 pb-4 flex flex-col gap-4">
 
-        {/* photo upload */}
         <div className="flex flex-col gap-2">
           <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
             Photos {isForSale ? <span className="text-red-500">*</span> : '(optional)'}
           </label>
-          <div className="flex gap-2">
-            {Array.from({ length: photos }).map((_, i) => (
-              <div key={i} className="w-20 h-20 rounded-xl bg-[#e0eaff] flex items-center justify-center text-[#4f6ef7] text-xs font-bold">
-                Photo {i + 1}
+          <div className="flex gap-2 flex-wrap">
+            {photos.map((src, i) => (
+              <div key={i} className="w-20 h-20 rounded-xl overflow-hidden relative">
+                <img src={src} className="w-full h-full object-cover" />
+                <button
+                  onClick={() => setPhotos(p => p.filter((_, j) => j !== i))}
+                  className="absolute top-1 right-1 bg-black/50 text-white rounded-full w-4 h-4 text-[10px] flex items-center justify-center"
+                >✕</button>
               </div>
             ))}
-            {photos < 5 && (
-              <button
-                onClick={() => setPhotos(p => p + 1)}
-                className="w-20 h-20 rounded-xl border-2 border-dashed border-[#e4e7ec] flex flex-col items-center justify-center gap-1 text-gray-400 hover:border-[#4f6ef7]"
-              >
+            {photos.length < 5 && (
+              <label className="w-20 h-20 rounded-xl border-2 border-dashed border-[#e4e7ec] flex flex-col items-center justify-center gap-1 text-gray-400 hover:border-[#4f6ef7] cursor-pointer">
                 <Camera size={18} />
                 <span className="text-[10px]">Add photo</span>
-              </button>
+                <input type="file" accept="image/*" multiple className="hidden" onChange={handlePhotoAdd} />
+              </label>
             )}
           </div>
-          {photos > 0 && <p className="text-[10px] text-gray-400">{photos}/5 photos added</p>}
+          {photos.length > 0 && <p className="text-[10px] text-gray-400">{photos.length}/5 photos added</p>}
         </div>
 
         <Input label="Title" placeholder={
