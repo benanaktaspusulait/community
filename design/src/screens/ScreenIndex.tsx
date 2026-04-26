@@ -3,7 +3,7 @@ import { ArrowRight, Layers3, Smartphone } from 'lucide-react'
 
 const sections = [
   {
-    title: '🔐 Auth & Onboarding',
+    title: 'Auth & Onboarding',
     screens: [
       { path: '/splash', label: 'Splash Screen' },
       { path: '/', label: 'Auth Landing' },
@@ -12,13 +12,13 @@ const sections = [
       { path: '/join', label: 'Join' },
       { path: '/join/pending', label: 'Join Pending' },
       { path: '/verify', label: 'Verify Code' },
-      { path: '/onboarding/location', label: 'Onboarding — Location setup' },
+      { path: '/onboarding/location', label: 'Onboarding - Location setup' },
       { path: '/location/map', label: 'Map Location Picker' },
-      { path: '/onboarding', label: 'Onboarding — Interests' },
+      { path: '/onboarding', label: 'Onboarding - Interests' },
     ],
   },
   {
-    title: '🏠 Main',
+    title: 'Main Experience',
     screens: [
       { path: '/feed', label: 'Home Feed' },
       { path: '/notifications', label: 'Notifications' },
@@ -33,7 +33,7 @@ const sections = [
     ],
   },
   {
-    title: '🔍 Search & Create',
+    title: 'Search & Create',
     screens: [
       { path: '/search', label: 'Search' },
       { path: '/create', label: 'Create (help request / question)' },
@@ -43,7 +43,7 @@ const sections = [
     ],
   },
   {
-    title: '📚 Library',
+    title: 'Library',
     screens: [
       { path: '/library', label: 'Library Home' },
       { path: '/resource', label: 'Resource Detail' },
@@ -51,13 +51,13 @@ const sections = [
     ],
   },
   {
-    title: '📢 Ads',
+    title: 'Ads',
     screens: [
       { path: '/ad/create', label: 'Create Ad' },
     ],
   },
   {
-    title: '👤 Profile & Settings',
+    title: 'Profile & Settings',
     screens: [
       { path: '/profile', label: 'My Profile (posts, saved, groups)' },
       { path: '/member', label: 'Member Profile (report, block)' },
@@ -65,11 +65,11 @@ const sections = [
     ],
   },
   {
-    title: '🛡️ Admin',
+    title: 'Admin',
     screens: [
       { path: '/admin', label: 'Admin Home' },
       { path: '/admin/invites', label: 'Invite Links & User Invites' },
-      { path: '/admin/reports', label: 'Reports Queue (şikayetleri görme)' },
+      { path: '/admin/reports', label: 'Reports Queue' },
       { path: '/admin/approvals', label: 'Approval Queue' },
       { path: '/admin/library', label: 'Knowledge Library Manager' },
       { path: '/admin/moderation', label: 'Member Moderation (warn / viewer / remove)' },
@@ -99,7 +99,7 @@ export function ScreenIndex() {
             <div className="grid grid-cols-2 gap-3 self-end">
               <div className="rounded-[24px] bg-white/14 p-4 backdrop-blur">
                 <Smartphone size={20} className="text-white/75" />
-                <p className="mt-4 text-2xl font-black tracking-[-0.05em]">30+</p>
+                <p className="mt-4 text-2xl font-black tracking-[-0.05em]">38</p>
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/58">Screens</p>
               </div>
               <div className="rounded-[24px] bg-white/14 p-4 backdrop-blur">
@@ -116,20 +116,20 @@ export function ScreenIndex() {
             <div key={section.title} className="soft-panel rounded-[28px] p-4">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-muted/70">{section.title}</p>
               <div className="flex flex-col gap-2">
-              {section.screens.map(s => (
-                <button
-                  key={s.path}
-                  onClick={() => navigate(s.path)}
+                {section.screens.map(s => (
+                  <button
+                    key={s.path}
+                    onClick={() => navigate(s.path)}
                     className="group flex items-center justify-between rounded-2xl border border-border bg-white/68 px-4 py-3 text-left text-sm font-bold text-ink transition-all hover:-translate-y-0.5 hover:border-brand-500 hover:bg-white"
-                >
+                  >
                     <span>{s.label}</span>
                     <span className="flex items-center gap-2 text-xs font-mono text-muted/55 group-hover:text-brand-700">
                       {s.path}
                       <ArrowRight size={13} />
                     </span>
-                </button>
-              ))}
-            </div>
+                  </button>
+                ))}
+              </div>
             </div>
           ))}
         </div>

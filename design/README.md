@@ -21,7 +21,7 @@ The prototype is intentionally mobile-first. It validates the product promise:
 ## Run Locally
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 

@@ -137,24 +137,30 @@ For each critical screen, the following states should be considered:
 | Expired invite | Critical for migration links |
 | Rate limited | Needed to prevent spam/abuse |
 
-## Phase 1 MVP Screen Set
+## Phase 1 MVP Screen Coverage
 
-In the first design sprint, P0 screens are sufficient:
+In the first design sprint, the prototype should cover the P0 journeys directly, either as dedicated screens or as clearly represented states inside a broader screen:
 
 - Public Community Preview
 - Invite Landing
 - Join Request
+- Join Pending
 - Login / Sign Up
 - Profile, location, topic, and ad-preference onboarding
+- Welcome / First Value
 - Home Feed
+- Community Home
+- Location Community
 - Topic Group
 - Invite People
 - Search Home and Search Results
 - Post Detail / Thread
+- Comment Composer state
 - Create Type Picker
 - Help Request Form
 - Listing Form
 - Question Form
+- Status Update state
 - Library Home
 - Solution Card Detail
 - Settings
