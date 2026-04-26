@@ -80,7 +80,7 @@ export function PublicPreview() {
         <div className="mb-3 flex items-center gap-2 text-xs font-bold text-muted">
           <MapPin size={14} /> Milton Keynes, UK
         </div>
-        <Button className="w-full py-3.5" onClick={() => navigate('/join')}>
+        <Button className="w-full py-3.5" onClick={() => navigate('/country')}>
           Join community
         </Button>
         <button

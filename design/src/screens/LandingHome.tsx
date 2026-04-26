@@ -105,7 +105,7 @@ export function LandingHome() {
             <div className="mt-6 flex flex-col gap-3">
               <Button
                 className="flex w-full items-center justify-center gap-2 py-3.5 text-base"
-                onClick={() => navigate('/join')}
+                onClick={() => navigate('/country')}
               >
                 Explore Communities
                 <ArrowRight size={17} />

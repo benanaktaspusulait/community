@@ -54,7 +54,7 @@ export function AuthLanding() {
         </div>
 
         <div className="appear-up flex flex-col gap-3" style={{ animationDelay: '220ms' }}>
-          <Button className="w-full py-3.5 text-base" onClick={() => navigate('/join')}>
+          <Button className="w-full py-3.5 text-base" onClick={() => navigate('/country')}>
             Join community
           </Button>
           <Button variant="secondary" className="w-full py-3.5 text-base" onClick={() => navigate('/preview')}>

@@ -38,11 +38,13 @@ import { ApprovalQueue } from './screens/ApprovalQueue'
 import { SplashScreen } from './screens/SplashScreen'
 import { AdminLibraryManager } from './screens/AdminLibraryManager'
 import { LandingHome } from './screens/LandingHome'
+import { CountrySelect } from './screens/CountrySelect'
 
 const phoneRoutes = [
   { path: '/splash', element: <SplashScreen /> },
   { path: '/', element: <SplashScreen /> },
   { path: '/landing', element: <LandingHome /> },
+  { path: '/country', element: <CountrySelect /> },
   { path: '/auth', element: <AuthLanding /> },
   { path: '/preview', element: <PublicPreview /> },
   { path: '/invite/landing', element: <InviteLanding /> },

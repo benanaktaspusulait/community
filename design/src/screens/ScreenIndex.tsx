@@ -7,6 +7,7 @@ const sections = [
     screens: [
       { path: '/splash', label: 'Splash Screen' },
       { path: '/landing', label: 'Landing Home (New Hero Design)' },
+      { path: '/country', label: 'Country Select' },
       { path: '/', label: 'Auth Landing' },
       { path: '/preview', label: 'Public Community Preview' },
       { path: '/invite/landing', label: 'Invite Landing' },
