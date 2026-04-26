@@ -35,12 +35,12 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
       backend {
         component auth "Auth & Onboarding" "Signup/login/verification and onboarding preferences." "Backend module"
         component rbac "RBAC" "Role assignments and scoped authorization checks." "Backend module"
-        component content "Content" "Communities, groups, threads, posts, lifecycle (open/close)." "Backend module"
+        component content "Content" "Communities, groups, memberships, invites, threads, posts, lifecycle." "Backend module"
         component library "Library" "Resources (knowledge cards), publish lifecycle, provenance links." "Backend module"
-        component searchModule "Search" "Query/filters, saved searches, duplicate deflection support." "Backend module"
+        component searchModule "Search" "Query/filters and duplicate deflection for threads/resources." "Backend module"
         component moderation "Moderation" "Reports, queues, decisions, enforcement actions." "Backend module"
         component ads "Ads" "Ad drafts/submission, approval integration, status transitions." "Backend module"
-        component approvals "Approvals" "Approval queue and decisions (Phase 1: ads; later: resources/sensitive posts)." "Backend module"
+        component approvals "Approvals" "Approval queue and decisions for join requests, ads, resources, sensitive posts, and group requests." "Backend module"
       }
     }
 
@@ -69,7 +69,7 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
     client -> auth "Authenticates and completes onboarding" "HTTPS/JSON"
     client -> content "Reads and writes threads/posts" "HTTPS/JSON"
     client -> library "Reads resources (and admin-only publishing)" "HTTPS/JSON"
-    client -> searchModule "Searches threads/resources; manages saved searches" "HTTPS/JSON"
+    client -> searchModule "Searches threads/resources" "HTTPS/JSON"
     client -> moderation "Creates reports" "HTTPS/JSON"
     client -> ads "Creates/edits ads (creator)" "HTTPS/JSON"
     client -> approvals "Reviews/decides approvals (admin/mod)" "HTTPS/JSON"
@@ -133,7 +133,8 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
     dynamic communityPlatform "J1-join-onboarding-first-value" {
       title "Dynamic — J1 Join → Onboarding → First value"
       description "Visitor becomes a member; onboarding seeds relevance; home feed loads."
-      visitor -> client "Open invite/entry and start join"
+      visitor -> client "Open preview/invite and view preview cards"
+      visitor -> client "Start join"
       client -> auth "Start signup/login"
       auth -> emailSms "Send verification (if required)"
       client -> auth "Submit verification code"
@@ -185,13 +186,13 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
     }
 
     dynamic communityPlatform "J5-report-and-resolve" {
-      title "Dynamic — J5 Report content → Admin resolves"
-      member -> client "Report a thread/post/resource"
+      title "Dynamic — J5 Report content -> Admin resolves"
+      member -> client "Report a thread/post/resource/user"
       client -> moderation "Submit report"
       moderation -> database "Persist report"
       moderator -> client "Open reports queue"
-      client -> moderation "Resolve/dismiss"
-      moderation -> database "Persist resolution"
+      client -> moderation "Warn / set viewer mode / remove / dismiss"
+      moderation -> database "Persist resolution and enforcement action"
     }
 
     styles {
@@ -220,4 +221,3 @@ workspace "Community Platform — Phase 1" "Phase 1 architecture driven by produ
     }
   }
 }
-

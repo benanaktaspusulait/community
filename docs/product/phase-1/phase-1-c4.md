@@ -15,6 +15,7 @@ This C4 model is authored in **Structurizr DSL**.
 - **System Context**: `context`
 - **Container**: `containers`
 - **Component (Backend API)**: `components`
+- **Dynamic journeys**: `J1` to `J5` covering join, search, help request, ads, and moderation.
 
 ## How to render
 
@@ -23,4 +24,3 @@ Open `docs/architecture/structurizr/phase-1/workspace.dsl` in Structurizr toolin
 Notes:
 
 - Phase 1 may start with DB-backed keyword search; the `Search (optional)` container becomes relevant when dedicated indexing is introduced.
-

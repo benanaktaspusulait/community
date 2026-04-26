@@ -20,10 +20,12 @@ If a doc needs one of these decisions, it should **reference it** instead of red
 - **Decision**: Replies/comments exist in Phase 1 (add `Post` to a `Thread`).
 - **Non-goal**: reactions/likes are out of scope.
 
-## K3 — Anonymous access (Phase 1)
+## K3 — Anonymous access and public previews (Phase 1)
 
-- **Decision**: No anonymous library/content browsing.
-- **Allowed**: auth landing + join/login/verification, plus any minimal invite/preview entry point required by the join flow.
+- **Decision**: No anonymous full library/content browsing.
+- **Allowed**: auth landing, invite landing, public community preview, and preview cards/snippets for selected threads/resources.
+- **Locked**: full thread bodies, comments, search, library browsing, create actions, save actions, and member profiles require signup and the correct membership state.
+- **Reason**: users should see enough value to switch, but the product should not become a fully public content site in Phase 1.
 
 ## K4 — Search scope (Phase 1)
 
@@ -39,7 +41,27 @@ If a doc needs one of these decisions, it should **reference it** instead of red
 
 - **Decision**: No budget/schedule in Phase 1.
 - **Targeting**: `Group` targeting only.
-- **Workflow**: `Ad` DRAFT → SUBMITTED → APPROVED/REJECTED via `Approval`.
+- **Workflow**: `Ad` DRAFT -> SUBMITTED -> APPROVED/REJECTED via the generic `Approval` queue with `targetType=AD`.
+
+## K7 — Temporary viewer mode penalty
+
+- **Decision**: Phase 1 moderation includes a temporary `VIEWER_MODE` enforcement action.
+- **Behavior**: the user stays in the scoped community/group but can only read/search/save until the penalty expires.
+- **Scope**: group or community scoped; platform-wide viewer mode is an escalation path, not the default.
+- **Duration**: admins/moderators must choose an expiry duration (for example 1, 3, 7, 14, or 30 days).
+- **Non-goal**: viewer mode is not the same as removing a user and should not silently hide the penalty from the affected user.
+
+## K8 — Resource scope
+
+- **Decision**: a `Resource` belongs to exactly one `Community`.
+- **Optional relevance**: a resource may have a `primaryGroupId` for topic/location filtering, but the community remains the canonical owner.
+- **Reason**: the knowledge library should feel like community memory, while still being discoverable from relevant groups.
+
+## K9 — Approval queue scope
+
+- **Decision**: Phase 1 uses one generic approval model for join requests, ads, resources, sensitive posts, and group requests.
+- **Workflow**: every approval item has a target type, target id, status, reviewer, reason, and audit timestamps.
+- **Reason**: admins should not need separate operational patterns for every approval type.
 
 ---
 
@@ -56,14 +78,12 @@ If a doc needs one of these decisions, it should **reference it** instead of red
 ### B3 — Moderation is required (not optional)
 
 - **Decision**: Reporting + admin resolution must exist end-to-end in Phase 1.
+- **Implication**: admin resolution includes at least warn, temporary viewer mode, content removal, and scoped member removal.
 
 ---
 
-## Open decisions (must be resolved before implementation)
+## Implementation readiness
 
-These are intentionally centralized here so they don’t appear as inconsistencies across docs.
+There are no open product decisions blocking Phase 1 implementation in this log.
 
-- **O1 — Resource scope**: does a `Resource` belong to a `Community` or a `Group`?  
-  Current docs: **mixed**; Phase 1 should pick one.
-- **O2 — Public preview depth**: if preview is used for acquisition, what is visible pre-join and what is always locked?
-
+If new uncertainty appears during coding, add it here as an explicit decision before changing the model or API.

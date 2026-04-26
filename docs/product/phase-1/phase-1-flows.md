@@ -41,7 +41,7 @@ The goal of Phase 1 is not to build a new social media or chat app. The goal is 
 | Priority | Flow |
 | --- | --- |
 | P0 | Public preview, invite/join, onboarding, feed, search, structured post, help request, comment/thread, report, ad preference |
-| P0 | Admin approval queue, member removal, pinned/knowledge-card management, topic/location setup |
+| P0 | Admin approval queue, viewer-mode penalty, member removal, pinned/knowledge-card management, topic/location setup |
 | P1 | Ad creation + basic ad approval, QR invite, data request, media/link archive |
 | P1 | Public thread/resource preview, duplicate deflection, account deletion |
 | P2 | Bulk invite import, advanced migration tooling, advanced ad reporting, manual weekly summary support |
@@ -67,11 +67,12 @@ Before leaving WhatsApp/Facebook/Telegram, users want to see real value here.
 
 1. The visitor opens a public preview page.
 2. The system shows the community name, location, topic groups, and selected high-value content.
-3. Without login, the visitor can see a limited set of solved threads, knowledge cards, and active help requests.
-4. The visitor selects `Join` or `Request to join`.
-5. If the community is public, the user joins after signup.
-6. If the community is private, a join request is created and awaits admin approval.
-7. If the visitor arrived via an invite link, they are routed directly to the relevant group.
+3. Without login, the visitor sees preview cards/snippets for selected solved threads, knowledge cards, and active help requests.
+4. Full thread bodies, comments, search, library browsing, save, reply, and create actions remain locked until signup and membership.
+5. The visitor selects `Join` or `Request to join`.
+6. If the community is public, the user joins after signup.
+7. If the community is private, a join request is created and awaits admin approval.
+8. If the visitor arrived via an invite link, they are routed directly to the relevant group.
 
 ### Decision Points
 
@@ -167,7 +168,7 @@ The biggest differentiation vs WhatsApp/Facebook/Telegram is access to past know
 ### Happy Path
 
 1. The user types a need into search.
-2. The system searches across threads, knowledge cards, FAQs, media/links, listings, and help requests.
+2. The system searches across threads and resources; listings/help requests are thread types, and FAQs/knowledge cards are resource types.
 3. The user filters by category, location, topic group, status, and date.
 4. Results are ranked by solved/saved/admin-pick/high-engagement signals.
 5. If there are no results, the user is nudged to create a structured post or help request.
@@ -181,12 +182,11 @@ The biggest differentiation vs WhatsApp/Facebook/Telegram is access to past know
 | Knowledge card | `Things to watch for when renting a room in the UK` |
 | Help request | `Looking for a room in Milton Keynes` |
 | Listing | `Stroller for sale` |
-| Provider | `Community-approved accountant` |
-| Media/link | A previously shared video, document, or link |
+| Media/link reference | A thread/resource that contains a previously shared video, document, or link |
 
 ### Phase 1 Boundary
 
-Semantic/AI search is not required in Phase 1. However, keyword search, filters, boosting solved/pinned content, and duplicate deflection before posting are required.
+Semantic/AI search is not required in Phase 1. Phase 1 search targets `Thread` and `Resource`; media/link archive can be browsed separately and surfaced through the owning thread/resource. Keyword search, filters, boosting solved/pinned content, and duplicate deflection before posting are required.
 
 ## Flow 5: Help Request
 
@@ -298,7 +298,7 @@ It is hard to find previously shared links/videos/files/images in WhatsApp/Teleg
 
 In Phase 1, the media archive should be basic listing and filtering. OCR, transcripts, video summaries, and file-content search belong to Phase 6.
 
-## Flow 9: Report, Block, and Removal from Group
+## Flow 9: Report, Block, Viewer Mode, and Removal from Group
 
 ### Problem
 
@@ -310,7 +310,18 @@ Member behavior can deteriorate. Admins need a simple, traceable workflow to han
 2. The system asks for a reason: spam, harassment, off-topic, scam, inappropriate content, other.
 3. The report enters the admin/mod queue.
 4. The reported user’s history and report count are visible.
-5. The moderator takes action: no action, warn, mute, remove content, remove from group, escalate to platform.
+5. The moderator takes action: no action, warn, temporary viewer mode, remove content, remove from group, escalate to platform.
+
+### Happy Path: Temporary Viewer Mode
+
+1. The admin/moderator opens a reported member or member detail.
+2. They choose `Set viewer mode`.
+3. They select the scope: topic group, location community, or whole community.
+4. They select a duration, for example 1, 3, 7, 14, or 30 days.
+5. The affected user remains a member but becomes read-only in that scope.
+6. During viewer mode, the user can read/search/save content but cannot create threads, reply, comment, advertise, or react in the scoped area.
+7. The system shows the user why the restriction exists and when it expires.
+8. When the duration ends, the restriction automatically expires unless an admin extends or escalates it.
 
 ### Happy Path: Block
 
@@ -323,7 +334,8 @@ Member behavior can deteriorate. Admins need a simple, traceable workflow to han
 | Signal | Action |
 | --- | --- |
 | Single low-risk report | Moderator review |
-| Repeated spam | Mute or remove from group |
+| Repeated off-topic behavior | Temporary viewer mode for a short duration |
+| Repeated spam | Temporary viewer mode or remove from group |
 | Scam suspicion | Remove content, remove from group, platform escalation |
 | Harm in sensitive topics | Stricter review and disclaimers |
 
@@ -332,7 +344,7 @@ Member behavior can deteriorate. Admins need a simple, traceable workflow to han
 - report record
 - moderation decision
 - audit trail
-- scoped removal/mute
+- scoped viewer-mode penalty or removal
 
 ## Flow 10: Ad Visibility Preference
 
@@ -367,7 +379,7 @@ Providers/local businesses want to reach the community, but uncontrolled ads har
 
 1. The user enters the “Advertise” flow.
 2. They choose an ad type: service, business, event, announcement, product.
-3. They enter title, description, location, target topic, image, date range.
+3. They enter title, description, target group, optional image, and optional link.
 4. The system shows an ad preview.
 5. The ad moves to `pending review`.
 6. After admin/platform approval, the ad becomes active.
@@ -381,12 +393,12 @@ Providers/local businesses want to reach the community, but uncontrolled ads har
 | Impression | Can be a simple counter in Phase 1 |
 | Click | Can be a simple counter in Phase 1 |
 | Save | Strong usefulness signal |
-| Helpful/like | Shows community sentiment (if implemented later) |
+| Helpful/like | Not Phase 1; future sentiment signal after reactions/feedback exist |
 | Report/hide | Quality/policy signal |
 
 ### Phase 1 Boundary
 
-Billing, campaign budgets, advanced targeting, and detailed ROI dashboards belong to Phase 5. However, Phase 1 should still answer early: “Was my ad published? Was it seen? Was it clicked?”
+Billing, campaign budgets, scheduling, advanced targeting, and detailed ROI dashboards belong to Phase 5. However, Phase 1 should still answer early: “Was my ad published? Was it seen? Was it clicked?”
 
 ## Flow 12: Admin Migration and Community Setup
 
@@ -470,19 +482,23 @@ Full self-service export and advanced data management can wait until Phase 4, bu
 
 | Product object | Candidate technical model |
 | --- | --- |
+| User | user |
 | Community | community |
 | Location community | community node / location scope |
 | Topic group | group / channel |
 | Membership | membership |
+| Join request | join request + approval |
 | Role assignment | role binding |
-| Structured post | post + post type + template values |
-| Help request | request |
-| Comment | comment |
+| Structured post | thread + template data + first post |
+| Help request | thread(type=HELP_REQUEST) + template data |
+| Comment | post |
 | Knowledge card | resource / knowledge card |
-| Media/link archive item | attachment / link artifact |
+| Media/link archive item | attachment |
+| User block | user block |
 | Report | report |
 | Moderation decision | moderation action |
+| Viewer-mode penalty | moderation action / enforcement |
 | Ad preference | user preference |
-| Advertisement | ad campaign / ad creative |
-| Approval item | approval task |
+| Advertisement | ad |
+| Approval item | approval |
 | Invite link | invite |

@@ -9,9 +9,9 @@ This is **not visual design**. It is a low-fidelity wireframe pack meant to vali
 - key states (loading/empty/error/no-permission)
 - moderation and approvals
 
-## Phase 1 Decisions (K1–K6)
+## Phase 1 Decisions (K1-K9)
 
-See decision log: `phase-1-decisions.md` (K1–K6).
+See decision log: `phase-1-decisions.md` (K1-K9).
 
 ## Conventions (used across all wireframes)
 
@@ -26,7 +26,7 @@ See decision log: `phase-1-decisions.md` (K1–K6).
 
 ### J1) Join -> Onboarding -> First value
 
-`AuthLanding` → `Join` → `VerifyCode` → `OnboardingInterests` → `OnboardingDone` → `HomeFeed`
+`PublicCommunityPreview` -> `Join` -> `VerifyCode` -> `OnboardingInterests` -> `OnboardingDone` -> `HomeFeed`
 
 ### J2) Search -> Find -> Resolve without posting
 
@@ -38,19 +38,44 @@ See decision log: `phase-1-decisions.md` (K1–K6).
 
 ### J4) Ads off (user) + Ad creation (creator) + Approval (admin)
 
-User: `Profile/Settings` → `AdPreferences` (turn off)
+User: `Profile/Settings` -> `AdPreferences` (turn off)
 
-Creator: `MyAds` → `CreateAd` → submit → `AdDetail`
+Creator: `MyAds` -> `CreateAd` -> submit -> `AdDetail`
 
-Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
+Admin: `AdminApprovalQueue` -> `ApprovalDetail` -> approve/reject
 
 ### J5) Report content -> Admin resolves
 
-`ThreadDetail`/`ResourceDetail` → `ReportModal` → `AdminReportsQueue` → resolve/dismiss
+`ThreadDetail`/`ResourceDetail` -> `ReportModal` -> `AdminReportsQueue` -> warn/viewer-mode/remove/dismiss
 
 ---
 
 ## Screens
+
+### S0) `PublicCommunityPreview` (Anonymous)
+
+- **Purpose**: Show enough value to justify signup without exposing full community content.
+- **Primary actions**: Join, request to join, open preview card.
+- **States**: public, private, invite-only, empty, removed/unavailable.
+- **Locked**: full thread bodies, comments, search, library browsing, save, reply, and create.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ Community name                                      [ Join ]  │
+├──────────────────────────────────────────────────────────────┤
+│ Location • Topic groups • Member count (optional)             │
+│                                                              │
+│ Preview cards                                                 │
+│ ┌──────────────────────────────────────────────────────────┐  │
+│ │ [Resource preview] Renting checklist                      │  │
+│ │ Short teaser...                          Join to read      │  │
+│ └──────────────────────────────────────────────────────────┘  │
+│ ┌──────────────────────────────────────────────────────────┐  │
+│ │ [Solved thread preview] Driver license steps              │  │
+│ │ Short teaser...                          Join to read      │  │
+│ └──────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────┘
+```
 
 ### S1) `AuthLanding` (Anonymous)
 
@@ -164,7 +189,7 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 ### S6) `Search` (Authenticated)
 
 - **Purpose**: Entry to community memory.
-- **Primary actions**: Open result, Save search, Create help request (if no results).
+- **Primary actions**: Open result, Create help request (if no results).
 - **States**: emptyQuery, loading, results, noResults, error.
 - **Filters**: Type (Thread/Resource), Group, Status (optional), Date (optional).
 
@@ -182,8 +207,6 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 │ │ [Thread] “Room contract pitfalls”                         │  │
 │ │ Solved • Replies • Open                                   │  │
 │ └──────────────────────────────────────────────────────────┘  │
-│                                                              │
-│ [ Save this search ]                                          │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -230,7 +253,7 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 
 - **Purpose**: Durable conversation and resolution.
 - **Primary actions**: Reply, Report; Close (owner).
-- **States**: loading, open, closed, removed, no-permission (private group).
+- **States**: loading, open, closed, viewer-mode-readonly, removed, no-permission (private group).
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -317,6 +340,35 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 └──────────────────────────────────────────────────────────────┘
 ```
 
+### S11b) `AdminMemberModeration` (Role: MOD/ADMIN)
+
+- **Purpose**: Apply scoped penalties without always removing a member.
+- **Primary actions**: Warn, set viewer mode, extend/end viewer mode, remove from group.
+- **States**: no-actions, active-viewer-mode, expired-viewer-mode, removed, no-permission.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ Member moderation                                             │
+├──────────────────────────────────────────────────────────────┤
+│ Member: Name                                                  │
+│ Scope: [ Topic group v ]                                      │
+│ Reports: 3   Last action: warning                             │
+│                                                              │
+│ Action                                                       │
+│ ( ) Warn                                                     │
+│ ( ) Viewer mode (read-only)                                  │
+│ ( ) Remove from group                                        │
+│                                                              │
+│ Duration (viewer mode only)                                  │
+│ [ 1 day ] [ 3 days ] [ 7 days ] [ 14 days ] [ 30 days ]       │
+│                                                              │
+│ Reason *                                                     │
+│ [________________________________________________________]     │
+│                                                              │
+│ [ Cancel ]                               [ Apply action ]     │
+└──────────────────────────────────────────────────────────────┘
+```
+
 ### S12) `AdPreferences` (Authenticated)
 
 - **Purpose**: Explicit user control over ad visibility.
@@ -391,8 +443,9 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 ┌──────────────────────────────────────────────────────────────┐
 │ Approval queue                           Filter: [All v]       │
 ├──────────────────────────────────────────────────────────────┤
-│ - Ad #123   SUBMITTED   Owner • Group • Time                   │
-│ - Ad #124   SUBMITTED   Owner • Group • Time                   │
+│ - Join request   PENDING   User • Community • Time             │
+│ - Resource       PENDING   Title • Community • Time            │
+│ - Ad #123        PENDING   Owner • Group • Time                │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -419,6 +472,26 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 └──────────────────────────────────────────────────────────────┘
 ```
 
+### S17) `AdminReportsQueue` (Role: ADMIN/MOD)
+
+- **Purpose**: Triage reports and route to the correct moderation action.
+- **Primary actions**: Open report, dismiss, warn, set viewer mode, remove.
+- **States**: empty, list, high-risk, already-handled, no-permission.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ Reports queue                         Filter: [Open v]        │
+├──────────────────────────────────────────────────────────────┤
+│ - Spam report      User • Target • 3 reports • Time           │
+│ - Off-topic        User • Group • 1 report  • Time            │
+│                                                              │
+│ Selected report                                              │
+│ Reason • Reporter • Target preview • History                  │
+│                                                              │
+│ [ Dismiss ] [ Warn ] [ Viewer mode ] [ Remove ]               │
+└──────────────────────────────────────────────────────────────┘
+```
+
 ---
 
 ## What this wireframe pack validates (checklist)
@@ -428,6 +501,6 @@ Admin: `AdminApprovalQueue` → `ApprovalDetail` → approve/reject
 - Help request creation is structured and guarded by required fields
 - Thread detail supports durable replies + closure
 - Reporting is lightweight and feeds admin workflows
+- Viewer mode gives admins a reversible, time-boxed penalty before removal
 - Ad preference is explicit and enforceable in surfaces
 - Ad creation and approval loop is coherent
-

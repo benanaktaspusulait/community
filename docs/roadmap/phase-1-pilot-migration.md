@@ -46,7 +46,7 @@ Phase 1 is successful if:
 - the `community > location > topic group` structure is clear and enforceable
 - repeat-question rate starts decreasing
 - at least a few groups begin shifting daily activity here
-- reporting and basic moderation flows work end-to-end
+- reporting and basic moderation flows, including temporary viewer-mode penalties, work end-to-end
 - a new user’s first session results in either:
   - finding an answer, or
   - successfully creating a structured help request
@@ -79,12 +79,12 @@ During the pilot, content must not be fully organic:
 ### Core Pilot (must work)
 
 - community / location / topic group structure
-- invite + join request + (optional) preview entry points
+- invite + join request + preview entry points
 - structured creation flows (help request, question, listing) backed by templates
 - thread + comment/reply model (async)
 - search + filters + “duplicate deflection” before posting
 - library/knowledge cards (seeded + curated)
-- basic moderation: report, remove content, remove member (scoped)
+- basic moderation: report, remove content, temporary viewer mode, remove member (scoped)
 - user ad visibility preference (show/hide)
 
 ### Launch Guardrails (must exist, can be minimal)
@@ -114,4 +114,3 @@ At the end of this phase, the product should be describable as:
 > A community platform entered via invite, preview, or join request; organized by topics; building memory via async threads; searchable; and with ad visibility controlled by the user.
 
 If this is clearly working, moving to Phase 2 is justified.
-

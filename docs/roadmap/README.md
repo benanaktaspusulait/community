@@ -201,7 +201,7 @@ From day one, the product should support:
 - admins manage join requests/group requests/resource publishing in one queue
 - community admins assign sub-admins for location/topic scopes
 - users report inappropriate members/content
-- admins remove problematic members based on reports
+- admins apply temporary viewer-mode penalties or remove problematic members based on reports
 - ad creation via “Advertise”, published after basic approval
 - users can fully disable ads in settings
 
@@ -216,6 +216,7 @@ Core metrics to track across the roadmap:
 - search-to-exit rate without posting a question
 - 7-day retention of invite-driven users
 - report resolution time
+- temporary viewer-mode penalty usage and repeat-offense rate
 - rate of removed problematic members
 - % of users opted in to ads
 - ad click and hide rates
@@ -245,7 +246,7 @@ Core metrics to track across the roadmap:
 
 - `Community founder` should not be a separate early role; treat it as community admin in Phase 1.
 - `Sub-admin` should not create new groups in Phase 1; they can request, with scoped-create opening in Phase 3.
-- `Moderator` can apply mutes by default in their scope; removals should follow policy/threshold.
+- `Moderator` can apply temporary viewer-mode penalties in their scope; removals should follow policy/threshold.
 - `Community admin` can control local ad eligibility/placement/local rules; pricing/billing/platform-wide ad policies stay centralized.
 - First productized commercial package: `Provider / Advertiser Starter`; `Admin Pro` comes next.
 - First migration motion should start `concierge-led`, later evolving into a hybrid self-serve model in Phase 3.

@@ -11,7 +11,7 @@ Phase 1 navigation should remain simple.
 | Area | Goal |
 | --- | --- |
 | Home | Show a useful feed based on community, location, and topic |
-| Search | Find past information: threads, knowledge cards, listings, media, and links |
+| Search | Find past information: threads and knowledge cards; media/links are surfaced through their owning thread/resource |
 | Create | Start a structured post, help request, listing, or ad |
 | Library | Knowledge cards, FAQs, resources, and media/link archive |
 | Profile | Profile, saved items, settings |
@@ -29,8 +29,8 @@ Phase 1 navigation should remain simple.
 
 | Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
-| Public Community Preview | P0 | Show value before joining | Join, request to join, view sample content | Public, private, empty, invite-only |
-| Public Thread Preview | P1 | Acquire via shared solved thread/resource | Join to reply, save after join, open community | Content available, login required, removed |
+| Public Community Preview | P0 | Show value before joining | Join, request to join, view preview cards | Public, private, empty, invite-only |
+| Public Thread Preview | P1 | Acquire via shared solved thread/resource | Join to read full thread, open community | Preview snippet, login required, removed |
 | Public Resource Preview | P1 | Build trust via knowledge card | Join, share, view related topics | Limited preview, full access after join |
 | Invite Landing | P0 | Route invite-link traffic to the right community/group | Continue, login, create account | Valid, expired, revoked, usage limit reached |
 | Join Request | P0 | Capture join request for private communities | Submit request, answer entry questions | Pending, approved, rejected |
@@ -79,11 +79,11 @@ Phase 1 navigation should remain simple.
 | Screen | Priority | Goal | Primary Actions | Critical States |
 | --- | --- | --- | --- | --- |
 | “Advertise” Entry | P1 | Start the ad flow | Choose ad type, continue | User not eligible, ads policy |
-| Ad Create Form | P1 | Capture ad in a structured form | Title, description, image, link, dates | Missing fields, policy warning |
-| Ad Targeting | P1 | Target location and topic | Select location, topic, service area | Too broad, no eligible audience |
+| Ad Create Form | P1 | Capture ad in a structured form | Title, description, image, link | Missing fields, policy warning |
+| Ad Targeting | P1 | Choose the target group | Select group; location/topic inherited from group | No eligible group, policy warning |
 | Ad Preview | P1 | Show how the ad will look | Submit for review, edit | Ads off note, mobile preview |
 | Ad Status | P1 | Keep advertiser informed | View pending, edit rejected, pause | Pending, approved, rejected, paused |
-| Basic Ad Report | P2 | Show early value | View impressions, clicks, saves, helpful, reports | Low data, no delivery |
+| Basic Ad Report | P2 | Show early value | View impressions, clicks, saves, hides, reports | Low data, no delivery |
 
 ## Admin Screens
 
@@ -93,8 +93,8 @@ Phase 1 navigation should remain simple.
 | Approval Queue | P0 | Centralize approvals | Approve, reject, request edit, escalate | Empty, filtered, overdue |
 | Approval Detail | P0 | Provide context for decisions | View item, view user, decide | Missing context, already handled |
 | Join Requests | P0 | Manage private community memberships | Approve, reject, message reason | Bulk pending, duplicate user |
-| Reports Queue | P0 | Process reports | Warn, mute, remove, no action | Multiple reports, high risk |
-| Member Detail (Admin) | P0 | View member history and actions | View reports, mute, remove from group | Scoped permission, platform escalation |
+| Reports Queue | P0 | Process reports | Warn, set viewer mode, remove, no action | Multiple reports, active viewer mode, high risk |
+| Member Detail (Admin) | P0 | View member history and actions | View reports, set viewer mode, extend/end penalty, remove from group | Scoped permission, active viewer mode, platform escalation |
 | Community Structure | P0 | Manage location/topic structure | Add/edit group, assign admin | Duplicate group, permission missing |
 | Topic Group Settings | P0 | Enforce topic rules | Edit rules, post approval, pinned items | Approval on/off, locked group |
 | Role Management | P0 | Assign sub-admin and moderator roles | Assign role, revoke role | Scope required, owner protected |
@@ -128,6 +128,7 @@ For each critical screen, the following states should be considered:
 | Rejected | Explain reason and next step to the user |
 | Removed | Old shared links should not break after moderation |
 | Reported | Owner/admin behavior must be defined for reported content |
+| Viewer mode active | User can read/search but cannot create or reply in the scoped area |
 | Ads off | If the user disabled ads, ad placements must be hidden |
 | No results | Transition from search to structured request creation |
 | Duplicate found | Deflect to existing knowledge before posting |
@@ -159,6 +160,7 @@ In the first design sprint, P0 screens are sufficient:
 - Approval Queue
 - Join Requests
 - Reports Queue
+- Member Detail (Admin)
 - Community Structure
 - Invite Links
 - Knowledge Library Manager
@@ -172,6 +174,7 @@ In the first design sprint, P0 screens are sufficient:
 - The ad-create flow must be separate from the normal post-create flow.
 - Admin actions must work with scoped permissions.
 - Report and block must be reachable in 1–2 taps.
+- Viewer mode must be visible to both admin and affected user with scope, reason, and expiry date.
 - Library and knowledge cards must be visible in primary navigation.
 - Media/link archive must be directly accessible under Library.
 
@@ -186,4 +189,3 @@ The wireframe set should first cover these 5 critical journeys:
 3. A user creates a “I’m looking for a room” help request.
 4. A user disables ads; an advertiser creates an ad.
 5. An admin manages join requests, reports, and knowledge-card approvals.
-
