@@ -4,7 +4,7 @@ import { TopBar } from '../components/ui/TopBar'
 import { BottomNav } from '../components/ui/BottomNav'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
-import { ChevronRight, MapPin, Bell, Eye, Shield, Bookmark, MessageCircle } from 'lucide-react'
+import { ChevronRight, MapPin, Bell, Eye, Shield, Bookmark, MessageCircle, LogOut } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 const myPosts = [
@@ -159,6 +159,13 @@ export function ProfileScreen() {
                 <ChevronRight size={14} className="text-gray-300" />
               </button>
             ))}
+            <button
+              onClick={() => navigate('/')}
+              className="w-full flex items-center gap-3 bg-white rounded-xl border border-[#e4e7ec] px-4 py-3 mb-2 text-gray-600"
+            >
+              <LogOut size={16} className="text-gray-400" />
+              <span className="flex-1 text-sm font-medium text-left">Log out</span>
+            </button>
           </div>
         </div>
       </div>

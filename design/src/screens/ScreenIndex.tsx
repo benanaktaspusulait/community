@@ -10,11 +10,11 @@ const sections = [
       { path: '/preview', label: 'Public Community Preview' },
       { path: '/invite/landing', label: 'Invite Landing' },
       { path: '/join', label: 'Join' },
-      { path: '/join/pending', label: 'Join Pending' },
+      { path: '/join/pending', label: 'Join Pending (awaiting approval)' },
       { path: '/verify', label: 'Verify Code' },
-      { path: '/onboarding/location', label: 'Onboarding - Location setup' },
-      { path: '/location/map', label: 'Map Location Picker' },
-      { path: '/onboarding', label: 'Onboarding - Interests' },
+      { path: '/onboarding/location', label: 'Onboarding — Location (search list)' },
+      { path: '/location/map', label: 'Onboarding — Location (map picker) 🗺️' },
+      { path: '/onboarding', label: 'Onboarding — Interests' },
     ],
   },
   {
@@ -59,9 +59,9 @@ const sections = [
   {
     title: 'Profile & Settings',
     screens: [
-      { path: '/profile', label: 'My Profile (posts, saved, groups)' },
-      { path: '/member', label: 'Member Profile (report, block)' },
-      { path: '/settings', label: 'Settings (ads, location, notifications)' },
+      { path: '/profile', label: 'My Profile (posts, saved, groups, logout)' },
+      { path: '/member', label: 'Member Profile (report, block, no-DM notice)' },
+      { path: '/settings', label: 'Settings (language, ads, location, notifications, logout, delete)' },
     ],
   },
   {

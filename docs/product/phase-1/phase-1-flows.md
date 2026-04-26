@@ -501,6 +501,64 @@ Even in a pilot, users need trust in account, privacy, and data rights.
 
 Full self-service export and advanced data management can wait until Phase 4, but the request path and support process must be clear in Phase 1.
 
+## Flow 14b: Session Management and Logout
+
+### Problem
+
+Users need a clear and safe way to end their session, especially on shared devices.
+
+### Happy Path
+
+1. The user opens Settings.
+2. They tap `Log out`.
+3. The system clears the local session and returns the user to the Auth Landing screen.
+4. No confirmation step is required for logout (unlike account deletion).
+
+### Rules
+
+- Logout must be reachable from Settings and from the Profile screen.
+- Logout clears the local auth token and any cached user context.
+- Logout does not delete the account or any content.
+
+### Output
+
+- session cleared
+- user returned to Auth Landing
+
+## Flow 14c: 1-to-1 Private Messaging — Phase 1 Decision
+
+### Problem
+
+Users coming from WhatsApp and Telegram expect to be able to message each other privately. This creates pressure to add DMs.
+
+### Decision: Out of Scope for Phase 1
+
+Full 1-to-1 private messaging (DMs) is explicitly out of scope for Phase 1.
+
+### Rationale
+
+- The product goal is structured community memory, not a chat replacement.
+- Adding DMs in Phase 1 would recreate the same unstructured, unsearchable message noise that the product is designed to replace.
+- DMs require significant infrastructure: real-time delivery, read receipts, message history, moderation, and abuse prevention.
+- Phase 1 must prove that structured threads and knowledge cards retain users before adding chat.
+
+### Phase 1 Alternative: Contact Preference
+
+Users who need to connect privately can use the `Contact preference` field on help requests and listings:
+
+- `Reply in thread` — keeps the conversation visible and searchable
+- `WhatsApp` — user provides their own WhatsApp contact
+- `Email` — user provides their own email
+
+This is intentional: the platform facilitates the connection but does not own the private channel in Phase 1.
+
+### Future Path
+
+1-to-1 messaging may be introduced in a later phase after:
+- structured threads prove retention
+- the moderation infrastructure is mature enough to handle private abuse
+- the product has a clear reason why in-app DMs are better than the user's existing WhatsApp
+
 ## Flow 15: Special Day Groups
 
 ### Problem
@@ -536,13 +594,29 @@ Community events like Eid, national holidays (23 Nisan), or local celebrations n
 
 The current design/prototype should explicitly cover:
 
-| Gap | Resolution |
-| --- | --- |
-| Direct user invite was not visible enough | Add `Invite People` screen and admin invite hub |
-| Admin `Invite links` tool was not actionable | Route admin tools to invite management |
-| Existing helper screens were not reachable | Add routes/index entries for splash, map picker, and push notification preview |
-| Special day invitations existed in docs but needed UI continuity | Keep banner entry and ensure invite language is visible in feed/special-day screens |
-| Group-scoped moderation could be misunderstood | Keep viewer-mode/removal wording as group-scoped in flows, docs, and screens |
+| Flow | Screen(s) | Status |
+| --- | --- | --- |
+| F1 Public preview → join | `/preview`, `/invite/landing`, `/join`, `/join/pending` | ✅ |
+| F1b Direct user invite | `/invite`, `/admin/invites` | ✅ |
+| F2 Onboarding | `/join`, `/verify`, `/onboarding/location`, `/location/map`, `/onboarding` | ✅ |
+| F3 Home feed | `/feed`, `/community`, `/group` | ✅ |
+| F4 Search + duplicate deflection | `/search` | ✅ |
+| F5 Help request | `/create`, `/thread` | ✅ |
+| F6 Structured listing | `/listing/create`, `/thread` | ✅ |
+| F7 Knowledge cards | `/library`, `/resource`, `/admin/library` | ✅ |
+| F8 Media archive | `/media` | ✅ |
+| F9 Report / block / viewer mode / removal | `/report`, `/admin/reports`, `/admin/moderation`, `/member` | ✅ |
+| F10 Ad preference | `/settings`, `/onboarding` | ✅ |
+| F11 Ad creation + approval | `/ad/create`, `/admin/approvals` | ✅ |
+| F12 Admin migration setup | `/admin`, `/admin/invites`, `/group/create` | ✅ |
+| F13 Approval queue | `/admin/approvals` | ✅ |
+| F14 Account + data rights | `/settings` (delete account, request data) | ✅ |
+| F14b Session / logout | `/settings` (log out button → `/`) | ✅ |
+| F14c 1-1 chat decision | Documented as out of scope; contact preference shown in `/listing/create` and `/create` | ✅ |
+| F15 Special day groups | `/special-day`, `/group/create` (SPECIAL_DAY type) | ✅ |
+| Map location picker | `/location/map` — reachable from `/onboarding/location` via "Pick from map" button | ✅ |
+| Push notification preview | `/notifications/push-demo` | ✅ |
+| Splash screen | `/splash` | ✅ |
 
 ## Out of Scope for Phase 1
 

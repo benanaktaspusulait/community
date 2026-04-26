@@ -90,6 +90,11 @@ export function MemberProfile() {
               <Ban size={13} /> {blocked ? 'Unblock' : 'Block'}
             </button>
           </div>
+
+          {/* no DMs notice */}
+          <div className="bg-[#f8f9fb] rounded-xl px-3 py-2.5 text-xs text-gray-400 text-center">
+            💬 Private messaging is not available in Phase 1. To contact this member, reply to one of their threads or use the contact preference they set on their listings.
+          </div>
         </div>
 
         {/* their posts */}

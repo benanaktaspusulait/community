@@ -194,9 +194,15 @@ export function Settings() {
           </button>
           <button
             onClick={() => setDeleteStep('confirm')}
-            className="flex items-center gap-2 text-sm text-red-500 py-2.5 font-medium"
+            className="flex items-center gap-2 text-sm text-red-500 py-2.5 font-medium border-b border-[#f0f0f0]"
           >
             🗑️ Delete account
+          </button>
+          <button
+            onClick={() => navigate('/')}
+            className="flex items-center gap-2 text-sm text-gray-600 py-2.5 font-medium"
+          >
+            🚪 Log out
           </button>
         </Card>
       </div>
