@@ -1,12 +1,13 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
 
 @Component({
   selector: 'app-topbar',
   standalone: true,
-  imports: [CommonModule, BadgeModule, AvatarModule],
+  imports: [CommonModule, RouterLink, BadgeModule, AvatarModule],
   template: `
     <header class="topbar">
       <button class="topbar-menu-btn" (click)="menuToggle.emit()">
@@ -31,7 +32,7 @@ import { AvatarModule } from 'primeng/avatar';
           <span class="topbar-user-name">Aylin Admin</span>
           <span class="topbar-user-role">Community Admin</span>
         </div>
-        <button class="logout-btn">
+        <button class="logout-btn" routerLink="/login">
           <i class="pi pi-sign-out"></i>
           <span>Logout</span>
         </button>

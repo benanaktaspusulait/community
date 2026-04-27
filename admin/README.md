@@ -19,6 +19,8 @@ npm start
 
 The local dev server runs at `http://localhost:4200/`.
 
+Start from `/login`; signing in routes to the admin command center.
+
 ## Validate
 
 ```bash

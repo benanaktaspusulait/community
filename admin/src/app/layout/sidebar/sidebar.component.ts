@@ -2,13 +2,57 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-const NAV = [
-  { label: 'Command Center', icon: 'pi pi-chart-line', route: '/dashboard' },
-  { label: 'Members', icon: 'pi pi-users', route: '/members' },
-  { label: 'Reports', icon: 'pi pi-flag', route: '/reports', badge: '3' },
-  { label: 'Approvals', icon: 'pi pi-check-circle', route: '/approvals', badge: '7' },
-  { label: 'Library', icon: 'pi pi-book', route: '/library' },
-  { label: 'Groups', icon: 'pi pi-sitemap', route: '/groups' },
+type NavItem = {
+  label: string;
+  icon: string;
+  route: string;
+  badge?: string;
+};
+
+type NavSection = {
+  id: string;
+  label: string;
+  icon: string;
+  badge?: string;
+  items: NavItem[];
+};
+
+const NAV_SECTIONS: NavSection[] = [
+  {
+    id: 'overview',
+    label: 'Overview',
+    icon: 'pi pi-compass',
+    items: [
+      { label: 'Command Center', icon: 'pi pi-chart-line', route: '/dashboard' },
+    ],
+  },
+  {
+    id: 'operations',
+    label: 'Operations',
+    icon: 'pi pi-inbox',
+    badge: '10',
+    items: [
+      { label: 'Reports', icon: 'pi pi-flag', route: '/reports', badge: '3' },
+      { label: 'Approvals', icon: 'pi pi-check-circle', route: '/approvals', badge: '7' },
+    ],
+  },
+  {
+    id: 'community',
+    label: 'Community',
+    icon: 'pi pi-users',
+    items: [
+      { label: 'Members', icon: 'pi pi-users', route: '/members' },
+      { label: 'Groups', icon: 'pi pi-sitemap', route: '/groups' },
+    ],
+  },
+  {
+    id: 'knowledge',
+    label: 'Knowledge',
+    icon: 'pi pi-book',
+    items: [
+      { label: 'Library', icon: 'pi pi-book', route: '/library' },
+    ],
+  },
 ];
 
 @Component({
@@ -25,16 +69,36 @@ const NAV = [
         </span>
       </div>
 
-      <nav class="sidebar-nav">
-        <a *ngFor="let item of nav"
-           [routerLink]="item.route"
-           routerLinkActive="active"
-           class="nav-item"
-           [title]="item.label">
-          <i [class]="item.icon"></i>
-          <span *ngIf="!collapsed">{{ item.label }}</span>
-          <strong class="nav-badge" *ngIf="!collapsed && item.badge">{{ item.badge }}</strong>
-        </a>
+      <nav class="sidebar-nav grouped">
+        <section
+          *ngFor="let section of sections"
+          class="nav-section"
+          [class.open]="isOpen(section.id)"
+        >
+          <button
+            type="button"
+            class="nav-section-toggle"
+            [title]="section.label"
+            (click)="toggleSection(section.id)"
+          >
+            <i [class]="section.icon"></i>
+            <span *ngIf="!collapsed">{{ section.label }}</span>
+            <strong class="nav-badge" *ngIf="!collapsed && section.badge">{{ section.badge }}</strong>
+            <i *ngIf="!collapsed" class="pi pi-chevron-down section-chevron"></i>
+          </button>
+
+          <div class="nav-section-items" *ngIf="!collapsed && isOpen(section.id)">
+            <a *ngFor="let item of section.items"
+               [routerLink]="item.route"
+               routerLinkActive="active"
+               class="nav-item"
+               [title]="item.label">
+              <i [class]="item.icon"></i>
+              <span>{{ item.label }}</span>
+              <strong class="nav-badge" *ngIf="item.badge">{{ item.badge }}</strong>
+            </a>
+          </div>
+        </section>
       </nav>
 
       <div class="sidebar-context" *ngIf="!collapsed">
@@ -52,5 +116,22 @@ const NAV = [
 export class SidebarComponent {
   @Input() collapsed = false;
   @Output() toggle = new EventEmitter<void>();
-  nav = NAV;
+  sections = NAV_SECTIONS;
+  openSections: Record<string, boolean> = {
+    overview: true,
+    operations: true,
+    community: true,
+    knowledge: true,
+  };
+
+  isOpen(sectionId: string) {
+    return this.openSections[sectionId];
+  }
+
+  toggleSection(sectionId: string) {
+    this.openSections = {
+      ...this.openSections,
+      [sectionId]: !this.openSections[sectionId],
+    };
+  }
 }
